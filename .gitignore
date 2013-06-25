@@ -76,3 +76,8 @@ ipch/
 *.psess
 *.vsp
 *.vspx
+
+*.sln
+*.suo
+*.vcxproj
+*.vxxproj.user
