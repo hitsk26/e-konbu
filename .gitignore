@@ -81,3 +81,4 @@ ipch/
 *.suo
 *.vcxproj
 *.vxxproj.user
+*.vcxproj.filters
