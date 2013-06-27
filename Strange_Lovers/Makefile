@@ -19,7 +19,8 @@ TARGET_SOURCES := \
 	PID_Brightness.c \
 	Target_Value.c \
 	Calibration.c \
-	Display.c
+	Display.c \
+	logSend.c
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
