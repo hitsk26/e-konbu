@@ -9,7 +9,9 @@
 //#include "Balancer.h"
 #include "RN_State.h"
 #include "PID_Brightness.h"
+#include "PID_Tail.h"
 #include "Calibration.h"
+#include "logSend.h"
 
 
 #endif

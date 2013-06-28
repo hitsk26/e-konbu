@@ -7,11 +7,11 @@
 //#include "balancer.h"
 #include "C:/cygwin/nxtOSEK\ecrobot/nxtway_gs_balancer/balancer.h"
 
-static S8 forward = 20;
-static S8 turn = 0;
+S8 forward = 20;
+S8 turn = 0;
 S8	pwm_l, pwm_r;
 
-static U32	gyro_offset = 600;
+U32	gyro_offset = 600;
 
 extern void Balance_running();
 extern void Set_forward(int forward_buf);

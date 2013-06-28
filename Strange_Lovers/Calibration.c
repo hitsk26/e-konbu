@@ -51,10 +51,8 @@ void Calibration(){
 
 	Set_target_value_brightness((black_value+white_value)/2);
 
-	while(1){
-		if(ecrobot_get_touch_sensor(NXT_PORT_S4) == TRUE)break;
-	}
 
 	print_calibrate_value();
 
+	end_calibration_flg = 1;
 }

@@ -21,9 +21,6 @@ void ecrobot_device_initialize(void){
 	ecrobot_set_motor_rev(NXT_PORT_C,0);
 	ecrobot_init_bt_slave("LEJOS-OSEK");
 
-	//ÉçÉOílèâä˙âª
-	resetSelfLocation();
-
 }
 
 //å„énññèàóù
@@ -72,8 +69,10 @@ void RN_mode_change(){
 
 	switch (rn_state){
 		case (RN_CALIBRATION):
-			Calibration();
-			rn_state = RN_RUNNING;
+			if(end_calibration_flg == 1 && ecrobot_get_touch_sensor(NXT_PORT_S4) == TRUE){
+				rn_state = RN_RUNNING;
+				set_anglr_of_aim(0);
+			}
 			break;
 
 		case (RN_RUNNING):
@@ -89,11 +88,18 @@ void RN_run(){
 
 	switch (rn_state){
 		case (RN_CALIBRATION):
+			if(end_calibration_flg == 0){
+				Calibration();
+				set_anglr_of_aim(100);
+				end_calibration_flg =1;
+			}
+			PID_tail();
 			break;
 
 		case (RN_RUNNING):
 			//Balance_running();
 			PID_Brightness();
+			PID_tail();
 			break;
 
 		case (RN_COMPLATION):

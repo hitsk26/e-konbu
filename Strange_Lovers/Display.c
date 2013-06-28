@@ -2,5 +2,5 @@
 
 void print_calibrate_value(){
 	display_update();
-	ecrobot_debug1(black_value,white_value,gyro);
+	ecrobot_debug1(black_value,white_value,target_value_brightness);
 }

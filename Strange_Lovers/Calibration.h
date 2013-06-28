@@ -8,7 +8,9 @@
 
 int black_value = 0;
 int white_value = 0;
-static U32 gyro = 0;
+U32 gyro = 0;
+
+int end_calibration_flg = 0;
 
 extern void Calibration();
 
