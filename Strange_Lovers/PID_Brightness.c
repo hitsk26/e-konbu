@@ -30,7 +30,7 @@ void PID_Brightness(){
 		turn = 100;
 	}
 
-	Set_turn(turn);
-	Balance_running();
+	set_turn(turn);
+	balance_running();
 
 }

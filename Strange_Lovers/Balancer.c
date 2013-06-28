@@ -2,7 +2,7 @@
 
 
 
-void Balance_running(){
+void balance_running(){
 
 	balance_control(
 				(F32)forward,
@@ -18,16 +18,16 @@ void Balance_running(){
 				nxt_motor_set_speed(NXT_PORT_B, pwm_r, 1);
 }
 
-void Set_forward(int forward_buf){
+void set_forward(int forward_buf){
 
 	forward = forward_buf;
 }
 
-void Set_turn(int turn_buf){
+void set_turn(int turn_buf){
 
 	turn = turn_buf;
 }
 
-void Set_gyro(U32 gyro){
+void set_gyro(U32 gyro){
 	gyro_offset = gyro;
 }

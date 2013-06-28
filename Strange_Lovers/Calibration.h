@@ -12,6 +12,6 @@ U32 gyro = 0;
 
 int end_calibration_flg = 0;
 
-extern void Calibration();
+extern void calibration();
 
 #endif

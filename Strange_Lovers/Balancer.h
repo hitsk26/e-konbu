@@ -13,9 +13,9 @@ S8	pwm_l, pwm_r;
 
 U32	gyro_offset = 600;
 
-extern void Balance_running();
-extern void Set_forward(int forward_buf);
-extern void Set_turn(int turn_buf);
-extern void Set_gyro(U32 gyro);
+extern void balance_running();
+extern void set_forward(int forward_buf);
+extern void set_turn(int turn_buf);
+extern void set_gyro(U32 gyro);
 
 #endif

@@ -1,6 +1,6 @@
 #include "Calibration.h"
 
-void Calibration(){
+void calibration(){
 
 	static int flg = 0;
 
@@ -47,9 +47,9 @@ void Calibration(){
 		}
 	}
 
-	Set_gyro(gyro);
+	set_gyro(gyro);
 
-	Set_target_value_brightness((black_value+white_value)/2);
+	set_target_value_brightness((black_value+white_value)/2);
 
 
 	print_calibrate_value();
