@@ -4,6 +4,9 @@
 
 #include "Balancer.h"
 #include "Target_Value.h"
+#include "logSend.h"
+
+
 
 extern void PID_Brightness();
 

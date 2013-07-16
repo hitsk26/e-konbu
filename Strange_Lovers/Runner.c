@@ -90,7 +90,7 @@ void RN_run(){
 		case (RN_CALIBRATION):
 			if(end_calibration_flg == 0){
 				calibration();
-				set_anglr_of_aim(100);
+				set_anglr_of_aim(110);
 				end_calibration_flg =1;
 			}
 			PID_tail();
@@ -100,6 +100,8 @@ void RN_run(){
 			//Balance_running();
 			PID_Brightness();
 			PID_tail();
+
+			//logSend(0,0,0,0,0,0,0,0);
 			break;
 
 		case (RN_COMPLATION):
