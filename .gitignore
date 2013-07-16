@@ -82,3 +82,7 @@ ipch/
 *.vcxproj
 *.vxxproj.user
 *.vcxproj.filters
+
+#astah extra files
+*.asta.lock
+*.asta.bak
