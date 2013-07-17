@@ -21,7 +21,8 @@ TARGET_SOURCES := \
 	Calibration.c \
 	Display.c \
 	logSend.c \
-	PID_Tail.c 
+	PID_Tail.c \
+	Factory.c
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 

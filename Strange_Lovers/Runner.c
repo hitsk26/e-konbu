@@ -24,6 +24,8 @@ void ecrobot_device_initialize(void){
 	ecrobot_set_motor_rev(NXT_PORT_C,0);
 	ecrobot_init_bt_slave("LEJOS-OSEK");
 
+	initialization();
+
 }
 
 //å„énññèàóù
@@ -92,8 +94,8 @@ void RN_run(){
 	switch (rn_state){
 		case (RN_CALIBRATION):
 			if(end_calibration_flg == 0){
-				calibration();
-				set_anglr_of_aim(100);
+				Calibration_calibration();
+				Target_value_set_anglr_of_aim(&target_value,100);
 				end_calibration_flg =1;
 			}
 			PID_tail();
@@ -108,11 +110,11 @@ void RN_run(){
 			}*/
 
 			if(count_start < 50){
-				set_anglr_of_aim(128);
+				Target_value_set_anglr_of_aim(&target_value,128);
 				count_start++;
 			}else
 				{
-					set_anglr_of_aim(0);
+					Target_value_set_anglr_of_aim(&target_value,0);
 					flg_tail=1;
 			}
 
