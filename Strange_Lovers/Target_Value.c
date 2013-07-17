@@ -1,5 +1,5 @@
 #include "Target_Value.h"
-
+#include "Factory.h"
 
 void Target_value_init(Target_value *this_Target_value){
 	this_Target_value->target_value_brightness = 0;

@@ -6,7 +6,7 @@
 #include "ecrobot_interface.h"
 //#include "balancer.h"
 #include "C:/cygwin/nxtOSEK\ecrobot/nxtway_gs_balancer/balancer.h"
-#include "Factory.h"
+
 
 
 typedef struct{

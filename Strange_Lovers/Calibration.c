@@ -1,5 +1,5 @@
 #include "Calibration.h"
-
+#include "Factory.h"
 
 void Calibration_init(Calibration *this_Calibration){
 	this_Calibration->black_value = 0;

@@ -1,4 +1,5 @@
 #include "Runner.h"
+#include "Factory.h"
 
 void RN_mode_change();
 void RN_run();

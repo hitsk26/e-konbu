@@ -1,5 +1,5 @@
 #include "Balancer.h"
-
+#include "Factory.h"
 
 
 void Balancer_init(Balancer *this_Balancer){
@@ -9,7 +9,7 @@ void Balancer_init(Balancer *this_Balancer){
 }
 
 void Balancer_balance_running(){
-
+	S8 pwm_l=0,pwm_r=0;
 	balance_control(
 				(F32)balancer.forward,
 				(F32)balancer.turn,

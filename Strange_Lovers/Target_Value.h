@@ -1,7 +1,6 @@
 #ifndef _TARGET_VALUE_H_
 #define _TARGET_VALUE_H_
 
-#include "Factory.h"
 
 typedef struct{
 	int target_value_brightness;
