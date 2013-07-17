@@ -3,6 +3,9 @@
 void RN_mode_change();
 void RN_run();
 
+int count_start=0;
+int flg_tail=0;
+
 //ëñçsèÛë‘èâä˙âª
 RN_STATE rn_state = RN_CALIBRATION;
 
@@ -71,7 +74,7 @@ void RN_mode_change(){
 		case (RN_CALIBRATION):
 			if(end_calibration_flg == 1 && ecrobot_get_touch_sensor(NXT_PORT_S4) == TRUE){
 				rn_state = RN_RUNNING;
-				set_anglr_of_aim(0);
+				//set_anglr_of_aim(0);
 			}
 			break;
 
@@ -90,7 +93,7 @@ void RN_run(){
 		case (RN_CALIBRATION):
 			if(end_calibration_flg == 0){
 				calibration();
-				set_anglr_of_aim(110);
+				set_anglr_of_aim(100);
 				end_calibration_flg =1;
 			}
 			PID_tail();
@@ -98,7 +101,24 @@ void RN_run(){
 
 		case (RN_RUNNING):
 			//Balance_running();
-			PID_Brightness();
+		/*	if(get_tail_value() < 110){
+				set_anglr_of_aim(get_tail_value());
+				anglr_of_aim++;
+				if(get_tail_value() == 110) set_anglr_of_aim(0);
+			}*/
+
+			if(count_start < 50){
+				set_anglr_of_aim(128);
+				count_start++;
+			}else
+				{
+					set_anglr_of_aim(0);
+					flg_tail=1;
+			}
+
+			//if(count_start==1)set_anglr_of_aim(0);
+
+			if(flg_tail==1)PID_Brightness();
 			PID_tail();
 
 			//logSend(0,0,0,0,0,0,0,0);

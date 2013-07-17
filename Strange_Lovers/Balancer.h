@@ -7,7 +7,7 @@
 //#include "balancer.h"
 #include "C:/cygwin/nxtOSEK\ecrobot/nxtway_gs_balancer/balancer.h"
 
-S8 forward = 10;
+S8 forward = 35;
 S8 turn = 0;
 S8	pwm_l, pwm_r;
 

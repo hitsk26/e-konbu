@@ -6,5 +6,7 @@ int anglr_of_aim = 0;
 
 extern void set_target_value_brightness(int target_value);
 extern void set_anglr_of_aim(int target_value);
+extern int get_tail_value();
+extern int get_brightness_value();
 
 #endif
