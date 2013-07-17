@@ -1,6 +1,14 @@
 #include "Calibration.h"
 
-void calibration(){
+
+void Calibration_init(Clibration *this_Calibration){
+	this_Calibration->black_value = 0;
+	this_Calibration->white_value = 0;
+	this_Calibration->gyro = 0;
+}
+
+
+void Calibration_calibration(){
 
 	static int flg = 0;
 
@@ -18,11 +26,11 @@ void calibration(){
 
 	while((ecrobot_get_systick_ms() - cal_start_time) < 1000U){
 		/* ジャイロセンサの設定をする */
-		gyro += (U32)ecrobot_get_gyro_sensor(NXT_PORT_S1);
+		this_Calibration.gyro += (U32)ecrobot_get_gyro_sensor(NXT_PORT_S1);
 		avg_cnt++;
 	}
 
-		gyro /= avg_cnt;
+		Calibration.gyro /= avg_cnt;
 		ecrobot_sound_tone(440U, 500U, 30U);
 
 	systick_wait_ms(500);
@@ -47,9 +55,9 @@ void calibration(){
 		}
 	}
 
-	set_gyro(gyro);
+	Balancer_set_gyro(&balancer , gyro);
 
-	set_target_value_brightness((black_value+white_value)/2);
+	set_target_value_brightness((Calibration.black_value+Calibration.white_value)/2);
 
 
 	print_calibrate_value();

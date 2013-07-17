@@ -6,16 +6,21 @@
 #include "ecrobot_interface.h"
 //#include "balancer.h"
 #include "C:/cygwin/nxtOSEK\ecrobot/nxtway_gs_balancer/balancer.h"
+#include "Factory.h"
 
-S8 forward = 35;
-S8 turn = 0;
-S8	pwm_l, pwm_r;
 
-U32	gyro_offset = 600;
+typedef struct{
+	S8 forward;
+	S8 turn;
+	S8	pwm_l, pwm_r;
+	U32	gyro_offset;
+}Balancer;
 
-extern void balance_running();
-extern void set_forward(int forward_buf);
-extern void set_turn(int turn_buf);
-extern void set_gyro(U32 gyro);
+
+extern void Balancer_init(Balancer *this_Balancer);
+extern void Balancer_balance_running();
+extern void Balancer_set_forward(Balancer *this_Balancer , S8 forward);
+extern void Balancer_set_turn(Balancer *this_Balancer , S8 turn);
+extern void Balancer_set_gyro(Balancer *this_Balancer , U32 gyro);
 
 #endif

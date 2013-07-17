@@ -31,8 +31,8 @@ void PID_Brightness(){
 		turn = 100;
 	}
 
-	set_turn(turn);
-	balance_running();
+	Balancer_set_turn(&balancer , turn);
+	Balancer_balance_running();
 
 
 	logSend(hensa,turn,0,0,0,0,0,0);

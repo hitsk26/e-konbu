@@ -4,14 +4,18 @@
 #include "Balancer.h"
 #include "Target_Value.h"
 #include "Display.h"
+#include "Factory.h"
 
 
-int black_value = 0;
-int white_value = 0;
-U32 gyro = 0;
+typedef struct{
+	int black_value;
+	int white_value;
+	U32 gyro;
+}Calibration;
 
 int end_calibration_flg = 0;
 
-extern void calibration();
+extern void Calibration_init(Clibration *this_Calibration);
+extern void Calibration_calibration();
 
 #endif

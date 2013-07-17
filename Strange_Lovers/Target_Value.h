@@ -1,12 +1,16 @@
 #ifndef _TARGET_VALUE_H_
 #define _TARGET_VALUE_H_
 
-int target_value_brightness = 0;
-int anglr_of_aim = 0;
+#include "Factory.h"
 
-extern void set_target_value_brightness(int target_value);
-extern void set_anglr_of_aim(int target_value);
-extern int get_tail_value();
-extern int get_brightness_value();
+typedef struct{
+	int target_value_brightness;
+	int anglr_of_aim;
+}Target_value;
+
+extern void Target_value_init(Target_value *this_Target_value);
+extern void Target_value_set_target_value_brightness(Target_value *this_Target_value , int target_value);
+extern void Target_value_set_anglr_of_aim(Target_value *this_Target_value , int target_value);
+extern int Target_value_get(Target_value *this_Target_value);
 
 #endif
