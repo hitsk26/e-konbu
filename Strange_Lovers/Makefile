@@ -23,7 +23,9 @@ TARGET_SOURCES := \
 	logSend.c \
 	PID_Tail.c \
 	./HardwareWrapper/TouchSensor.c \
+	./HardwareWrapper/Motor.c \
 	./UI/PushButton.c \
+	WheelMotor.c \
 	Factory.c
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
