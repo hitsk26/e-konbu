@@ -15,7 +15,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 
 	//gyro_offset
 	while (1){
-		if(ecrobot_get_touch_sensor(NXT_PORT_S4) == TRUE)break;
+		if(PushButton_detect_push_button(&pushButton) == TRUE)break;
 	}
 	
 		ecrobot_sound_tone(880, 512, 30);
@@ -35,7 +35,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 	
 	//black
 	while(1){
-		if(ecrobot_get_touch_sensor(NXT_PORT_S4) == TRUE){
+		if(PushButton_detect_push_button(&pushButton) == TRUE){
 			ecrobot_sound_tone(906, 512, 30);
 			this_Calibration->black_value = ecrobot_get_light_sensor(NXT_PORT_S3);
 			systick_wait_ms(500);
@@ -45,7 +45,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 
 	//white
 	while(1){
-		if(ecrobot_get_touch_sensor(NXT_PORT_S4) == TRUE){
+		if(PushButton_detect_push_button(&pushButton) == TRUE){
 			ecrobot_sound_tone(906, 512, 30);
 			this_Calibration->white_value = ecrobot_get_light_sensor(NXT_PORT_S3);
 			systick_wait_ms(500);

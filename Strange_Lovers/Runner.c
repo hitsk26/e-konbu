@@ -75,7 +75,7 @@ void RN_mode_change(){
 
 	switch (rn_state){
 		case (RN_CALIBRATION):
-			if(end_calibration_flg == 1 && ecrobot_get_touch_sensor(NXT_PORT_S4) == TRUE){
+			if(end_calibration_flg == 1 && PushButton_detect_push_button(&pushButton) == TRUE){
 				rn_state = RN_RUNNING;
 				//set_anglr_of_aim(0);
 			}
