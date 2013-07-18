@@ -7,7 +7,7 @@
 
 #include "Target_Value.h"
 
-extern void PID_tail();
+extern void PID_tail(int angle_of_aim);
 
 #endif
 

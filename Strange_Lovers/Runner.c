@@ -99,7 +99,7 @@ void RN_run(){
 				Target_value_set_anglr_of_aim(&target_value,100);
 				end_calibration_flg =1;
 			}
-			PID_tail();
+			PID_tail(target_value.angle_of_aim);
 			break;
 
 		case (RN_RUNNING):
@@ -122,7 +122,7 @@ void RN_run(){
 			//if(count_start==1)set_anglr_of_aim(0);
 
 			if(flg_tail==1)PID_Brightness();
-			PID_tail();
+			PID_tail(target_value.angle_of_aim);
 
 			//logSend(0,0,0,0,0,0,0,0);
 			break;

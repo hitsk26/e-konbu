@@ -1,6 +1,6 @@
 #include "PID_Tail.h"
 
-void PID_tail(){
+void PID_tail(int angle_of_aim){
 
 	static const float Kp_s = 2.4;
 	static const float Ki_s = 0.00;
@@ -12,7 +12,7 @@ void PID_tail(){
 	static float bf_hensa = 0;
 	static float speed = 0;
 	
-	hensa = anglr_of_aim - ecrobot_get_motor_rev(NXT_PORT_A);
+	hensa = angle_of_aim - ecrobot_get_motor_rev(NXT_PORT_A);
 	i_hensa = i_hensa + (hensa*0.004);
 	d_hensa = (bf_hensa - hensa)/0.004;
 	bf_hensa = hensa;
