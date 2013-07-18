@@ -8,7 +8,11 @@ int count_start=0;
 int flg_tail=0;
 
 //走行状態初期化
-RN_STATE rn_state = RN_CALIBRATION;
+//RN_STATE rn_state = RN_CALIBRATION;
+
+void Runner_init(Runner *this_Runner){
+	this_Runner->rn_state = RN_CALIBRATION;
+}
 
 //カウンタの宣言
 DeclareCounter(SysTimerCnt);
@@ -73,10 +77,10 @@ TASK(ActionTask){
 
 void RN_mode_change(){
 
-	switch (rn_state){
+	switch (runner.rn_state){
 		case (RN_CALIBRATION):
 			if(end_calibration_flg == 1 && PushButton_detect_push_button(&pushButton) == TRUE){
-				rn_state = RN_RUNNING;
+				runner.rn_state = RN_RUNNING;
 				//set_anglr_of_aim(0);
 			}
 			break;
@@ -92,7 +96,7 @@ void RN_mode_change(){
 
 void RN_run(){
 
-	switch (rn_state){
+	switch (runner.rn_state){
 		case (RN_CALIBRATION):
 			if(end_calibration_flg == 0){
 				Calibration_calibration(&calibration);
@@ -111,7 +115,7 @@ void RN_run(){
 			}*/
 
 			if(count_start < 50){
-				TargetValue_set_anglr_of_aim(&targetValue,128);
+				TargetValue_set_anglr_of_aim(&targetValue,126);
 				count_start++;
 			}else
 				{

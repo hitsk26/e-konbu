@@ -4,7 +4,11 @@
 #include "Calibration.h"
 #include "ecrobot_interface.h"
 
-extern void print_calibrate_value(int black_value,int white_value,int gyro_offset);
+typedef struct{
+}Display;
+
+extern void Display_init(Display *this_Display);
+extern void Display_print_calibrate_value(int black_value,int white_value,int gyro_offset);
 
 #endif
 

@@ -1,6 +1,9 @@
 #include "PID_Brightness.h"
 #include "Factory.h"
 
+void PID_BRIGHTNESS_init(PID_BRIGHTNESS *this_PID_BRIGHTNESS){
+}
+
 void PID_Brightness(int target_brighness){
 
 	static	float	hensa = 0;

@@ -4,6 +4,10 @@ void initialization(){
 	Balancer_init(&balancer);
 	Calibration_init(&calibration);
 	TargetValue_init(&targetValue);
+	PID_TAIL_init(&pid_tail);
+	PID_BRIGHTNESS_init(&pid_brightness);
+	Display_init(&display);
+	Runner_init(&runner);
 
 	//UI
 	PushButton_init(&pushButton,NXT_PORT_S4);

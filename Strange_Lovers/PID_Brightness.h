@@ -6,8 +6,10 @@
 #include "TargetValue.h"
 #include "logSend.h"
 
+typedef struct{
+}PID_BRIGHTNESS;
 
-
+extern void PID_BRIGHTNESS_init(PID_BRIGHTNESS *this_PID_BRIGHTNESS);
 extern void PID_Brightness(int target_brighness);
 
 #endif

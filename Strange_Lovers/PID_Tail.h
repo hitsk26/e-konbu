@@ -7,6 +7,10 @@
 
 #include "TargetValue.h"
 
+typedef struct{
+}PID_TAIL;
+
+extern void PID_TAIL_init(PID_TAIL *this_PID_TAIL);
 extern void PID_tail(int angle_of_aim);
 
 #endif

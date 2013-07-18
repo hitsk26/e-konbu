@@ -1,4 +1,11 @@
 #include "PID_Tail.h"
+#include "Factory.c"
+
+
+void PID_TAIL_init(PID_TAIL *this_PID_TAIL){
+
+}
+
 
 void PID_tail(int angle_of_aim){
 
