@@ -3,8 +3,9 @@
 
 #include "Calibration.h"
 #include "Target_Value.h"
+#include "ecrobot_interface.h"
 
-extern void print_calibrate_value();
+extern void print_calibrate_value(int black_value,int white_value,int gyro_offset);
 
 #endif
 

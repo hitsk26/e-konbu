@@ -58,7 +58,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 	Target_value_set_target_value_brightness(&target_value,(this_Calibration->black_value+this_Calibration->white_value)/2);
 
 
-	print_calibrate_value();
+	print_calibrate_value((int)this_Calibration->black_value,(int)this_Calibration->white_value,(int)this_Calibration->gyro);
 
 	end_calibration_flg = 1;
 }
