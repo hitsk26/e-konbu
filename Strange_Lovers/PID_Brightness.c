@@ -1,7 +1,7 @@
 #include "PID_Brightness.h"
 #include "Factory.h"
 
-void PID_Brightness(){
+void PID_Brightness(int target_brighness){
 
 	static	float	hensa = 0;
 	static	int		turn = 0;
@@ -17,7 +17,7 @@ void PID_Brightness(){
 
 	
 
-	hensa = Target_value_get(&target_value); - ecrobot_get_light_sensor(NXT_PORT_S3);
+	hensa = target_brighness - ecrobot_get_light_sensor(NXT_PORT_S3);
 
 	i_hensa = i_hensa + (hensa * 0.004);
 

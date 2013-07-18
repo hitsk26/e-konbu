@@ -3,11 +3,11 @@
 
 #include "Balancer.h"
 #include "Calibration.h"
-#include "Target_Value.h"
+#include "TargetValue.h"
 
 Balancer balancer;
 Calibration calibration;
-Target_value target_value;
+TargetValue targetValue;
 
 extern void initialization();
 

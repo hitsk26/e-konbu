@@ -96,10 +96,10 @@ void RN_run(){
 		case (RN_CALIBRATION):
 			if(end_calibration_flg == 0){
 				Calibration_calibration(&calibration);
-				Target_value_set_anglr_of_aim(&target_value,100);
+				TargetValue_set_anglr_of_aim(&targetValue,100);
 				end_calibration_flg =1;
 			}
-			PID_tail(target_value.angle_of_aim);
+			PID_tail(targetValue.angle_of_aim);
 			break;
 
 		case (RN_RUNNING):
@@ -111,18 +111,18 @@ void RN_run(){
 			}*/
 
 			if(count_start < 50){
-				Target_value_set_anglr_of_aim(&target_value,128);
+				TargetValue_set_anglr_of_aim(&targetValue,128);
 				count_start++;
 			}else
 				{
-					Target_value_set_anglr_of_aim(&target_value,0);
+					TargetValue_set_anglr_of_aim(&targetValue,0);
 					flg_tail=1;
 			}
 
 			//if(count_start==1)set_anglr_of_aim(0);
 
-			if(flg_tail==1)PID_Brightness();
-			PID_tail(target_value.angle_of_aim);
+			if(flg_tail==1)PID_Brightness(targetValue.target_brightness);
+			PID_tail(targetValue.angle_of_aim);
 
 			//logSend(0,0,0,0,0,0,0,0);
 			break;

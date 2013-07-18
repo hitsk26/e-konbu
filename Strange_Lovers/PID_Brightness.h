@@ -3,12 +3,12 @@
 
 
 #include "Balancer.h"
-#include "Target_Value.h"
+#include "TargetValue.h"
 #include "logSend.h"
 
 
 
-extern void PID_Brightness();
+extern void PID_Brightness(int target_brighness);
 
 #endif
 

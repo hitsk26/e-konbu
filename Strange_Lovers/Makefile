@@ -13,11 +13,11 @@ USER_LIB = nxtway_gs_balancer
 # User application source
 TARGET_SOURCES := \
 	balancer_param.c \
+	TargetValue.c \
 	Runner.c \
 	RN_State.c \
 	Balancer.c \
 	PID_Brightness.c \
-	Target_Value.c \
 	Calibration.c \
 	Display.c \
 	logSend.c \
