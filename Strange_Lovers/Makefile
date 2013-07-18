@@ -24,7 +24,9 @@ TARGET_SOURCES := \
 	PID_Tail.c \
 	./HardwareWrapper/TouchSensor.c \
 	./HardwareWrapper/Motor.c \
+	./HardwareWrapper/SystemTimer.c \
 	./UI/PushButton.c \
+	./DetectorPart/Timer.c \
 	WheelMotor.c \
 	Factory.c
 

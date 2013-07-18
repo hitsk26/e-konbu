@@ -20,8 +20,8 @@ void Balancer_balance_running(){
 				(F32)ecrobot_get_battery_voltage(),
 				&pwm_l,
 				&pwm_r);
-				nxt_motor_set_speed(NXT_PORT_C, pwm_l, 1);
-				nxt_motor_set_speed(NXT_PORT_B, pwm_r, 1);
+				WheelMotor_drive_motor(&leftWheelMotor,pwm_l);
+				WheelMotor_drive_motor(&rightWheelMotor,pwm_r);
 }
 
 

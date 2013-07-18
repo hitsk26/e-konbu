@@ -6,6 +6,7 @@
 #include "ecrobot_interface.h"
 //#include "balancer.h"
 #include "/cygdrive/c/cygwin/nxtOSEK/ecrobot/nxtway_gs_balancer/balancer.h"
+#include "WheelMotor.h"
 
 
 
