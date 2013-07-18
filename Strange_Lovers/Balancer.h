@@ -5,7 +5,7 @@
 #include "kernel_id.h"
 #include "ecrobot_interface.h"
 //#include "balancer.h"
-#include "C:/cygwin/nxtOSEK\ecrobot/nxtway_gs_balancer/balancer.h"
+#include "/cygdrive/c/cygwin/nxtOSEK/ecrobot/nxtway_gs_balancer/balancer.h"
 
 
 
@@ -24,3 +24,4 @@ extern void Balancer_set_turn(Balancer *this_Balancer , S8 turn);
 extern void Balancer_set_gyro(Balancer *this_Balancer , U32 gyro);
 
 #endif
+

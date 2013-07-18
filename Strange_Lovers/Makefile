@@ -1,7 +1,7 @@
 # Target specific macros
 TARGET = Strange_Lovers
 
-NXTOSEK_ROOT =  /cygdrive/c/cygwin/nxtOSEK
+NXTOSEK_ROOT = /cygdrive/c/cygwin/nxtOSEK
 
 # nxtway_gs_balancer library desiged for NXTway-GS two wheeled self-balancing robot
 USER_INC_PATH= $(NXTOSEK_ROOT)/ecrobot/nxtway_gs_balancer

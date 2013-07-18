@@ -15,6 +15,7 @@ void set_anglr_of_aim(Target_value *this_Target_value , int target_value){
 }
 
 extern int Target_value_get(Target_value *this_Target_value){
+return 0;
 }
 
 
