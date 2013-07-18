@@ -8,7 +8,7 @@ void Calibration_init(Calibration *this_Calibration){
 }
 
 
-void Calibration_calibration(){
+void Calibration_calibration(Calibration *this_Calibration){
 
 	static int flg = 0;
 

@@ -16,7 +16,7 @@ typedef struct{
 int end_calibration_flg = 0;
 
 extern void Calibration_init(Calibration *this_Calibration);
-extern void Calibration_calibration();
+extern void Calibration_calibration(Calibration *this_Calibration);
 
 #endif
 

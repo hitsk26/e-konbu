@@ -95,7 +95,7 @@ void RN_run(){
 	switch (rn_state){
 		case (RN_CALIBRATION):
 			if(end_calibration_flg == 0){
-				Calibration_calibration();
+				Calibration_calibration(&calibration);
 				Target_value_set_anglr_of_aim(&target_value,100);
 				end_calibration_flg =1;
 			}
