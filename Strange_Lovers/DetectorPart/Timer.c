@@ -3,11 +3,11 @@
 
 void Timer_init(Timer *this_Timer)
 {
-
+	//none
 }
 
 int Timer_get_ms(Timer *this_Timer)
 {
-	return 0;
+	return (int)SystemTimer_get_ms();
 }
 
