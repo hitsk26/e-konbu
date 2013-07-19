@@ -19,10 +19,10 @@ typedef struct{
 
 
 extern void Balancer_init(Balancer *this_Balancer);
-extern void Balancer_balance_running();
+extern void Balancer_balance_running(Balancer *this_Balancer);
 extern void Balancer_set_forward(Balancer *this_Balancer , S8 forward);
 extern void Balancer_set_turn(Balancer *this_Balancer , S8 turn);
-extern void Balancer_set_gyro(Balancer *this_Balancer , U32 gyro);
+extern void Balancer_set_gyro(Balancer *this_Balancer , U32 gyro_offset);
 
 #endif
 

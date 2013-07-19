@@ -5,6 +5,7 @@
 #include "TargetValue.h"
 #include "Display.h"
 #include "UI/PushButton.h"
+#include "DetectorPart/InclinationEncoder.h"
 
 
 typedef struct{

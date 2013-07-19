@@ -24,7 +24,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 
 	while((ecrobot_get_systick_ms() - cal_start_time) < 1000U){
 		/* ジャイロセンサの設定をする */
-		this_Calibration->gyro += (U32)ecrobot_get_gyro_sensor(NXT_PORT_S1);
+		this_Calibration->gyro += InclinationEncoder_get_inclination(&inclinationEncoder);
 		avg_cnt++;
 	}
 

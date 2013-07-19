@@ -36,7 +36,7 @@ void PID_Brightness(int target_brighness){
 	}
 
 	Balancer_set_turn(&balancer , turn);
-	Balancer_balance_running();
+	Balancer_balance_running(&balancer);
 
 
 }

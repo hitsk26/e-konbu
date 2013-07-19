@@ -18,4 +18,5 @@ void initialization(){
 	//DetectorPart
 	Timer_init(&timer);
 	DistanceEncoder_init(&distanceEncoder);
+	InclinationEncoder_init(&inclinationEncoder,NXT_PORT_S1);
 }

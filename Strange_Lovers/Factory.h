@@ -16,6 +16,8 @@
 #include "DetectorPart/DistanceEncoder.h"
 #include "DetectorPart/SpeedEncoder.h"
 #include "DetectorPart/Timer.h"
+#include "DetectorPart/InclinationEncoder.h"
+
 
 Balancer balancer;
 Calibration calibration;
@@ -35,6 +37,8 @@ WheelMotor leftWheelMotor;
 Timer timer;
 DistanceEncoder distanceEncoder;
 SpeedEncoder speedEncoder;
+InclinationEncoder inclinationEncoder;
+
 
 
 
