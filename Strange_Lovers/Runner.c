@@ -6,6 +6,7 @@ void RN_run();
 
 int count_start=0;
 int flg_tail=0;
+int Start_flg =0;
 
 //走行状態初期化
 //RN_STATE rn_state = RN_CALIBRATION;
@@ -19,6 +20,11 @@ DeclareCounter(SysTimerCnt);
 
 //タスクの宣言
 DeclareTask(ActionTask);
+DeclareTask(INITIALIZE);
+
+
+//イベントの宣言
+DeclareEvent(RUNEVENT);
 
 //初期処理
 void ecrobot_device_initialize(void){
@@ -68,10 +74,53 @@ void user_1ms_isr_type2(void){
 	}
 }
 
+
+TASK(INITIALIZE){
+
+	if(end_calibration_flg == 0){
+		Calibration_calibration(&calibration);
+		TargetValue_set_anglr_of_aim(&targetValue,100);
+		end_calibration_flg =1;
+	}
+	
+	if(PushButton_detect_push_button(&pushButton) == TRUE)
+	Start_flg =1;
+	
+	if(Start_flg==1){
+
+	if(count_start < 10){
+		TargetValue_set_anglr_of_aim(&targetValue,126);
+		count_start++;
+	}else{
+		TargetValue_set_anglr_of_aim(&targetValue,0);
+		flg_tail=1;
+		}
+
+	}
+
+	if(flg_tail==1){
+
+		SetEvent(ActionTask,RUNEVENT);
+	}
+
+	PID_tail(targetValue.angle_of_aim);
+
+
+	TerminateTask();
+}
+
 TASK(ActionTask){
 
-	RN_mode_change();
-	RN_run();
+	WaitEvent(RUNEVENT);
+	ClearEvent(RUNEVENT);
+
+
+	//RN_mode_change();
+	//RN_run();
+	PID_Brightness(targetValue.target_brightness);
+	PID_tail(targetValue.angle_of_aim);
+
+
 	TerminateTask();
 }
 
