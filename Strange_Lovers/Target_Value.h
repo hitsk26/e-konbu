@@ -2,6 +2,7 @@
 #define _TARGET_VALUE_H_
 
 
+<<<<<<< HEAD
 typedef struct{
 	int target_value_brightness;
 	int angle_of_aim;
@@ -13,4 +14,8 @@ extern void Target_value_set_anglr_of_aim(Target_value *this_Target_value , int 
 extern int Target_value_get(Target_value *this_Target_value);
 
 #endif
+=======
+extern void set_target_value_brightness(int target_value);
+extern void set_anglr_of_aim(int target_value);
+>>>>>>> parent of b18677e... tail to start is compleat
 

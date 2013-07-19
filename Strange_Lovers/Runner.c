@@ -8,6 +8,7 @@ int count_start=0;
 int flg_tail=0;
 int Start_flg =0;
 
+
 //‘–só‘Ô‰Šú‰»
 //RN_STATE rn_state = RN_CALIBRATION;
 
@@ -88,7 +89,7 @@ TASK(INITIALIZE){
 	
 	if(Start_flg==1){
 
-	if(count_start < 10){
+	if(count_start < 50){
 		TargetValue_set_anglr_of_aim(&targetValue,126);
 		count_start++;
 	}else{
@@ -117,6 +118,7 @@ TASK(ActionTask){
 
 	//RN_mode_change();
 	//RN_run();
+
 	PID_Brightness(targetValue.target_brightness);
 	PID_tail(targetValue.angle_of_aim);
 
@@ -150,6 +152,7 @@ void RN_run(){
 			if(end_calibration_flg == 0){
 				Calibration_calibration(&calibration);
 				TargetValue_set_anglr_of_aim(&targetValue,100);
+
 				end_calibration_flg =1;
 			}
 			PID_tail(targetValue.angle_of_aim);
