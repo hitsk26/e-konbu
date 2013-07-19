@@ -9,4 +9,4 @@ typedef struct  {
 
 void Timer_init(Timer *this_Timer);
 
-int Timer_get_ms(Timer *this_Timer);
+unsigned int Timer_get_ms(Timer *this_Timer);

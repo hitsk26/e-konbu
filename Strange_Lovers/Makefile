@@ -27,6 +27,7 @@ TARGET_SOURCES := \
 	./HardwareWrapper/SystemTimer.c \
 	./UI/PushButton.c \
 	./DetectorPart/Timer.c \
+	./DetectorPart/DistanceEncoder.c \
 	WheelMotor.c \
 	Factory.c
 
