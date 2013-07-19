@@ -2,6 +2,8 @@
 #include "SpeedEncoder.h"
 #include "../Factory.h"
 
+#define CYCLE_TIME 0.004
+#define TARGTIME 100
 
 #define MEASURE_TIME_CYCLE 100 //[ms]
 #define EXECUTE_CYCLE_TIME 4 //[ms]
@@ -15,26 +17,27 @@ int SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder)
 int SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder)
 {
 
-	static int buf_distance=0;
-	static int buf_time = 0;
-	static int count=0;
-	static float speed_store=0,speed=0;
+
 	
-	int distance = DistanceEncoder_get_distance(&distanceEncoder);
+	static float speedStore=0,bufDistance=0;
+	static int bufTime =0;
+	
+	float distance = DistanceEncoder_get_distance(&distanceEncoder);
+	float distance_diff = ((distance - bufDistance)/CYCLE_TIME)/10; //‚P‚O‚ÅŠ„‚Á‚Ä‚¢‚é‚Ì‚Í’PˆÊ‚ðcm/s‚É‚·‚é‚½‚ß
 	unsigned int time =  Timer_get_ms(&timer);
 
-	speed_store += ((distance - buf_distance) / (time -  buf_time));
-	if(count>= 25){
-	speed = speed_store / 25 ;
-	speed_store =0;
-	count = 0;
+	speedStore += distance_diff;
+
+	if((time - bufTime) >= TARGTIME)
+	{
+		this_SpeedEncoder->speed = (int)speedStore/25; //25‰ñ•ª‚Ì•½‹Ï‚ðŽæ‚Á‚Ä‚é
+		speedStore = 0;
+		bufTime = time;
 	}
-	count++;
 
-	buf_distance= distance;
-	buf_time = time;
+	bufDistance = distance;
 
-	return speed;
+	return (int)this_SpeedEncoder->speed;
 }
 
 void SpeedEncoder_init(SpeedEncoder *this_SpeedEncoder)
