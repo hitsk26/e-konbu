@@ -128,7 +128,7 @@ void RN_run(){
 			if(flg_tail==1)PID_Brightness(targetValue.target_brightness);
 			PID_tail(targetValue.angle_of_aim);
 
-			//logSend(0,0,0,0,0,0,0,0);
+			logSend(0,0,SpeedEncoder_get_speed(&speedEncoder),0,0,0,0,0);
 			break;
 
 		case (RN_COMPLATION):
