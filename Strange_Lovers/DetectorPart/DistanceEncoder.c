@@ -32,3 +32,4 @@ int DistanceEncoder_calc_distance(DistanceEncoder *this_DistanceEncoder)
 	this_DistanceEncoder->revL_buf=WheelMotor_get_count(&leftWheelMotor);
 	this_DistanceEncoder->revR_buf=WheelMotor_get_count(&rightWheelMotor);	
 }
+
