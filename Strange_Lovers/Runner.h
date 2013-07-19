@@ -16,7 +16,6 @@
 #include "./UI/PushButton.h"
 
 typedef struct{
-	RN_STATE rn_state;
 }Runner;
 
 extern void Runner_init(Runner *this_Runner);

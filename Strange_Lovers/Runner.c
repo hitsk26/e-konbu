@@ -13,7 +13,7 @@ int Start_flg =0;
 //RN_STATE rn_state = RN_CALIBRATION;
 
 void Runner_init(Runner *this_Runner){
-	this_Runner->rn_state = RN_CALIBRATION;
+	
 }
 
 //ƒJƒEƒ“ƒ^‚ÌéŒ¾
@@ -89,12 +89,12 @@ TASK(INITIALIZE){
 	
 	if(Start_flg==1){
 
-	if(count_start < 50){
-		TargetValue_set_anglr_of_aim(&targetValue,126);
-		count_start++;
-	}else{
-		TargetValue_set_anglr_of_aim(&targetValue,0);
-		flg_tail=1;
+		if(count_start < 50){
+			TargetValue_set_anglr_of_aim(&targetValue,126);
+			count_start++;
+		}else{
+			TargetValue_set_anglr_of_aim(&targetValue,0);
+			flg_tail=1;
 		}
 
 	}
@@ -110,14 +110,11 @@ TASK(INITIALIZE){
 	TerminateTask();
 }
 
+
 TASK(ActionTask){
 
 	WaitEvent(RUNEVENT);
 	ClearEvent(RUNEVENT);
-
-
-	//RN_mode_change();
-	//RN_run();
 
 	PID_Brightness(targetValue.target_brightness);
 	PID_tail(targetValue.angle_of_aim);
@@ -125,68 +122,3 @@ TASK(ActionTask){
 
 	TerminateTask();
 }
-
-void RN_mode_change(){
-
-	switch (runner.rn_state){
-		case (RN_CALIBRATION):
-			if(end_calibration_flg == 1 && PushButton_detect_push_button(&pushButton) == TRUE){
-				runner.rn_state = RN_RUNNING;
-				//set_anglr_of_aim(0);
-			}
-			break;
-
-		case (RN_RUNNING):
-			break;
-
-		case (RN_COMPLATION):
-			break;
-	}
-
-}
-
-void RN_run(){
-
-	switch (runner.rn_state){
-		case (RN_CALIBRATION):
-			if(end_calibration_flg == 0){
-				Calibration_calibration(&calibration);
-				TargetValue_set_anglr_of_aim(&targetValue,100);
-
-				end_calibration_flg =1;
-			}
-			PID_tail(targetValue.angle_of_aim);
-			break;
-
-		case (RN_RUNNING):
-			//Balance_running();
-		/*	if(get_tail_value() < 110){
-				set_anglr_of_aim(get_tail_value());
-				anglr_of_aim++;
-				if(get_tail_value() == 110) set_anglr_of_aim(0);
-			}*/
-
-			if(count_start < 50){
-				TargetValue_set_anglr_of_aim(&targetValue,126);
-				count_start++;
-			}else
-				{
-					TargetValue_set_anglr_of_aim(&targetValue,0);
-					flg_tail=1;
-			}
-
-			//if(count_start==1)set_anglr_of_aim(0);
-
-			if(flg_tail==1)PID_Brightness(targetValue.target_brightness);
-			PID_tail(targetValue.angle_of_aim);
-
-			//logSend(0,0,0,0,0,0,0,0);
-			break;
-
-		case (RN_COMPLATION):
-			break;
-	}
-
-}
-
-
