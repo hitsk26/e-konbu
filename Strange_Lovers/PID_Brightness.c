@@ -39,7 +39,5 @@ void PID_Brightness(int target_brighness){
 	Balancer_balance_running();
 
 
-	logSend(hensa,turn,0,0,0,0,0,0);
-
 }
 

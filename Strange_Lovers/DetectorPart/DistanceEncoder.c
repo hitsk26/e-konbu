@@ -18,7 +18,7 @@ int DistanceEncoder_get_distance(DistanceEncoder *this_DistanceEncoder)
 	return this_DistanceEncoder->distance;
 }
 
-static int DistanceEncoder_calc_distance(DistanceEncoder *this_DistanceEncoder)
+int DistanceEncoder_calc_distance(DistanceEncoder *this_DistanceEncoder)
 {
 	S16 revL=0,revR=0;
 	revL = WheelMotor_get_count(&leftWheelMotor);

@@ -1,29 +1,19 @@
+#ifndef __SpeedEncoder
+#define __SpeedEncoder
 
-#include <string>
-#include <vector>
-#include <list>
-#include <iostream>
-#include <assert.h>
 
-#include "DetectorPart/DistanceEncoder.h"
-#include "DetectorPart/Timer.h"
+#include "./DistanceEncoder.h"
+#include "./Timer.h"
 
-namespace DetectorPart
-{
-class SpeedEncoder
-{
-private:
-	SpeedEncoder speedEncoder;
-	DistanceEncoder distanceEncoder;
-	Timer timer;
+typedef struct{
+	int speed;
+	
+}SpeedEncoder;
 
-public:
-	void SpeedEncoder_get_speed();
 
-	void SpeedEncoder_calc_speed();
+int SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder);
+int SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder);
+void SpeedEncoder_init(SpeedEncoder *this_SpeedEncoder);
 
-	void SpeedEncoder_init();
+#endif 
 
-};
-
-}  // namespace DetectorPart

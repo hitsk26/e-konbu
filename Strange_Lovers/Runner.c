@@ -110,7 +110,6 @@ TASK(INITIALIZE){
 	TerminateTask();
 }
 
-
 TASK(ActionTask){
 
 	WaitEvent(RUNEVENT);

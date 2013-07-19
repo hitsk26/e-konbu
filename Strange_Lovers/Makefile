@@ -28,6 +28,7 @@ TARGET_SOURCES := \
 	./UI/PushButton.c \
 	./DetectorPart/Timer.c \
 	./DetectorPart/DistanceEncoder.c \
+	./DetectorPart/SpeedEncoder.c \
 	WheelMotor.c \
 	Factory.c
 
