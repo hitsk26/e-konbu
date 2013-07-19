@@ -29,6 +29,7 @@ TARGET_SOURCES := \
 	./DetectorPart/Timer.c \
 	./DetectorPart/DistanceEncoder.c \
 	./DetectorPart/SpeedEncoder.c \
+	./DetectorPart/InclinationEncoder.c \
 	WheelMotor.c \
 	model_impl.c \
 	Factory.c
