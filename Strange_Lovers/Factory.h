@@ -12,6 +12,10 @@
 #include "Runner.h"
 #include "./UI/PushButton.h"
 #include "WheelMotor.h"
+#include "DetectorPart/Timer.h"
+
+#include "DetectorPart/DistanceEncoder.h"
+
 
 Balancer balancer;
 Calibration calibration;
@@ -26,6 +30,10 @@ PushButton pushButton;
 
 WheelMotor rightWheelMotor;
 WheelMotor leftWheelMotor;
+
+//DetectorPart
+Timer timer;
+DistanceEncoder distanceEncoder;
 
 
 extern void initialization();

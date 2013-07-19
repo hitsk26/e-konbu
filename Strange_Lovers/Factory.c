@@ -14,4 +14,8 @@ void initialization(){
 	WheelMotor_init(&rightWheelMotor,NXT_PORT_B);
 	WheelMotor_init(&leftWheelMotor,NXT_PORT_C);
 
+
+	//DetectorPart
+	Timer_init(&timer);
+	DistanceEncoder_init(&distanceEncoder);
 }
