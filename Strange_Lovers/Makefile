@@ -30,6 +30,7 @@ TARGET_SOURCES := \
 	./DetectorPart/DistanceEncoder.c \
 	./DetectorPart/SpeedEncoder.c \
 	WheelMotor.c \
+	model_impl.c \
 	Factory.c
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil

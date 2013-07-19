@@ -18,7 +18,11 @@
 typedef struct{
 }Runner;
 
-extern void Runner_init(Runner *this_Runner);
+
+void Runner_init(Runner *this_Runner);
+void Runner_run(Runner *this_Runner);
+
+
 
 #endif
 
