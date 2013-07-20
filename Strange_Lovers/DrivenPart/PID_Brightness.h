@@ -7,10 +7,12 @@
 #include "../logSend.h"
 
 typedef struct{
-}PID_BRIGHTNESS;
+}PID_Brightness;
 
-extern void PID_BRIGHTNESS_init(PID_BRIGHTNESS *this_PID_BRIGHTNESS);
-extern void PID_Brightness(int target_brighness);
+extern void PID_Brightness_init(PID_Brightness *this_PID_Brightness);
+
+
+extern void PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target_brighness);
 
 #endif
 

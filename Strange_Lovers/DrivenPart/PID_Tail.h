@@ -1,11 +1,9 @@
 #ifndef _PID_TAIL_H_
 #define _PID_TAIL_H_
 
-#include "kernel.h"
-#include "kernel_id.h"
-#include "ecrobot_interface.h"
-
 #include "TargetValue.h"
+#include "./TailMotor.h"
+
 
 typedef struct{
 }PID_TAIL;

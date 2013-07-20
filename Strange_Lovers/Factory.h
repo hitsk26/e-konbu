@@ -10,6 +10,7 @@
 #include "./UI/PushButton.h"
 
 #include "./DrivenPart/WheelMotor.h"
+#include "./DrivenPart/TailMotor.h"
 #include "./DrivenPart/Balancer.h"
 #include "./DrivenPart/PID_Tail.h"
 #include "./DrivenPart/PID_Brightness.h"
@@ -20,19 +21,17 @@
 #include "DetectorPart/InclinationEncoder.h"
 
 
-Balancer balancer;
+
 Calibration calibration;
 TargetValue targetValue;
-PID_TAIL pid_tail;
-PID_BRIGHTNESS pid_brightness;
+
 Display display;
 Runner runner;
 
 //UI package
 PushButton pushButton;
 
-WheelMotor rightWheelMotor;
-WheelMotor leftWheelMotor;
+
 
 //DetectorPart
 Timer timer;
@@ -40,6 +39,13 @@ DistanceEncoder distanceEncoder;
 SpeedEncoder speedEncoder;
 InclinationEncoder inclinationEncoder;
 
+//DrivenPart
+PID_TAIL pid_tail;
+PID_Brightness pid_Brightness;
+Balancer balancer;
+WheelMotor rightWheelMotor;
+WheelMotor leftWheelMotor;
+TailMotor tailMotor;
 
 
 

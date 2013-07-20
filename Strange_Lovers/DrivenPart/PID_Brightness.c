@@ -1,10 +1,10 @@
 #include "PID_Brightness.h"
 #include "Factory.h"
 
-void PID_BRIGHTNESS_init(PID_BRIGHTNESS *this_PID_BRIGHTNESS){
+void PID_Brightness_init(PID_Brightness *this_PID_Brightness){
 }
 
-void PID_Brightness(int target_brighness){
+void PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target_brighness){
 
 	static	float	hensa = 0;
 	static	int		turn = 0;

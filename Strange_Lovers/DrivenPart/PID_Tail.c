@@ -19,7 +19,8 @@ void PID_tail(int angle_of_aim){
 	static float bf_hensa = 0;
 	static float speed = 0;
 	
-	hensa = angle_of_aim - ecrobot_get_motor_rev(NXT_PORT_A);
+	hensa = angle_of_aim - TailMotor_get_count(&tailMotor);
+
 	i_hensa = i_hensa + (hensa*0.004);
 	d_hensa = (bf_hensa - hensa)/0.004;
 	bf_hensa = hensa;
@@ -32,6 +33,6 @@ void PID_tail(int angle_of_aim){
 	}
 	
 
-	ecrobot_set_motor_speed(NXT_PORT_A,speed);
+	TailMotor_drive_tail(&tailMotor,speed);
 }
 
