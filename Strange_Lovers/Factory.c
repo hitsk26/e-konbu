@@ -15,6 +15,7 @@ void initialization(){
 	Timer_init(&timer);
 	DistanceEncoder_init(&distanceEncoder);
 	InclinationEncoder_init(&inclinationEncoder,NXT_PORT_S1);
+	BrightnessEncoder_init(&brightnessEncoder,NXT_PORT_S3);
 
 	//DrivenPart
 	PID_TAIL_init(&pid_tail);

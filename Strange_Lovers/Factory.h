@@ -19,6 +19,7 @@
 #include "DetectorPart/SpeedEncoder.h"
 #include "DetectorPart/Timer.h"
 #include "DetectorPart/InclinationEncoder.h"
+#include "DetectorPart/BrightnessEncoder.h"
 
 
 
@@ -38,6 +39,7 @@ Timer timer;
 DistanceEncoder distanceEncoder;
 SpeedEncoder speedEncoder;
 InclinationEncoder inclinationEncoder;
+BrightnessEncoder brightnessEncoder; 
 
 //DrivenPart
 PID_TAIL pid_tail;

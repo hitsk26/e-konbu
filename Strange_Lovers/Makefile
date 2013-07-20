@@ -29,6 +29,7 @@ TARGET_SOURCES := \
 	./DetectorPart/DistanceEncoder.c \
 	./DetectorPart/SpeedEncoder.c \
 	./DetectorPart/InclinationEncoder.c \
+	./DetectorPart/BrightnessEncoder.c \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/Balancer.c \
