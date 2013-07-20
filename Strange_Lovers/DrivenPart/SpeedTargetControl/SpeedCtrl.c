@@ -60,6 +60,8 @@ void SC_run(SpeedCtrl *this_SpeedCtrl)
 void SC_doCtrl(SpeedCtrl *this_SpeedCtrl)
 {
 	int forward = PSC_calcSpeedCtrlVal(&mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),S_getSpeed(&mSpeed,systick_get_ms()),systick_get_ms()*0.001);
+	//WheelMotor_drive_motor(&rightWheelMotor,forward);
+	//WheelMotor_drive_motor(&leftWheelMotor,forward);
 	Balancer_set_forward(&balancer ,(S8)forward);
 }
 

@@ -26,10 +26,12 @@ void initialization(){
 	TailMotor_init(&tailMotor,NXT_PORT_A);
 	
 	//DrivenPart/SpeedTargetControl
-	PSC_init(&mPIDSpeedCtrl);
-	PSCP_init(&mPIDSpeedCtrlParm);
-	SC_init(&mSpeedCtrl,mPIDSpeedCtrl);
 	SC_setCtrlParm(&mSpeedCtrl,mPIDSpeedCtrlParm);
+	
+	PSCP_init(&mPIDSpeedCtrlParm);
+	PSC_init(&mPIDSpeedCtrl);
+	SC_init(&mSpeedCtrl,mPIDSpeedCtrl);
+	
 	SC_setTargSpeed(&mSpeedCtrl,20);
 	SC_startCtrl(&mSpeedCtrl);
 }

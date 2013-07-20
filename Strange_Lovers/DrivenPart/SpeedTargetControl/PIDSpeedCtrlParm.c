@@ -1,8 +1,11 @@
 #include "PIDSpeedCtrlParm.h"
 
 void PSCP_init(PIDSpeedCtrlParm *this_PIDSpeedCtrlParm){
-	this_PIDSpeedCtrlParm->sKp = 1.25;
-	this_PIDSpeedCtrlParm->sKi = 0.15;
+	this_PIDSpeedCtrlParm->sKp = 3.5;
+	//this_PIDSpeedCtrlParm->sKp = 1.25;
+//	this_PIDSpeedCtrlParm->sKi = 0.15;
+	this_PIDSpeedCtrlParm->sKi = 0.035;
+	
 	this_PIDSpeedCtrlParm->sKd = 0.0;
 }
 
