@@ -23,6 +23,7 @@ TARGET_SOURCES := \
 	./HardwareWrapper/Motor.c \
 	./HardwareWrapper/SystemTimer.c \
 	./HardwareWrapper/GyroSensor.c \
+	./HardwareWrapper/LightSensor.c \
 	./UI/PushButton.c \
 	./DetectorPart/Timer.c \
 	./DetectorPart/DistanceEncoder.c \
