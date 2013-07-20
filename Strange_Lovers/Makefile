@@ -9,7 +9,7 @@ USER_LIB = nxtway_gs_balancer
 
 # using NXT standard tires (not Motorcycle tires)
 #USER_DEF = NXT_STD_TIRE
-
+DRIVENPART_SOURCES := 
 # User application source
 TARGET_SOURCES := \
 	balancer_param.c \
@@ -29,6 +29,7 @@ TARGET_SOURCES := \
 	./DetectorPart/SpeedEncoder.c \
 	./DetectorPart/InclinationEncoder.c \
 	./DrivenPart/WheelMotor.c \
+	./DrivenPart/TailMotor.c \
 	./DrivenPart/Balancer.c \
 	./DrivenPart/PID_Brightness.c \
 	model_impl.c \
