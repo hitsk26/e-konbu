@@ -2,7 +2,7 @@
 #ifndef __DistanceEncoder
 #define __DistanceEncoder
 
-#include "../WheelMotor.h"
+#include "../DrivenPart/WheelMotor.h"
 
 typedef struct{
 	int distance;

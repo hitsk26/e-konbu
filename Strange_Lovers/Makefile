@@ -15,12 +15,10 @@ TARGET_SOURCES := \
 	balancer_param.c \
 	TargetValue.c \
 	Runner.c \
-	Balancer.c \
-	PID_Brightness.c \
 	Calibration.c \
 	Display.c \
 	logSend.c \
-	PID_Tail.c \
+	./DrivenPart/PID_Tail.c \
 	./HardwareWrapper/TouchSensor.c \
 	./HardwareWrapper/Motor.c \
 	./HardwareWrapper/SystemTimer.c \
@@ -30,7 +28,9 @@ TARGET_SOURCES := \
 	./DetectorPart/DistanceEncoder.c \
 	./DetectorPart/SpeedEncoder.c \
 	./DetectorPart/InclinationEncoder.c \
-	WheelMotor.c \
+	./DrivenPart/WheelMotor.c \
+	./DrivenPart/Balancer.c \
+	./DrivenPart/PID_Brightness.c \
 	model_impl.c \
 	Factory.c
 

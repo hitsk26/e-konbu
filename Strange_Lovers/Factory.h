@@ -3,15 +3,16 @@
 
 #include "ecrobot_interface.h"
 
-#include "Balancer.h"
 #include "Calibration.h"
 #include "TargetValue.h"
-#include "PID_Tail.h"
-#include "PID_Brightness.h"
 #include "Display.h"
 #include "Runner.h"
 #include "./UI/PushButton.h"
-#include "WheelMotor.h"
+
+#include "./DrivenPart/WheelMotor.h"
+#include "./DrivenPart/Balancer.h"
+#include "./DrivenPart/PID_Tail.h"
+#include "./DrivenPart/PID_Brightness.h"
 
 #include "DetectorPart/DistanceEncoder.h"
 #include "DetectorPart/SpeedEncoder.h"
