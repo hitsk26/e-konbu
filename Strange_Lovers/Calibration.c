@@ -37,7 +37,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 	while(1){
 		if(PushButton_detect_push_button(&pushButton) == TRUE){
 			ecrobot_sound_tone(906, 512, 30);
-			this_Calibration->black_value = ecrobot_get_light_sensor(NXT_PORT_S3);
+			this_Calibration->black_value = BrightnessEncoder_get_brightness(&brightnessEncoder);
 			systick_wait_ms(500);
 			break;
 		}
@@ -47,7 +47,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 	while(1){
 		if(PushButton_detect_push_button(&pushButton) == TRUE){
 			ecrobot_sound_tone(906, 512, 30);
-			this_Calibration->white_value = ecrobot_get_light_sensor(NXT_PORT_S3);
+			this_Calibration->white_value = BrightnessEncoder_get_brightness(&brightnessEncoder);
 			systick_wait_ms(500);
 			break;
 		}

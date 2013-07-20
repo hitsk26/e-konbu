@@ -20,7 +20,7 @@ void PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target
 
 	
 
-	hensa = target_brighness - ecrobot_get_light_sensor(NXT_PORT_S3);
+	hensa = target_brighness - BrightnessEncoder_get_brightness(&brightnessEncoder);
 
 	i_hensa = i_hensa + (hensa * 0.004);
 

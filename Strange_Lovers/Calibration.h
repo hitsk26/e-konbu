@@ -6,6 +6,7 @@
 #include "Display.h"
 #include "UI/PushButton.h"
 #include "DetectorPart/InclinationEncoder.h"
+#include "./DetectorPart/BrightnessEncoder.h"
 
 
 typedef struct{
