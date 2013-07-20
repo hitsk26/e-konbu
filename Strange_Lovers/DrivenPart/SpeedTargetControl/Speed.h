@@ -1,8 +1,6 @@
 #ifndef _SPEED_H
 #define _SPEED_H
 
-#include "SpeedEncoder.h"
-#include "Log.h"
 #include "math.h"
 
 #define W_RADIUS 4.1
@@ -12,12 +10,9 @@
 typedef struct{
 	float targSpeed;
 	float bfSpeed;
-	SpeedEncoder mSpeedEncoder;
 } Speed;
 
-Log mLog;
-
-extern void S_init(Speed *this_Speed,SpeedEncoder SE);
+extern void S_init(Speed *this_Speed);
 extern int S_getSpeed(Speed *this_Speed,int time);
 extern int S_getTargSpeed(Speed *this_Speed);
 extern int S_getBfSpeed(Speed *this_Speed);

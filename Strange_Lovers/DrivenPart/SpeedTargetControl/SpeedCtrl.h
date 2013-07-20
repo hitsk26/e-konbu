@@ -3,7 +3,6 @@
 
 #include "Speed.h"
 #include "PIDSpeedCtrl.h"
-#include "WheelMotor.h"
 #include "SpeedCtrlState.h"
 
 typedef struct{
@@ -11,10 +10,9 @@ typedef struct{
 } SpeedCtrl;
 
 PIDSpeedCtrl mPIDSpeedCtrl;
-WheelMotor mWheelMotor;
 Speed mSpeed;
 
-extern void SC_init(SpeedCtrl *this_SpeedCtrl,SpeedEncoder SE,WheelMotor WM,PIDSpeedCtrl PSC);
+extern void SC_init(SpeedCtrl *this_SpeedCtrl,PIDSpeedCtrl PSC);
 extern void SC_setTargSpeed(SpeedCtrl *this_SpeedCtrl,int parm);
 extern float SC_getTargSpeedCtrl(SpeedCtrl *this_SpeedCtrl);
 extern void SC_setCtrlParm(SpeedCtrl *this_SpeedCtrl,PIDSpeedCtrlParm parm);

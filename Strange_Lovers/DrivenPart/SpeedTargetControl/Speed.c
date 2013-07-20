@@ -1,21 +1,16 @@
 #include "Speed.h"
-#include "DegRadMath.h"
+#include "../../Factory.h"
 
-void S_init(Speed *this_Speed,SpeedEncoder SE){
+void S_init(Speed *this_Speed){
 	this_Speed->targSpeed = 0;
 	this_Speed->bfSpeed = 0;
-	this_Speed->mSpeedEncoder = SE;
-	Log_init(&mLog);
 }
 
 int S_getSpeed(Speed *this_Speed,int time){
 
-	int speed = SE_getSpeed(&this_Speed->mSpeedEncoder,time);
-	Log_setData3(&mLog,speed);
+	int speed = SpeedEncoder_get_speed(&speedEncoder);
+
 	this_Speed->bfSpeed = speed;
-
-	Log_logSend(&mLog);
-
 	return speed;
 }
 

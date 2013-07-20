@@ -15,6 +15,9 @@
 #include "./DrivenPart/PID_Tail.h"
 #include "./DrivenPart/PID_Brightness.h"
 
+#include "./DrivenPart/SpeedTargetControl/SpeedCtrl.h"
+
+
 #include "DetectorPart/DistanceEncoder.h"
 #include "DetectorPart/SpeedEncoder.h"
 #include "DetectorPart/Timer.h"
@@ -49,6 +52,9 @@ WheelMotor rightWheelMotor;
 WheelMotor leftWheelMotor;
 TailMotor tailMotor;
 
+//DrivenPart/SpeedControl
+SpeedCtrl mSpeedCtrl;
+PIDSpeedCtrlParm mPIDSpeedCtrlParm;
 
 
 extern void initialization();

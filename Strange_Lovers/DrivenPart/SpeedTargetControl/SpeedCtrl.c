@@ -1,12 +1,11 @@
 #include "SpeedCtrl.h"
+#include "../../Factory.h"
 
 //初期化メソッド
-void SC_init(SpeedCtrl *this_SpeedCtrl,SpeedEncoder SE,WheelMotor WM,PIDSpeedCtrl PSC)
+void SC_init(SpeedCtrl *this_SpeedCtrl,PIDSpeedCtrl PSC)
 {
-	S_init(&mSpeed,SE);
-	mWheelMotor = WM;
-	WM_init(&mWheelMotor);
-	mPIDSpeedCtrl = PSC;
+	S_init(&mSpeed);
+	mPIDSpeedCtrl = PSC; //オブジェクトの張替えをしてる　メンバで持たせるべき
 	PSC_init(&mPIDSpeedCtrl);
 
 	this_SpeedCtrl->S_CtrlState = S_CTRL_OFF;
@@ -60,7 +59,8 @@ void SC_run(SpeedCtrl *this_SpeedCtrl)
 //角度制御実行メソッド
 void SC_doCtrl(SpeedCtrl *this_SpeedCtrl)
 {
-	WM_setSpeed(&mWheelMotor,PSC_calcSpeedCtrlVal(&mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),S_getSpeed(&mSpeed,systick_get_ms()),systick_get_ms()*0.001));
+	int forward = PSC_calcSpeedCtrlVal(&mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),S_getSpeed(&mSpeed,systick_get_ms()),systick_get_ms()*0.001);
+	Balancer_set_forward(&balancer ,(S8)forward);
 }
 
 void SC_changeMode(SpeedCtrl *this_SpeedCtrl,SpeedCtrlState state){

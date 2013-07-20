@@ -34,6 +34,10 @@ TARGET_SOURCES := \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/Balancer.c \
 	./DrivenPart/PID_Brightness.c \
+	./DrivenPart/SpeedTargetControl/SpeedCtrl.c \
+	./DrivenPart/SpeedTargetControl/Speed.c \
+	./DrivenPart/SpeedTargetControl/PIDSpeedCtrl.c \
+	./DrivenPart/SpeedTargetControl/PIDSpeedCtrlParm.c \
 	model_impl.c \
 	Factory.c
 
