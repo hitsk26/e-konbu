@@ -15,7 +15,7 @@
 #include "./DrivenPart/PID_Tail.h"
 #include "./DrivenPart/PID_Brightness.h"
 
-#include "./DrivenPart/SpeedTargetControl/SpeedCtrl.h"
+#include "./DrivenPart/TargetSpeedControl/SpeedCtrl.h"
 
 
 #include "DetectorPart/DistanceEncoder.h"
@@ -23,7 +23,7 @@
 #include "DetectorPart/Timer.h"
 #include "DetectorPart/InclinationEncoder.h"
 #include "DetectorPart/BrightnessEncoder.h"
-
+#include "DetectorPart/DirectionEncoder.h"
 
 
 Calibration calibration;
@@ -43,6 +43,8 @@ DistanceEncoder distanceEncoder;
 SpeedEncoder speedEncoder;
 InclinationEncoder inclinationEncoder;
 BrightnessEncoder brightnessEncoder; 
+DirectionEncoder directionEncoder;
+
 
 //DrivenPart
 PID_TAIL pid_tail;

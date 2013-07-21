@@ -3,7 +3,12 @@
 
 
 #include "./DistanceEncoder.h"
-#include "./Timer.h"
+#include "../DrivenPart/WheelMotor.h"
+
+
+// Ô—Ö”¼ŒaA‘–s‘Ì•
+#define WHEEL_R		41	//[mm]
+#define MACHINE_W	162	//[mm]
 
 typedef struct{
 	int direction;

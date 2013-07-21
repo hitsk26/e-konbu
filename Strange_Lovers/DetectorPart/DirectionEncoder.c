@@ -21,7 +21,11 @@ int DirectionEncoder_get_speed(DirectionEncoder *this_DirectionEncoder)
 
 int DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder)
 {
+	float revL = WheelMotor_get_count(&leftWheelMotor);
+	float revR = WheelMotor_get_count(&rightWheelMotor);	
 
+	float direction = W_RADIUS / W_DIST * (revR - revL);
+	return (int)direction;
 }
 
 

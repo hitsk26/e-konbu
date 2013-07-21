@@ -16,6 +16,8 @@ void initialization(){
 	DistanceEncoder_init(&distanceEncoder);
 	InclinationEncoder_init(&inclinationEncoder,NXT_PORT_S1);
 	BrightnessEncoder_init(&brightnessEncoder,NXT_PORT_S3);
+	DirectionEncoder_init(&directionEncoder);
+
 
 	//DrivenPart
 	PID_TAIL_init(&pid_tail);
@@ -25,7 +27,7 @@ void initialization(){
 	WheelMotor_init(&leftWheelMotor,NXT_PORT_C);
 	TailMotor_init(&tailMotor,NXT_PORT_A);
 	
-	//DrivenPart/SpeedTargetControl
+	//DrivenPart/TargetSpeedControl
 	SC_setCtrlParm(&mSpeedCtrl,mPIDSpeedCtrlParm);
 	
 	PSCP_init(&mPIDSpeedCtrlParm);
