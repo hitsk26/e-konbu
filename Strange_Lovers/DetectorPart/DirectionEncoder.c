@@ -13,7 +13,7 @@ void DirectionEncoder_init(DirectionEncoder *this_DirectionEncoder)
 	this_DirectionEncoder->direction = 0;
 }
 
-int DirectionEncoder_get_speed(DirectionEncoder *this_DirectionEncoder)
+int DirectionEncoder_get_direction(DirectionEncoder *this_DirectionEncoder)
 {
 	this_DirectionEncoder->direction =DirectionEncoder_calc_speed(this_DirectionEncoder);
 	return this_DirectionEncoder->direction;

@@ -1,5 +1,5 @@
 #include "PID_Brightness.h"
-#include "Factory.h"
+#include "../Factory.h"
 
 void PID_Brightness_init(PID_Brightness *this_PID_Brightness){
 }
@@ -34,6 +34,8 @@ void PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target
 	}else if (turn > 100) {
 		turn = 100;
 	}
+
+	turn = DirectionCtrl_run(&directionCtrl,90);
 
 	Balancer_set_turn(&balancer , turn);
 	Balancer_balance_running(&balancer);

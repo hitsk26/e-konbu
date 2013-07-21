@@ -12,6 +12,7 @@ USER_LIB = nxtway_gs_balancer
 DRIVENPART_SOURCES := 
 # User application source
 TARGET_SOURCES := \
+	./lib/CommonFunction.c \
 	balancer_param.c \
 	TargetValue.c \
 	Runner.c \

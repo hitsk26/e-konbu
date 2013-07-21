@@ -3,6 +3,8 @@
 
 #include "ecrobot_interface.h"
 
+#include "./lib/CommonFunction.h"
+
 #include "Calibration.h"
 #include "TargetValue.h"
 #include "Display.h"
@@ -16,6 +18,7 @@
 #include "./DrivenPart/PID_Brightness.h"
 
 #include "./DrivenPart/TargetSpeedControl/SpeedCtrl.h"
+#include "DrivenPart\TargetDirectionControl\DirectionCtrl.h"
 
 
 #include "DetectorPart/DistanceEncoder.h"
@@ -24,6 +27,7 @@
 #include "DetectorPart/InclinationEncoder.h"
 #include "DetectorPart/BrightnessEncoder.h"
 #include "DetectorPart/DirectionEncoder.h"
+
 
 
 Calibration calibration;
@@ -57,6 +61,9 @@ TailMotor tailMotor;
 //DrivenPart/SpeedControl
 SpeedCtrl mSpeedCtrl;
 PIDSpeedCtrlParm mPIDSpeedCtrlParm;
+
+//DrivenPart/DirectionCtrl
+DirectionCtrl directionCtrl;
 
 
 extern void initialization();
