@@ -39,6 +39,7 @@ TARGET_SOURCES := \
 	./DrivenPart/TargetSpeedControl/Speed.c \
 	./DrivenPart/TargetSpeedControl/PIDSpeedCtrl.c \
 	./DrivenPart/TargetSpeedControl/PIDSpeedCtrlParm.c \
+	./DrivenPart/TargetDirectionControl/DirectionCtrl.c \
 	model_impl.c \
 	Factory.c
 
