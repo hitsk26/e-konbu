@@ -30,6 +30,7 @@ TARGET_SOURCES := \
 	./DetectorPart/SpeedEncoder.c \
 	./DetectorPart/InclinationEncoder.c \
 	./DetectorPart/BrightnessEncoder.c \
+	./DetectorPart/SpeedEncoder.c \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/Balancer.c \
