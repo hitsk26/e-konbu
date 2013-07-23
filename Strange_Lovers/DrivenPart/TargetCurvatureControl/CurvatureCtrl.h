@@ -4,13 +4,13 @@
 
 typedef struct {
 	
-}DirectionCtrl;
+}CurvatureCtrl;
 
 
-int DirectionCtrl_do_direction_ctrl(DirectionCtrl *this_DirectionCtrl);
+int CurvatureCtrl_do_curvature_ctrl(CurvatureCtrl *this_CurvatureCtrl);
 
 
-int DirectionCtrl_run(DirectionCtrl *this_DirectionCtrl,int target_direction);
+int CurvatureCtrl_run(CurvatureCtrl *this_CurvatureCtrl,int target_curvature);
 
 
 #endif

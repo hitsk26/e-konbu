@@ -1,13 +1,12 @@
 #include "CurvatureCtrl.h"
 #include "../../Factory.h"
 
-#include "../../DetectorPart/DirectionEncoder.h" //need to be rectoring
 
 #define CYCLE_TIME 0.004
 
 
 //fake implementation
-int DirectionCtrl_run(DirectionCtrl *this_DirectionCtrl,int target_direction)
+int CurvatureCtrl_run(CurvatureCtrl *this_CurvatureCtrl,int target_curvature)
 {
 	static	float	hensa = 0;
 	static	int		turn = 0;
@@ -20,7 +19,7 @@ int DirectionCtrl_run(DirectionCtrl *this_DirectionCtrl,int target_direction)
 	static float d_hensa = 0;
 	static float bf_hensa = 0;
 
-	hensa =  DirectionEncoder_get_direction(&directionEncoder) - target_direction;
+	hensa =  CurvatureEncoder_get_curvature(&curvatureEncoder) - target_curvature;
 
 	i_hensa = i_hensa + (hensa * CYCLE_TIME);
 	d_hensa = (bf_hensa - hensa )/CYCLE_TIME;
@@ -33,7 +32,7 @@ int DirectionCtrl_run(DirectionCtrl *this_DirectionCtrl,int target_direction)
 
 }
 
-int DirectionCtrl_do_direction_ctrl(DirectionCtrl *this_DirectionCtrl)
+int CurvatureCtrl_do_curvature_ctrl(CurvatureCtrl *this_CurvatureCtrl)
 {
 	return 0;
 }
