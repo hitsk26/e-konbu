@@ -4,6 +4,8 @@
 #include "ecrobot_interface.h"
 
 #include "./lib/CommonFunction.h"
+#include "./lib/mymath.h"
+
 
 #include "Calibration.h"
 #include "TargetValue.h"

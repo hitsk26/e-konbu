@@ -3,7 +3,7 @@
 
 
 #include "./DistanceEncoder.h"
-#include "../DrivenPart/WheelMotor.h"
+#include "./DirectionEncoder.h"
 
 typedef struct{
 	int curvature;

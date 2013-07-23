@@ -1,5 +1,5 @@
 #include "PID_Tail.h"
-#include "Factory.c"
+#include "../Factory.c"
 
 
 void PID_TAIL_init(PID_TAIL *this_PID_TAIL){
@@ -31,7 +31,6 @@ void PID_tail(int angle_of_aim){
 	}else if (speed > 100) {
 		speed = 100;
 	}
-	
 
 	TailMotor_drive_tail(&tailMotor,speed);
 }

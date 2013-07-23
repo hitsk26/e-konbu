@@ -13,6 +13,7 @@ DRIVENPART_SOURCES :=
 # User application source
 TARGET_SOURCES := \
 	./lib/CommonFunction.c \
+	./lib/mymath.c \
 	balancer_param.c \
 	TargetValue.c \
 	Runner.c \
