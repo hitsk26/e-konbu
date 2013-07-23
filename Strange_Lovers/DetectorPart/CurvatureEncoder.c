@@ -42,7 +42,6 @@ int CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 	}
 	curvature_store += curvature;
 
-	//’Pƒ•½‹Ïˆ—‚Æ‚µ‚ÄŠÖ”‰»‚Å‚«‚»‚¤
 	if((time - bufTime) >= TARGTIME)
 	{
 		this_CurvatureEncoder->curvature = (int)curvature_store/25; //25‰ñ•ª‚Ì•½‹Ï‚ğæ‚Á‚Ä‚é
@@ -55,5 +54,4 @@ int CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 
 	return (int)this_CurvatureEncoder->curvature;
 }
-
 
