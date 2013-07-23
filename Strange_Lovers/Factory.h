@@ -18,6 +18,8 @@
 #include "./DrivenPart/Balancer.h"
 #include "./DrivenPart/PID_Tail.h"
 #include "./DrivenPart/PID_Brightness.h"
+#include "./DrivenPart/DrivenDirector.h"
+#include "DrivenPart/ControllerWegiht.h"
 
 #include "./DrivenPart/TargetSpeedControl/SpeedCtrl.h"
 #include "DrivenPart/TargetCurvatureControl/CurvatureCtrl.h"
@@ -29,6 +31,7 @@
 #include "DetectorPart/InclinationEncoder.h"
 #include "DetectorPart/BrightnessEncoder.h"
 #include "DetectorPart/DirectionEncoder.h"
+#include "DetectorPart/CurvatureEncoder.h"
 
 
 
@@ -50,7 +53,7 @@ SpeedEncoder speedEncoder;
 InclinationEncoder inclinationEncoder;
 BrightnessEncoder brightnessEncoder; 
 DirectionEncoder directionEncoder;
-
+CurvatureEncoder curvatureEncoder; 
 
 //DrivenPart
 PID_TAIL pid_tail;
@@ -59,13 +62,15 @@ Balancer balancer;
 WheelMotor rightWheelMotor;
 WheelMotor leftWheelMotor;
 TailMotor tailMotor;
+DrivenDirector drivenDirector;
+
 
 //DrivenPart/SpeedControl
 SpeedCtrl mSpeedCtrl;
 PIDSpeedCtrlParm mPIDSpeedCtrlParm;
 
 //DrivenPart/DirectionCtrl
-DirectionCtrl directionCtrl;
+CurvatureCtrl curvatureCtrl;
 
 
 extern void initialization();

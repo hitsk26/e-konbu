@@ -19,15 +19,18 @@ ControllerWegiht use_controller;
 }DrivenDirector;
 	
 	
+
+void DrivenDirector_init(DrivenDirector *this_DrivenDirector);
+
 /**
  * ù‰ñ—Ê‚ğŒvZ‚·‚é
  */
-void DrivenDirector_calc_turn_val(int target_brightness, float target_curvature);
+int DrivenDirector_calc_turn_val(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature);
 
 /**
  * ‹ì“®—v‹‚ğ‚·‚é
  */
-void DrivenDirector_request_drive(int target_brightness, float target_curvature);
+void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature);
 
 
 #endif

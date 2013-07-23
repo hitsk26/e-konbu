@@ -4,7 +4,7 @@
 void PID_Brightness_init(PID_Brightness *this_PID_Brightness){
 }
 
-void PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target_brighness){
+int PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target_brighness){
 
 	static	float	hensa = 0;
 	static	int		turn = 0;
@@ -35,9 +35,9 @@ void PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target
 		turn = 100;
 	}
 
-	Balancer_set_turn(&balancer , turn);
-	Balancer_balance_running(&balancer);
+	//Balancer_set_turn(&balancer , turn);
+	//Balancer_balance_running(&balancer);
 
-
+	return turn;
 }
 
