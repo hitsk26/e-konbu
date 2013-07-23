@@ -20,7 +20,7 @@
 #include "./DrivenPart/PID_Brightness.h"
 
 #include "./DrivenPart/TargetSpeedControl/SpeedCtrl.h"
-#include "DrivenPart\TargetDirectionControl\DirectionCtrl.h"
+#include "DrivenPart/TargetCurvatureControl/CurvatureCtrl.h"
 
 
 #include "DetectorPart/DistanceEncoder.h"

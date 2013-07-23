@@ -1,4 +1,4 @@
-#include "DirectionCtrl.h"
+#include "CurvatureCtrl.h"
 #include "../../Factory.h"
 
 #include "../../DetectorPart/DirectionEncoder.h" //need to be rectoring
