@@ -35,9 +35,6 @@ int PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target_
 		turn = 100;
 	}
 
-	//Balancer_set_turn(&balancer , turn);
-	//Balancer_balance_running(&balancer);
-
 	return turn;
 }
 
