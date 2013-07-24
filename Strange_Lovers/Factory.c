@@ -35,6 +35,6 @@ void initialization(){
 	PSC_init(&mPIDSpeedCtrl);
 	SC_init(&mSpeedCtrl,mPIDSpeedCtrl);
 	
-	SC_setTargSpeed(&mSpeedCtrl,10);
+	SC_setTargSpeed(&mSpeedCtrl,20);
 	SC_startCtrl(&mSpeedCtrl);
 }

@@ -11,8 +11,7 @@ void Runner_init(Runner *this_Runner){
 }
 void Runner_run(Runner *this_Runner){
 
-	//PID_Brightness_target_control(&pid_Brightness,targetValue.target_brightness);
-	DrivenDirector_request_drive(&drivenDirector,targetValue.target_brightness,30);
+	DrivenDirector_request_drive(&drivenDirector,targetValue.target_brightness,targetValue.target_curvature);
 	PID_tail(targetValue.angle_of_aim);
 	SC_run(&mSpeedCtrl);
 }

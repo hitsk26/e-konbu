@@ -11,13 +11,13 @@
 #define MACHINE_W	162	//[mm]
 
 typedef struct{
-	int direction;
+	float direction;
 	
 }DirectionEncoder;
 
 
-int DirectionEncoder_get_direction(DirectionEncoder *this_DirectionEncoder);
-int DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder);
+float DirectionEncoder_get_direction(DirectionEncoder *this_DirectionEncoder);
+float DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder);
 void DirectionEncoder_init(DirectionEncoder *this_DirectionEncoder);
 
 #endif 

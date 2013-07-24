@@ -5,6 +5,7 @@
 typedef struct{
 	int target_brightness;
 	int angle_of_aim;
+	float target_curvature;
 }TargetValue;
 
 extern void TargetValue_init(TargetValue *this_TargetValue);

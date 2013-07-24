@@ -6,36 +6,34 @@
 #define CYCLE_TIME 0.004
 #define TARGTIME 100
 
-#define MEASURE_TIME_CYCLE 100 //[ms]
-#define EXECUTE_CYCLE_TIME 4 //[ms]
-
 void CurvatureEncoder_init(CurvatureEncoder *this_CurvatureEncoder)
 {
 	this_CurvatureEncoder->curvature = 0;
 }
 
-int CurvatureEncoder_get_curvature(CurvatureEncoder *this_CurvatureEncoder)
+float CurvatureEncoder_get_curvature(CurvatureEncoder *this_CurvatureEncoder)
 {
 	this_CurvatureEncoder->curvature =CurvatureEncoder_calc_curvature(this_CurvatureEncoder);
 	return this_CurvatureEncoder->curvature;
 }
 
-int CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
+float CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 {
 	float theta=0;
-	int distance=0;
+	float distance=0;
 	static float buf_theta=0;
-	static int buf_distance=0;
+	static float buf_distance=0;
 	float curvature=0;
-	static float curvature_store=0;
+	static float curvature_store=0,averaged_curvature=0;
 	static int bufTime =0;
 	
-	distance = DistanceEncoder_get_distance(&distanceEncoder);
+	distance = DistanceEncoder_get_distance(&distanceEncoder); 
 	theta = DirectionEncoder_get_direction(&directionEncoder);
 	unsigned int time =  Timer_get_ms(&timer);
 
+
 	if(!(theta == buf_theta)){
-		curvature = rad2deg((distance - buf_distance) / (theta - buf_theta));
+		curvature = rad2deg((distance - buf_distance)/ (theta - buf_theta))/10;
 	}
 	else{
 		curvature= 0.0;
@@ -44,14 +42,16 @@ int CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 
 	if((time - bufTime) >= TARGTIME)
 	{
-		this_CurvatureEncoder->curvature = (int)curvature_store/25; //25‰ñ•ª‚Ì•½‹Ï‚ğæ‚Á‚Ä‚é
+	
+		averaged_curvature = curvature_store/25; //25‰ñ•ª‚Ì•½‹Ï‚ğæ‚Á‚Ä‚é
 		curvature_store = 0;
 		bufTime = time;
 	}
 
 	buf_distance = distance;
 	buf_theta= theta;
+	logSend(0,0,balancer.turn,distance*100,theta*10,this_CurvatureEncoder->curvature*10,0,0);
 
-	return (int)this_CurvatureEncoder->curvature;
+	return averaged_curvature;
 }
 
