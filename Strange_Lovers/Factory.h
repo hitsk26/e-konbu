@@ -72,6 +72,10 @@ PIDSpeedCtrlParm mPIDSpeedCtrlParm;
 //DrivenPart/DirectionCtrl
 CurvatureCtrl curvatureCtrl;
 
+PIDLightValCtrl mPIDLightValCtrl;
+WheelMotor mWheelMotor;
+LightVal mLightVal;
+
 
 extern void initialization();
 
