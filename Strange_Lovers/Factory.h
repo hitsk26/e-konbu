@@ -23,7 +23,9 @@
 
 #include "./DrivenPart/TargetSpeedControl/SpeedCtrl.h"
 #include "DrivenPart/TargetCurvatureControl/CurvatureCtrl.h"
-
+#include "DrivenPart/TargetCurvatureControl/PIDCurvatureCtrl.h"
+#include "DrivenPart/TargetCurvatureControl/Curvature.h"
+#include "DrivenPart/TargetCurvatureControl/PIDCurvatureCtrlParm.h"
 
 #include "DetectorPart/DistanceEncoder.h"
 #include "DetectorPart/SpeedEncoder.h"
@@ -70,7 +72,9 @@ SpeedCtrl mSpeedCtrl;
 PIDSpeedCtrlParm mPIDSpeedCtrlParm;
 
 //DrivenPart/DirectionCtrl
-CurvatureCtrl curvatureCtrl;
+CurvatureCtrl mCurvatureCtrl; 
+PIDCurvatureCtrl mPIDCurvatureCtrl;
+PIDCurvatureCtrlParm mPIDCurvatureCtrlParm;
 
 //PIDLightValCtrl mPIDLightValCtrl;
 //WheelMotor mWheelMotor;

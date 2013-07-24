@@ -25,7 +25,7 @@ void DrivenDirector_init(DrivenDirector *this_DrivenDirector);
 /**
  * ù‰ñ—Ê‚ğŒvZ‚·‚é
  */
-int DrivenDirector_calc_turn_val(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature);
+int DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature);
 
 /**
  * ‹ì“®—v‹‚ğ‚·‚é
