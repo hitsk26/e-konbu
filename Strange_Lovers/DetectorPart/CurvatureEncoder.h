@@ -6,7 +6,7 @@
 #include "./DirectionEncoder.h"
 
 typedef struct{
-	int curvature;
+	float curvature;
 	
 }CurvatureEncoder;
 

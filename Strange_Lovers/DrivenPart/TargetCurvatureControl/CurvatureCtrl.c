@@ -11,9 +11,9 @@ int CurvatureCtrl_run(CurvatureCtrl *this_CurvatureCtrl,int target_curvature)
 	static	float	hensa = 0;
 	static	int		turn = 0;
 
-	static const float cKp = 1.5;
-	static const float cKi = 0.00	;
-	static const float cKd =	0.1;
+	static const float cKp = 1.8;
+	static const float cKi = 0.9;
+	static const float cKd =	0.001;
 
 	static float i_hensa = 0;
 	static float d_hensa = 0;

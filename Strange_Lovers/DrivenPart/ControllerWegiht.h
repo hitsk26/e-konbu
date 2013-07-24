@@ -7,7 +7,7 @@
  */
 typedef struct {
 float target_light_controller_weight;
-float target_directioncontroller_weight;
+float target_curvature_controller_weight;
 }ControllerWegiht;
 
 #endif

@@ -11,7 +11,7 @@
 #define MACHINE_W	162	//[mm]
 
 typedef struct{
-	int direction;
+	float direction;
 	
 }DirectionEncoder;
 
