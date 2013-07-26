@@ -19,7 +19,7 @@
 #include "./DrivenPart/PID_Tail.h"
 #include "./DrivenPart/PID_Brightness.h"
 #include "./DrivenPart/DrivenDirector.h"
-#include "DrivenPart/ControllerWegiht.h"
+#include "DrivenPart/ControllerWeight.h"
 
 #include "./DrivenPart/TargetSpeedControl/SpeedCtrl.h"
 #include "DrivenPart/TargetCurvatureControl/CurvatureCtrl.h"

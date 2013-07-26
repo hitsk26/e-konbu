@@ -5,7 +5,7 @@
 #include "../DrivenPart/DrivenDirector.h"
 #include "SwitchTerm.h"
 #include "TargetValues.h"
-#include "../DrivenPart/ControllerWegiht.h"
+#include "../DrivenPart/ControllerWeight.h"
 
 //#include "../StrategyPart/StrategySwitchJudge/SwitchJudge.h"
 
@@ -19,7 +19,7 @@ typedef struct {
 	/**
 	 * égópêßå‰äÌ
 	 */
-	int usedController;
+	int use_controller;
 
 	/**
 	 * êKîˆäpìx
