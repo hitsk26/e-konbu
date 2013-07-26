@@ -31,7 +31,7 @@ int DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,int targe
 /**
  * ‹ì“®—v‹‚ğ‚·‚é
  */
-void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature,int target_tail_angle);
+void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature,int target_speed,int target_tail_angle,int self_balancing_requirement,ControllerWegiht used_controller,int gyro_offset_revise);
 
 
 #endif

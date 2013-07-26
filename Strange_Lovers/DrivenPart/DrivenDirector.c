@@ -20,7 +20,7 @@ int DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,int targe
 		+ 	this_DrivenDirector->use_controller.target_curvature_controller_weight*curvature_turn;
 }
 
-void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature,int target_tail_angle)
+void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature,int target_speed,int target_tail_angle,int self_balancing_requirement,ControllerWegiht used_controller,int gyro_offset_revise)
 {
 	int turn = DrivenDirector_calc_turn_value(this_DrivenDirector,target_brightness,target_curvature);
 	PID_tail(target_tail_angle);

@@ -5,6 +5,7 @@
 #include "../DrivenPart/DrivenDirector.h"
 #include "SwitchTerm.h"
 #include "TargetValues.h"
+#include "../DrivenPart/ControllerWegiht.h"
 
 //#include "../StrategyPart/StrategySwitchJudge/SwitchJudge.h"
 
@@ -46,7 +47,7 @@ typedef struct {
 	/**
 	 * ëññ@Çé¿çsÇ∑ÇÈ
 	 */
-	void RunningMethod_execute_method(RunningMethod *this_RunningMethod,TargetValues targetValue);
+	void RunningMethod_execute_method(RunningMethod *this_RunningMethod,TargetValues target_value);
 
 
 #endif

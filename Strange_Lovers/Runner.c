@@ -10,7 +10,7 @@ void Runner_init(Runner *this_Runner){
 
 }
 void Runner_run(Runner *this_Runner){
-	DrivenDirector_request_drive(&drivenDirector,targetValue.target_brightness,targetValue.target_curvature,targetValue.target_tail_angle);
+	//DrivenDirector_request_drive(&drivenDirector,targetValue.target_brightness,targetValue.target_curvature,targetValue.target_tail_angle);
 }
 
 
