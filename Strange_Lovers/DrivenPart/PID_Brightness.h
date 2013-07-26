@@ -4,7 +4,7 @@
 
 #include "./Balancer.h"
 #include "../TargetValue.h"
-#include "../DetectorPart/BrightnessEncoder.h"
+#include "../EncoderPart/BrightnessEncoder.h"
 
 typedef struct{
 }PID_Brightness;

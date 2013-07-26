@@ -7,7 +7,8 @@
 #include "TargetValues.h"
 #include "../DrivenPart/ControllerWeight.h"
 
-//#include "../StrategyPart/StrategySwitchJudge/SwitchJudge.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/SwitchJudge.h"
+
 
 typedef struct {
 	
@@ -35,6 +36,10 @@ typedef struct {
 	 * 走法切り替え判定値
 	 */
 	SwitchTerm switch_term;
+
+	//走法切り替えの関数へのポインタ
+	 int (*fp_SwitchJudge)(SwitchTerm);
+
 }RunningMethod;
 
 

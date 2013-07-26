@@ -1,7 +1,7 @@
 #ifndef _CURVATURE_H
 #define _CURVATURE_H
 
-#include "../../DetectorPart/CurvatureEncoder.h"
+#include "../../EncoderPart/CurvatureEncoder.h"
 
 
 typedef struct{

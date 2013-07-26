@@ -27,13 +27,13 @@
 #include "DrivenPart/TargetCurvatureControl/Curvature.h"
 #include "DrivenPart/TargetCurvatureControl/PIDCurvatureCtrlParm.h"
 
-#include "DetectorPart/DistanceEncoder.h"
-#include "DetectorPart/SpeedEncoder.h"
-#include "DetectorPart/Timer.h"
-#include "DetectorPart/InclinationEncoder.h"
-#include "DetectorPart/BrightnessEncoder.h"
-#include "DetectorPart/DirectionEncoder.h"
-#include "DetectorPart/CurvatureEncoder.h"
+#include "EncoderPart/DistanceEncoder.h"
+#include "EncoderPart/SpeedEncoder.h"
+#include "EncoderPart/Timer.h"
+#include "EncoderPart/InclinationEncoder.h"
+#include "EncoderPart/BrightnessEncoder.h"
+#include "EncoderPart/DirectionEncoder.h"
+#include "EncoderPart/CurvatureEncoder.h"
 
 #include "./StrategyPart/Runner.h"
 #include "./StrategyPart/RunningMethod.h"
@@ -42,6 +42,10 @@
 #include "./StrategyPart/TargetValues.h"
 #include "./StrategyPart/SwitchTerm.h"
 
+#include "StrategyPart/RunningMethodSwitchJudge/SwitchJudge.h"
+#include "StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.h"
+#include "StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
+#include "StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 
 
 
@@ -56,7 +60,7 @@ PushButton pushButton;
 
 
 
-//DetectorPart
+//EncoderPart
 Timer timer;
 DistanceEncoder distanceEncoder;
 SpeedEncoder speedEncoder;

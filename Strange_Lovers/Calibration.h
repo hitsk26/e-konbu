@@ -5,8 +5,8 @@
 #include "TargetValue.h"
 #include "Display.h"
 #include "UI/PushButton.h"
-#include "DetectorPart/InclinationEncoder.h"
-#include "./DetectorPart/BrightnessEncoder.h"
+#include "EncoderPart/InclinationEncoder.h"
+#include "./EncoderPart/BrightnessEncoder.h"
 
 
 typedef struct{

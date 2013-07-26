@@ -26,13 +26,13 @@ TARGET_SOURCES := \
 	./HardwareWrapper/GyroSensor.c \
 	./HardwareWrapper/LightSensor.c \
 	./UI/PushButton.c \
-	./DetectorPart/Timer.c \
-	./DetectorPart/DistanceEncoder.c \
-	./DetectorPart/SpeedEncoder.c \
-	./DetectorPart/InclinationEncoder.c \
-	./DetectorPart/BrightnessEncoder.c \
-	./DetectorPart/DirectionEncoder.c \
-	./DetectorPart/CurvatureEncoder.c \
+	./EncoderPart/Timer.c \
+	./EncoderPart/DistanceEncoder.c \
+	./EncoderPart/SpeedEncoder.c \
+	./EncoderPart/InclinationEncoder.c \
+	./EncoderPart/BrightnessEncoder.c \
+	./EncoderPart/DirectionEncoder.c \
+	./EncoderPart/CurvatureEncoder.c \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/Balancer.c \
@@ -49,6 +49,10 @@ TARGET_SOURCES := \
 	./StrategyPart/Section.c \
 	./StrategyPart/RunningMethod.c \
 	./StrategyPart/Runner.c \
+	./StrategyPart/RunningMethodSwitchJudge/SwitchJudge.c \
+	./StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
 	model_impl.c \
 	Factory.c
 

@@ -3,12 +3,12 @@
 
 int RunningMethod_check_executed(RunningMethod *this_RunningMethod)
 {
-
-	return 0;
+	return SwitchJudge_judge_switch_method(this_RunningMethod->fp_SwitchJudge,this_RunningMethod->switch_term);
 }
 
 void RunningMethod_execute_method(RunningMethod *this_RunningMethod, TargetValues target_value)
 {
+	//é¿ëïó·
 	target_value.target_brightness =target_value.target_brightness /* + ï‚ê≥ó  */;
 	target_value.target_curvature = target_value.target_curvature/* + ï‚ê≥ó  */;
 	target_value.target_speed = target_value.target_speed/* + ï‚ê≥ó  */;
