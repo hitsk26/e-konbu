@@ -21,25 +21,25 @@ typedef struct {
 	float target_curvature;
 	int target_brightness;
 	struct Section *nextSection;
-	RunningStrategy runningStrategy[];
+	RunningStrategy current_strategy;
 	
 }Section;
 
 	/**
 	 * Ÿ‹æŠÔØ‘ÖğŒæ“¾
 	 */
-	changeTerm Section_getChangeTermOfNextSection();
+	changeTerm Section_getChangeTermOfNextSection(Section *this_Section);
 
 	/**
 	 * Ÿ‹æŠÔ‚ğæ“¾‚·‚é
 	 */
-	Section Section_getNextSection();
+	Section Section_getNextSection(Section *this_Section);
 
 	/**
 	 * ‘–”j‚·‚é
 	 */
-	int Section_clearSection();
+	int Section_clearSection(Section *this_Section);
 
-	void Section_run();
+	void Section_run(Section *this_Section);
 
 #endif

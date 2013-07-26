@@ -40,11 +40,11 @@ typedef struct {
 	/**
 	 * í—ªØ‚è‘Ö‚¦
 	 */
-	void RunningStrategy_change_strategy();
+	void RunningStrategy_change_strategy(RunningStrategy *this_RunningStrategy);
 
 	/**
 	 * í—ª‚ğÀs‚·‚é
 	 */
-	void RunningStrategy_execute_strategy();
+	void RunningStrategy_execute_strategy(RunningStrategy *this_RunningStrategy);
 
 #endif

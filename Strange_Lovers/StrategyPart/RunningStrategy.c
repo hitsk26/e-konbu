@@ -2,10 +2,10 @@
 
 
 
-void RunningStrategy_changeStrategy()
+void RunningStrategy_changeStrategy(RunningStrategy *this_RunningStrategy)
 {
 }
 
-void RunningStrategy_executeStrategy()
+void RunningStrategy_executeStrategy(RunningStrategy *this_RunningStrategy)
 {
 }
