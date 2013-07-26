@@ -3,6 +3,7 @@
 
 int RunningMethod_check_executed(RunningMethod *this_RunningMethod)
 {
+
 	return 0;
 }
 

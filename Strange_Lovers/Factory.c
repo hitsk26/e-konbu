@@ -47,6 +47,6 @@ void initialization(){
 
 	//StrategyPart
 	Section test_section;
-	Runner_init(&runner,test_section);
+	Runner_init(&runner,&test_section);
 
 }
