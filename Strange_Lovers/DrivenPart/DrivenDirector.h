@@ -5,7 +5,8 @@
 #include "../DrivenPart/PID_Brightness.h"
 #include "../DrivenPart/Balancer.h"
 #include "../DrivenPart/TargetCurvatureControl/CurvatureCtrl.h"
-
+#include "../DrivenPart/PID_Tail.h"
+#include "../DrivenPart/TargetSpeedControl/SpeedCtrl.h"
 
 /**
  * ‹ì“®w¦Ší
@@ -30,7 +31,7 @@ int DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,int targe
 /**
  * ‹ì“®—v‹‚ğ‚·‚é
  */
-void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature);
+void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature,int target_tail_angle);
 
 
 #endif

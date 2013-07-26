@@ -1,9 +1,6 @@
 #ifndef _RUNNER_
 #define _RUNNER_
 
-#include "./DrivenPart/PID_Brightness.h"
-#include "./DrivenPart/PID_Tail.h"
-#include "logSend.h"
 #include "TargetValue.h"
 #include "./UI/PushButton.h"
 

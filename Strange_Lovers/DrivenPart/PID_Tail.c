@@ -7,7 +7,7 @@ void PID_TAIL_init(PID_TAIL *this_PID_TAIL){
 }
 
 
-void PID_tail(int angle_of_aim){
+void PID_tail(int target_tail_angle){
 
 	static const float Kp_s = 2.4;
 	static const float Ki_s = 0.00;
@@ -19,7 +19,7 @@ void PID_tail(int angle_of_aim){
 	static float bf_hensa = 0;
 	static float speed = 0;
 	
-	hensa = angle_of_aim - TailMotor_get_count(&tailMotor);
+	hensa = target_tail_angle - TailMotor_get_count(&tailMotor);
 
 	i_hensa = i_hensa + (hensa*0.004);
 	d_hensa = (bf_hensa - hensa)/0.004;
