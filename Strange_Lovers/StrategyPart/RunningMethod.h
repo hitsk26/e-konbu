@@ -14,12 +14,12 @@ typedef struct {
 	/**
 	 * “|—§§Œä‚Ì—L–³
 	 */
-	int selfBalancingRequrement;
+	int balancing_requrement;
 
 	/**
 	 * g—p§ŒäŠí
 	 */
-	int use_controller;
+	ControllerWeight use_controller;
 
 	/**
 	 * K”öŠp“x
