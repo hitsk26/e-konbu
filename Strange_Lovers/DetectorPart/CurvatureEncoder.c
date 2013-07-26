@@ -50,8 +50,6 @@ float CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 
 	buf_distance = distance;
 	buf_theta= theta;
-	logSend(0,0,balancer.turn,distance*100,theta*10,this_CurvatureEncoder->curvature*10,0,0);
-
 	return averaged_curvature;
 }
 

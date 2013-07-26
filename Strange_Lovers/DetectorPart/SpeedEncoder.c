@@ -17,8 +17,6 @@ int SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder)
 int SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder)
 {
 
-
-	
 	static float speedStore=0,bufDistance=0;
 	static int bufTime =0;
 	

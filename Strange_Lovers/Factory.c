@@ -42,7 +42,7 @@ void initialization(){
 	PCCP_init(&mPIDCurvatureCtrlParm);
 	CC_init(&mCurvatureCtrl,mPIDCurvatureCtrl);
 	CC_setCtrlParm(&mCurvatureCtrl,mPIDCurvatureCtrlParm);
-	CC_setTargCurvature(&mCurvatureCtrl,50);
+	CC_setTargCurvature(&mCurvatureCtrl,0);
 	CC_startCtrl(&mCurvatureCtrl);
 
 }

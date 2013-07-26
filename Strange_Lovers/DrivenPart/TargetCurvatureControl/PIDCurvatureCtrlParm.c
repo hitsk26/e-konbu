@@ -3,7 +3,7 @@
 void PCCP_init(PIDCurvatureCtrlParm *this_PIDCurvatureCtrlParm)
 {
 	this_PIDCurvatureCtrlParm->cKp = 1.85;
-	this_PIDCurvatureCtrlParm->cKi = 0.0;
+	this_PIDCurvatureCtrlParm->cKi = 0.3;
 	this_PIDCurvatureCtrlParm->cKd = 0.03;
 }
 
