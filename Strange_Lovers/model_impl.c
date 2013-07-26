@@ -102,7 +102,7 @@ TASK(INITIALIZE){
 		SetEvent(ActionTask,RUNEVENT);
 	}
 
-	PID_tail(targetValue.angle_of_aim);
+	PID_tail(targetValue.target_tail_angle);
 
 
 	TerminateTask();

@@ -12,7 +12,7 @@ void Runner_init(Runner *this_Runner){
 void Runner_run(Runner *this_Runner){
 
 	DrivenDirector_request_drive(&drivenDirector,targetValue.target_brightness,targetValue.target_curvature);
-	PID_tail(targetValue.angle_of_aim);
+	PID_tail(targetValue.target_tail_angle);
 	SC_run(&mSpeedCtrl);
 }
 

@@ -4,7 +4,7 @@
 
 typedef struct{
 	int target_brightness;
-	int angle_of_aim;
+	int target_tail_angle;
 	float target_curvature;
 }TargetValue;
 
