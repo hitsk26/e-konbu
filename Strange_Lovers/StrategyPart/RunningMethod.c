@@ -1,7 +1,7 @@
 #include "RunningMethod.h"
 #include "../Factory.h"
 
-int runningMethod_check_executed(RunningMethod *this_RunningMethod)
+int RunningMethod_check_executed(RunningMethod *this_RunningMethod)
 {
 	return 0;
 }

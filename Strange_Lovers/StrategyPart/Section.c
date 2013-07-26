@@ -19,6 +19,7 @@ int Section_clear_section(Section *this_Section)
 void Section_run(Section *this_Section)
 {
 	RunningMethod_execute_method(&(this_Section->running_methods[this_Section->current_running_method_number]),this_Section->target_value);
+	
 	if(RunningMethod_check_executed(&(this_Section->running_methods[this_Section->current_running_method_number]))){
 		Section_update_current_running_methods(this_Section);
 	}

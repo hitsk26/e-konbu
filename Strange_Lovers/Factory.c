@@ -6,7 +6,7 @@ void initialization(){
 	TargetValue_init(&targetValue);
 	
 	Display_init(&display);
-	Runner_init(&runner);
+	
 
 	//UI
 	PushButton_init(&pushButton,NXT_PORT_S4);
@@ -44,5 +44,9 @@ void initialization(){
 	CC_setCtrlParm(&mCurvatureCtrl,mPIDCurvatureCtrlParm);
 	CC_setTargCurvature(&mCurvatureCtrl,0);
 	CC_startCtrl(&mCurvatureCtrl);
+
+	//StrategyPart
+	Section test_section;
+	Runner_init(&runner,test_section);
 
 }

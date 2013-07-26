@@ -7,13 +7,6 @@ int flg_tail=0;
 int Start_flg =0;
 
 
-//走行状態初期化
-//RN_STATE rn_state = RN_CALIBRATION;
-
-void Runner_init(Runner *this_Runner){
-	
-}
-
 //カウンタの宣言
 DeclareCounter(SysTimerCnt);
 

@@ -42,7 +42,7 @@ typedef struct {
 	/**
 	 * ‘––@Ø‚è‘Ö‚¦”»’f
 	 */
-	int RunningMethod_check_executed(RunningMethod *this_RunningMethod);
+	int  RunningMethod_check_executed(RunningMethod *this_RunningMethod);
 
 	/**
 	 * ‘––@‚ğÀs‚·‚é

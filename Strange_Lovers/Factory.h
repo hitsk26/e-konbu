@@ -36,6 +36,14 @@
 #include "DetectorPart/CurvatureEncoder.h"
 
 #include "./StrategyPart/Runner.h"
+#include "./StrategyPart/RunningMethod.h"
+#include "./StrategyPart/Section.h"
+#include "./StrategyPart/SwitchTerm.h"
+#include "./StrategyPart/TargetValues.h"
+#include "./StrategyPart/SwitchTerm.h"
+
+
+
 
 Calibration calibration;
 TargetValue targetValue;
