@@ -1,38 +1,30 @@
 #ifndef STRATEGYPART_SECTION_H
 #define STRATEGYPART_SECTION_H
 
-#include "../StrategyPart/RunningStrategy.h"
-#include "../StrategyPart/changeTerm.h"
-
+#include "../StrategyPart/RunningMethod.h"
+#include "../StrategyPart/TargetValues.h"
 
 /**
  * 区間
  */
 
 typedef struct {
-	/**
-	 * 目標前進速度
-	 */
-	
 	struct Section *nextSection;
-	RunningStrategy current_strategy;
-	
+	int current_running_method_number;
+	int number_of_running_method;
+	RunningMethod *running_methods;
+	TargetValues target_value;
 }Section;
-
-	/**
-	 * 次区間切替条件取得
-	 */
-	changeTerm Section_getChangeTermOfNextSection(Section *this_Section);
 
 	/**
 	 * 次区間を取得する
 	 */
-	Section Section_getNextSection(Section *this_Section);
+	struct Section* Section_get_next_section(Section *this_Section);
 
 	/**
 	 * 走破する
 	 */
-	int Section_clearSection(Section *this_Section);
+	int Section_clear_section(Section *this_Section);
 
 	void Section_run(Section *this_Section);
 

@@ -48,6 +48,7 @@ TARGET_SOURCES := \
 	./DrivenPart/TargetCurvatureControl/Curvature.c \
 	./DrivenPart/TargetCurvatureControl/PIDCurvatureCtrl.c \
 	./StrategyPart/Section.c \
+	./StrategyPart/RunningMethod.c \
 	model_impl.c \
 	Factory.c
 
