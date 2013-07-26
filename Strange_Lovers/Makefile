@@ -16,7 +16,6 @@ TARGET_SOURCES := \
 	./lib/mymath.c \
 	balancer_param.c \
 	TargetValue.c \
-	Runner.c \
 	Calibration.c \
 	Display.c \
 	logSend.c \
@@ -49,6 +48,7 @@ TARGET_SOURCES := \
 	./DrivenPart/TargetCurvatureControl/PIDCurvatureCtrl.c \
 	./StrategyPart/Section.c \
 	./StrategyPart/RunningMethod.c \
+	./StrategyPart/Runner.c \
 	model_impl.c \
 	Factory.c
 

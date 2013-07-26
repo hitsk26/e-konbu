@@ -10,7 +10,7 @@
 #include "Calibration.h"
 #include "TargetValue.h"
 #include "Display.h"
-#include "Runner.h"
+
 #include "./UI/PushButton.h"
 
 #include "./DrivenPart/WheelMotor.h"
@@ -35,7 +35,7 @@
 #include "DetectorPart/DirectionEncoder.h"
 #include "DetectorPart/CurvatureEncoder.h"
 
-
+#include "./StrategyPart/Runner.h"
 
 Calibration calibration;
 TargetValue targetValue;
