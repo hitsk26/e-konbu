@@ -5,6 +5,14 @@
 //#include "../StrategyPart/StrategySwitchJudge/SwitchJudge.h"
 
 typedef struct {
+	int targetSpeed;
+
+	/**
+	 * 曲率半径
+	 */
+	float target_curvature;
+	int target_brightness;
+
 	
 	/**
 	 * 倒立制御の有無
@@ -19,7 +27,7 @@ typedef struct {
 	/**
 	 * 尻尾角度
 	 */
-	int tailAngle;
+	int target_tail_angle;
 
 	/**
 	 * ジャイロオフセット補正値

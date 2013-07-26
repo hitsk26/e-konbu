@@ -20,5 +20,9 @@ int Section_clearSection(Section *this_Section)
 void Section_run(Section *this_Section)
 {
 	RunningStrategy_execute_strategy(&(this_Section->current_strategy));
+	if(RunningStrategy_finish_strategy?(&(this_Section->current_strategy))){
+		this_Section->current_strategy = 
+	}
+
 }
 

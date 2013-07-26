@@ -13,13 +13,7 @@ typedef struct {
 	/**
 	 * 目標前進速度
 	 */
-	int targetSpeed;
-
-	/**
-	 * 曲率半径
-	 */
-	float target_curvature;
-	int target_brightness;
+	
 	struct Section *nextSection;
 	RunningStrategy current_strategy;
 	
