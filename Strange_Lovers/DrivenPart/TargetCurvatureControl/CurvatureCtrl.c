@@ -103,3 +103,4 @@ void CC_changeMode(CurvatureCtrl *this_CurvatureCtrl,CurvatureCtrlState state)
 {
 	this_CurvatureCtrl->C_CtrlState = state;
 }
+

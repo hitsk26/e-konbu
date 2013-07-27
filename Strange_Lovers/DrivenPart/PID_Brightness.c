@@ -8,8 +8,8 @@ int PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target_
 
 	static	float	hensa = 0;
 	static	int		turn = 0;
-
-	static const float Kp =	0.5;
+	static const float Kp =	1.5;
+	//static const float Kp =	0.5;
 	static const float Ki =	0.00;
 	static const float Kd =	0.001;
 	static const float b = 0;

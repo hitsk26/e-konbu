@@ -1,5 +1,7 @@
 #include "Section.h"
 #include "../Factory.h"
+#include "../logSend.h"
+
 static void Section_update_current_running_methods(Section *this_Section);
 
 //‹æŠÔÅŒã‚Ì‘––@ŽÀsI—¹”»’f
@@ -29,21 +31,20 @@ int Section_run(Section *this_Section)
 
 	RunningMethod_execute_method(&(this_Section->running_methods[this_Section->current_running_method_number]),this_Section->target_values);
 	
-	/*
+	
 	int executed_flag =  RunningMethod_check_executed(&(this_Section->running_methods[this_Section->current_running_method_number]));
 	
 	if(executed_flag==1){
+		ecrobot_sound_tone(440,40,40);
 		Section_update_current_running_methods(this_Section);
 	}
-
-
+	/*
 	if(Section_clear_section(this_Section,executed_flag)){
 		return 1;
 	}
 	else {
 		return 0;
-	}
-	*/
+	}*/
 	return 0;
 }
 
