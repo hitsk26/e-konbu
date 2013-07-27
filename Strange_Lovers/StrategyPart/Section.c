@@ -1,5 +1,5 @@
 #include "Section.h"
-
+#include "../Factory.h"
 static void Section_update_current_running_methods(Section *this_Section);
 
 //‹æŠÔÅŒã‚Ì‘––@ŽÀsI—¹”»’f
@@ -26,9 +26,10 @@ int Section_clear_section(Section *this_Section,int executed_flag)
 
 int Section_run(Section *this_Section)
 {
-	
+
 	RunningMethod_execute_method(&(this_Section->running_methods[this_Section->current_running_method_number]),this_Section->target_values);
 	
+	/*
 	int executed_flag =  RunningMethod_check_executed(&(this_Section->running_methods[this_Section->current_running_method_number]));
 	
 	if(executed_flag==1){
@@ -42,6 +43,8 @@ int Section_run(Section *this_Section)
 	else {
 		return 0;
 	}
+	*/
+	return 0;
 }
 
 static void Section_update_current_running_methods(Section *this_Section){
