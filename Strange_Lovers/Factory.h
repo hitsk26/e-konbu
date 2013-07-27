@@ -53,7 +53,6 @@ Calibration calibration;
 TargetValue targetValue;
 
 Display display;
-Runner runner;
 
 //UI package
 PushButton pushButton;
@@ -91,6 +90,12 @@ PIDCurvatureCtrlParm mPIDCurvatureCtrlParm;
 //PIDLightValCtrl mPIDLightValCtrl;
 //WheelMotor mWheelMotor;
 //LightVal mLightVal;
+
+//StarategyPart
+Runner runner;
+
+
+//StrategyPart/RunningMethodSwitchJudge
 
 
 extern void initialization();

@@ -2,6 +2,11 @@
 
 static void Section_update_current_running_methods(Section *this_Section);
 
+//‹æŠÔÅŒã‚Ì‘––@ŽÀsI—¹”»’f
+static int Section_clear_section(Section *this_Section,int executed_flag);
+
+
+
 struct Section* Section_get_next_section(Section *this_Section)
 {
 	return this_Section->nextSection;
@@ -22,13 +27,14 @@ int Section_clear_section(Section *this_Section,int executed_flag)
 int Section_run(Section *this_Section)
 {
 	
-	RunningMethod_execute_method(&(this_Section->running_methods[this_Section->current_running_method_number]),this_Section->target_value);
+	RunningMethod_execute_method(&(this_Section->running_methods[this_Section->current_running_method_number]),this_Section->target_values);
 	
 	int executed_flag =  RunningMethod_check_executed(&(this_Section->running_methods[this_Section->current_running_method_number]));
 	
 	if(executed_flag==1){
 		Section_update_current_running_methods(this_Section);
 	}
+
 
 	if(Section_clear_section(this_Section,executed_flag)){
 		return 1;
@@ -49,3 +55,4 @@ static void Section_update_current_running_methods(Section *this_Section){
 
 }
 	
+
