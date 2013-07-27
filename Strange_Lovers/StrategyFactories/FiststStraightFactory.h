@@ -28,6 +28,9 @@
 //StarategyPart
 
 Section firstStraight;
+RunningMethod stableRunningMethod;
+RunningMethod straightLineTraceMethod;
+RunningMethod running_method_array[2];
 
 
 //Section firstCurve;

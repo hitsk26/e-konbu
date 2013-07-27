@@ -47,6 +47,8 @@
 #include "StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 
+#include "./StrategyFactories/FiststStraightFactory.h"
+
 
 
 Calibration calibration;

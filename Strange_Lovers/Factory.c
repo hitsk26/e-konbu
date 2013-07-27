@@ -45,8 +45,10 @@ void initialization(){
 	CC_setTargCurvature(&mCurvatureCtrl,0);
 	CC_startCtrl(&mCurvatureCtrl);
 
-	//StrategyPart
-	Section test_section;
-	Runner_init(&runner,&test_section);
+	//initialize Sections pleas call them here!!
+	first_straight_factory_init();
+	
 
+	//StrategyPart
+	Runner_init(&runner,&firstStraight);
 }

@@ -14,6 +14,8 @@ DRIVENPART_SOURCES :=
 TARGET_SOURCES := \
 	./lib/CommonFunction.c \
 	./lib/mymath.c \
+	model_impl.c \
+	Factory.c \
 	balancer_param.c \
 	TargetValue.c \
 	Calibration.c \
@@ -53,9 +55,8 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
-	model_impl.c \
-	Factory.c
-
+	./StrategyFactories/FiststStraightFactory.c \
+	
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build
