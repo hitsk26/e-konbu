@@ -24,8 +24,8 @@ typedef struct {
 	/**
 	 * ‘–”j‚·‚é
 	 */
-	int Section_clear_section(Section *this_Section);
+	int Section_clear_section(Section *this_Section,int executed_flag);
 
-	void Section_run(Section *this_Section);
+	int Section_run(Section *this_Section);
 
 #endif
