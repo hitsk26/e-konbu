@@ -2,13 +2,11 @@
 
 
 void first_curve_factory_init(){
-
-	RunningMethod running_method_array[1];
 	
 	//RunningMethod
 	
 	//curveLineTraceMethod
-	curvetLineTraceMethod.balancing_requrement = 0;
+	curveLineTraceMethod.balancing_requrement = 0;
 	curveLineTraceMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	curveLineTraceMethod.gyroOffsetRevise = 0;
 	

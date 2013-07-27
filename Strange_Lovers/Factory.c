@@ -47,8 +47,9 @@ void initialization(){
 
 	//initialize Sections pleas call them here!!
 	first_straight_factory_init();
-	
+	first_curve_factory_init();
 
 	//StrategyPart
 	Runner_init(&runner,&firstStraight);
+
 }

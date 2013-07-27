@@ -28,24 +28,23 @@ int Section_clear_section(Section *this_Section,int executed_flag)
 
 int Section_run(Section *this_Section)
 {
+	int cleared_flag=0;
 
 	RunningMethod_execute_method(&(this_Section->running_methods[this_Section->current_running_method_number]),this_Section->target_values);
 	
 	
 	int executed_flag =  RunningMethod_check_executed(&(this_Section->running_methods[this_Section->current_running_method_number]));
 	
+	if(Section_clear_section(this_Section,executed_flag)){
+		cleared_flag = 1;
+	}
+
 	if(executed_flag==1){
 		ecrobot_sound_tone(440,40,40);
 		Section_update_current_running_methods(this_Section);
 	}
-	/*
-	if(Section_clear_section(this_Section,executed_flag)){
-		return 1;
-	}
-	else {
-		return 0;
-	}*/
-	return 0;
+	
+	return cleared_flag;
 }
 
 static void Section_update_current_running_methods(Section *this_Section){
