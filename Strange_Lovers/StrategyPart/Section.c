@@ -8,6 +8,10 @@ static void Section_update_current_running_methods(Section *this_Section);
 static int Section_clear_section(Section *this_Section,int executed_flag);
 
 
+void Section_init(Section *this_Section){
+	this_Section->current_running_method_number=0;
+}
+
 
 struct Section* Section_get_next_section(Section *this_Section)
 {
@@ -40,7 +44,6 @@ int Section_run(Section *this_Section)
 	}
 
 	if(executed_flag==1){
-		ecrobot_sound_tone(440,40,40);
 		Section_update_current_running_methods(this_Section);
 	}
 	

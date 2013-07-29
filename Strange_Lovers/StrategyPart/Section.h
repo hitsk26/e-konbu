@@ -23,4 +23,6 @@ typedef struct {
 
 	int Section_run(Section *this_Section);
 
+	void Section_init(Section *this_Section);
+
 #endif

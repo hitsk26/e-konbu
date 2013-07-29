@@ -15,8 +15,8 @@ void first_curve_factory_init(){
 	curveLineTraceMethod.switch_term.time = 0;
 	
 	curveLineTraceMethod.target_tail_angle=0;
-	curveLineTraceMethod.use_controller.target_curvature_controller_weight= 0.5;
-	curveLineTraceMethod.use_controller.target_light_controller_weight = 0.5;
+	curveLineTraceMethod.use_controller.target_curvature_controller_weight= 0.0;
+	curveLineTraceMethod.use_controller.target_light_controller_weight = 0.0;
 
 	first_curve_running_method_array[0]=curveLineTraceMethod;
 
@@ -26,6 +26,6 @@ void first_curve_factory_init(){
 	firstCurve.target_values.target_brightness=574;
 	firstCurve.target_values.target_curvature=0;
 	firstCurve.target_values.target_speed=40;
-	firstCurve.nextSection = &firstCurve;
+	firstCurve.nextSection = &firstStraight;
 
 }

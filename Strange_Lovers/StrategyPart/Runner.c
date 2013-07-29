@@ -10,7 +10,7 @@ void Runner_init(Runner *this_Runner,Section *start_section){
 void Runner_run(Runner *this_Runner){
 	
 	if(Section_run(this_Runner->current_section)==1){
-		ecrobot_sound_tone(880,40,40);
+		Section_init(this_Runner->current_section);
 		this_Runner->current_section = Section_get_next_section(this_Runner->current_section);
 	}
 }
