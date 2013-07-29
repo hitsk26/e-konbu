@@ -51,5 +51,4 @@ void initialization(){
 
 	//StrategyPart
 	Runner_init(&runner,&firstStraight);
-
 }
