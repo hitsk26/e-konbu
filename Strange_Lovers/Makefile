@@ -57,7 +57,8 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
 	./StrategyFactories/FiststCurveFactory.c \
-	
+	./StrategyFactories/SeeSawFactory.c \
+
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build

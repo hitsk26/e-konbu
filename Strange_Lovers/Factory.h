@@ -48,7 +48,7 @@
 #include "StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 
 #include "./StrategyFactories/FiststStraightFactory.h"
-
+#include "./StrategyFactories/SeeSawFactory.h"
 
 
 Calibration calibration;

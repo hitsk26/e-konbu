@@ -1,5 +1,5 @@
-#ifndef _FirstStraightFactory_
-#define _FirstStraightFactory_
+#ifndef _SeeSawFactory_
+#define _SeeSawFactory_
 
 #include "../DrivenPart/DrivenDirector.h"
 #include "../DrivenPart/ControllerWeight.h"
@@ -30,20 +30,15 @@
 
 //StarategyPart
 
-Section firstStraight;
+Section seesaw;
 RunningMethod stableRunningMethod;
 RunningMethod straightLineTraceMethod;
-
-RunningMethod first_straight_running_method_array[2];
-
-
-//Section firstCurve;
+RunningMethod seesaw_running_method_array[10];
 
 
 //StrategyPart/RunningMethodSwitchJudge
 
-
-extern void first_straight_factory_init();
+extern void seesaw_factory_init();
 
 #endif
 
