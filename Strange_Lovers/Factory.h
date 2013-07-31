@@ -46,9 +46,13 @@
 #include "StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
+#include "StrategyPart/RunningMethodSwitchJudge/TimeSwitch.h"
+#include "StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.h"
+
 
 #include "./StrategyFactories/FiststStraightFactory.h"
 #include "./StrategyFactories/SeeSawFactory.h"
+#include "./StrategyFactories/StartedRunningFactory.h"
 
 
 Calibration calibration;
