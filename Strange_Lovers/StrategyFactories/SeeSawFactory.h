@@ -31,9 +31,9 @@
 //StarategyPart
 
 Section seesaw;
-RunningMethod stableRunningMethod;
-RunningMethod straightLineTraceMethod;
-RunningMethod seesaw_running_method_array[10];
+RunningMethod SeesawLineTraceMethod;
+RunningMethod SeesawRunningUpMethod;
+RunningMethod seesaw_running_method_array[2];
 
 
 //StrategyPart/RunningMethodSwitchJudge
