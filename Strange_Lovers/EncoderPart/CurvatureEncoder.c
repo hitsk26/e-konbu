@@ -1,7 +1,9 @@
 
 #include "CurvatureEncoder.h"
 #include "DirectionEncoder.h"
+#include "../lib/MovingAverage.h"
 #include "../Factory.h"
+#include "../logSend.h"
 
 #define CYCLE_TIME 0.004
 #define TARGTIME 100
@@ -24,30 +26,28 @@ float CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 	static float buf_theta=0;
 	static float buf_distance=0;
 	float curvature=0;
-	static float curvature_store=0,averaged_curvature=0;
-	static int bufTime =0;
-	
-	distance = DistanceEncoder_get_distance(&distanceEncoder); 
-	theta = DirectionEncoder_get_direction(&directionEncoder);
-	unsigned int time =  Timer_get_ms(&timer);
+	float averaged_curvature=0;
+	static float moving_average_buf[25];
+	static int index=0;
 
+
+	distance = DistanceEncoder_get_distance(&distanceEncoder)/10; 
+	theta = DirectionEncoder_get_direction(&directionEncoder);
 
 	if(!(theta == buf_theta)){
-		curvature = rad2deg((distance - buf_distance)/ (theta - buf_theta))/10;
+		curvature = rad2deg((distance - buf_distance)/ (theta - buf_theta));
 	}
 	else{
 		curvature= 0.0;
 	}
-	curvature_store += curvature;
 
-	if((time - bufTime) >= TARGTIME)
-	{
-	
-		averaged_curvature = curvature_store/25; //25‰ñ•ª‚Ì•½‹Ï‚ğæ‚Á‚Ä‚é
-		curvature_store = 0;
-		bufTime = time;
+	if(index>=25){
+		index=0;
 	}
+	averaged_curvature  = moving_average(curvature,moving_average_buf,25,index);
+	index++;
 
+	logSend(0,0,averaged_curvature,0,0,0,0,0);
 	buf_distance = distance;
 	buf_theta= theta;
 	return averaged_curvature;

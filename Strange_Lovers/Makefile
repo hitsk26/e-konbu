@@ -14,6 +14,7 @@ DRIVENPART_SOURCES :=
 TARGET_SOURCES := \
 	./lib/CommonFunction.c \
 	./lib/mymath.c \
+	./lib/MovingAverage.c \
 	model_impl.c \
 	Factory.c \
 	balancer_param.c \

@@ -61,7 +61,6 @@ void SC_run(SpeedCtrl *this_SpeedCtrl)
 void SC_doCtrl(SpeedCtrl *this_SpeedCtrl)
 {
 	int forward = PSC_calcSpeedCtrlVal(&mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),S_getSpeed(&mSpeed,systick_get_ms()),systick_get_ms()*0.001);
-	logSend(0,0,forward,S_getSpeed(&mSpeed,systick_get_ms()),S_getTargSpeed(&mSpeed),0,0,0);
 	Balancer_set_forward(&balancer ,(S8)forward);
 }
 

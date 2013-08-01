@@ -18,7 +18,6 @@ void PID_tail(int target_tail_angle){
 	static float d_hensa = 0;
 	static float bf_hensa = 0;
 	static float speed = 0;
-	
 	hensa = target_tail_angle - TailMotor_get_count(&tailMotor);
 
 	i_hensa = i_hensa + (hensa*0.004);
