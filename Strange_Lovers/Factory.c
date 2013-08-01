@@ -45,6 +45,11 @@ void initialization(){
 	CC_setTargCurvature(&mCurvatureCtrl,0);
 	CC_startCtrl(&mCurvatureCtrl);
 
+	//DrivenPart/TargetLightValueControl
+	PLVCP_init(&mPIDLightValCtrlParm);
+	PLVC_init(&mPIDLightValCtrl);
+	LVC_init(&mLightValCtrl,brightnessEncoder,mPIDLightValCtrl);
+
 	//initialize Sections pleas call them here!!
 	first_straight_factory_init();
 	first_curve_factory_init();

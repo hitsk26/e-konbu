@@ -7,6 +7,9 @@
 #include "../DrivenPart/TargetCurvatureControl/CurvatureCtrl.h"
 #include "../DrivenPart/PID_Tail.h"
 #include "../DrivenPart/TargetSpeedControl/SpeedCtrl.h"
+#include "../DrivenPart/TargetLightValueControl/LightValCtrl.h"
+
+#include "../logSend.h"
 
 /**
  * ‹ì“®ŽwŽ¦Ší

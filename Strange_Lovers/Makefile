@@ -48,6 +48,12 @@ TARGET_SOURCES := \
 	./DrivenPart/TargetCurvatureControl/PIDCurvatureCtrlParm.c \
 	./DrivenPart/TargetCurvatureControl/Curvature.c \
 	./DrivenPart/TargetCurvatureControl/PIDCurvatureCtrl.c \
+	./DrivenPart/TargetLightValueControl/LightVal.c \
+	./DrivenPart/TargetLightValueControl/LightValCtrl.c \
+	./DrivenPart/TargetLightValueControl/LightValListener.c \
+	./DrivenPart/TargetLightValueControl/LightValRange.c \
+	./DrivenPart/TargetLightValueControl/PIDLightValCtrl.c \
+	./DrivenPart/TargetLightValueControl/PIDLightValCtrlParm.c \
 	./StrategyPart/Section.c \
 	./StrategyPart/RunningMethod.c \
 	./StrategyPart/Runner.c \

@@ -9,30 +9,26 @@ void PLVC_init(PIDLightValCtrl *this_PIDLightValCtrl){
 	this_PIDLightValCtrl->lastMeasurementTime = 0;
 }
 
-int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,int targLightVal,int LightVal,float time){
+int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm,int targLightVal,int LightVal,float time){
 	
-	static	float	hensa = 0;
-	static	int		turn = 0;
+	int	turn;
 
-	static const float Kp =	1.0;
-	static const float Ki =	0.0	;
-	static const float Kd =	0.0	;
-	static const float b = 0;
 
-	static float i_hensa = 0;
-	static float d_hensa = 0;
-	static float bf_hensa = 0;
+	this_PIDLightValCtrl->deviation = targLightVal - LightVal;
 
-	
+	this_PIDLightValCtrl->integratedDeviation = (float) (this_PIDLightValCtrl->integratedDeviation + 
+		(this_PIDLightValCtrl->deviation * (time - this_PIDLightValCtrl->lastMeasurementTime)));
 
-	hensa = LV_getTargLightVal(&mLightVal) - BrightnessEncoder_get_brightness(&brightnessEncoder);
+	this_PIDLightValCtrl->differentialDeviation = (float) ((this_PIDLightValCtrl->deviation - 
+		this_PIDLightValCtrl->bfDeviation)/(time - this_PIDLightValCtrl->lastMeasurementTime));
 
-	i_hensa = i_hensa + (hensa * 0.004);
 
-	d_hensa = (bf_hensa - hensa )/0.004;
-	bf_hensa = hensa;
 
-	turn = Kp*hensa + Ki*i_hensa + Kd*d_hensa + b;
+	//turn = Kp*hensa + Ki*i_hensa + Kd*d_hensa + b;
+
+	turn = (int)(this_PIDLightValCtrl->deviation * PLVCP_getLKp(&mPIDLightValCtrlParm)
+		//+ this_PIDLightValCtrl->integratedDeviation * PLVCP_getLKi(&mPIDLightValCtrlParm)
+		+ this_PIDLightValCtrl->differentialDeviation * PLVCP_getLKd(&mPIDLightValCtrlParm));
 
 	if (turn < -100) {
 		turn = -100;
@@ -42,7 +38,45 @@ int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,int targLightVal,int 
 
 	//turn = DirectionCtrl_run(&directionCtrl,90);
 
+	//ecrobot_debug1((int)this_PIDLightValCtrl->deviation,turn,(int)this_PIDLightValCtrl->differentialDeviation);
+
+	logSend((int)(this_PIDLightValCtrl->deviation * PLVCP_getLKp(&this_PIDLightValCtrl->mPIDLightValCtrlParm)
+		+ this_PIDLightValCtrl->integratedDeviation * PLVCP_getLKi(&this_PIDLightValCtrl->mPIDLightValCtrlParm)
+		+ this_PIDLightValCtrl->differentialDeviation * PLVCP_getLKd(&this_PIDLightValCtrl->mPIDLightValCtrlParm)),0,0,0,0,0,0,0);
+
 	return turn;
+
+	/*
+
+	int cmd_turn;
+
+	if(targLightVal > 0)
+		this_PIDLightValCtrl->deviation = targLightVal - LightVal;
+	else
+		this_PIDLightValCtrl->deviation = LightVal - targLightVal;
+	
+	this_PIDLightValCtrl->integratedDeviation = (float) (this_PIDLightValCtrl->integratedDeviation + 
+		(this_PIDLightValCtrl->deviation * (time - this_PIDLightValCtrl->lastMeasurementTime)));
+
+	this_PIDLightValCtrl->differentialDeviation = (float) ((this_PIDLightValCtrl->deviation - 
+		this_PIDLightValCtrl->bfDeviation)/(time - this_PIDLightValCtrl->lastMeasurementTime));
+
+	cmd_turn = (int)(this_PIDLightValCtrl->deviation * PLVCP_getLKp(&this_PIDLightValCtrl->mPIDLightValCtrlParm)
+		+ this_PIDLightValCtrl->integratedDeviation * PLVCP_getLKi(&this_PIDLightValCtrl->mPIDLightValCtrlParm)
+		+ this_PIDLightValCtrl->differentialDeviation * PLVCP_getLKd(&this_PIDLightValCtrl->mPIDLightValCtrlParm));
+
+	if(cmd_turn > 100)
+		cmd_turn = 100;
+	else if(cmd_turn < -100)
+		cmd_turn = -100;
+
+	this_PIDLightValCtrl->bfDeviation = this_PIDLightValCtrl->deviation;
+	this_PIDLightValCtrl->lastMeasurementTime = time;
+
+	return cmd_turn;
+
+	ecrobot_debug1(cmd_turn,targLightVal,LightVal);
+	*/
 }
 
 void PLVC_setCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm parm){

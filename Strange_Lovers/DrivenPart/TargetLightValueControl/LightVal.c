@@ -1,17 +1,17 @@
 #include "LightVal.h"
 #include "../../Factory.h"
 
-void LV_init(LightVal *this_LightVal,LightValEncoder LVE){
+void LV_init(LightVal *this_LightVal,BrightnessEncoder LVE){
 
-	mLightValEncoder = LVE;
-	LVE_init(&mLightValEncoder);
+	//mLightValEncoder = LVE;
+	//LVE_init(&mLightValEncoder);
 	this_LightVal->targLightVal = 0;
 }
 
 int LV_getLightVal(LightVal *this_LightVal){
 
-	int lightVal = LVE_getLightVal(&mLightValEncoder);
-	BrightnessEncoder_get_brightness(BrightnessEncoder *this_BrightnessEncoder);
+	//int lightVal = LVE_getLightVal(&mLightValEncoder);
+	int lightVal = BrightnessEncoder_get_brightness(&brightnessEncoder);
 
 	if(LVR_checkRange(&mLightValRange,lightVal) == 0)
 		LVL_emergency(&mLightValListener,lightVal);
