@@ -14,11 +14,10 @@ void CurvatureEncoder_init(CurvatureEncoder *this_CurvatureEncoder)
 
 float CurvatureEncoder_get_curvature(CurvatureEncoder *this_CurvatureEncoder)
 {
-	this_CurvatureEncoder->curvature =CurvatureEncoder_calc_curvature(this_CurvatureEncoder);
 	return this_CurvatureEncoder->curvature;
 }
 
-float CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
+void CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 {
 	float theta=0;
 	float distance=0;
@@ -30,12 +29,13 @@ float CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 	static int index=0;
 
 
-	distance = DistanceEncoder_get_distance(&distanceEncoder)/10; 
+	distance = DistanceEncoder_get_distance(&distanceEncoder); 
 	theta = DirectionEncoder_get_direction(&directionEncoder);
 
 	if(!(theta == buf_theta)){
-		curvature = rad2deg((distance - buf_distance)/ (theta - buf_theta));
+		curvature =  deg2rad(((distance - buf_distance / theta - buf_theta)));
 	}
+
 	else{
 		curvature= 0.0;
 	}
@@ -49,6 +49,7 @@ float CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 
 	buf_distance = distance;
 	buf_theta= theta;
-	return averaged_curvature;
+
+	this_CurvatureEncoder->curvature =averaged_curvature;
 }
 

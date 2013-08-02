@@ -1,56 +1,61 @@
 #include "PIDCurvatureCtrl.h"
 
-extern void PCC_init(PIDCurvatureCtrl *this_PIDCurvatureCtrl)
+extern void PCC_init(PIDCurvatureCtrl *self)
 {
-	this_PIDCurvatureCtrl->deviation = 0;
-	this_PIDCurvatureCtrl->integratedDeviation = 0;
-	this_PIDCurvatureCtrl->differentialDeviation = 0;
-	this_PIDCurvatureCtrl->bfDeviation = 0;
-	this_PIDCurvatureCtrl->lastMeasurementTime = 0;
+	self->deviation = 0;
+	self->integratedDeviation = 0;
+	self->differentialDeviation = 0;
+	self->bfDeviation = 0;
+	self->lastMeasurementTime = 0;
+	self->turn_buf=0;
+
 }
 
-extern int PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *this_PIDCurvatureCtrl,float targCurvature,float curvature,float time)
+extern int PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *self,float targCurvature,float curvature,float time)
 {
-	int cmd_turn;
+	float turn;
+	
+	self->deviation = targCurvature - curvature;
 
-	this_PIDCurvatureCtrl->deviation = targCurvature - curvature;
+	self->integratedDeviation = (float) (self->integratedDeviation + 
+		(self->deviation * (time - self->lastMeasurementTime)));
 
-	this_PIDCurvatureCtrl->integratedDeviation = (float) (this_PIDCurvatureCtrl->integratedDeviation + 
-		(this_PIDCurvatureCtrl->deviation * (time - this_PIDCurvatureCtrl->lastMeasurementTime)));
+	self->differentialDeviation = (float) ((self->deviation - 
+		self->bfDeviation)/(time - self->lastMeasurementTime));
 
-	this_PIDCurvatureCtrl->differentialDeviation = (float) ((this_PIDCurvatureCtrl->deviation - 
-		this_PIDCurvatureCtrl->bfDeviation)/(time - this_PIDCurvatureCtrl->lastMeasurementTime));
+	turn = (self->deviation * PCCP_getCKp(&self->mPIDCurvatureCtrlParm)
+		+ self->integratedDeviation * PCCP_getCKi(&self->mPIDCurvatureCtrlParm)
+		+ self->differentialDeviation * PCCP_getCKd(&self->mPIDCurvatureCtrlParm));
+	
+	turn = (-1)*turn + self->turn_buf;
+	
+	if(turn > 100)
+		turn = 100;
+	else if(turn < -100)
+		turn = -100;
 
-	cmd_turn = (int)(this_PIDCurvatureCtrl->deviation * PCCP_getCKp(&this_PIDCurvatureCtrl->mPIDCurvatureCtrlParm)
-		+ this_PIDCurvatureCtrl->integratedDeviation * PCCP_getCKi(&this_PIDCurvatureCtrl->mPIDCurvatureCtrlParm)
-		+ this_PIDCurvatureCtrl->differentialDeviation * PCCP_getCKd(&this_PIDCurvatureCtrl->mPIDCurvatureCtrlParm));
+	self->bfDeviation = self->deviation;
+	self->lastMeasurementTime = time;
+	self->turn_buf = turn;
 
-	if(cmd_turn > 100)
-		cmd_turn = 100;
-	else if(cmd_turn < -100)
-		cmd_turn = -100;
-
-	this_PIDCurvatureCtrl->bfDeviation = this_PIDCurvatureCtrl->deviation;
-	this_PIDCurvatureCtrl->lastMeasurementTime = time;
-
-	return (-1)*cmd_turn;
+	return turn;
 }
 
-PIDCurvatureCtrlParm PCC_getPIDCurvatureCtrlParm(PIDCurvatureCtrl *this_PIDCurvatureCtrl)
+PIDCurvatureCtrlParm PCC_getPIDCurvatureCtrlParm(PIDCurvatureCtrl *self)
 {
-	return this_PIDCurvatureCtrl->mPIDCurvatureCtrlParm;
+	return self->mPIDCurvatureCtrlParm;
 }
 
-extern void PCC_setPIDCurvatureCtrlParm(PIDCurvatureCtrl *this_PIDCurvatureCtrl,PIDCurvatureCtrlParm parm)
+extern void PCC_setPIDCurvatureCtrlParm(PIDCurvatureCtrl *self,PIDCurvatureCtrlParm parm)
 {
-	this_PIDCurvatureCtrl->mPIDCurvatureCtrlParm = parm;
+	self->mPIDCurvatureCtrlParm = parm;
 }
 
-extern void PCC_reset(PIDCurvatureCtrl *this_PIDCurvatureCtrl)
+extern void PCC_reset(PIDCurvatureCtrl *self)
 {
-	this_PIDCurvatureCtrl->deviation = 0;
-	this_PIDCurvatureCtrl->integratedDeviation = 0;
-	this_PIDCurvatureCtrl->differentialDeviation = 0;
-	this_PIDCurvatureCtrl->bfDeviation = 0;
-	this_PIDCurvatureCtrl->lastMeasurementTime = 0;
+	self->deviation = 0;
+	self->integratedDeviation = 0;
+	self->differentialDeviation = 0;
+	self->bfDeviation = 0;
+	self->lastMeasurementTime = 0;
 }

@@ -1,5 +1,7 @@
 #include "CurvatureCtrl.h"
 #include "../../Factory.h"
+#include "../../logSend.h"
+
 
 
 
@@ -75,8 +77,11 @@ void CC_stopCtrl(CurvatureCtrl *this_CurvatureCtrl)
 
 int CC_doCtrl(CurvatureCtrl *this_CurvatureCtrl)
 {
+	float curvature = C_getCurvature(&mCurvature,ecrobot_get_systick_ms());
 	int turn = PCC_calcCurvatureCtrlVal(&mPIDCurvatureCtrl,
-		C_getTargCurvature(&mCurvature),C_getCurvature(&mCurvature,ecrobot_get_systick_ms()),systick_get_ms()*0.001);
+		C_getTargCurvature(&mCurvature),curvature,systick_get_ms()*0.001);
+	
+	logSend(0,0,curvature,C_getTargCurvature(&mCurvature),turn,0,0,0);	
 	return turn;
 }
 

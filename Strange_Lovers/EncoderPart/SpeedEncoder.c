@@ -9,11 +9,10 @@
 
 int SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder)
 {
-	this_SpeedEncoder->speed =SpeedEncoder_calc_speed(this_SpeedEncoder);
 	return this_SpeedEncoder->speed;
 }
 
-int SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder)
+void SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder)
 {
 
 	static float speedStore=0,bufDistance=0;
@@ -27,10 +26,8 @@ int SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder)
 	}
 	this_SpeedEncoder->speed  = moving_average(distance_diff,moving_average_buf,25,index);
 	index++;
-
 	bufDistance = distance;
-	
-	return (int)this_SpeedEncoder->speed;
+
 }
 
 void SpeedEncoder_init(SpeedEncoder *this_SpeedEncoder)
