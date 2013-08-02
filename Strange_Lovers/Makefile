@@ -38,7 +38,7 @@ TARGET_SOURCES := \
 	./EncoderPart/CurvatureEncoder.c \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
-	./DrivenPart/Balancer.c \
+	./DrivenPart/WheelActuator.c \
 	./DrivenPart/PID_Brightness.c \
 	./DrivenPart/DrivenDirector.c \
 	./DrivenPart/TargetSpeedControl/SpeedCtrl.c \

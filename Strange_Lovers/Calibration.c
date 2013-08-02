@@ -53,7 +53,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 		}
 	}
 
-	Balancer_set_gyro(&balancer ,this_Calibration->gyro);
+	InclinationEncoder_set_gyro_offset(&inclinationEncoder ,this_Calibration->gyro);
 
 	TargetValue_set_target_value_brightness(&targetValue,(this_Calibration->black_value+this_Calibration->white_value)/2);
 

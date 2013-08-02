@@ -11,3 +11,8 @@ int InclinationEncoder_get_inclination(InclinationEncoder *this_InclinationEncod
 	return GyroSensor_get_gyro_sensor(this_InclinationEncoder->port_id);
 }
 
+
+void InclinationEncoder_set_gyro_offset(InclinationEncoder *this_InclinationEncoder,int gyro_offset){
+
+	this_InclinationEncoder->gyro_offset = gyro_offset;
+}

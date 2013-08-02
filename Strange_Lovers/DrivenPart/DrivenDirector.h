@@ -3,7 +3,7 @@
 
 #include "../DrivenPart/ControllerWeight.h"
 #include "../DrivenPart/PID_Brightness.h"
-#include "../DrivenPart/Balancer.h"
+#include "../DrivenPart/WheelActuator.h"
 #include "../DrivenPart/TargetCurvatureControl/CurvatureCtrl.h"
 #include "../DrivenPart/PID_Tail.h"
 #include "../DrivenPart/TargetSpeedControl/SpeedCtrl.h"

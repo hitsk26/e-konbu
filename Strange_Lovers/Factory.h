@@ -15,7 +15,7 @@
 
 #include "./DrivenPart/WheelMotor.h"
 #include "./DrivenPart/TailMotor.h"
-#include "./DrivenPart/Balancer.h"
+#include "./DrivenPart/WheelActuator.h"
 #include "./DrivenPart/PID_Tail.h"
 #include "./DrivenPart/PID_Brightness.h"
 #include "./DrivenPart/DrivenDirector.h"
@@ -73,7 +73,7 @@ CurvatureEncoder curvatureEncoder;
 //DrivenPart
 PID_TAIL pid_tail;
 PID_Brightness pid_Brightness;
-Balancer balancer;
+WheelActuator wheelActuator;
 WheelMotor rightWheelMotor;
 WheelMotor leftWheelMotor;
 TailMotor tailMotor;

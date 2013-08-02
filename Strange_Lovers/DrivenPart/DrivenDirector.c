@@ -22,6 +22,7 @@ void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target
 	PID_tail(target_tail_angle);
 	SC_setTargSpeed(&mSpeedCtrl,target_speed);
 	SC_run(&mSpeedCtrl);
-	Balancer_set_turn(&balancer , turn);
-	Balancer_balance_running(&balancer);
+	WheelActuator_set_turn(&wheelActuator , turn);
+	WheelActuator_set_self_balancing_requirement(&wheelActuator,self_balancing_requirement);
+	WheelActuator_dirve_motors(&wheelActuator);
 }
