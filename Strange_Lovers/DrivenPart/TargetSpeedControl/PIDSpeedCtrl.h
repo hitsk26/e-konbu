@@ -4,9 +4,7 @@
 #include "PIDSpeedCtrlParm.h"
 
 typedef struct{
-	float deviation;
 	float integratedDeviation;
-	float differentialDeviation;
 	float bfDeviation;
 	float lastMeasurementTime;
 	PIDSpeedCtrlParm mPIDSpeedCtrlParm;

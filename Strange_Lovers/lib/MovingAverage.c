@@ -8,7 +8,7 @@ float moving_average(float mesured_value,float *buf,int max_count,int index){
 	for(i=0;i<max_count;++i){
 		sum += buf[i];
 	}
-	average = sum /  max_count;
+	average = (float)sum /  max_count;
 	return average;
 }
 

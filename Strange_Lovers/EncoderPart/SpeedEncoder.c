@@ -18,7 +18,7 @@ int SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder)
 
 	static float speedStore=0,bufDistance=0;
 	float distance = DistanceEncoder_get_distance(&distanceEncoder);
-	float distance_diff = ((distance - bufDistance)/CYCLE_TIME)/10; //‚P‚O‚ÅŠ„‚Á‚Ä‚¢‚é‚Ì‚Í’PˆÊ‚ðcm/s‚É‚·‚é‚½‚ß
+	float distance_diff = ((distance - bufDistance)/CYCLE_TIME);
 	static float moving_average_buf[25];
 	static int index=0;
 	

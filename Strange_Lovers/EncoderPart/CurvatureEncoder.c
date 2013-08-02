@@ -3,7 +3,6 @@
 #include "DirectionEncoder.h"
 #include "../lib/MovingAverage.h"
 #include "../Factory.h"
-#include "../logSend.h"
 
 #define CYCLE_TIME 0.004
 #define TARGTIME 100
@@ -47,7 +46,7 @@ float CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 	averaged_curvature  = moving_average(curvature,moving_average_buf,25,index);
 	index++;
 
-	logSend(0,0,averaged_curvature,0,0,0,0,0);
+
 	buf_distance = distance;
 	buf_theta= theta;
 	return averaged_curvature;

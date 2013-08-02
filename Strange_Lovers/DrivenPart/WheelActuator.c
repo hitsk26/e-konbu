@@ -32,8 +32,8 @@ void WheelActuator_set_turn(WheelActuator *this_WheelActuator , S8 turn){
 }
 
 void WheelActuator_tail_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S8 *pwm_r){
-	*pwm_l = this_WheelActuator->forward + 	this_WheelActuator->turn;
-	*pwm_r = this_WheelActuator->forward - 	this_WheelActuator->turn;
+	*pwm_l = cutoff(this_WheelActuator->forward + 	this_WheelActuator->turn,100);
+	*pwm_r = cutoff(this_WheelActuator->forward - 	this_WheelActuator->turn,100);
 
 }
 
