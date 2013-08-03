@@ -6,7 +6,7 @@ void first_curve_factory_init(){
 	//RunningMethod
 	
 	//curveLineTraceMethod
-	curveLineTraceMethod.balancing_requrement = 0;
+	curveLineTraceMethod.balancing_requrement = 1;
 	curveLineTraceMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	curveLineTraceMethod.gyroOffsetRevise = 0;
 	
