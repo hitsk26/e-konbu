@@ -1,7 +1,5 @@
 #include "CurvatureCtrl.h"
 #include "../../Factory.h"
-#include "../../logSend.h"
-
 
 
 
@@ -80,8 +78,6 @@ int CC_doCtrl(CurvatureCtrl *this_CurvatureCtrl)
 	float curvature = C_getCurvature(&mCurvature,ecrobot_get_systick_ms());
 	int turn = PCC_calcCurvatureCtrlVal(&mPIDCurvatureCtrl,
 		C_getTargCurvature(&mCurvature),curvature,systick_get_ms()*0.001);
-	
-	logSend(0,0,curvature,C_getTargCurvature(&mCurvature),turn,0,0,0);	
 	return turn;
 }
 
@@ -90,7 +86,6 @@ int CC_run(CurvatureCtrl *this_CurvatureCtrl)
 	int turn = 0;
 	switch(this_CurvatureCtrl->C_CtrlState){
 	case C_CTRL_ON:
-		//‘åä•vH
 		turn = CC_doCtrl(&(*this_CurvatureCtrl));
 		break;
 	case C_CTRL_OFF:

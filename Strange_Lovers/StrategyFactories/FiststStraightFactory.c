@@ -10,7 +10,7 @@ void first_straight_factory_init(){
 	stableRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	stableRunningMethod.gyroOffsetRevise = 0;
 	
-	stableRunningMethod.switch_term.distance = 37800000/*970*/;
+	stableRunningMethod.switch_term.distance = 970;
 	stableRunningMethod.switch_term.inclination = 0;
 	stableRunningMethod.switch_term.time = 0;
 	
@@ -39,7 +39,7 @@ void first_straight_factory_init(){
 	firstStraight.number_of_running_method=1;
 	firstStraight.running_methods=first_straight_running_method_array;
 	firstStraight.target_values.target_brightness=565;
-	firstStraight.target_values.target_curvature=6.5;
+	firstStraight.target_values.target_curvature=1.0/130;
 	firstStraight.target_values.target_speed=100;
 	firstStraight.nextSection = &firstCurve;
 

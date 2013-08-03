@@ -2,11 +2,11 @@
 
 void PCCP_init(PIDCurvatureCtrlParm *this_PIDCurvatureCtrlParm)
 {
-	this_PIDCurvatureCtrlParm->cKp = 0.009;
+	this_PIDCurvatureCtrlParm->cKp = 80.0;
 	
 	//this_PIDCurvatureCtrlParm->cKp = 1.85;
 	//this_PIDCurvatureCtrlParm->cKi = 0.003;
-	this_PIDCurvatureCtrlParm->cKd = 0.00003;
+	//this_PIDCurvatureCtrlParm->cKd = 0.00003;
 }
 
 float PCCP_getCKp(PIDCurvatureCtrlParm *this_PIDCurvatureCtrlParm)

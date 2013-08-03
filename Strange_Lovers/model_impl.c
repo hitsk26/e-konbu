@@ -95,9 +95,8 @@ TASK(INITIALIZE){
 		SetEvent(ActionTask,RUNEVENT);
 	}
 
-//	PID_tail(targetValue.target_tail_angle);
-	PID_tail(95);
-
+	PID_tail(targetValue.target_tail_angle);
+	
 
 	TerminateTask();
 }
