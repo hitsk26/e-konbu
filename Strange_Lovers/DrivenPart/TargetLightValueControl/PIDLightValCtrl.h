@@ -19,7 +19,7 @@ typedef struct{
 
 
 extern void PLVC_init(PIDLightValCtrl *this_PIDLightValCtrl);
-extern int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm,int targLightVal,int LightVal,float time);
+extern int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm,float targLightVal,float LightVal,float time);
 extern void PLVC_setCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm parm);
 extern PIDLightValCtrlParm PLVC_getCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl);
 extern void PLVC_reset(PIDLightValCtrl *this_PIDLightValCtrl);

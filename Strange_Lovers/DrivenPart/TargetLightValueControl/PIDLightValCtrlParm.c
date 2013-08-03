@@ -1,9 +1,9 @@
 #include "PIDLightValCtrlParm.h"
 
 void PLVCP_init(PIDLightValCtrlParm *this_PIDLightValCtrlParm){
-	this_PIDLightValCtrlParm->lKp = 1.85;
-	this_PIDLightValCtrlParm->lKi = 0.03;
-	this_PIDLightValCtrlParm->lKd = 0.03;
+	this_PIDLightValCtrlParm->lKp = 185;
+	this_PIDLightValCtrlParm->lKi = 3;
+	this_PIDLightValCtrlParm->lKd = 3;
 }
 float PLVCP_getLKp(PIDLightValCtrlParm *this_PIDLightValCtrlParm){
 	return this_PIDLightValCtrlParm->lKp;
