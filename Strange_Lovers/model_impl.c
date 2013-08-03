@@ -96,7 +96,7 @@ TASK(INITIALIZE){
 	}
 
 	PID_tail(targetValue.target_tail_angle);
-
+	
 
 	TerminateTask();
 }
@@ -107,6 +107,10 @@ TASK(ActionTask){
 	ClearEvent(RUNEVENT);
 
 	Runner_run(&runner);
+	DirectionEncoder_calc_speed(&directionEncoder);
+	DistanceEncoder_calc_distance(&distanceEncoder);
+	SpeedEncoder_calc_speed(&speedEncoder);
+	CurvatureEncoder_calc_curvature(&curvatureEncoder);
 
 	TerminateTask();
 }

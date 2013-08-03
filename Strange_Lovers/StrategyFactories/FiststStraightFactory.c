@@ -6,11 +6,11 @@ void first_straight_factory_init(){
 	//RunningMethod
 
 	//stableRunningMethod
-	stableRunningMethod.balancing_requrement = 1;
+	stableRunningMethod.balancing_requrement = 0;
 	stableRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	stableRunningMethod.gyroOffsetRevise = 0;
 	
-	stableRunningMethod.switch_term.distance = 37800000/*970*/;
+	stableRunningMethod.switch_term.distance = 970;
 	stableRunningMethod.switch_term.inclination = 0;
 	stableRunningMethod.switch_term.time = 0;
 	
@@ -41,8 +41,8 @@ void first_straight_factory_init(){
 
 	firstStraight.target_values.target_brightness=0.5;
 	firstStraight.target_values.target_curvature=0;
-
-	firstStraight.target_values.target_speed=20;
+	firstStraight.target_values.target_speed=100;
+	
 	firstStraight.nextSection = &firstCurve;
 
 }

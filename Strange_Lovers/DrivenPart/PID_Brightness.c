@@ -18,7 +18,6 @@ int PID_Brightness_target_control(PID_Brightness *this_PID_Brigtness,int target_
 	static float d_hensa = 0;
 	static float bf_hensa = 0;
 
-	
 
 	hensa = target_brighness - BrightnessEncoder_get_brightness(&brightnessEncoder);
 

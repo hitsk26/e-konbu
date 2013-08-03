@@ -17,7 +17,7 @@ typedef struct{
 
 
 float DirectionEncoder_get_direction(DirectionEncoder *this_DirectionEncoder);
-float DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder);
+void DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder);
 void DirectionEncoder_init(DirectionEncoder *this_DirectionEncoder);
 
 #endif 
