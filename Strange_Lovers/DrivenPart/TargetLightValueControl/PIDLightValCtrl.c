@@ -9,30 +9,26 @@ void PLVC_init(PIDLightValCtrl *this_PIDLightValCtrl){
 	this_PIDLightValCtrl->lastMeasurementTime = 0;
 }
 
-int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,int targLightVal,int LightVal,float time){
+int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm,float targLightVal,float LightVal,float time){
 	
-	static	float	hensa = 0;
-	static	int		turn = 0;
+	float	turn;
 
-	static const float Kp =	1.0;
-	static const float Ki =	0.0	;
-	static const float Kd =	0.0	;
-	static const float b = 0;
 
-	static float i_hensa = 0;
-	static float d_hensa = 0;
-	static float bf_hensa = 0;
+	this_PIDLightValCtrl->deviation = targLightVal - LightVal;
 
-	
+	this_PIDLightValCtrl->integratedDeviation = (this_PIDLightValCtrl->integratedDeviation + 
+		(this_PIDLightValCtrl->deviation * (time - this_PIDLightValCtrl->lastMeasurementTime)));
 
-	hensa = LV_getTargLightVal(&mLightVal) - BrightnessEncoder_get_brightness(&brightnessEncoder);
+	this_PIDLightValCtrl->differentialDeviation =  ((this_PIDLightValCtrl->deviation - 
+		this_PIDLightValCtrl->bfDeviation)/(time - this_PIDLightValCtrl->lastMeasurementTime));
 
-	i_hensa = i_hensa + (hensa * 0.004);
 
-	d_hensa = (bf_hensa - hensa )/0.004;
-	bf_hensa = hensa;
 
-	turn = Kp*hensa + Ki*i_hensa + Kd*d_hensa + b;
+	//turn = Kp*hensa + Ki*i_hensa + Kd*d_hensa + b;
+
+	turn = (float)(this_PIDLightValCtrl->deviation * PLVCP_getLKp(&mPIDLightValCtrlParm)
+		//+ this_PIDLightValCtrl->integratedDeviation * PLVCP_getLKi(&mPIDLightValCtrlParm)
+		+ this_PIDLightValCtrl->differentialDeviation * PLVCP_getLKd(&mPIDLightValCtrlParm));
 
 	if (turn < -100) {
 		turn = -100;
@@ -40,9 +36,10 @@ int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,int targLightVal,int 
 		turn = 100;
 	}
 
-	//turn = DirectionCtrl_run(&directionCtrl,90);
+	//ecrobot_debug1(turn,(int)(LightVal*100), (targLightVal - LightVal)*100);
 
-	return turn;
+
+	return (int)turn;
 }
 
 void PLVC_setCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm parm){

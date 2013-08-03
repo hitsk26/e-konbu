@@ -10,8 +10,6 @@
 
 
 typedef struct{
-	int black_value;
-	int white_value;
 	U32 gyro;
 }Calibration;
 

@@ -51,6 +51,7 @@
 #include "./StrategyFactories/SeeSawFactory.h"
 
 
+
 Calibration calibration;
 TargetValue targetValue;
 
@@ -89,9 +90,13 @@ CurvatureCtrl mCurvatureCtrl;
 PIDCurvatureCtrl mPIDCurvatureCtrl;
 PIDCurvatureCtrlParm mPIDCurvatureCtrlParm;
 
-//PIDLightValCtrl mPIDLightValCtrl;
-//WheelMotor mWheelMotor;
-//LightVal mLightVal;
+//DrivenPart/LightValueContrl
+LightValListener mLightValListener;
+LightValRange mLightValRange;
+PIDLightValCtrlParm mPIDLightValCtrlParm;
+PIDLightValCtrl mPIDLightValCtrl;
+LightVal mLightVal;
+LightValCtrl mLightValCtrl;
 
 //StarategyPart
 Runner runner;

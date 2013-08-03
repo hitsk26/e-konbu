@@ -38,8 +38,10 @@ void first_straight_factory_init(){
 	firstStraight.current_running_method_number=0;
 	firstStraight.number_of_running_method=1;
 	firstStraight.running_methods=first_straight_running_method_array;
-	firstStraight.target_values.target_brightness=565;
-	firstStraight.target_values.target_curvature=30;
+
+	firstStraight.target_values.target_brightness=0.5;
+	firstStraight.target_values.target_curvature=0;
+
 	firstStraight.target_values.target_speed=20;
 	firstStraight.nextSection = &firstCurve;
 
