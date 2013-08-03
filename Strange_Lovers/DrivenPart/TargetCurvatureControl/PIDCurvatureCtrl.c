@@ -15,7 +15,7 @@ extern int PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *self,float targCurvature,f
 {
 	float turn;
 	
-	self->deviation = targCurvature - curvature;
+	self->deviation =   targCurvature - curvature;
 
 	self->integratedDeviation = (float) (self->integratedDeviation + 
 		(self->deviation * (time - self->lastMeasurementTime)));
@@ -27,7 +27,7 @@ extern int PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *self,float targCurvature,f
 		+ self->integratedDeviation * PCCP_getCKi(&self->mPIDCurvatureCtrlParm)
 		+ self->differentialDeviation * PCCP_getCKd(&self->mPIDCurvatureCtrlParm));
 	
-	turn = (-1)*turn + self->turn_buf;
+	turn = turn + self->turn_buf;
 	
 	if(turn > 100)
 		turn = 100;
@@ -38,7 +38,7 @@ extern int PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *self,float targCurvature,f
 	self->lastMeasurementTime = time;
 	self->turn_buf = turn;
 
-	return turn;
+	return (int)turn;
 }
 
 PIDCurvatureCtrlParm PCC_getPIDCurvatureCtrlParm(PIDCurvatureCtrl *self)

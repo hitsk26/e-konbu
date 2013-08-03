@@ -26,9 +26,34 @@ void CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 	float curvature=0;
 	float averaged_curvature=0;
 	static float moving_average_buf[25];
+
 	static int index=0;
+	
+	
+	int revL=0,revR=0;
+	static int revR_buf=0,revL_buf=0;
+	static float curvature_buf=0;
 
 
+	revL = WheelMotor_get_count(&leftWheelMotor);
+	revR = WheelMotor_get_count(&rightWheelMotor);	
+	
+	float diff_revL = (revL - revL_buf)/CYCLE_TIME;
+	float diff_revR = (revR - revR_buf)/CYCLE_TIME;
+
+	if(diff_revL + diff_revR!=0){
+	curvature = ((diff_revL - diff_revR) / (diff_revL + diff_revR) )*16.10/2.0;
+	//curvature = 1/ curvature;	
+	//curvature = (float)(diff_revL - diff_revR / diff_revL + diff_revR )*161;
+	
+	}
+	else {
+		curvature = curvature_buf;
+	}
+	revL_buf = revL;
+	revR_buf = revR;
+	
+	/*
 	distance = DistanceEncoder_get_distance(&distanceEncoder); 
 	theta = DirectionEncoder_get_direction(&directionEncoder);
 
@@ -39,6 +64,7 @@ void CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 	else{
 		curvature= 0.0;
 	}
+	*/
 
 	if(index>=25){
 		index=0;
@@ -49,6 +75,8 @@ void CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 
 	buf_distance = distance;
 	buf_theta= theta;
+	curvature_buf= curvature;
+
 
 	this_CurvatureEncoder->curvature =averaged_curvature;
 }

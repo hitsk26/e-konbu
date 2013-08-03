@@ -108,11 +108,11 @@ TASK(ActionTask){
 	ClearEvent(RUNEVENT);
 
 	Runner_run(&runner);
-	CurvatureEncoder_calc_curvature(&curvatureEncoder);
 	DirectionEncoder_calc_speed(&directionEncoder);
 	DistanceEncoder_calc_distance(&distanceEncoder);
 	SpeedEncoder_calc_speed(&speedEncoder);
-	
+	CurvatureEncoder_calc_curvature(&curvatureEncoder);
+
 	TerminateTask();
 }
 

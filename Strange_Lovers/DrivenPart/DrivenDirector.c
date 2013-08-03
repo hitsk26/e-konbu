@@ -19,7 +19,6 @@ int DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,int targe
 void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target_brightness, float target_curvature,int target_speed,int target_tail_angle,int self_balancing_requirement,ControllerWeight use_controller,int gyro_offset_revise)
 {
 	int turn = DrivenDirector_calc_turn_value(this_DrivenDirector,target_brightness,target_curvature,use_controller);
-	turn = 30;
 	PID_tail(target_tail_angle);
 	SC_setTargSpeed(&mSpeedCtrl,target_speed);
 	SC_run(&mSpeedCtrl);
