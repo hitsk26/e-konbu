@@ -15,6 +15,7 @@ TARGET_SOURCES := \
 	./lib/CommonFunction.c \
 	./lib/mymath.c \
 	./lib/MovingAverage.c \
+	./lib/LowPassFillter.c \
 	model_impl.c \
 	Factory.c \
 	balancer_param.c \

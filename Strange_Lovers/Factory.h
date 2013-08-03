@@ -5,6 +5,7 @@
 
 #include "./lib/CommonFunction.h"
 #include "./lib/mymath.h"
+#include "./lib/LowPassFillter.h"
 
 
 #include "Calibration.h"
@@ -52,6 +53,8 @@
 
 
 
+
+
 Calibration calibration;
 TargetValue targetValue;
 
@@ -60,6 +63,8 @@ Display display;
 //UI package
 PushButton pushButton;
 
+//lib 
+LowPassFillter lowPassFillter;
 
 
 //EncoderPart

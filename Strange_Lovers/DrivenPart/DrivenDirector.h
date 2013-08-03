@@ -9,7 +9,6 @@
 #include "../DrivenPart/TargetSpeedControl/SpeedCtrl.h"
 #include "../DrivenPart/TargetLightValueControl/LightValCtrl.h"
 
-#include "../logSend.h"
 
 /**
  * ‹ì“®ŽwŽ¦Ší

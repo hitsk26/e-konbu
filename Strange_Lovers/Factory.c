@@ -10,12 +10,15 @@ void initialization(){
 
 	//UI
 	PushButton_init(&pushButton,NXT_PORT_S4);
+
+	//lib
+
 	
-	//DetectorPart
+	//EncoderPart
 	Timer_init(&timer);
 	DistanceEncoder_init(&distanceEncoder);
 	InclinationEncoder_init(&inclinationEncoder,NXT_PORT_S1);
-	BrightnessEncoder_init(&brightnessEncoder,NXT_PORT_S3);
+	BrightnessEncoder_init(&brightnessEncoder,NXT_PORT_S3,&lowPassFillter);
 	DirectionEncoder_init(&directionEncoder);
 
 

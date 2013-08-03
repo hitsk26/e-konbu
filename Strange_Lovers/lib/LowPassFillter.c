@@ -1,11 +1,11 @@
-#include "LowPassfFillter.h"
+#include "LowPassFillter.h"
 
 
-void LowPassfFillter_init(LowPassfFillter *self,float gain){
+void LowPassFillter_init(LowPassFillter *self,float gain){
 	self->gain = gain;
 	self->buf = 0;
 }
-float LowPassFilter_get_filltered_value(LowPassfFillter *self,float mesured_value){
+float LowPassFilter_get_filltered_value(LowPassFillter *self,float mesured_value){
 	float filltered_value = 0;
 
 	filltered_value = self->gain* mesured_value + (1-self->gain)*self->buf ;
