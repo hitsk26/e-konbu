@@ -66,7 +66,8 @@ TARGET_SOURCES := \
 	./StrategyFactories/FiststStraightFactory.c \
 	./StrategyFactories/FiststCurveFactory.c \
 	./StrategyFactories/SeeSawFactory.c \
-
+	./StrategyFactories/SlopeFactory.c \
+	
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build

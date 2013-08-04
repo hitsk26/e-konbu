@@ -25,7 +25,7 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 
-#include "SlopeFactory.h"
+#include "FiststCurveFactory.h"
 
 
 //StarategyPart

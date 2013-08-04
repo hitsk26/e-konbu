@@ -50,6 +50,8 @@
 
 #include "./StrategyFactories/FiststStraightFactory.h"
 #include "./StrategyFactories/SeeSawFactory.h"
+#include "./StrategyFactories/SlopeFactory.h"
+
 
 
 
