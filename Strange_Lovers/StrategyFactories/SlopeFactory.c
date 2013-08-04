@@ -28,6 +28,6 @@ void slope_factory_init(){
 	slope.target_values.target_curvature=0;
 	slope.target_values.target_speed=200;
 	
-	slope.nextSection = &firstCurve;
+	slope.nextSection = &afterSlopeStraight;
 
 }

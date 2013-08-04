@@ -29,8 +29,8 @@ void first_straight_factory_init(){
 	straightLineTraceMethod.switch_term.time = 0;
 	
 	straightLineTraceMethod.target_tail_angle=0;
-	straightLineTraceMethod.use_controller.target_curvature_controller_weight= 0.5;
-	straightLineTraceMethod.use_controller.target_light_controller_weight = 0.5;
+	straightLineTraceMethod.use_controller.target_curvature_controller_weight= 0.8;
+	straightLineTraceMethod.use_controller.target_light_controller_weight = 0.2;
 
 
 	first_straight_running_method_array[0]=stableRunningMethod;
@@ -42,7 +42,7 @@ void first_straight_factory_init(){
 
 	firstStraight.target_values.target_brightness=0.5;
 	firstStraight.target_values.target_curvature=0;
-	firstStraight.target_values.target_speed=200;
+	firstStraight.target_values.target_speed=300;
 	
 	firstStraight.nextSection = &slope;
 

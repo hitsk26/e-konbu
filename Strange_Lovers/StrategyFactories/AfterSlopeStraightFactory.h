@@ -1,5 +1,5 @@
-#ifndef _FirstStraightFactory_
-#define _FirstStraightFactory_
+#ifndef _AfterSlopeStraightStraightFactory_
+#define _AfterSlopeStraightStraightFactory_
 
 #include "../DrivenPart/DrivenDirector.h"
 #include "../DrivenPart/ControllerWeight.h"

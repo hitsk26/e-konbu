@@ -64,9 +64,10 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
-	./StrategyFactories/FiststCurveFactory.c \
 	./StrategyFactories/SeeSawFactory.c \
 	./StrategyFactories/SlopeFactory.c \
+	./StrategyFactories/AfterSlopeStraightFactory.c \
+	./StrategyFactories/FiststCurveFactory.c \
 	
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
