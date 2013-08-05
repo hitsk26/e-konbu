@@ -32,7 +32,7 @@ void started_running_factory_init(){
 	StartedRunningMethod.use_controller.target_light_controller_weight = 1.0;
 
 	//stableRunningMethod
-	stableRunningMethod.balancing_requrement = 0;
+	stableRunningMethod.balancing_requrement = 1;
 	stableRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	stableRunningMethod.gyroOffsetRevise = 0;
 	
