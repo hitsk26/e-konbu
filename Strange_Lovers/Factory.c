@@ -51,5 +51,5 @@ void initialization(){
 	 seesaw_factory_init();
 
 	//StrategyPart
-	Runner_init(&runner,&firstStraight);
+	Runner_init(&runner,&seesaw);
 }
