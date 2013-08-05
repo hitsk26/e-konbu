@@ -75,6 +75,7 @@ TASK(INITIALIZE){
 		end_calibration_flg =1;
 	}
 	
+	/*
 	if(PushButton_detect_push_button(&pushButton) == TRUE)
 	Start_flg =1;
 	
@@ -89,13 +90,14 @@ TASK(INITIALIZE){
 		}
 
 	}
+	*/
 
-	if(flg_tail==1){
+	if(end_calibration_flg==1){
 
 		SetEvent(ActionTask,RUNEVENT);
 	}
 
-	PID_tail(targetValue.target_tail_angle);
+	//PID_tail(targetValue.target_tail_angle);
 
 
 	TerminateTask();

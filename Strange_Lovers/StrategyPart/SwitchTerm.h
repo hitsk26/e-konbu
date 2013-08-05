@@ -19,6 +19,11 @@ typedef struct {
 	 * 時間
 	 */
 	int time;
+
+	/**
+	 * タッチセンサ押下時
+	 */
+	bool inPushed;
 	
 }SwitchTerm;
 #endif

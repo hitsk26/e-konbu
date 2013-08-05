@@ -11,6 +11,7 @@ void started_running_factory_init(){
 	CompleteStopMethod.switch_term.distance = 0;
 	CompleteStopMethod.switch_term.inclination = 0;
 	CompleteStopMethod.switch_term.time = 0;
+	CompleteStopMethod.switch_term.inPushed = 1;
 
 	CompleteStopMethod.target_tail_angle = 100;
 	CompleteStopMethod.use_controller.target_curvature_controller_weight = 0.0;
@@ -24,6 +25,7 @@ void started_running_factory_init(){
 	StartedRunningMethod.switch_term.distance = 0;
 	StartedRunningMethod.switch_term.inclination = 0;
 	StartedRunningMethod.switch_term.time = 0.2;
+	StartedRunningMethod.switch_term.inPushed = 0;
 
 	StartedRunningMethod.target_tail_angle = 126;
 	StartedRunningMethod.use_controller.target_curvature_controller_weight = 0.0;
@@ -37,6 +39,7 @@ void started_running_factory_init(){
 	stableRunningMethod.switch_term.distance = 100/*970*/;
 	stableRunningMethod.switch_term.inclination = 0;
 	stableRunningMethod.switch_term.time = 0;
+	stableRunningMethod.switch_term.inPushed = 0;
 	
 	stableRunningMethod.target_tail_angle=0;
 	stableRunningMethod.use_controller.target_curvature_controller_weight= 0.0;
