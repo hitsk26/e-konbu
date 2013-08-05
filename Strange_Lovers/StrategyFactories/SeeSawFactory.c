@@ -3,8 +3,6 @@
 
 void seesaw_factory_init(){
 
-	//seesawRunningMethod
-
 	//SeesawLineTraceMethod
 	SeesawFirstLineTraceMethod.balancing_requrement = 0;
 	SeesawFirstLineTraceMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
@@ -20,24 +18,24 @@ void seesaw_factory_init(){
 	
 	//SeesawRunningUp
 	SeesawRunningUpMethod.balancing_requrement = 0;
-	SeesawRunningUpMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
+	SeesawRunningUpMethod.fp_SwitchJudge= InclinationSwitch_judge_switch_method;
 	SeesawRunningUpMethod.gyroOffsetRevise = 0;
-	
-	SeesawRunningUpMethod.switch_term.distance = 20;
-	SeesawRunningUpMethod.switch_term.inclination = 0;
+
+	SeesawRunningUpMethod.switch_term.distance = 0;
+	SeesawRunningUpMethod.switch_term.inclination = 600;
 	SeesawRunningUpMethod.switch_term.time = 0;
-	
+		
 	SeesawRunningUpMethod.target_tail_angle=0;
 	SeesawRunningUpMethod.use_controller.target_curvature_controller_weight= 0;
 	SeesawRunningUpMethod.use_controller.target_light_controller_weight = 1;
 
 	//SeesawUpslopeRunning
 	SeesawUpslopeRunningMethod.balancing_requrement = 0;
-	SeesawUpslopeRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
+	SeesawUpslopeRunningMethod.fp_SwitchJudge= InclinationSwitch_judge_switch_method;
 	SeesawUpslopeRunningMethod.gyroOffsetRevise = 0;
 	
-	SeesawUpslopeRunningMethod.switch_term.distance = 20;
-	SeesawUpslopeRunningMethod.switch_term.inclination = 0;
+	SeesawUpslopeRunningMethod.switch_term.distance = 0;
+	SeesawUpslopeRunningMethod.switch_term.inclination = 600;
 	SeesawUpslopeRunningMethod.switch_term.time = 0;
 	
 	SeesawUpslopeRunningMethod.target_tail_angle=0;
@@ -46,10 +44,10 @@ void seesaw_factory_init(){
 
 	//SeesawSwitchDownslope
 	SeesawSwitchDownslopeMethod.balancing_requrement = 0;
-	SeesawSwitchDownslopeMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
+	SeesawSwitchDownslopeMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;//éûä‘Ç≈êÿÇËë÷Ç¶ÇÊÇ§Ç©Ç∆
 	SeesawSwitchDownslopeMethod.gyroOffsetRevise = 0;
 	
-	SeesawSwitchDownslopeMethod.switch_term.distance = 20;
+	SeesawSwitchDownslopeMethod.switch_term.distance = 0;
 	SeesawSwitchDownslopeMethod.switch_term.inclination = 0;
 	SeesawSwitchDownslopeMethod.switch_term.time = 0;
 	
@@ -72,11 +70,11 @@ void seesaw_factory_init(){
 
 	//SeesawRunningDown
 	SeesawRunningDownMethod.balancing_requrement = 0;
-	SeesawRunningDownMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
+	SeesawRunningDownMethod.fp_SwitchJudge= InclinationSwitch_judge_switch_method;
 	SeesawRunningDownMethod.gyroOffsetRevise = 0;
 	
-	SeesawRunningDownMethod.switch_term.distance = 20;
-	SeesawRunningDownMethod.switch_term.inclination = 0;
+	SeesawRunningDownMethod.switch_term.distance = 0;
+	SeesawRunningDownMethod.switch_term.inclination = 600;
 	SeesawRunningDownMethod.switch_term.time = 0;
 	
 	SeesawRunningDownMethod.target_tail_angle=0;
