@@ -31,9 +31,14 @@
 //StarategyPart
 
 Section seesaw;
-RunningMethod SeesawLineTraceMethod;
+RunningMethod SeesawFirstLineTraceMethod;
 RunningMethod SeesawRunningUpMethod;
-RunningMethod seesaw_running_method_array[2];
+RunningMethod SeesawUpslopeRunningMethod;
+RunningMethod SeesawSwitchDownslopeMethod;
+RunningMethod SeesawDownslopeRunningMethod;
+RunningMethod SeesawRunningDownMethod;
+RunningMethod SeesawFinalLineTraceMethod;
+RunningMethod seesaw_running_method_array[7];
 
 
 //StrategyPart/RunningMethodSwitchJudge
