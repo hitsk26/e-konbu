@@ -1,11 +1,13 @@
 #include "MovingAverage.h"
-#include "stdlib.h"
 
 void MovingAverage_init(MovingAverage *self,int max_count){
 	self->index = 0;
 	self->max_count = max_count;	
+	int i = 0;
+	for(i=0;i<MAX_ARRAY_NUMBER;++i){
+		self->buf[i]=0;
+	}
 }
-
 
 float MovingAverage_get_averaged_value(MovingAverage *self,float mesured_value){
 	
