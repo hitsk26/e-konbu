@@ -16,3 +16,4 @@ void InclinationEncoder_set_gyro_offset(InclinationEncoder *this_InclinationEnco
 
 	this_InclinationEncoder->gyro_offset = gyro_offset;
 }
+

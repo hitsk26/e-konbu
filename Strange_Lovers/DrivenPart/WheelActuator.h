@@ -1,11 +1,8 @@
 #ifndef _WheelActuator_H_
 #define _WheelActuator_H_
 
-#include "kernel.h"
-#include "kernel_id.h"
-#include "ecrobot_interface.h"
-//#include "balancer.h"
-#include "/cygdrive/c/cygwin/nxtOSEK/ecrobot/nxtway_gs_balancer/balancer.h"
+
+#include "balancer.h"
 #include "WheelMotor.h"
 #include "../EncoderPart/InclinationEncoder.h"
 
@@ -13,7 +10,6 @@
 typedef struct{
 	S8 forward;
 	S8 turn;
-	U32	gyro_offset;
 	int self_balancing_requirment;
 }WheelActuator;
 

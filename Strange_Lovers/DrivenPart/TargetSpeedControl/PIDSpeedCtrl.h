@@ -7,6 +7,7 @@ typedef struct{
 	float integratedDeviation;
 	float bfDeviation;
 	float lastMeasurementTime;
+	float buf_forward;
 	PIDSpeedCtrlParm mPIDSpeedCtrlParm;
 }PIDSpeedCtrl;
 

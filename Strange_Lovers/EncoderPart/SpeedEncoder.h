@@ -4,10 +4,12 @@
 
 #include "./DistanceEncoder.h"
 #include "./Timer.h"
+#include "../lib/MovingAverage.h"
+
 
 typedef struct{
 	int speed;
-	
+	int buf_distance;
 }SpeedEncoder;
 
 

@@ -24,7 +24,7 @@ void DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder)
 
 	int revR = WheelMotor_get_count(&rightWheelMotor);	
 
-	this_DirectionEncoder->direction = (float)W_RADIUS / W_DIST * (revR - revL);
+	this_DirectionEncoder->direction = (float)WHEEL_R /MACHINE_W * (revR - revL);
 }
 
 

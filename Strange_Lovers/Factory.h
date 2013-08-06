@@ -6,6 +6,7 @@
 #include "./lib/CommonFunction.h"
 #include "./lib/mymath.h"
 #include "./lib/LowPassFillter.h"
+#include "./lib/MovingAverage.h"
 
 
 #include "Calibration.h"
@@ -68,6 +69,9 @@ PushButton pushButton;
 
 //lib 
 LowPassFillter lowPassFillter;
+MovingAverage speedEncoderMovingAverage;
+MovingAverage curvatureEncoderMovingAverage;
+
 
 
 //EncoderPart
@@ -113,6 +117,9 @@ Runner runner;
 
 
 extern void initialization();
+extern void restart();
+extern void reset_objects();
+
 
 #endif
 

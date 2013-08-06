@@ -1,14 +1,33 @@
+#include "MovingAverage.h"
 
+void MovingAverage_init(MovingAverage *self,int max_count){
+	self->index = 0;
+	self->max_count = max_count;	
+	int i = 0;
+	for(i=0;i<MAX_ARRAY_NUMBER;++i){
+		self->buf[i]=0;
+	}
+}
 
-float moving_average(float mesured_value,float *buf,int max_count,int index){
-	buf[index]=mesured_value;
+float MovingAverage_get_averaged_value(MovingAverage *self,float mesured_value){
 	
 	int i=0;
 	float average=0,sum=0;
-	for(i=0;i<max_count;++i){
-		sum += buf[i];
+	
+	if(self->index>=self->max_count){
+		self->index=0;
 	}
-	average = (float)sum /  max_count;
+
+	for(i=0;i<self->max_count;++i){
+		sum += self->buf[i];
+	}
+
+	self->buf[self->index]=mesured_value;
+	
+	self->index++;
+	
+	average = (float)sum /  self->max_count;
+	
 	return average;
 }
 

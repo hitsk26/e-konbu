@@ -1,8 +1,6 @@
 #include "Runner.h"
 #include "../Factory.h"
 
-#define CYCLE_TIME 0.004
-
 
 void Runner_init(Runner *this_Runner,Section *start_section){
 	this_Runner->current_section = start_section;
