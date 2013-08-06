@@ -24,7 +24,6 @@ void initialization(){
 
 	//DrivenPart
 	PID_TAIL_init(&pid_tail);
-	PID_Brightness_init(&pid_Brightness);
 	WheelActuator_init(&wheelActuator);
 	WheelMotor_init(&rightWheelMotor,NXT_PORT_B);
 	WheelMotor_init(&leftWheelMotor,NXT_PORT_C);
@@ -61,6 +60,6 @@ void initialization(){
 	seesaw_factory_init();
 	
 	//StrategyPart
-	//Runner_init(&runner,&afterSlopeStraight);
-	Runner_init(&runner,&firstStraight);
+	Runner_init(&runner,&seesaw);
+
 }
