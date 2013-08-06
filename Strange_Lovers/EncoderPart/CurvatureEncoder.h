@@ -7,13 +7,15 @@
 
 typedef struct{
 	float curvature;
-	
+	float curvature_buf;
+	int revR_buf;
+	int revL_buf;	
 }CurvatureEncoder;
 
 
-float CurvatureEncoder_get_curvature(CurvatureEncoder *this_CurvatureEncoder);
-void CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder);
-void CurvatureEncoder_init(CurvatureEncoder *this_CurvatureEncoder);
+float CurvatureEncoder_get_curvature(CurvatureEncoder *self);
+void CurvatureEncoder_calc_curvature(CurvatureEncoder *self);
+void CurvatureEncoder_init(CurvatureEncoder *self);
 
 #endif 
 

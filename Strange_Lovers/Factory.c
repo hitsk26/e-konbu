@@ -12,8 +12,11 @@ void initialization(){
 	PushButton_init(&pushButton,NXT_PORT_S4);
 
 	//lib
-
+	MovingAverage_init(&speedEncoderMovingAverage,25);
+	MovingAverage_init(&curvatureEncoderMovingAverage,25);
 	
+
+
 	//EncoderPart
 	Timer_init(&timer);
 	DistanceEncoder_init(&distanceEncoder);
@@ -61,6 +64,16 @@ void initialization(){
 	seesaw_factory_init();
 	
 	//StrategyPart
-	//Runner_init(&runner,&afterSlopeStraight);
 	Runner_init(&runner,&firstStraight);
 }
+
+void reset_objects(){
+
+}
+
+void restart(){
+
+	reset_objects();
+	initialization();
+}
+

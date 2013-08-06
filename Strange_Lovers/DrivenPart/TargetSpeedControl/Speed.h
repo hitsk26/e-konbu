@@ -3,8 +3,7 @@
 
 #include "math.h"
 
-#define W_RADIUS 4.1
-#define W_DIST 16.2
+
 #define LIMIT 100
 
 typedef struct{

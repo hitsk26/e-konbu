@@ -5,51 +5,44 @@
 #include "../Factory.h"
 
 #define CYCLE_TIME 0.004
-#define TARGTIME 100
 
-void CurvatureEncoder_init(CurvatureEncoder *this_CurvatureEncoder)
+
+void CurvatureEncoder_init(CurvatureEncoder *self)
 {
-	this_CurvatureEncoder->curvature = 0;
+	self->curvature = 0;
+	self->curvature_buf = 0;
+	self->revL_buf = 0;
+	self->revR_buf = 0;
 }
 
-float CurvatureEncoder_get_curvature(CurvatureEncoder *this_CurvatureEncoder)
+float CurvatureEncoder_get_curvature(CurvatureEncoder *self)
 {
-	return this_CurvatureEncoder->curvature;
+	return self->curvature;
 }
 
-void CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
+void CurvatureEncoder_calc_curvature(CurvatureEncoder *self)
 {
 	float curvature=0;
 	float averaged_curvature=0;
-	static float moving_average_buf[25];
-	static int index=0;
-	int revL=0,revR=0;
-	static int revR_buf=0,revL_buf=0;
-	static float curvature_buf=0;
-
-	revL = 41*WheelMotor_get_count(&leftWheelMotor);
-	revR = 41*WheelMotor_get_count(&rightWheelMotor);	
 	
-	float diff_revL = (revL - revL_buf)/CYCLE_TIME;
-	float diff_revR = (revR - revR_buf)/CYCLE_TIME;
+	int revL = 41*WheelMotor_get_count(&leftWheelMotor);
+	int revR = 41*WheelMotor_get_count(&rightWheelMotor);	
+	
+	float diff_revL = (revL - self->revL_buf)/CYCLE_TIME;
+	float diff_revR = (revR - self->revR_buf)/CYCLE_TIME;
 
 	if(diff_revL + diff_revR!=0){
-	curvature = (float)((diff_revL - diff_revR) /( (diff_revL + diff_revR)*(162.0/2)));
+	curvature = (float)((diff_revL - diff_revR) /( (diff_revL + diff_revR)*(MACHINE_W/2)));
 	}
 	else {
-		curvature = curvature_buf;
+		curvature = self->curvature_buf;
 	}
-	revL_buf = revL;
-	revR_buf = revR;
+	self->revL_buf = revL;
+	self->revR_buf = revR;
+
+	averaged_curvature  = MovingAverage_get_averaged_value(&curvatureEncoderMovingAverage,curvature);
 	
-	if(index>=25){
-		index=0;
-	}
-	averaged_curvature  = moving_average(curvature,moving_average_buf,25,index);
-	index++;
-
-	curvature_buf= curvature;
-
-	this_CurvatureEncoder->curvature =averaged_curvature;
+	self->curvature_buf= curvature;
+	self->curvature =averaged_curvature;
 }
 

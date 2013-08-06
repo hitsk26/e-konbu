@@ -1,11 +1,14 @@
 
 #include "SpeedEncoder.h"
-#include "../lib/MovingAverage.h"
-
 #include "../Factory.h"
 
 #define CYCLE_TIME 0.004
 
+void SpeedEncoder_init(SpeedEncoder *this_SpeedEncoder)
+{
+	this_SpeedEncoder->speed = 0;
+	this_SpeedEncoder->buf_distance =0;
+}
 
 int SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder)
 {
@@ -14,27 +17,15 @@ int SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder)
 
 void SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder)
 {
-
-	static float speedStore=0,bufDistance=0;
 	float distance = DistanceEncoder_get_distance(&distanceEncoder);
-	float distance_diff = ((distance - bufDistance)/CYCLE_TIME);
-	static float moving_average_buf[25];
-	static int index=0;
-	
-	if(index>=25){
-		index=0;
-	}
-	this_SpeedEncoder->speed  = moving_average(distance_diff,moving_average_buf,25,index);
-	index++;
-	bufDistance = distance;
+	float speed = ((distance - this_SpeedEncoder->buf_distance)/CYCLE_TIME);
+
+	this_SpeedEncoder->speed  = MovingAverage_get_averaged_value(&speedEncoderMovingAverage,speed);
+	this_SpeedEncoder->buf_distance=distance;
 
 }
 
-void SpeedEncoder_init(SpeedEncoder *this_SpeedEncoder)
-{
-	this_SpeedEncoder->speed = 0;
 
-}
 
 
 
