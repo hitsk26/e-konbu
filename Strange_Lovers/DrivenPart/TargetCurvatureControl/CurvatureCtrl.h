@@ -10,9 +10,6 @@ typedef struct {
 	CurvatureCtrlState C_CtrlState;
 }CurvatureCtrl;
 
-int CurvatureCtrl_run(CurvatureCtrl *this_CurvatureCtrl,int target_curvature);
-
-
 PIDCurvatureCtrl mPIDCurvatureCtrl;
 Curvature mCurvature;
 

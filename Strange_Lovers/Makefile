@@ -40,7 +40,6 @@ TARGET_SOURCES := \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/WheelActuator.c \
-	./DrivenPart/PID_Brightness.c \
 	./DrivenPart/DrivenDirector.c \
 	./DrivenPart/TargetSpeedControl/SpeedCtrl.c \
 	./DrivenPart/TargetSpeedControl/Speed.c \

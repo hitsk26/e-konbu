@@ -1,6 +1,5 @@
 #include "BrightnessEncoder.h"
 #include "../Factory.h"
-#include "../logSend.h"
 
 void BrightnessEncoder_init(BrightnessEncoder *this_BrightnessEncoder,U8 port_id,LowPassFillter *lowPassFillter)
 {
@@ -24,9 +23,7 @@ float BrightnessEncoder_get_brightness_normalize(BrightnessEncoder *this_Brightn
 	
 	normalize = (float)(filltered_brightness - this_BrightnessEncoder->white_value)
 		/(float)(this_BrightnessEncoder->black_value - this_BrightnessEncoder->white_value);
-	//logSend(0,0,normalize*1000,0,0,0,0,0);
-
-
+	
 	ecrobot_debug1(this_BrightnessEncoder->black_value,this_BrightnessEncoder->white_value,LightSensor_get_light_sensor(this_BrightnessEncoder->port_id));
 
 	return normalize;
@@ -38,3 +35,4 @@ void BrightnessEncoder_set_black(BrightnessEncoder *this_BrightnessEncoder,int b
 void BrightnessEncoder_set_white(BrightnessEncoder *this_BrightnessEncoder,int white){
 	this_BrightnessEncoder->white_value = white;
 }
+

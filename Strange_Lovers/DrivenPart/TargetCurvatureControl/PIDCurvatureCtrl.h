@@ -4,9 +4,7 @@
 #include "PIDCurvatureCtrlParm.h"
 
 typedef struct{
-	float deviation;
 	float integratedDeviation;
-	float differentialDeviation;
 	float bfDeviation;
 	float lastMeasurementTime;
 	float turn_buf;

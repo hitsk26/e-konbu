@@ -15,3 +15,4 @@ int InclinationEncoder_get_inclination(InclinationEncoder *this_InclinationEncod
 void InclinationEncoder_set_gyro_offset(InclinationEncoder *this_InclinationEncoder,int gyro_offset);
 
 #endif
+

@@ -3,9 +3,8 @@
 
 
 void WheelActuator_init(WheelActuator *this_WheelActuator){
-	this_WheelActuator->forward = 35;
+	this_WheelActuator->forward = 0;
 	this_WheelActuator->turn = 0;
-	this_WheelActuator->gyro_offset = 600;
 }
 
 void WheelActuator_balance_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S8 *pwm_r){

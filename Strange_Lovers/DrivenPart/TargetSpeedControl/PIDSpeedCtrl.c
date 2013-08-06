@@ -4,12 +4,12 @@ void PSC_init(PIDSpeedCtrl *self){
 	self->integratedDeviation = 0;
 	self->bfDeviation = 0;
 	self->lastMeasurementTime = 0;
+	self->buf_forward=0;
 }
 
 int PSC_calcSpeedCtrlVal(PIDSpeedCtrl *self,float targSpeed,float bfSpeed,float speed,float time){
 	float forward=0;
-	float static buf_forward=0;
-
+	
 	float deviation = targSpeed - speed;
 	
 	self->integratedDeviation = (self->integratedDeviation + 
@@ -31,14 +31,14 @@ int PSC_calcSpeedCtrlVal(PIDSpeedCtrl *self,float targSpeed,float bfSpeed,float 
 	self->bfDeviation = deviation;
 	self->lastMeasurementTime = time;
 	
-	forward = forward + buf_forward;
+	forward = forward + self->buf_forward;
 
 	if(forward > 100)
 		forward = 100;
 	else if(forward < -100)
 		forward = -100;
 	
-	buf_forward = forward;
+	self->buf_forward = forward;
 	return (int)forward;
 }
 

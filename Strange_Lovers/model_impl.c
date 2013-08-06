@@ -1,6 +1,9 @@
 #include "./StrategyPart/Runner.h"
 #include "Factory.h"
 
+#include "kernel.h"
+#include "kernel_id.h"
+#include "ecrobot_interface.h"
 
 int count_start=0;
 int flg_tail=0;
