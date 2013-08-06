@@ -16,6 +16,8 @@ int DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,float tar
 	int curvature_turn = CC_run(&mCurvatureCtrl);
 	return use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn;
+
+	logSend(brightness_turn,0,0,0,0,0,0,0);
 }
 
 void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector ,float target_brightness, float target_curvature,int target_speed,int target_tail_angle,int self_balancing_requirement,ControllerWeight use_controller,int gyro_offset_revise)

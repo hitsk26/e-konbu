@@ -71,7 +71,7 @@ TASK(INITIALIZE){
 
 	if(end_calibration_flg == 0){
 		Calibration_calibration(&calibration);
-		TargetValue_set_anglr_of_aim(&targetValue,100);
+		TargetValue_set_anglr_of_aim(&targetValue,0);		//100
 		end_calibration_flg =1;
 	}
 	
@@ -81,7 +81,7 @@ TASK(INITIALIZE){
 	if(Start_flg==1){
 
 		if(count_start < 50){
-			TargetValue_set_anglr_of_aim(&targetValue,126);
+			TargetValue_set_anglr_of_aim(&targetValue,0);	//126
 			count_start++;
 		}else{
 			TargetValue_set_anglr_of_aim(&targetValue,0);

@@ -25,6 +25,9 @@ float BrightnessEncoder_get_brightness_normalize(BrightnessEncoder *this_Brightn
 	normalize = (float)(filltered_brightness - this_BrightnessEncoder->white_value)
 		/(float)(this_BrightnessEncoder->black_value - this_BrightnessEncoder->white_value);
 
+
+	ecrobot_debug1(this_BrightnessEncoder->black_value,this_BrightnessEncoder->white_value,LightSensor_get_light_sensor(this_BrightnessEncoder->port_id));
+
 	return normalize;
 }
 

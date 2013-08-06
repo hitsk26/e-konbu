@@ -37,7 +37,8 @@ int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm *
 	}
 
 	//ecrobot_debug1(turn,(int)(LightVal*100), (targLightVal - LightVal)*100);
-
+	this_PIDLightValCtrl->bfDeviation = this_PIDLightValCtrl->deviation;
+	this_PIDLightValCtrl->lastMeasurementTime = time;
 
 	return (int)turn;
 }
