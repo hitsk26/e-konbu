@@ -76,8 +76,11 @@ TASK(INITIALIZE){
 	}
 	
 	if(PushButton_detect_push_button(&pushButton) == TRUE)
+	{
 	Start_flg =1;
-	
+	flg_tail=1;
+	}
+	/*
 	if(Start_flg==1){
 
 		if(count_start < 50){
@@ -89,13 +92,14 @@ TASK(INITIALIZE){
 		}
 
 	}
+	*/
 
 	if(flg_tail==1){
 
 		SetEvent(ActionTask,RUNEVENT);
 	}
 
-	PID_tail(targetValue.target_tail_angle);
+	PID_tail(/*targetValue.target_tail_angle*/90);
 	
 
 	TerminateTask();

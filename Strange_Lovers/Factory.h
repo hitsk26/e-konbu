@@ -18,7 +18,6 @@
 #include "./DrivenPart/TailMotor.h"
 #include "./DrivenPart/WheelActuator.h"
 #include "./DrivenPart/PID_Tail.h"
-#include "./DrivenPart/PID_Brightness.h"
 #include "./DrivenPart/DrivenDirector.h"
 #include "DrivenPart/ControllerWeight.h"
 
@@ -47,6 +46,8 @@
 #include "StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
+#include "StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
+
 
 #include "./StrategyFactories/FiststStraightFactory.h"
 #include "./StrategyFactories/SeeSawFactory.h"
@@ -78,7 +79,6 @@ CurvatureEncoder curvatureEncoder;
 
 //DrivenPart
 PID_TAIL pid_tail;
-PID_Brightness pid_Brightness;
 WheelActuator wheelActuator;
 WheelMotor rightWheelMotor;
 WheelMotor leftWheelMotor;

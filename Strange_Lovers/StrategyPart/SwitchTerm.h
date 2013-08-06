@@ -20,5 +20,9 @@ typedef struct {
 	 */
 	int time;
 	
+	/**
+	 * ‘¬“x
+	 */
+	int speed;
 }SwitchTerm;
 #endif
