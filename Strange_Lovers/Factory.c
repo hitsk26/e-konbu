@@ -67,10 +67,9 @@ void initialization(){
 	slope_factory_init();
 	first_straight_factory_init();
 	seesaw_factory_init();
-	started_running_factory_init();
-
+	
 	//StrategyPart
-	Runner_init(&runner,&StartedRunning);
+	Runner_init(&runner,&firstStraight);
 }
 
 void reset_objects(){

@@ -73,7 +73,7 @@ TASK(INITIALIZE){
 
 	if(end_calibration_flg == 0){
 		Calibration_calibration(&calibration);
-		TargetValue_set_anglr_of_aim(&targetValue,0);		//100
+		//TargetValue_set_anglr_of_aim(&targetValue,0);		//100
 		end_calibration_flg =1;
 		Runner_start_run(&runner);
 	}
@@ -105,7 +105,6 @@ TASK(INITIALIZE){
 	}
 
 	//PID_tail(/*targetValue.target_tail_angle*/90);
-	
 
 	TerminateTask();
 }

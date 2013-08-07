@@ -6,10 +6,10 @@ int inPushedSwitch_judge_switch_method(SwitchTerm switch_term)
 {
 	int start_flag = 0;
 
-	while(PushButton_detect_push_button(&pushButton) == TRUE){
-		start_flag = 0;
-	}
+	if(PushButton_detect_push_button(&pushButton) == TRUE){
 		start_flag = 1;
+	}
+	
 		return start_flag;
 
 	//DistanceSwitch_judge_switch_methodをコピッた残骸
