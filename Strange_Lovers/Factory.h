@@ -53,7 +53,7 @@
 #include "./StrategyFactories/FiststStraightFactory.h"
 #include "./StrategyFactories/SeeSawFactory.h"
 #include "./StrategyFactories/SlopeFactory.h"
-#include "./StrategyFactories/StartRunningFactory.h"
+#include "./StrategyFactories/StartedRunningFactory.h"
 
 
 

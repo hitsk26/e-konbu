@@ -36,10 +36,10 @@ void started_running_factory_init(){
 	stableRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	stableRunningMethod.gyroOffsetRevise = 0;
 	
-	stableRunningMethod.switch_term.distance = 100/*970*/;
+	stableRunningMethod.switch_term.distance = 0/*970*/;
 	stableRunningMethod.switch_term.inclination = 0;
 	stableRunningMethod.switch_term.time = 0;
-	stableRunningMethod.switch_term.inPushed = 0;
+	stableRunningMethod.switch_term.inPushed = 0.2;
 
 	stableRunningMethod.target_tail_angle=0;
 	stableRunningMethod.use_controller.target_curvature_controller_weight= 0.0;
@@ -53,7 +53,7 @@ void started_running_factory_init(){
 	StartedRunning.number_of_running_method = 3;
 	StartedRunning.target_values.target_brightness = 574;
 	StartedRunning.target_values.target_curvature = 0;
-	StartedRunning.target_values.target_speed = 20;
+	StartedRunning.target_values.target_speed = 0;
 	StartedRunning.nextSection = &firstStraight;
 
 
