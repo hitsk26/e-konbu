@@ -40,7 +40,6 @@ TARGET_SOURCES := \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/WheelActuator.c \
-	./DrivenPart/PID_Brightness.c \
 	./DrivenPart/DrivenDirector.c \
 	./DrivenPart/TargetSpeedControl/SpeedCtrl.c \
 	./DrivenPart/TargetSpeedControl/Speed.c \
@@ -63,10 +62,13 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
-	./StrategyFactories/FiststCurveFactory.c \
 	./StrategyFactories/SeeSawFactory.c \
-
+	./StrategyFactories/SlopeFactory.c \
+	./StrategyFactories/AfterSlopeStraightFactory.c \
+	./StrategyFactories/FiststCurveFactory.c \
+	
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build

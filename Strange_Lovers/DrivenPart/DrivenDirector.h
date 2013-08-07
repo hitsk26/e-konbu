@@ -2,7 +2,6 @@
 #define DRIVENPART_DRIVEN_DIRECTOR_H
 
 #include "../DrivenPart/ControllerWeight.h"
-#include "../DrivenPart/PID_Brightness.h"
 #include "../DrivenPart/WheelActuator.h"
 #include "../DrivenPart/TargetCurvatureControl/CurvatureCtrl.h"
 #include "../DrivenPart/PID_Tail.h"

@@ -71,17 +71,20 @@ TASK(INITIALIZE){
 
 	if(end_calibration_flg == 0){
 		Calibration_calibration(&calibration);
-		TargetValue_set_anglr_of_aim(&targetValue,100);
+		TargetValue_set_anglr_of_aim(&targetValue,0);		//100
 		end_calibration_flg =1;
 	}
 	
 	if(PushButton_detect_push_button(&pushButton) == TRUE)
-	Start_flg =1;
-	
+	{
+		Start_flg =1;
+		flg_tail = 1;
+	}
+	/*
 	if(Start_flg==1){
 
 		if(count_start < 50){
-			TargetValue_set_anglr_of_aim(&targetValue,126);
+			TargetValue_set_anglr_of_aim(&targetValue,0);	//126
 			count_start++;
 		}else{
 			TargetValue_set_anglr_of_aim(&targetValue,0);
@@ -89,13 +92,15 @@ TASK(INITIALIZE){
 		}
 
 	}
+	*/
 
 	if(flg_tail==1){
 
 		SetEvent(ActionTask,RUNEVENT);
 	}
 
-	PID_tail(targetValue.target_tail_angle);
+
+	PID_tail(/*targetValue.target_tail_angle*/90);
 	
 
 	TerminateTask();
