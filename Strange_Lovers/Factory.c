@@ -2,6 +2,12 @@
 
 void initialization(){
 	
+	ecrobot_set_light_sensor_active(NXT_PORT_S3);
+	ecrobot_set_motor_rev(NXT_PORT_A,0);
+	ecrobot_set_motor_rev(NXT_PORT_B,0);
+	ecrobot_set_motor_rev(NXT_PORT_C,0);
+	ecrobot_init_bt_slave("LEJOS-OSEK");
+
 	Calibration_init(&calibration);
 	TargetValue_init(&targetValue);
 	

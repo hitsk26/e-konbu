@@ -1,4 +1,6 @@
 #include "./StrategyPart/Runner.h"
+#include "./StrategyPart/RunnerState.h"
+
 #include "Factory.h"
 
 #include "kernel.h"
@@ -16,20 +18,17 @@ DeclareCounter(SysTimerCnt);
 //タスクの宣言
 DeclareTask(ActionTask);
 DeclareTask(INITIALIZE);
+DeclareTask(UI);
 
 
 //イベントの宣言
 DeclareEvent(RUNEVENT);
 
+//アラームの宣言
+DeclareAlarm(cyclic_alarm1);
+
 //初期処理
 void ecrobot_device_initialize(void){
-
-	ecrobot_set_light_sensor_active(NXT_PORT_S3);
-	ecrobot_set_motor_rev(NXT_PORT_A,0);
-	ecrobot_set_motor_rev(NXT_PORT_B,0);
-	ecrobot_set_motor_rev(NXT_PORT_C,0);
-	ecrobot_init_bt_slave("LEJOS-OSEK");
-
 	initialization();
 
 }
@@ -76,6 +75,7 @@ TASK(INITIALIZE){
 		Calibration_calibration(&calibration);
 		TargetValue_set_anglr_of_aim(&targetValue,0);		//100
 		end_calibration_flg =1;
+		Runner_start_run(&runner);
 	}
 	
 	if(PushButton_detect_push_button(&pushButton) == TRUE)
@@ -98,12 +98,10 @@ TASK(INITIALIZE){
 	*/
 
 	if(flg_tail==1){
-
-		SetEvent(ActionTask,RUNEVENT);
+		//SetEvent(ActionTask,RUNEVENT);
 	}
 
-
-	PID_tail(/*targetValue.target_tail_angle*/90);
+	//PID_tail(/*targetValue.target_tail_angle*/90);
 	
 
 	TerminateTask();
@@ -111,15 +109,30 @@ TASK(INITIALIZE){
 
 TASK(ActionTask){
 
-	WaitEvent(RUNEVENT);
-	ClearEvent(RUNEVENT);
+	// 4msec 毎にイベント通知する設定
+    //SetRelAlarm(cyclic_alarm1, 1, 4); 
 
-	Runner_run(&runner);
-	DirectionEncoder_calc_speed(&directionEncoder);
-	DistanceEncoder_calc_distance(&distanceEncoder);
-	SpeedEncoder_calc_speed(&speedEncoder);
-	CurvatureEncoder_calc_curvature(&curvatureEncoder);
+	//WaitEvent(RUNEVENT);
+	//ClearEvent(RUNEVENT);
+	
+	Runner_execute(&runner);
 
 	TerminateTask();
 }
 
+TASK(UI){
+
+	if(PushButton_detect_push_button(&pushButton) == TRUE && (Runner_get_runner_state(&runner)==RUN)){
+		ecrobot_sound_tone(880, 512, 30);
+		systick_wait_ms(500);
+		Runner_stop_run(&runner);
+	}
+	else if(PushButton_detect_push_button(&pushButton) == TRUE && (Runner_get_runner_state(&runner)==STOP)){
+		ecrobot_sound_tone(880, 512, 30);
+		systick_wait_ms(500);
+		initialization();
+		Runner_start_run(&runner);
+	
+	}
+	TerminateTask();
+}

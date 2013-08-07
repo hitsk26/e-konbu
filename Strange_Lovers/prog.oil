@@ -45,6 +45,17 @@ CPU ATMEL_AT91SAM7S256
 
 	};
 
+	TASK UI
+	{	
+		AUTOSTART = TRUE;
+	
+		SCHEDULE = FULL;
+		PRIORITY = 1;
+		ACTIVATION = 1;
+		STACKSIZE = 512;
+		RESOURCE = lcd;
+
+	};
 
 	TASK ActionTask
 	{
@@ -71,7 +82,7 @@ CPU ATMEL_AT91SAM7S256
 			APPMODE = appmode1;
 		};
 	};
-
+	/*
 	ALARM cyclic_alarm2
 	{
 		COUNTER = SysTimerCnt;
@@ -83,6 +94,21 @@ CPU ATMEL_AT91SAM7S256
 		{
 			ALARMTIME = 1;
 			CYCLETIME = 4;
+			APPMODE = appmode1;
+		};
+	};
+	*/
+	ALARM cyclic_alarm3
+	{
+		COUNTER = SysTimerCnt;
+		ACTION = ACTIVATETASK
+		{
+			TASK = UI;
+		};
+		AUTOSTART = TRUE
+		{
+			ALARMTIME = 1;
+			CYCLETIME = 40;
 			APPMODE = appmode1;
 		};
 	};

@@ -7,17 +7,17 @@ void first_straight_factory_init(){
 	//RunningMethod
 
 	//stableRunningMethod
-	stableRunningMethod.balancing_requrement = 1;
+	stableRunningMethod.balancing_requrement = 0;
 	stableRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	stableRunningMethod.gyroOffsetRevise = 0;
 	
-	stableRunningMethod.switch_term.distance = 200;
+	stableRunningMethod.switch_term.distance = 200000;
 	stableRunningMethod.switch_term.inclination = 0;
 	stableRunningMethod.switch_term.time = 0;
 	
-	stableRunningMethod.target_tail_angle=0;
-	stableRunningMethod.use_controller.target_curvature_controller_weight= 0.5;
-	stableRunningMethod.use_controller.target_light_controller_weight = 0.5;
+	stableRunningMethod.target_tail_angle=90;
+	stableRunningMethod.use_controller.target_curvature_controller_weight= 0.0;
+	stableRunningMethod.use_controller.target_light_controller_weight = 1.0;
 	
 	//straightLineTraceMethod
 	straightLineTraceMethod.balancing_requrement = 1;
@@ -42,7 +42,7 @@ void first_straight_factory_init(){
 
 	firstStraight.target_values.target_brightness=0.5;
 	firstStraight.target_values.target_curvature=0;
-	firstStraight.target_values.target_speed=300;
+	firstStraight.target_values.target_speed=200;
 	
 	firstStraight.nextSection = &slope;
 

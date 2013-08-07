@@ -5,6 +5,7 @@
 void WheelActuator_init(WheelActuator *this_WheelActuator){
 	this_WheelActuator->forward = 0;
 	this_WheelActuator->turn = 0;
+	balance_init();
 }
 
 void WheelActuator_balance_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S8 *pwm_r){
