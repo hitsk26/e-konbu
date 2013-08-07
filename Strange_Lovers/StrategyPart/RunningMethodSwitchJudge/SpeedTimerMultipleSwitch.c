@@ -5,18 +5,13 @@ int SpeedTimerMultipleSwitch_judge_switch_method(SwitchTerm switch_term){
 	
 	int speed =  SpeedEncoder_get_speed(&speedEncoder);
 	int time = Timer_get_ms(&timer);
+	int judge_flag = 0;
 
-	/*
 	if(switch_term.speed <= speed && switch_term.time >= time){
-
+		judge_flag = 1;
 	}
 	else{ 
-<<<<<<< HEAD
-		return 0;
+		judge_flag = 0;
 	}
-
-=======
-	}
-	*/
->>>>>>> ab993dc12f47db5126e8a74c725d86467e84c86f
+	return judge_flag;
 }
