@@ -5,7 +5,7 @@ void seesaw_factory_init(){
 
 	//SeesawLineTraceMethod
 	SeesawFirstLineTraceMethod.balancing_requrement = 0;
-	SeesawFirstLineTraceMethod.fp_SwitchJudge= SpeedTimerMultipleSwitch_judge_switch_method;
+	SeesawFirstLineTraceMethod.fp_SwitchJudge = SpeedTimerMultipleSwitch_judge_switch_method;
 	SeesawFirstLineTraceMethod.gyroOffsetRevise = 0;
 	
 	SeesawFirstLineTraceMethod.switch_term.distance = 100000;

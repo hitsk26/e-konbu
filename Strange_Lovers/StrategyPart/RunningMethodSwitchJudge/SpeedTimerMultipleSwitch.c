@@ -10,7 +10,7 @@ int SpeedTimerMultipleSwitch_judge_switch_method(SwitchTerm switch_term){
 		return 1;
 	}
 	else{ 
-
+		return 0;
 	}
 
 }
