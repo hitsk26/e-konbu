@@ -40,7 +40,7 @@ void started_running_factory_init(){
 	stableRunningMethod.switch_term.inclination = 0;
 	stableRunningMethod.switch_term.time = 0;
 	stableRunningMethod.switch_term.inPushed = 0;
-	
+
 	stableRunningMethod.target_tail_angle=0;
 	stableRunningMethod.use_controller.target_curvature_controller_weight= 0.0;
 	stableRunningMethod.use_controller.target_light_controller_weight = 1.0;
@@ -50,10 +50,12 @@ void started_running_factory_init(){
 	Started_running_method_array[2] = stableRunningMethod;
 
 	StartedRunning.current_running_method_number = 0;
-	StartedRunning.number_of_running_method = 2;
+	StartedRunning.number_of_running_method = 3;
 	StartedRunning.target_values.target_brightness = 574;
 	StartedRunning.target_values.target_curvature = 0;
 	StartedRunning.target_values.target_speed = 20;
+	StartedRunning.nextSection = &firstStraight;
+
 
 
 	//écä[

@@ -1,4 +1,5 @@
 #include "DrivenDirector.h"
+#include "../logSend.h"
 #include "../Factory.h"
 
 
@@ -19,6 +20,8 @@ void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector,int target
 {
 	int turn = DrivenDirector_calc_turn_value(this_DrivenDirector,target_brightness,target_curvature,use_controller);
 	PID_tail(target_tail_angle);
+	
+	logSend(target_tail_angle,0,0,0,0,0,0,0);
 	SC_setTargSpeed(&mSpeedCtrl,target_speed);
 	SC_run(&mSpeedCtrl);
 	Balancer_set_turn(&balancer , turn);

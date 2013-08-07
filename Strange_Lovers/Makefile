@@ -54,6 +54,8 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/SwitchJudge.c \
 	./StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/TimeSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
 	./StrategyFactories/FiststCurveFactory.c \

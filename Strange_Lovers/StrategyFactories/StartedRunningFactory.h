@@ -28,6 +28,7 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 
 #include "FiststCurveFactory.h"
+#include "FiststStraightFactory.h"
 
 
 //StarategyPart

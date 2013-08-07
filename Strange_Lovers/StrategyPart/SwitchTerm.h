@@ -23,7 +23,7 @@ typedef struct {
 	/**
 	 * タッチセンサ押下時
 	 */
-	bool inPushed;
+	int inPushed;
 	
 }SwitchTerm;
 #endif

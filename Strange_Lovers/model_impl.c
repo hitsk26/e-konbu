@@ -71,10 +71,12 @@ TASK(INITIALIZE){
 
 	if(end_calibration_flg == 0){
 		Calibration_calibration(&calibration);
-		TargetValue_set_anglr_of_aim(&targetValue,100);
+		//TargetValue_set_anglr_of_aim(&targetValue,100);
 		end_calibration_flg =1;
 	}
-	
+	if(PushButton_detect_push_button(&pushButton) == TRUE)
+	Start_flg =1;
+
 	/*
 	if(PushButton_detect_push_button(&pushButton) == TRUE)
 	Start_flg =1;
@@ -92,8 +94,8 @@ TASK(INITIALIZE){
 	}
 	*/
 
-	if(end_calibration_flg==1){
-
+	if(Start_flg==1){
+		ecrobot_sound_tone(440,50,50);
 		SetEvent(ActionTask,RUNEVENT);
 	}
 

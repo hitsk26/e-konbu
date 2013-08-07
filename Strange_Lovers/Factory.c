@@ -52,5 +52,5 @@ void initialization(){
 	started_running_factory_init();
 
 	//StrategyPart
-	Runner_init(&runner,&firstStraight);
+	Runner_init(&runner,&StartedRunning);
 }
