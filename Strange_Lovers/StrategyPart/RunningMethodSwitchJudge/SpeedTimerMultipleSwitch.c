@@ -9,9 +9,12 @@ int SpeedTimerMultipleSwitch_judge_switch_method(SwitchTerm switch_term){
 
 	if(switch_term.speed <= speed && switch_term.time >= time){
 		judge_flag = 1;
+		Timer_reset(&timer);
 	}
-	else{ 
+	else{
 		judge_flag = 0;
 	}
+
 	return judge_flag;
+
 }
