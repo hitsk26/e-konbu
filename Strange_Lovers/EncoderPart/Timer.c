@@ -8,6 +8,10 @@ void Timer_init(Timer *this_Timer)
 
 unsigned int Timer_get_ms(Timer *this_Timer)
 {
-	return (unsigned int)SystemTimer_get_ms();
+	return (unsigned int)SystemTimer_get_ms() - this_Timer->initial_time;
 }
 
+void Timer_reset(Timer *this_Timer)
+{
+	this_Timer->initial_time = (unsigned int)SystemTimer_get_ms();;
+}
