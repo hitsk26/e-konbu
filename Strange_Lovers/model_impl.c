@@ -77,7 +77,10 @@ TASK(INITIALIZE){
 		end_calibration_flg =1;
 		Runner_start_run(&runner);
 	}
-	
+	if(PushButton_detect_push_button(&pushButton) == TRUE)
+	Start_flg =1;
+
+	/*
 	if(PushButton_detect_push_button(&pushButton) == TRUE)
 	{
 		Start_flg =1;

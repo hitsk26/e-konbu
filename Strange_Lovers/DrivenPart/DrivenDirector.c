@@ -1,4 +1,5 @@
 #include "DrivenDirector.h"
+#include "../logSend.h"
 #include "../Factory.h"
 #include "../logSend.h"
 
@@ -34,6 +35,5 @@ void DrivenDirector_request_drive(DrivenDirector *this_DrivenDirector ,float tar
 	WheelActuator_set_turn(&wheelActuator , turn);
 	WheelActuator_set_self_balancing_requirement(&wheelActuator,self_balancing_requirement);
 	WheelActuator_dirve_motors(&wheelActuator);
-
 	
 }
