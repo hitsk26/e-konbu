@@ -9,6 +9,7 @@ typedef struct{
 	float differentialDeviation;
 	float bfDeviation;
 	float lastMeasurementTime;
+	float turn_buf;
 	PIDCurvatureCtrlParm mPIDCurvatureCtrlParm;
 } PIDCurvatureCtrl;
 

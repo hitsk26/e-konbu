@@ -1,6 +1,6 @@
 #include "SpeedCtrl.h"
 #include "../../Factory.h"
-#include "../../logSend.h"
+
 
 //初期化メソッド
 void SC_init(SpeedCtrl *this_SpeedCtrl,PIDSpeedCtrl PSC)
@@ -60,9 +60,10 @@ void SC_run(SpeedCtrl *this_SpeedCtrl)
 //角度制御実行メソッド
 void SC_doCtrl(SpeedCtrl *this_SpeedCtrl)
 {
-	int forward = PSC_calcSpeedCtrlVal(&mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),S_getSpeed(&mSpeed,systick_get_ms()),systick_get_ms()*0.001);
-	logSend(0,0,forward,S_getSpeed(&mSpeed,systick_get_ms()),S_getTargSpeed(&mSpeed),0,0,0);
-	Balancer_set_forward(&balancer ,(S8)forward);
+	int speed = S_getSpeed(&mSpeed,systick_get_ms());
+	int forward = PSC_calcSpeedCtrlVal(&mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),speed,systick_get_ms()*0.001);
+
+	WheelActuator_set_forward(&wheelActuator ,(S8)forward);
 }
 
 void SC_changeMode(SpeedCtrl *this_SpeedCtrl,SpeedCtrlState state){

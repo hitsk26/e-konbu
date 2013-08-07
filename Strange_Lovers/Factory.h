@@ -5,6 +5,7 @@
 
 #include "./lib/CommonFunction.h"
 #include "./lib/mymath.h"
+#include "./lib/LowPassFillter.h"
 
 
 #include "Calibration.h"
@@ -15,9 +16,8 @@
 
 #include "./DrivenPart/WheelMotor.h"
 #include "./DrivenPart/TailMotor.h"
-#include "./DrivenPart/Balancer.h"
+#include "./DrivenPart/WheelActuator.h"
 #include "./DrivenPart/PID_Tail.h"
-#include "./DrivenPart/PID_Brightness.h"
 #include "./DrivenPart/DrivenDirector.h"
 #include "DrivenPart/ControllerWeight.h"
 
@@ -46,9 +46,16 @@
 #include "StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
+#include "StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
+
 
 #include "./StrategyFactories/FiststStraightFactory.h"
 #include "./StrategyFactories/SeeSawFactory.h"
+#include "./StrategyFactories/SlopeFactory.h"
+
+
+
+
 
 
 Calibration calibration;
@@ -59,6 +66,8 @@ Display display;
 //UI package
 PushButton pushButton;
 
+//lib 
+LowPassFillter lowPassFillter;
 
 
 //EncoderPart
@@ -72,8 +81,7 @@ CurvatureEncoder curvatureEncoder;
 
 //DrivenPart
 PID_TAIL pid_tail;
-PID_Brightness pid_Brightness;
-Balancer balancer;
+WheelActuator wheelActuator;
 WheelMotor rightWheelMotor;
 WheelMotor leftWheelMotor;
 TailMotor tailMotor;
@@ -89,9 +97,13 @@ CurvatureCtrl mCurvatureCtrl;
 PIDCurvatureCtrl mPIDCurvatureCtrl;
 PIDCurvatureCtrlParm mPIDCurvatureCtrlParm;
 
-//PIDLightValCtrl mPIDLightValCtrl;
-//WheelMotor mWheelMotor;
-//LightVal mLightVal;
+//DrivenPart/LightValueContrl
+LightValListener mLightValListener;
+LightValRange mLightValRange;
+PIDLightValCtrlParm mPIDLightValCtrlParm;
+PIDLightValCtrl mPIDLightValCtrl;
+LightVal mLightVal;
+LightValCtrl mLightValCtrl;
 
 //StarategyPart
 Runner runner;

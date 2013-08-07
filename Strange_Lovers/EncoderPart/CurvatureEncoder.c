@@ -1,6 +1,7 @@
 
 #include "CurvatureEncoder.h"
 #include "DirectionEncoder.h"
+#include "../lib/MovingAverage.h"
 #include "../Factory.h"
 
 #define CYCLE_TIME 0.004
@@ -13,43 +14,42 @@ void CurvatureEncoder_init(CurvatureEncoder *this_CurvatureEncoder)
 
 float CurvatureEncoder_get_curvature(CurvatureEncoder *this_CurvatureEncoder)
 {
-	this_CurvatureEncoder->curvature =CurvatureEncoder_calc_curvature(this_CurvatureEncoder);
 	return this_CurvatureEncoder->curvature;
 }
 
-float CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
+void CurvatureEncoder_calc_curvature(CurvatureEncoder *this_CurvatureEncoder)
 {
-	float theta=0;
-	float distance=0;
-	static float buf_theta=0;
-	static float buf_distance=0;
 	float curvature=0;
-	static float curvature_store=0,averaged_curvature=0;
-	static int bufTime =0;
+	float averaged_curvature=0;
+	static float moving_average_buf[25];
+	static int index=0;
+	int revL=0,revR=0;
+	static int revR_buf=0,revL_buf=0;
+	static float curvature_buf=0;
+
+	revL = 41*WheelMotor_get_count(&leftWheelMotor);
+	revR = 41*WheelMotor_get_count(&rightWheelMotor);	
 	
-	distance = DistanceEncoder_get_distance(&distanceEncoder); 
-	theta = DirectionEncoder_get_direction(&directionEncoder);
-	unsigned int time =  Timer_get_ms(&timer);
+	float diff_revL = (revL - revL_buf)/CYCLE_TIME;
+	float diff_revR = (revR - revR_buf)/CYCLE_TIME;
 
-
-	if(!(theta == buf_theta)){
-		curvature = rad2deg((distance - buf_distance)/ (theta - buf_theta))/10;
+	if(diff_revL + diff_revR!=0){
+	curvature = (float)((diff_revL - diff_revR) /( (diff_revL + diff_revR)*(162.0/2)));
 	}
-	else{
-		curvature= 0.0;
+	else {
+		curvature = curvature_buf;
 	}
-	curvature_store += curvature;
-
-	if((time - bufTime) >= TARGTIME)
-	{
+	revL_buf = revL;
+	revR_buf = revR;
 	
-		averaged_curvature = curvature_store/25; //25‰ñ•ª‚Ì•½‹Ï‚ğæ‚Á‚Ä‚é
-		curvature_store = 0;
-		bufTime = time;
+	if(index>=25){
+		index=0;
 	}
+	averaged_curvature  = moving_average(curvature,moving_average_buf,25,index);
+	index++;
 
-	buf_distance = distance;
-	buf_theta= theta;
-	return averaged_curvature;
+	curvature_buf= curvature;
+
+	this_CurvatureEncoder->curvature =averaged_curvature;
 }
 

@@ -24,6 +24,8 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
+
 
 #include "FiststCurveFactory.h"
 
@@ -31,9 +33,14 @@
 //StarategyPart
 
 Section seesaw;
-RunningMethod SeesawLineTraceMethod;
+RunningMethod SeesawFirstLineTraceMethod;
 RunningMethod SeesawRunningUpMethod;
-RunningMethod seesaw_running_method_array[2];
+RunningMethod SeesawUpslopeRunningMethod;
+RunningMethod SeesawSwitchDownslopeMethod;
+RunningMethod SeesawDownslopeRunningMethod;
+RunningMethod SeesawRunningDownMethod;
+RunningMethod SeesawFinalLineTraceMethod;
+RunningMethod seesaw_running_method_array[7];
 
 
 //StrategyPart/RunningMethodSwitchJudge

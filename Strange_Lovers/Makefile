@@ -14,6 +14,8 @@ DRIVENPART_SOURCES :=
 TARGET_SOURCES := \
 	./lib/CommonFunction.c \
 	./lib/mymath.c \
+	./lib/MovingAverage.c \
+	./lib/LowPassFillter.c \
 	model_impl.c \
 	Factory.c \
 	balancer_param.c \
@@ -37,8 +39,7 @@ TARGET_SOURCES := \
 	./EncoderPart/CurvatureEncoder.c \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
-	./DrivenPart/Balancer.c \
-	./DrivenPart/PID_Brightness.c \
+	./DrivenPart/WheelActuator.c \
 	./DrivenPart/DrivenDirector.c \
 	./DrivenPart/TargetSpeedControl/SpeedCtrl.c \
 	./DrivenPart/TargetSpeedControl/Speed.c \
@@ -48,6 +49,12 @@ TARGET_SOURCES := \
 	./DrivenPart/TargetCurvatureControl/PIDCurvatureCtrlParm.c \
 	./DrivenPart/TargetCurvatureControl/Curvature.c \
 	./DrivenPart/TargetCurvatureControl/PIDCurvatureCtrl.c \
+	./DrivenPart/TargetLightValueControl/LightVal.c \
+	./DrivenPart/TargetLightValueControl/LightValCtrl.c \
+	./DrivenPart/TargetLightValueControl/LightValListener.c \
+	./DrivenPart/TargetLightValueControl/LightValRange.c \
+	./DrivenPart/TargetLightValueControl/PIDLightValCtrl.c \
+	./DrivenPart/TargetLightValueControl/PIDLightValCtrlParm.c \
 	./StrategyPart/Section.c \
 	./StrategyPart/RunningMethod.c \
 	./StrategyPart/Runner.c \
@@ -55,10 +62,13 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
-	./StrategyFactories/FiststCurveFactory.c \
 	./StrategyFactories/SeeSawFactory.c \
-
+	./StrategyFactories/SlopeFactory.c \
+	./StrategyFactories/AfterSlopeStraightFactory.c \
+	./StrategyFactories/FiststCurveFactory.c \
+	
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build

@@ -23,6 +23,7 @@ int Section_clear_section(Section *this_Section,int executed_flag)
 
 	if(executed_flag==1 && 
 		this_Section->current_running_method_number+1 == this_Section->number_of_running_method){
+			ecrobot_sound_tone(880,10,60);
 			return 1;
 	}
 	else {

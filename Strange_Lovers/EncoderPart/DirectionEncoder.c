@@ -15,17 +15,16 @@ void DirectionEncoder_init(DirectionEncoder *this_DirectionEncoder)
 
 float DirectionEncoder_get_direction(DirectionEncoder *this_DirectionEncoder)
 {
-	this_DirectionEncoder->direction =DirectionEncoder_calc_speed(this_DirectionEncoder);
 	return this_DirectionEncoder->direction;
 }
 
-float DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder)
+void DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder)
 {
 	int revL = WheelMotor_get_count(&leftWheelMotor);
+
 	int revR = WheelMotor_get_count(&rightWheelMotor);	
 
-	float direction = (float)W_RADIUS / W_DIST * (revR - revL);
-	return direction;
+	this_DirectionEncoder->direction = (float)W_RADIUS / W_DIST * (revR - revL);
 }
 
 
