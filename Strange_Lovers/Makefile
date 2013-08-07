@@ -62,10 +62,13 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
-	./StrategyFactories/FiststCurveFactory.c \
 	./StrategyFactories/SeeSawFactory.c \
-
+	./StrategyFactories/SlopeFactory.c \
+	./StrategyFactories/AfterSlopeStraightFactory.c \
+	./StrategyFactories/FiststCurveFactory.c \
+	
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build

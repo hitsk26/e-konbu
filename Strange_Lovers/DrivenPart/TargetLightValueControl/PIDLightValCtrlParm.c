@@ -1,6 +1,7 @@
 #include "PIDLightValCtrlParm.h"
 
 void PLVCP_init(PIDLightValCtrlParm *this_PIDLightValCtrlParm){
+
 	this_PIDLightValCtrlParm->lKp = 145.0;
 	this_PIDLightValCtrlParm->lKi = 0.15;
 	this_PIDLightValCtrlParm->lKd = 4.0;

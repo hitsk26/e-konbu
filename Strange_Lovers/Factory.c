@@ -53,10 +53,13 @@ void initialization(){
 	LVC_init(&mLightValCtrl,brightnessEncoder,mPIDLightValCtrl);
 
 	//initialize Sections pleas call them here!!
-	first_straight_factory_init();
 	first_curve_factory_init();
-	 seesaw_factory_init();
-
+	after_slope_straight_factory_init();
+	slope_factory_init();
+	first_straight_factory_init();
+	seesaw_factory_init();
+	
 	//StrategyPart
 	Runner_init(&runner,&seesaw);
+
 }

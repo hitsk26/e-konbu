@@ -1,5 +1,5 @@
-#ifndef _FirstStraightFactory_
-#define _FirstStraightFactory_
+#ifndef _AfterSlopeStraightStraightFactory_
+#define _AfterSlopeStraightStraightFactory_
 
 #include "../DrivenPart/DrivenDirector.h"
 #include "../DrivenPart/ControllerWeight.h"
@@ -25,25 +25,22 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 
-#include "SlopeFactory.h"
+#include "FiststCurveFactory.h"
 
 
 //StarategyPart
 
-Section firstStraight;
-RunningMethod stableRunningMethod;
-RunningMethod straightLineTraceMethod;
+Section afterSlopeStraight;
+RunningMethod afterSlopeStraightRunningMethod;
 
-RunningMethod first_straight_running_method_array[2];
+RunningMethod after_slope_straight_running_method_array[1];
 
-
-//Section firstCurve;
 
 
 //StrategyPart/RunningMethodSwitchJudge
 
 
-extern void first_straight_factory_init();
+extern void after_slope_straight_factory_init();
 
 #endif
 

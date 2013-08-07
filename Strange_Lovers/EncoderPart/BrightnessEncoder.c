@@ -21,9 +21,10 @@ int BrightnessEncoder_get_brightness(BrightnessEncoder *this_BrightnessEncoder)
 float BrightnessEncoder_get_brightness_normalize(BrightnessEncoder *this_BrightnessEncoder){
 	float normalize;
 	float filltered_brightness = LowPassFilter_get_filltered_value(this_BrightnessEncoder->lowPassfFillter,(int)LightSensor_get_light_sensor(this_BrightnessEncoder->port_id));
-
+	
 	normalize = (float)(filltered_brightness - this_BrightnessEncoder->white_value)
 		/(float)(this_BrightnessEncoder->black_value - this_BrightnessEncoder->white_value);
+	//logSend(0,0,normalize*1000,0,0,0,0,0);
 
 
 	ecrobot_debug1(this_BrightnessEncoder->black_value,this_BrightnessEncoder->white_value,LightSensor_get_light_sensor(this_BrightnessEncoder->port_id));
