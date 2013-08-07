@@ -24,6 +24,7 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
 
 #include "FiststCurveFactory.h"
 
