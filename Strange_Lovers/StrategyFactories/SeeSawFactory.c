@@ -5,27 +5,28 @@ void seesaw_factory_init(){
 
 	//SeesawLineTraceMethod
 	SeesawFirstLineTraceMethod.balancing_requrement = 0;
-	SeesawFirstLineTraceMethod.fp_SwitchJudge= SpeedTimerMultipleSwitch_judge_switch_method;
+	SeesawFirstLineTraceMethod.fp_SwitchJudge = SpeedTimerMultipleSwitch_judge_switch_method;
 	SeesawFirstLineTraceMethod.gyroOffsetRevise = 0;
 	
-	SeesawFirstLineTraceMethod.switch_term.distance = 100000;
+	SeesawFirstLineTraceMethod.switch_term.distance = 0;
 	SeesawFirstLineTraceMethod.switch_term.inclination = 0;
-	SeesawFirstLineTraceMethod.switch_term.time = 0;
+	SeesawFirstLineTraceMethod.switch_term.time = 20000;
+	SeesawFirstLineTraceMethod.switch_term.speed = 40;
 	
-	SeesawFirstLineTraceMethod.target_tail_angle=90;
+	SeesawFirstLineTraceMethod.target_tail_angle=100;
 	SeesawFirstLineTraceMethod.use_controller.target_curvature_controller_weight= 0;
 	SeesawFirstLineTraceMethod.use_controller.target_light_controller_weight = 1;
-	
 
 
 	//SeesawRunningUp
 	SeesawRunningUpMethod.balancing_requrement = 0;
 	SeesawRunningUpMethod.fp_SwitchJudge= InclinationSwitch_judge_switch_method;
-	SeesawRunningUpMethod.gyroOffsetRevise = 0;
+	SeesawRunningUpMethod.gyroOffsetRevise = -30;
 
 	SeesawRunningUpMethod.switch_term.distance = 0;
 	SeesawRunningUpMethod.switch_term.inclination = 600;
 	SeesawRunningUpMethod.switch_term.time = 0;
+	SeesawFirstLineTraceMethod.switch_term.speed = 0;
 		
 	SeesawRunningUpMethod.target_tail_angle=0;
 	SeesawRunningUpMethod.use_controller.target_curvature_controller_weight= 0;
@@ -109,7 +110,7 @@ void seesaw_factory_init(){
 	seesaw.running_methods = seesaw_running_method_array;
 	seesaw.target_values.target_brightness = 0.5;
 	seesaw.target_values.target_curvature = 0;
-	seesaw.target_values.target_speed = 100;
+	seesaw.target_values.target_speed = 50;
 	seesaw.nextSection = &firstCurve;
 	
 }

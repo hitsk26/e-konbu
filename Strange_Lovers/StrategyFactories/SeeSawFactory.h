@@ -26,7 +26,6 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
 
-
 #include "FiststCurveFactory.h"
 
 
