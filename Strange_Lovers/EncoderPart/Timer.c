@@ -3,7 +3,7 @@
 
 void Timer_init(Timer *this_Timer)
 {
-	//none
+	this_Timer->init_time = 0;
 }
 
 unsigned int Timer_get_ms(Timer *this_Timer)
