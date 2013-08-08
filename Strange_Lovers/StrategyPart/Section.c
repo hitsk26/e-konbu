@@ -34,7 +34,6 @@ int Section_clear_section(Section *this_Section,int executed_flag)
 int Section_run(Section *this_Section)
 {
 	int cleared_flag=0;
-
 	RunningMethod_execute_method(&(this_Section->running_methods[this_Section->current_running_method_number]),this_Section->target_values);
 	
 	

@@ -24,7 +24,7 @@ void started_running_factory_init(){
 
 	StartedRunningMethod.switch_term.distance = 0;
 	StartedRunningMethod.switch_term.inclination = 0;
-	StartedRunningMethod.switch_term.time = 0.2;
+	StartedRunningMethod.switch_term.time = 200;
 	StartedRunningMethod.switch_term.inPushed = 0;
 
 	StartedRunningMethod.target_tail_angle = 126;
@@ -50,7 +50,8 @@ void started_running_factory_init(){
 	Started_running_method_array[2] = stableRunningMethod;
 
 	StartedRunning.current_running_method_number = 0;
-	StartedRunning.number_of_running_method = 3;
+	StartedRunning.number_of_running_method = 2;
+	StartedRunning.running_methods=Started_running_method_array;
 	StartedRunning.target_values.target_brightness = 574;
 	StartedRunning.target_values.target_curvature = 0;
 	StartedRunning.target_values.target_speed = 0;

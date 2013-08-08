@@ -30,6 +30,7 @@ void Runner_execute(Runner *self){
 		ecrobot_set_motor_speed(NXT_PORT_A, 0);
 		ecrobot_set_motor_speed(NXT_PORT_B, 0);
 		ecrobot_set_motor_speed(NXT_PORT_C, 0);
+		
 		break;
 	default :
 		break;

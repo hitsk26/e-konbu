@@ -3,7 +3,7 @@
 
 #include "Balancer.h"
 #include "TargetValue.h"
-#include "Display.h"
+#include "UI/Display.h"
 #include "UI/PushButton.h"
 #include "EncoderPart/InclinationEncoder.h"
 #include "./EncoderPart/BrightnessEncoder.h"

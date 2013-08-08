@@ -39,8 +39,6 @@ void LVC_stopCtrl(LightValCtrl *this_LightValCtrl){
 }
 
 void LVC_doCtrl(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm){
-	//int turn;
-	//WM_setTurn(&mWheelMotor,PLVC_calcCtrlVal(&mPIDLightValCtrl,LV_getTargLightVal(&mLightVal),LV_getLightVal(&mLightVal),systick_get_ms()*0.001));
 	this_LightValCtrl->turn = PLVC_calcCtrlVal(&mPIDLightValCtrl,&mPIDLightValCtrlParm,LV_getTargLightVal(&mLightVal),LV_getLightVal(&mLightVal),systick_get_ms()*0.001);
 
 }
@@ -57,8 +55,6 @@ int LVC_run(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *this_PIDLightVa
 	}
 
 	return this_LightValCtrl->turn;
-
-	//ecrobot_debug1((int)this_LightValCtrl->turn,0,0);
 }
 
 void LVC_changeMode(LightValCtrl *this_LightValCtrl,LightValCtrlState state){

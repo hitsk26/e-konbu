@@ -6,7 +6,6 @@
 typedef struct {
 	U8 port_id;
 	int gyro_offset;
-	
 }InclinationEncoder;
 
 

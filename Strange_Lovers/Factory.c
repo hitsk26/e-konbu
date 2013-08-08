@@ -2,11 +2,12 @@
 
 void initialization(){
 	
-	ecrobot_set_light_sensor_active(NXT_PORT_S3);
 	ecrobot_set_motor_rev(NXT_PORT_A,0);
 	ecrobot_set_motor_rev(NXT_PORT_B,0);
 	ecrobot_set_motor_rev(NXT_PORT_C,0);
-	ecrobot_init_bt_slave("LEJOS-OSEK");
+	nxt_motor_set_count(NXT_PORT_A, 0); 
+    nxt_motor_set_count(NXT_PORT_B, 0); /* reset left motor count */
+    nxt_motor_set_count(NXT_PORT_C, 0); /* reset right motor count */
 
 	Calibration_init(&calibration);
 	TargetValue_init(&targetValue);
@@ -29,6 +30,8 @@ void initialization(){
 	InclinationEncoder_init(&inclinationEncoder,NXT_PORT_S1);
 	BrightnessEncoder_init(&brightnessEncoder,NXT_PORT_S3,&lowPassFillter);
 	DirectionEncoder_init(&directionEncoder);
+	CurvatureEncoder_init(&curvatureEncoder);
+	SpeedEncoder_init(&speedEncoder);
 
 
 	//DrivenPart

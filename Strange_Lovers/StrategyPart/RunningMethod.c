@@ -8,7 +8,7 @@ int RunningMethod_check_executed(RunningMethod *this_RunningMethod)
 
 void RunningMethod_execute_method(RunningMethod *this_RunningMethod, TargetValues target_values)
 {
-	DrivenDirector_request_drive(&drivenDirector,target_values.target_brightness, target_values.target_curvature,
+		DrivenDirector_request_drive(&drivenDirector,target_values.target_brightness, target_values.target_curvature,
 		target_values.target_speed,this_RunningMethod->target_tail_angle,this_RunningMethod->balancing_requrement,
 		this_RunningMethod->use_controller,this_RunningMethod->gyroOffsetRevise);
 }

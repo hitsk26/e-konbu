@@ -21,7 +21,6 @@ TARGET_SOURCES := \
 	balancer_param.c \
 	TargetValue.c \
 	Calibration.c \
-	Display.c \
 	logSend.c \
 	./DrivenPart/PID_Tail.c \
 	./HardwareWrapper/TouchSensor.c \
@@ -30,6 +29,8 @@ TARGET_SOURCES := \
 	./HardwareWrapper/GyroSensor.c \
 	./HardwareWrapper/LightSensor.c \
 	./UI/PushButton.c \
+	./UI/Display.c \
+	./UI/Starter.c \
 	./EncoderPart/Timer.c \
 	./EncoderPart/DistanceEncoder.c \
 	./EncoderPart/SpeedEncoder.c \

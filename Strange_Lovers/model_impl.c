@@ -29,8 +29,9 @@ DeclareAlarm(cyclic_alarm1);
 
 //‰Šúˆ—
 void ecrobot_device_initialize(void){
+	ecrobot_init_bt_slave("LEJOS-OSEK");
+	ecrobot_set_light_sensor_active(NXT_PORT_S3);
 	initialization();
-
 }
 
 //Œãn––ˆ—
@@ -124,17 +125,12 @@ TASK(ActionTask){
 
 TASK(UI){
 
-	if(PushButton_detect_push_button(&pushButton) == TRUE && (Runner_get_runner_state(&runner)==RUN)){
-		ecrobot_sound_tone(880, 512, 30);
-		systick_wait_ms(500);
-		Runner_stop_run(&runner);
+	if(Runner_get_runner_state(&runner)==RUN){
+		 Starter_accept_stop_run(&starter);
 	}
-	else if(PushButton_detect_push_button(&pushButton) == TRUE && (Runner_get_runner_state(&runner)==STOP)){
-		ecrobot_sound_tone(880, 512, 30);
-		systick_wait_ms(500);
-		initialization();
-		Runner_start_run(&runner);
-	
+	else if(Runner_get_runner_state(&runner)==STOP){
+		 Starter_accept_start_run(&starter);
 	}
+
 	TerminateTask();
 }
