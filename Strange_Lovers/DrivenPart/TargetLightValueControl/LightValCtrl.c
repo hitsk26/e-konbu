@@ -5,8 +5,6 @@
 
 void LVC_init(LightValCtrl *this_LightValCtrl,BrightnessEncoder LVE,PIDLightValCtrl PLVC){
 	LV_init(&mLightVal,LVE);
-	//mWheelMotor = WM;
-	//WM_init(&mWheelMotor);
 	mPIDLightValCtrl = PLVC;
 	PLVC_init(&mPIDLightValCtrl);
 	this_LightValCtrl->LV_CtrlState = LV_CTRL_ON;
