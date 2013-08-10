@@ -31,6 +31,7 @@ TARGET_SOURCES := \
 	./UI/PushButton.c \
 	./UI/Display.c \
 	./UI/Starter.c \
+	./UI/ParameterReceiver.c \
 	./EncoderPart/Timer.c \
 	./EncoderPart/DistanceEncoder.c \
 	./EncoderPart/SpeedEncoder.c \

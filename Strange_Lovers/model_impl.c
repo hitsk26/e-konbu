@@ -1,5 +1,4 @@
 #include "./StrategyPart/Runner.h"
-#include "./StrategyPart/RunnerState.h"
 
 #include "Factory.h"
 
@@ -76,12 +75,6 @@ TASK(ActionTask){
 
 TASK(UI){
 
-	if(Runner_get_runner_state(&runner)==RUN){
-		 Starter_accept_stop_run(&starter);
-	}
-	else if(Runner_get_runner_state(&runner)==STOP){
-		 Starter_accept_start_run(&starter);
-	}
-
+	Starter_user_command_accept(&starter);
 	TerminateTask();
 }

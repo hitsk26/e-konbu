@@ -16,6 +16,7 @@
 #include "./UI/PushButton.h"
 #include "./UI/Display.h"
 #include "./UI/Starter.h"
+#include "./UI/ParameterReceiver.h"
 
 
 
@@ -72,6 +73,7 @@ TargetValue targetValue;
 PushButton pushButton;
 Display display;
 Starter starter;
+ParameterReceiver parameterReceiver;
 
 //lib 
 LowPassFillter lowPassFillter;
