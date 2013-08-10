@@ -12,6 +12,7 @@ void Starter_accept_start_run(Starter *self)
 	if(PushButton_detect_push_button(&pushButton) == TRUE){
 		ecrobot_sound_tone(880, 512, 30);
 		systick_wait_ms(500);
+		self->starter_state = ON_CONTEST;
 		initialization();
 		Timer_reset(&timer);
 		Runner_start_run(&runner);
@@ -28,7 +29,8 @@ void Starter_accept_stop_run(Starter *self)
 }
 
 void Starter_accept_paramter_adujust_start(Starter *self){
-	if(PushButton_detect_push_button(&pushButton) == TRUE){	
+	if(PushButton_detect_push_button(&pushButton) == TRUE){
+		systick_wait_ms(500);
 		self->starter_state = PARAMETER_ADJUST;
 	}
 }
