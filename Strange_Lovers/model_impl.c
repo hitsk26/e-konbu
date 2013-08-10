@@ -7,7 +7,6 @@
 #include "kernel_id.h"
 #include "ecrobot_interface.h"
 
-
 //カウンタの宣言
 DeclareCounter(SysTimerCnt);
 
@@ -15,13 +14,6 @@ DeclareCounter(SysTimerCnt);
 DeclareTask(ActionTask);
 DeclareTask(INITIALIZE);
 DeclareTask(UI);
-
-
-//イベントの宣言
-DeclareEvent(RUNEVENT);
-
-//アラームの宣言
-DeclareAlarm(cyclic_alarm1);
 
 //初期処理
 void ecrobot_device_initialize(void){
@@ -67,7 +59,6 @@ void user_1ms_isr_type2(void){
 
 
 TASK(INITIALIZE){
-
 	while(1){
 		if(Calibration_calibration(&calibration) ==1){
 			break;
