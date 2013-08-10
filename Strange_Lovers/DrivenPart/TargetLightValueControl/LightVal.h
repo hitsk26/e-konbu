@@ -9,9 +9,6 @@ typedef struct{
 	float targLightVal;
 }LightVal;
 
-//LightValEncoder mLightValEncoder;
-//LightValListener mLightValListener;
-//LightValRange mLightValRange;
 
 extern void LV_init(LightVal *this_LightVal,BrightnessEncoder LVE);
 extern float LV_getLightVal(LightVal *this_LightVal);

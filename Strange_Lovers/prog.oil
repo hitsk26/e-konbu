@@ -82,22 +82,7 @@ CPU ATMEL_AT91SAM7S256
 			APPMODE = appmode1;
 		};
 	};
-	/*
-	ALARM cyclic_alarm2
-	{
-		COUNTER = SysTimerCnt;
-		ACTION = ACTIVATETASK
-		{
-			TASK = INITIALIZE;
-		};
-		AUTOSTART = TRUE
-		{
-			ALARMTIME = 1;
-			CYCLETIME = 4;
-			APPMODE = appmode1;
-		};
-	};
-	*/
+
 	ALARM cyclic_alarm3
 	{
 		COUNTER = SysTimerCnt;

@@ -6,7 +6,7 @@ void Calibration_init(Calibration *this_Calibration){
 }
 
 
-void Calibration_calibration(Calibration *this_Calibration){
+int Calibration_calibration(Calibration *this_Calibration){
 
 	static U32	avg_cnt = 0;
 	static U32	cal_start_time;	
@@ -59,7 +59,7 @@ void Calibration_calibration(Calibration *this_Calibration){
 			break;
 		}
 	}
-
-	end_calibration_flg = 1;
+	//キャリブレーションが終了したら1を返す
+	return 1;
 }
 

@@ -7,10 +7,6 @@
 #include "kernel_id.h"
 #include "ecrobot_interface.h"
 
-int count_start=0;
-int flg_tail=0;
-int Start_flg =0;
-
 
 //カウンタの宣言
 DeclareCounter(SysTimerCnt);
@@ -72,54 +68,18 @@ void user_1ms_isr_type2(void){
 
 TASK(INITIALIZE){
 
-	if(end_calibration_flg == 0){
-		Calibration_calibration(&calibration);
-		//TargetValue_set_anglr_of_aim(&targetValue,0);		//100
-		end_calibration_flg =1;
-		Runner_start_run(&runner);
-	}
-	if(PushButton_detect_push_button(&pushButton) == TRUE)
-	Start_flg =1;
-
-	/*
-	if(PushButton_detect_push_button(&pushButton) == TRUE)
-	{
-		Start_flg =1;
-		flg_tail = 1;
-	}
-	/*
-	if(Start_flg==1){
-
-		if(count_start < 50){
-			TargetValue_set_anglr_of_aim(&targetValue,0);	//126
-			count_start++;
-		}else{
-			TargetValue_set_anglr_of_aim(&targetValue,0);
-			flg_tail=1;
+	while(1){
+		if(Calibration_calibration(&calibration) ==1){
+			break;
 		}
-
 	}
-	*/
-
-	if(flg_tail==1){
-		//SetEvent(ActionTask,RUNEVENT);
-	}
-
-	//PID_tail(/*targetValue.target_tail_angle*/90);
-
+	Runner_start_run(&runner);
 	TerminateTask();
 }
 
 TASK(ActionTask){
 
-	// 4msec 毎にイベント通知する設定
-    //SetRelAlarm(cyclic_alarm1, 1, 4); 
-
-	//WaitEvent(RUNEVENT);
-	//ClearEvent(RUNEVENT);
-	
 	Runner_execute(&runner);
-
 	TerminateTask();
 }
 
