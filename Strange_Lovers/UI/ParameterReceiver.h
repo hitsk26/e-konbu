@@ -7,12 +7,13 @@
 
 typedef struct {
 	LightValCtrl *lightValCtrl;
-
+	SpeedCtrl *speedCtrl;
+	CurvatureCtrl *curvatureCtrl;
 }ParameterReceiver;
 
 
 
-void ParameterReceiver_init(ParameterReceiver *self);
+void ParameterReceiver_init(ParameterReceiver *self,LightValCtrl *lightValCtrl,SpeedCtrl *speedCtrl,CurvatureCtrl *curvatureCtrl);
 
 void ParamterReceiver_paramter_adjust(ParameterReceiver *self);
 
