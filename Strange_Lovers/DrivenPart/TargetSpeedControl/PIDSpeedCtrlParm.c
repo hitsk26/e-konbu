@@ -1,13 +1,9 @@
 #include "PIDSpeedCtrlParm.h"
 
 void PSCP_init(PIDSpeedCtrlParm *this_PIDSpeedCtrlParm){
-//200mm/s Kp0.03‚ª‚¿‚å‚¤‚Ç‚æ‚¢
 	this_PIDSpeedCtrlParm->sKp = 0.0008;
-	
-	//this_PIDSpeedCtrlParm->sKp = 1.5;
-	//this_PIDSpeedCtrlParm->sKi = 0.0002;
-	//this_PIDSpeedCtrlParm->sKi = 0.0002;
-	this_PIDSpeedCtrlParm->sKd = 0.0001;
+	//this_PIDSpeedCtrlParm->sKi = 0.00002;
+	//this_PIDSpeedCtrlParm->sKd = 0.0000001;
 }
 
 float PSCP_getSKp(PIDSpeedCtrlParm *this_PIDSpeedCtrlParm){

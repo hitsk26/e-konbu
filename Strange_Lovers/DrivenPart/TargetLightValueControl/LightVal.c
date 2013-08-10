@@ -2,9 +2,6 @@
 #include "../../Factory.h"
 
 void LV_init(LightVal *this_LightVal,BrightnessEncoder LVE){
-
-	//mLightValEncoder = LVE;
-	//LVE_init(&mLightValEncoder);
 	this_LightVal->targLightVal = 0.0;
 }
 

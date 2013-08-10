@@ -5,8 +5,6 @@
 #define CYCLE_TIME 0.004
 #define TARGTIME 100
 
-#define MEASURE_TIME_CYCLE 100 //[ms]
-#define EXECUTE_CYCLE_TIME 4 //[ms]
 
 void DirectionEncoder_init(DirectionEncoder *this_DirectionEncoder)
 {
