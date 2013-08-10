@@ -19,10 +19,12 @@ typedef struct {
 	/**
 	 * ŽŸ‹æŠÔ‚ðŽæ“¾‚·‚é
 	 */
-	struct Section* Section_get_next_section(Section *this_Section);
+	struct Section* Section_get_next_section(Section *self);
 
-	int Section_run(Section *this_Section);
+	int Section_run(Section *self);
 
-	void Section_init(Section *this_Section);
+	void  Section_init(Section *self,Section *nextSection,int number_of_running_method,RunningMethod *running_methods,TargetValues target_values);
+
+	void Section_reset(Section *self);
 
 #endif

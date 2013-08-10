@@ -42,17 +42,19 @@ typedef struct {
 
 }RunningMethod;
 
+void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerWeight use_controller,int target_tail_angle,
+					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm));
 
 
 	/**
 	 * ëññ@êÿÇËë÷Ç¶îªíf
 	 */
-	int  RunningMethod_check_executed(RunningMethod *this_RunningMethod);
+	int  RunningMethod_check_executed(RunningMethod *self);
 
 	/**
 	 * ëññ@Çé¿çsÇ∑ÇÈ
 	 */
-	void RunningMethod_execute_method(RunningMethod *this_RunningMethod,TargetValues target_value);
+	void RunningMethod_execute_method(RunningMethod *self,TargetValues target_value);
 
 
 #endif

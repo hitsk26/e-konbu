@@ -10,7 +10,7 @@ void Runner_init(Runner *self,Section *start_section){
 void Runner_run(Runner *self){
 	
 	if(Section_run(self->current_section)==1){
-		Section_init(self->current_section);
+		Section_reset(self->current_section);
 		self->current_section = Section_get_next_section(self->current_section);
 	}
 }
