@@ -28,13 +28,12 @@ void ParamterReceiver_paramter_adjust(ParameterReceiver *self){
 	receive_length = ecrobot_read_bt(buf, 0,  BUF_SIZE);
 	if (receive_length > 0)
 	{
-		ecrobot_sound_tone(449,40,30);
-
 		if(ParameterReceiver_check_receive_data_number(buf)==1){
 			ParameterReceiver_adjust_value(self,buf);
 		}
 		else {
 			ParameterReceiver_switch_adujusting_value(self,buf);
+			ecrobot_sound_tone(449,40,30);
 			}
 	}
 }
@@ -42,7 +41,7 @@ static void ParameterReceiver_init_buf(char *buf,int buf_size ){
 	int i=0;
 	for (i=0; i< buf_size ; i++)
 	{
-		buf[i] = 0;
+		buf[i] = '\0';
 	}
 }
 
@@ -74,7 +73,8 @@ static void ParameterReceiver_adjust_value(ParameterReceiver *self,char *buf){
 	}
 
 	LVC_setCtrlParm(self->lightValCtrl,parameter);
-	Display_print_PID_paramteres(parameter.lKp,parameter.lKi,parameter.lKd);
+	ecrobot_debug1(parameter.lKp*1000,parameter.lKi*1000,parameter.lKd*1000);
+	//Display_print_PID_paramteres(parameter.lKp,parameter.lKi,parameter.lKd);
 }
 
 static void ParameterReceiver_switch_adujusting_value(ParameterReceiver *self,char *buf){
@@ -87,14 +87,14 @@ static float ParameterReceiver_atof(ParameterReceiver *self,char *buf){
 }
 
 ADJUSTING_PARAMETER ParameterReceiver_ato_ADJUSTING_PARAMETER(ParameterReceiver *self,char *buf){
-	if(strcmp(buf,"KP")){
+	if(strcmp(buf,"KP")==0){
 		return KP;
 	}
-	else if(strcmp(buf,"KI")){
+	else if(strcmp(buf,"KI")==0){
 		return KI;
 	}
-	else if(strcmp(buf,"KD")){
+	else if(strcmp(buf,"KD")==0){
 		return KD;
 	}
-
 }
+
