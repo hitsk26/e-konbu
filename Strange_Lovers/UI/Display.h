@@ -9,6 +9,7 @@ typedef struct{
 
 extern void Display_init(Display *this_Display);
 extern void Display_print_calibrate_value(int black_value,int white_value,int gyro_offset);
+extern void Display_print_PID_paramteres(float Kp,float Ki,float Kd);
 
 #endif
 

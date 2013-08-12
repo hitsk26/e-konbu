@@ -45,7 +45,7 @@ void PLVC_setCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm 
 	this_PIDLightValCtrl->mPIDLightValCtrlParm = parm;
 }
 
-PIDLightValCtrlParm PLVC_getLtrlParm(PIDLightValCtrl *this_PIDLightValCtrl){
+PIDLightValCtrlParm PLVC_getCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl){
 	return this_PIDLightValCtrl->mPIDLightValCtrlParm;
 }
 
