@@ -12,11 +12,13 @@ void initialization(){
 	Calibration_init(&calibration);
 	TargetValue_init(&targetValue);
 	
-	Display_init(&display);
 	
 
 	//UI
 	PushButton_init(&pushButton,NXT_PORT_S4);
+	ParameterReceiver_init(&parameterReceiver,&mLightValCtrl,&mSpeedCtrl,&mCurvatureCtrl);
+	Display_init(&display);
+	
 
 	//lib
 	MovingAverage_init(&speedEncoderMovingAverage,25);
