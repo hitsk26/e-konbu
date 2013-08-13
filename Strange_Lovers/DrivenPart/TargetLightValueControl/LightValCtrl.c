@@ -3,8 +3,8 @@
 
 
 
-void LVC_init(LightValCtrl *this_LightValCtrl,BrightnessEncoder LVE,PIDLightValCtrl PLVC){
-	LV_init(&mLightVal,LVE);
+void LVC_init(LightValCtrl *this_LightValCtrl,PIDLightValCtrl PLVC){
+	LV_init(&mLightVal);
 	mPIDLightValCtrl = PLVC;
 	PLVC_init(&mPIDLightValCtrl);
 	this_LightValCtrl->LV_CtrlState = LV_CTRL_ON;

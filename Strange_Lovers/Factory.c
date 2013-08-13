@@ -63,7 +63,7 @@ void initialization(){
 	//DrivenPart/TargetLightValueControl
 	PLVCP_init(&mPIDLightValCtrlParm,145.0,0.15,10);
 	PLVC_init(&mPIDLightValCtrl);
-	LVC_init(&mLightValCtrl,brightnessEncoder,mPIDLightValCtrl);
+	LVC_init(&mLightValCtrl,mPIDLightValCtrl);
 
 	//initialize Sections pleas call them here!!
 	first_curve_factory_init();
