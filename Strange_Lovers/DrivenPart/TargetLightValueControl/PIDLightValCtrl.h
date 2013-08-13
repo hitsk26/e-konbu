@@ -8,9 +8,7 @@
 
 
 typedef struct{
-	float deviation;
 	float integratedDeviation;
-	float differentialDeviation;
 	float bfDeviation;
 	float lastMeasurementTime;
 	PIDLightValCtrlParm mPIDLightValCtrlParm;
