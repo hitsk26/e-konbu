@@ -39,8 +39,6 @@ void LVC_stopCtrl(LightValCtrl *self){
 void LVC_doCtrl(LightValCtrl *self){
 	self->turn = PLVC_calcCtrlVal(&mPIDLightValCtrl,LV_getTargLightVal(&mLightVal),LV_getLightVal(&mLightVal),systick_get_ms()*0.001);
 	PIDLightValCtrlParm *parameter = LVC_getCtrlParm(&mLightValCtrl);
-	ecrobot_debug1(parameter->lKp*1000,parameter->lKi*1000,parameter->lKd*1000);
-	
 }
 
 int LVC_run(LightValCtrl *self){

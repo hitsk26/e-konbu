@@ -1,27 +1,27 @@
 #include "PIDLightValCtrlParm.h"
 
-void PLVCP_init(PIDLightValCtrlParm *this_PIDLightValCtrlParm,float Kp,float Ki,float Kd){
+void PLVCP_init(PIDLightValCtrlParm *selfParm,float Kp,float Ki,float Kd){
 
-	this_PIDLightValCtrlParm->lKp = Kp;
-	this_PIDLightValCtrlParm->lKi = Ki;
-	this_PIDLightValCtrlParm->lKd = Kd;
+	selfParm->lKp = Kp;
+	selfParm->lKi = Ki;
+	selfParm->lKd = Kd;
 }
-float PLVCP_getLKp(PIDLightValCtrlParm *this_PIDLightValCtrlParm){
-	return this_PIDLightValCtrlParm->lKp;
+float PLVCP_getLKp(PIDLightValCtrlParm *selfParm){
+	return selfParm->lKp;
 }
-void PLVCP_setLKp(PIDLightValCtrlParm *this_PIDLightValCtrlParm,float parm){
-	this_PIDLightValCtrlParm->lKp = parm;
+void PLVCP_setLKp(PIDLightValCtrlParm *selfParm,float parm){
+	selfParm->lKp = parm;
 }
-float PLVCP_getLKi(PIDLightValCtrlParm *this_PIDLightValCtrlParm){
-	return this_PIDLightValCtrlParm->lKi;
+float PLVCP_getLKi(PIDLightValCtrlParm *selfParm){
+	return selfParm->lKi;
 }
-void PLVCP_setLKi(PIDLightValCtrlParm *this_PIDLightValCtrlParm,float parm){
-	this_PIDLightValCtrlParm->lKi = parm;
+void PLVCP_setLKi(PIDLightValCtrlParm *selfParm,float parm){
+	selfParm->lKi = parm;
 }
-float PLVCP_getLKd(PIDLightValCtrlParm *this_PIDLightValCtrlParm){
-	return this_PIDLightValCtrlParm->lKd;
+float PLVCP_getLKd(PIDLightValCtrlParm *selfParm){
+	return selfParm->lKd;
 }
-void PLVCP_setLKd(PIDLightValCtrlParm *this_PIDLightValCtrlParm,float parm){
-	this_PIDLightValCtrlParm->lKd = parm;
+void PLVCP_setLKd(PIDLightValCtrlParm *selfParm,float parm){
+	selfParm->lKd = parm;
 }
 
