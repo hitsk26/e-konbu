@@ -10,7 +10,6 @@
 
 
 #include "Calibration.h"
-#include "TargetValue.h"
 
 
 #include "./UI/PushButton.h"
@@ -65,7 +64,6 @@
 
 
 Calibration calibration;
-TargetValue targetValue;
 
 
 

@@ -19,9 +19,6 @@ int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm *
 
 	float differentialDeviation =  ((deviation - 
 		this_PIDLightValCtrl->bfDeviation)/(time - this_PIDLightValCtrl->lastMeasurementTime));
-
-
-
 	
 	turn = (float)(deviation * PLVCP_getLKp(&mPIDLightValCtrlParm)
 		+ this_PIDLightValCtrl->integratedDeviation * PLVCP_getLKi(&mPIDLightValCtrlParm)
@@ -39,11 +36,11 @@ int PLVC_calcCtrlVal(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm *
 	return (int)turn;
 }
 
-void PLVC_setCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm parm){
+void PLVC_setCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl,PIDLightValCtrlParm *parm){
 	this_PIDLightValCtrl->mPIDLightValCtrlParm = parm;
 }
 
-PIDLightValCtrlParm PLVC_getCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl){
+PIDLightValCtrlParm* PLVC_getCtrlParm(PIDLightValCtrl *this_PIDLightValCtrl){
 	return this_PIDLightValCtrl->mPIDLightValCtrlParm;
 }
 

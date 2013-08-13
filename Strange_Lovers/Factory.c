@@ -10,7 +10,6 @@ void initialization(){
     nxt_motor_set_count(NXT_PORT_C, 0); /* reset right motor count */
 
 	Calibration_init(&calibration);
-	TargetValue_init(&targetValue);
 	
 	
 

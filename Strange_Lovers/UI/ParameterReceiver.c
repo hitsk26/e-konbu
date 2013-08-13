@@ -55,25 +55,25 @@ static int ParameterReceiver_check_receive_data_number(char *buf){
 }
 
 static void ParameterReceiver_adjust_value(ParameterReceiver *self,char *buf){
-	PIDLightValCtrlParm parameter = LVC_getCtrlParm(self->lightValCtrl);
+	PIDLightValCtrlParm *parameter = LVC_getCtrlParm(self->lightValCtrl);
 	float new_value = ParameterReceiver_atof(self,buf);
 
 	switch (self->adjusing_paramter) {
 		case KP :
-			parameter.lKp = new_value;		
+			parameter->lKp = new_value;		
 		break;
 
 		case KI :
-			parameter.lKi = new_value;
+			parameter->lKi = new_value;
 		break;
 
 		case KD :
-			parameter.lKd = new_value;
+			parameter->lKd = new_value;
 		break;
 	}
 
 	LVC_setCtrlParm(self->lightValCtrl,parameter);
-	ecrobot_debug1(parameter.lKp*1000,parameter.lKi*1000,parameter.lKd*1000);
+	ecrobot_debug1(parameter->lKp*1000,parameter->lKi*1000,parameter->lKd*1000);
 	//Display_print_PID_paramteres(parameter.lKp,parameter.lKi,parameter.lKd);
 }
 

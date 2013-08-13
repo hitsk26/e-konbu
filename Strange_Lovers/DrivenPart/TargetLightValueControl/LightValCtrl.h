@@ -16,8 +16,8 @@ typedef struct{
 extern void LVC_init(LightValCtrl *this_LightValCtrl,BrightnessEncoder LVE,PIDLightValCtrl PLVC);
 extern void LVC_setTargLightVal(LightValCtrl *this_LightValCtrl,int parm);
 extern int LVC_getTargLightValCtrl(LightValCtrl *this_LightValCtrl);
-extern void LVC_setCtrlParm(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm parm);
-extern PIDLightValCtrlParm LVC_getCtrlParm(LightValCtrl *this_LightValCtrl);
+extern void LVC_setCtrlParm(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *parm);
+extern PIDLightValCtrlParm* LVC_getCtrlParm(LightValCtrl *this_LightValCtrl);
 extern void LVC_startCtrl(LightValCtrl *this_LightValCtrl);
 extern void LVC_stopCtrl(LightValCtrl *this_LightValCtrl);
 extern void LVC_doCtrl(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm);

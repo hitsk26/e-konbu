@@ -19,11 +19,11 @@ int LVC_getTargLightValCtrl(LightValCtrl *this_LightValCtrl){
 	return LV_getTargLightVal(&mLightVal);
 }
 
-void LVC_setCtrlParm(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm parm){
+void LVC_setCtrlParm(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *parm){
 	PLVC_setCtrlParm(&mPIDLightValCtrl,parm);
 }
 
-PIDLightValCtrlParm LVC_getCtrlParm(LightValCtrl *this_LightValCtrl){
+PIDLightValCtrlParm* LVC_getCtrlParm(LightValCtrl *this_LightValCtrl){
 	return PLVC_getCtrlParm(&mPIDLightValCtrl);
 }
 
