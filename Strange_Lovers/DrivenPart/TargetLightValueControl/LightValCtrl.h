@@ -8,24 +8,25 @@
 
 typedef struct{
 	LightValCtrlState LV_CtrlState;
+	PIDLightValCtrl *mPIDLightValCtrl;
 	int turn;
 }LightValCtrl;
 
 
 
-extern void LVC_init(LightValCtrl *this_LightValCtrl,PIDLightValCtrl PLVC);
-extern void LVC_setTargLightVal(LightValCtrl *this_LightValCtrl,int parm);
-extern int LVC_getTargLightValCtrl(LightValCtrl *this_LightValCtrl);
-extern void LVC_setCtrlParm(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *parm);
-extern PIDLightValCtrlParm* LVC_getCtrlParm(LightValCtrl *this_LightValCtrl);
-extern void LVC_startCtrl(LightValCtrl *this_LightValCtrl);
-extern void LVC_stopCtrl(LightValCtrl *this_LightValCtrl);
-extern void LVC_doCtrl(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm);
-extern int LVC_run(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm);
-extern void LVC_changeMode(LightValCtrl *this_LightValCtrl,LightValCtrlState state);
-extern LightValRange LVC_getLightValRange(LightValCtrl *this_LightValCtrl);
-extern void LVC_setLightValRange(LightValCtrl *this_LightValCtrl,LightValRange LVR);
-extern void LVC_setLightValListener(LightValCtrl *this_LightValCtrl,LightValListener LVL);
+extern void LVC_init(LightValCtrl *self,PIDLightValCtrl *PLVC);
+extern void LVC_setTargLightVal(LightValCtrl *self,int parm);
+extern int LVC_getTargLightValCtrl(LightValCtrl *self);
+extern void LVC_setCtrlParm(LightValCtrl *self,PIDLightValCtrlParm *parm);
+extern PIDLightValCtrlParm* LVC_getCtrlParm(LightValCtrl *self);
+extern void LVC_startCtrl(LightValCtrl *self);
+extern void LVC_stopCtrl(LightValCtrl *self);
+extern void LVC_doCtrl(LightValCtrl *self);
+extern int LVC_run(LightValCtrl *self);
+extern void LVC_changeMode(LightValCtrl *self,LightValCtrlState state);
+extern LightValRange LVC_getLightValRange(LightValCtrl *self);
+extern void LVC_setLightValRange(LightValCtrl *self,LightValRange LVR);
+extern void LVC_setLightValListener(LightValCtrl *self,LightValListener LVL);
 
 
 #endif

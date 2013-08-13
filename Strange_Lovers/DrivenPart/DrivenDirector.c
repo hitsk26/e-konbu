@@ -13,7 +13,7 @@ int DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,float tar
 	CC_setTargCurvature(&mCurvatureCtrl,target_curvature);
 	LV_setTargLightVal(&mLightVal,target_brightness);
 
-	int brightness_turn = LVC_run(&mLightValCtrl,&mPIDLightValCtrlParm);
+	int brightness_turn = LVC_run(&mLightValCtrl);
 	int curvature_turn = CC_run(&mCurvatureCtrl);
 	logSend(0,0,brightness_turn,curvature_turn,use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn,SpeedEncoder_get_speed(&speedEncoder),0,0);
