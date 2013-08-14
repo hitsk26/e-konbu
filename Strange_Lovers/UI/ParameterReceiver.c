@@ -19,7 +19,7 @@ void ParameterReceiver_init(ParameterReceiver *self,LightValCtrl *lightValCtrl,S
 	self->speedCtrl = speedCtrl;
 }
 
-void ParamterReceiver_paramter_adjust(ParameterReceiver *self){
+void ParamterReceiver_parameter_adjust(ParameterReceiver *self){
 	int receive_length=0;
 	char buf[ BUF_SIZE];
 	

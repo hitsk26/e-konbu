@@ -50,7 +50,7 @@ void Starter_user_command_accept(Starter *self){
 			break;
 		case PARAMETER_ADJUST :
 				Starter_accept_start_run(&starter);
-				ParamterReceiver_paramter_adjust(&parameterReceiver);
+				ParamterReceiver_parameter_adjust(&parameterReceiver);
 			break;
 
 	}

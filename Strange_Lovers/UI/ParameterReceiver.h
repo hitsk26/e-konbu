@@ -23,7 +23,7 @@ typedef struct {
 
 void ParameterReceiver_init(ParameterReceiver *self,LightValCtrl *lightValCtrl,SpeedCtrl *speedCtrl,CurvatureCtrl *curvatureCtrl);
 
-void ParamterReceiver_paramter_adjust(ParameterReceiver *self);
+void ParamterReceiver_parameter_adjust(ParameterReceiver *self);
 
 
 #endif
