@@ -22,7 +22,7 @@ void ParameterReceiver_init(ParameterReceiver *self,LightValCtrl *lightValCtrl,S
 void ParamterReceiver_parameter_adjust(ParameterReceiver *self){
 	int receive_length=0;
 	char buf[ BUF_SIZE];
-	
+
 	ParameterReceiver_init_buf(buf,BUF_SIZE);
 
 	receive_length = ecrobot_read_bt(buf, 0,  BUF_SIZE);
@@ -55,6 +55,7 @@ static int ParameterReceiver_check_receive_data_number(char *buf){
 }
 
 static void ParameterReceiver_adjust_value(ParameterReceiver *self,char *buf){
+	
 	PIDLightValCtrlParm *parameter = LVC_getCtrlParm(self->lightValCtrl);
 	float new_value = ParameterReceiver_atof(self,buf);
 
@@ -73,8 +74,7 @@ static void ParameterReceiver_adjust_value(ParameterReceiver *self,char *buf){
 	}
 
 	LVC_setCtrlParm(self->lightValCtrl,parameter);
-	ecrobot_debug1(parameter->lKp*1000,parameter->lKi*1000,parameter->lKd*1000);
-	//Display_print_PID_paramteres(parameter.lKp,parameter.lKi,parameter.lKd);
+	Display_print_PID_paramteres(parameter->lKp,parameter->lKi,parameter->lKd);
 }
 
 static void ParameterReceiver_switch_adujusting_value(ParameterReceiver *self,char *buf){

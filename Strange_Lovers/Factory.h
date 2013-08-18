@@ -123,8 +123,7 @@ Runner runner;
 
 
 extern void initialization();
-extern void restart();
-extern void reset_objects();
+extern void clear_objects();
 
 
 #endif
