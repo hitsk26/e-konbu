@@ -20,12 +20,13 @@ void Runner_execute(Runner *self){
 
 	switch (self->runner_state){
 	case (RUN):
-		Runner_run(self);
+		BrightnessEncoder_cal_normalized_brightness_(&brightnessEncoder);
 		DirectionEncoder_calc_speed(&directionEncoder);
 		DistanceEncoder_calc_distance(&distanceEncoder);
 		SpeedEncoder_calc_speed(&speedEncoder);
 		CurvatureEncoder_calc_curvature(&curvatureEncoder);
-		break;
+		Runner_run(self);
+			break;
 	case (STOP) :
 		ecrobot_set_motor_speed(NXT_PORT_A, 0);
 		ecrobot_set_motor_speed(NXT_PORT_B, 0);
