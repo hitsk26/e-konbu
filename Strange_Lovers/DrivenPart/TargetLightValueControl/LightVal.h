@@ -10,7 +10,7 @@ typedef struct{
 }LightVal;
 
 
-extern void LV_init(LightVal *this_LightVal,BrightnessEncoder LVE);
+extern void LV_init(LightVal *this_LightVal);
 extern float LV_getLightVal(LightVal *this_LightVal);
 extern float LV_getTargLightVal(LightVal *this_LightVal);
 extern void LV_setTargLightVal(LightVal *this_LightVal,float parm);

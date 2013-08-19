@@ -3,48 +3,48 @@
 
 
 
-void LVC_init(LightValCtrl *this_LightValCtrl,BrightnessEncoder LVE,PIDLightValCtrl PLVC){
-	LV_init(&mLightVal,LVE);
-	mPIDLightValCtrl = PLVC;
-	PLVC_init(&mPIDLightValCtrl);
-	this_LightValCtrl->LV_CtrlState = LV_CTRL_ON;
-	this_LightValCtrl->turn = 0;
+void LVC_init(LightValCtrl *self,PIDLightValCtrl *PLVC){
+	LV_init(&mLightVal);
+	PLVC_init(PLVC,&mPIDLightValCtrlParm);
+	self->mPIDLightValCtrl = PLVC;
+	self->LV_CtrlState = LV_CTRL_ON;
+	self->turn = 0;
 }
 
-void LVC_setTargLightVal(LightValCtrl *this_LightValCtrl,int parm){
+void LVC_setTargLightVal(LightValCtrl *self,int parm){
 	LV_setTargLightVal(&mLightVal,parm);
 }
 
-int LVC_getTargLightValCtrl(LightValCtrl *this_LightValCtrl){
+int LVC_getTargLightValCtrl(LightValCtrl *self){
 	return LV_getTargLightVal(&mLightVal);
 }
 
-void LVC_setCtrlParm(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm parm){
+void LVC_setCtrlParm(LightValCtrl *self,PIDLightValCtrlParm *parm){
 	PLVC_setCtrlParm(&mPIDLightValCtrl,parm);
 }
 
-PIDLightValCtrlParm LVC_getCtrlParm(LightValCtrl *this_LightValCtrl){
-	return PLVC_getCtrlParm(&mPIDLightValCtrl);
+PIDLightValCtrlParm* LVC_getCtrlParm(LightValCtrl *self){
+	return PLVC_getCtrlParm(self->mPIDLightValCtrl);
 }
 
-void LVC_startCtrl(LightValCtrl *this_LightValCtrl){
-	LVC_changeMode(this_LightValCtrl,LV_CTRL_ON);
+void LVC_startCtrl(LightValCtrl *self){
+	LVC_changeMode(self,LV_CTRL_ON);
 }
 
-void LVC_stopCtrl(LightValCtrl *this_LightValCtrl){
+void LVC_stopCtrl(LightValCtrl *self){
 	ecrobot_sound_tone(900,100,10);
-	LVC_changeMode(this_LightValCtrl,LV_CTRL_OFF);
+	LVC_changeMode(self,LV_CTRL_OFF);
 }
 
-void LVC_doCtrl(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm){
-	this_LightValCtrl->turn = PLVC_calcCtrlVal(&mPIDLightValCtrl,&mPIDLightValCtrlParm,LV_getTargLightVal(&mLightVal),LV_getLightVal(&mLightVal),systick_get_ms()*0.001);
-
+void LVC_doCtrl(LightValCtrl *self){
+	self->turn = PLVC_calcCtrlVal(&mPIDLightValCtrl,LV_getTargLightVal(&mLightVal),LV_getLightVal(&mLightVal),systick_get_ms()*0.001);
+	PIDLightValCtrlParm *parameter = LVC_getCtrlParm(&mLightValCtrl);
 }
 
-int LVC_run(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *this_PIDLightValCtrlParm){
-	switch(this_LightValCtrl->LV_CtrlState){
+int LVC_run(LightValCtrl *self){
+	switch(self->LV_CtrlState){
 	case LV_CTRL_ON:
-		LVC_doCtrl(&(*this_LightValCtrl),&mPIDLightValCtrlParm);
+		LVC_doCtrl(&(*self));
 		break;
 	case LV_CTRL_OFF:
 		break;
@@ -52,21 +52,21 @@ int LVC_run(LightValCtrl *this_LightValCtrl,PIDLightValCtrlParm *this_PIDLightVa
 		break;
 	}
 
-	return this_LightValCtrl->turn;
+	return self->turn;
 }
 
-void LVC_changeMode(LightValCtrl *this_LightValCtrl,LightValCtrlState state){
-	this_LightValCtrl->LV_CtrlState = state;
+void LVC_changeMode(LightValCtrl *self,LightValCtrlState state){
+	self->LV_CtrlState = state;
 }
 
-LightValRange LVC_getLightValRange(LightValCtrl *this_LightValCtrl){
+LightValRange LVC_getLightValRange(LightValCtrl *self){
 	return LV_getLightValRange(&mLightVal);
 }
 
-void LVC_setLightValRange(LightValCtrl *this_LightValCtrl,LightValRange LVR){
+void LVC_setLightValRange(LightValCtrl *self,LightValRange LVR){
 	LV_setLightValRange(&mLightVal,LVR);
 }
 
-void LVC_setLightValListener(LightValCtrl *this_LightValCtrl,LightValListener LVL){
+void LVC_setLightValListener(LightValCtrl *self,LightValListener LVL){
 	LV_setLightValListener(&mLightVal,LVL);
 }

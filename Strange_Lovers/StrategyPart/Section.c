@@ -36,7 +36,7 @@ int Section_clear_section(Section *self,int executed_flag)
 
 	if(executed_flag==1 && 
 		self->current_running_method_number+1 == self->number_of_running_method){
-			//ecrobot_sound_tone(880,10,60);
+			ecrobot_sound_tone(880,10,60);
 			return 1;
 	}
 	else {
@@ -67,7 +67,7 @@ static void Section_update_current_running_methods(Section *self){
 	
 	if(self->current_running_method_number +1 < self->number_of_running_method ) {
 		self->current_running_method_number +=1;
-		ecrobot_sound_tone(300,500,50);
+		ecrobot_sound_tone(300,50,50);
 	}
 	else {
 		//none

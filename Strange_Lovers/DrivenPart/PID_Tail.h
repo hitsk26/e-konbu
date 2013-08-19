@@ -1,7 +1,7 @@
 #ifndef _PID_TAIL_H_
 #define _PID_TAIL_H_
 
-#include "TargetValue.h"
+
 #include "./TailMotor.h"
 
 

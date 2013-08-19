@@ -13,8 +13,7 @@ void Starter_accept_start_run(Starter *self)
 		ecrobot_sound_tone(880, 512, 30);
 		systick_wait_ms(500);
 		self->starter_state = ON_CONTEST;
-		initialization();
-		Timer_reset(&timer);
+		clear_objects();
 		Runner_start_run(&runner);
 	}
 }
@@ -50,7 +49,7 @@ void Starter_user_command_accept(Starter *self){
 			break;
 		case PARAMETER_ADJUST :
 				Starter_accept_start_run(&starter);
-				ParamterReceiver_paramter_adjust(&parameterReceiver);
+				ParamterReceiver_parameter_adjust(&parameterReceiver);
 			break;
 
 	}

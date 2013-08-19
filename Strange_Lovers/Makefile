@@ -19,7 +19,6 @@ TARGET_SOURCES := \
 	model_impl.c \
 	Factory.c \
 	balancer_param.c \
-	TargetValue.c \
 	Calibration.c \
 	logSend.c \
 	./DrivenPart/PID_Tail.c \
