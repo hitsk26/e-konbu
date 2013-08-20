@@ -55,14 +55,13 @@
 
 
 #include "./StrategyFactories/FiststStraightFactory.h"
-#include "./StrategyFactories/SeeSawFactory.h"
 #include "./StrategyFactories/SlopeFactory.h"
 #include "./StrategyFactories/StartUpFactory.h"
 #include "./StrategyFactories/SecondStraightFactory.h"
 #include "./StrategyFactories/SecondCurve_1Factory.h"
 #include "./StrategyFactories/SecondCurve_2Factory.h"
 #include "./StrategyFactories/SecondCurve_3Factory.h"
-//#include "./StrategyFactories/SecondCurve_4Factory.h"
+#include "./StrategyFactories/SecondCurve_4Factory.h"
 
 #include "./StrategyFactories/StartUpWithTailFactory.h"
 #include "./StrategyFactories/SeeSaw_1Factory.h"
