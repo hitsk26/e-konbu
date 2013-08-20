@@ -7,20 +7,21 @@
 
 typedef struct{
 	SpeedCtrlState S_CtrlState;
+	PIDSpeedCtrl *mPIDSpeedCtrl;
 } SpeedCtrl;
 
-PIDSpeedCtrl mPIDSpeedCtrl;
+
 Speed mSpeed;
 
-extern void SC_init(SpeedCtrl *this_SpeedCtrl,PIDSpeedCtrl PSC);
-extern void SC_setTargSpeed(SpeedCtrl *this_SpeedCtrl,int parm);
-extern float SC_getTargSpeedCtrl(SpeedCtrl *this_SpeedCtrl);
-extern void SC_setCtrlParm(SpeedCtrl *this_SpeedCtrl,PIDSpeedCtrlParm parm);
-extern PIDSpeedCtrlParm SC_getCtrlParm(SpeedCtrl *this_SpeedCtrl);
-extern void SC_startCtrl(SpeedCtrl *this_SpeedCtrl);
-extern void SC_stopCtrl(SpeedCtrl *this_SpeedCtrl);
-extern void SC_doCtrl(SpeedCtrl *this_SpeedCtrl);
-extern void SC_run(SpeedCtrl *this_SpeedCtrl);
-extern void SC_changeMode(SpeedCtrl *this_SpeedCtrl,SpeedCtrlState state);
+extern void SC_init(SpeedCtrl *self,PIDSpeedCtrl *PSC);
+extern void SC_setTargSpeed(SpeedCtrl *self,int parm);
+extern float SC_getTargSpeedCtrl(SpeedCtrl *self);
+extern void SC_setCtrlParm(SpeedCtrl *self,PIDSpeedCtrlParm parm);
+extern PIDSpeedCtrlParm SC_getCtrlParm(SpeedCtrl *self);
+extern void SC_startCtrl(SpeedCtrl *self);
+extern void SC_stopCtrl(SpeedCtrl *self);
+extern void SC_doCtrl(SpeedCtrl *self);
+extern void SC_run(SpeedCtrl *self);
+extern void SC_changeMode(SpeedCtrl *self,SpeedCtrlState state);
 
 #endif

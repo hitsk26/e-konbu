@@ -47,9 +47,7 @@ void initialization(){
 	SC_setCtrlParm(&mSpeedCtrl,mPIDSpeedCtrlParm);
 	
 	PSCP_init(&mPIDSpeedCtrlParm);
-	PSC_init(&mPIDSpeedCtrl);
-	SC_init(&mSpeedCtrl,mPIDSpeedCtrl);
-	SC_setTargSpeed(&mSpeedCtrl,20);
+	SC_init(&mSpeedCtrl,&mPIDSpeedCtrl);
 	SC_startCtrl(&mSpeedCtrl);
 
 	//DrivenPart/TargetCurvatureControl
@@ -116,7 +114,7 @@ void clear_objects(){
 	DrivenDirector_init(&drivenDirector);
 
 	//DrivenPart/TargetSpeedControl
-	//PSC_reset(mSpeedCtrl->mPIDSpeedCtrl);
+	PSC_reset(mSpeedCtrl.mPIDSpeedCtrl);
 
 	//DrivenPart/TargetCurvatureControl
 	//PCC_reset(mLightValCtrl.mPIDLightValCtrl);

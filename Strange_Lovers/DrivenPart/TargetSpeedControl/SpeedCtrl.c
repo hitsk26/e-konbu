@@ -3,52 +3,52 @@
 
 
 //初期化メソッド
-void SC_init(SpeedCtrl *this_SpeedCtrl,PIDSpeedCtrl PSC)
+void SC_init(SpeedCtrl *self,PIDSpeedCtrl *PSC)
 {
 	S_init(&mSpeed);
-	mPIDSpeedCtrl = PSC; //オブジェクトの張替えをしてる　メンバで持たせるべき
-	PSC_init(&mPIDSpeedCtrl);
+	self->mPIDSpeedCtrl = PSC;
+	PSC_init(self->mPIDSpeedCtrl);
 
-	this_SpeedCtrl->S_CtrlState = S_CTRL_OFF;
+	self->S_CtrlState = S_CTRL_OFF;
 }
 
 //目標角度設定メソッド
-void SC_setTargSpeed(SpeedCtrl *this_SpeedCtrl, int parm)
+void SC_setTargSpeed(SpeedCtrl *self, int parm)
 {
 	S_setTargSpeed(&mSpeed,parm);
 }
 
-int SC_getTargSpeed(SpeedCtrl *this_SpeedCtrl)
+int SC_getTargSpeed(SpeedCtrl *self)
 {
 	return S_getTargSpeed(&mSpeed);
 }
 
-void SC_setCtrlParm(SpeedCtrl *this_SpeedCtrl,PIDSpeedCtrlParm parm)
+void SC_setCtrlParm(SpeedCtrl *self,PIDSpeedCtrlParm parm)
 {
-	PSC_setPIDSpeedCtrlParm(&mPIDSpeedCtrl,parm);
+	PSC_setPIDSpeedCtrlParm(self->mPIDSpeedCtrl,parm);
 }
 
-PIDSpeedCtrlParm SC_getCtrlParm(SpeedCtrl *this_SpeedCtrl)
+PIDSpeedCtrlParm SC_getCtrlParm(SpeedCtrl *self)
 {
-	return PSC_getPIDSpeedCtrlParm(&mPIDSpeedCtrl);
+	return PSC_getPIDSpeedCtrlParm(self->mPIDSpeedCtrl);
 }
 
-void SC_startCtrl(SpeedCtrl *this_SpeedCtrl)
+void SC_startCtrl(SpeedCtrl *self)
 {
-	SC_changeMode(&(*this_SpeedCtrl),S_CTRL_ON);
+	SC_changeMode(&(*self),S_CTRL_ON);
 }
 
-void SC_stopCtrl(SpeedCtrl *this_SpeedCtrl)
+void SC_stopCtrl(SpeedCtrl *self)
 {
-	PSC_reset(&mPIDSpeedCtrl);
-	SC_changeMode(&(*this_SpeedCtrl),S_CTRL_OFF);
+	PSC_reset(self->mPIDSpeedCtrl);
+	SC_changeMode(&(*self),S_CTRL_OFF);
 }
 
-void SC_run(SpeedCtrl *this_SpeedCtrl)
+void SC_run(SpeedCtrl *self)
 {
-	switch(this_SpeedCtrl->S_CtrlState){
+	switch(self->S_CtrlState){
 	case S_CTRL_ON:
-		SC_doCtrl(&(*this_SpeedCtrl));
+		SC_doCtrl(&(*self));
 		break;
 	case S_CTRL_OFF:
 		break;
@@ -58,13 +58,13 @@ void SC_run(SpeedCtrl *this_SpeedCtrl)
 }
 
 //角度制御実行メソッド
-void SC_doCtrl(SpeedCtrl *this_SpeedCtrl)
+void SC_doCtrl(SpeedCtrl *self)
 {
 	int speed = S_getSpeed(&mSpeed,systick_get_ms());
-	int forward = PSC_calcSpeedCtrlVal(&mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),speed,systick_get_ms()*0.001);
+	int forward = PSC_calcSpeedCtrlVal(self->mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),speed,systick_get_ms()*0.001);
 	WheelActuator_set_forward(&wheelActuator ,(S8)forward);
 }
 
-void SC_changeMode(SpeedCtrl *this_SpeedCtrl,SpeedCtrlState state){
-	this_SpeedCtrl->S_CtrlState = state;
+void SC_changeMode(SpeedCtrl *self,SpeedCtrlState state){
+	self->S_CtrlState = state;
 }

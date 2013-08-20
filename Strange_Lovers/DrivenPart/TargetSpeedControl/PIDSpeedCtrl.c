@@ -5,6 +5,7 @@ void PSC_init(PIDSpeedCtrl *self){
 	self->bfDeviation = 0;
 	self->lastMeasurementTime = 0;
 	self->buf_forward=0;
+
 }
 
 int PSC_calcSpeedCtrlVal(PIDSpeedCtrl *self,float targSpeed,float bfSpeed,float speed,float time){

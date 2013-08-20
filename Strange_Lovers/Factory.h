@@ -100,6 +100,7 @@ DrivenDirector drivenDirector;
 
 //DrivenPart/SpeedControl
 SpeedCtrl mSpeedCtrl;
+PIDSpeedCtrl mPIDSpeedCtrl;
 PIDSpeedCtrlParm mPIDSpeedCtrlParm;
 
 //DrivenPart/DirectionCtrl
