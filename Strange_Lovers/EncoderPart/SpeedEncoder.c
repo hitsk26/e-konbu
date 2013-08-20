@@ -10,7 +10,7 @@ void SpeedEncoder_init(SpeedEncoder *this_SpeedEncoder)
 	this_SpeedEncoder->buf_distance =0;
 }
 
-int SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder)
+float SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder)
 {
 	return this_SpeedEncoder->speed;
 }
