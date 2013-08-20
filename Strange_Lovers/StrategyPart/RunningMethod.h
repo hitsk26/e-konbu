@@ -8,19 +8,7 @@
 #include "../DrivenPart/ControllerWeight.h"
 
 #include "../StrategyPart/RunningMethodSwitchJudge/SwitchJudge.h"
-
-
-#ifndef MovementDirection        
-#define MovementDirection int
-#endif
-
-#ifndef FORWARD            
-#define FORWARD 1
-#endif
-
-#ifndef BACKWARD           
-#define BACKWARD -1
-#endif
+#include "../NXTSettings.h"
 
 typedef struct {
 	

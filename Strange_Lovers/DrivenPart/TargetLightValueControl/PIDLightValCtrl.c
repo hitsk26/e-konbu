@@ -14,7 +14,7 @@ float PLVC_calcCtrlVal(PIDLightValCtrl *self,float targLightVal,float LightVal,f
 	float	turn;
 
 
-	float deviation = targLightVal - LightVal;
+	float deviation = self->movementDirection*(targLightVal - LightVal);
 
 	self->integratedDeviation = (self->integratedDeviation + 
 		(deviation * (time - self->lastMeasurementTime)));
@@ -52,3 +52,7 @@ void PLVC_reset(PIDLightValCtrl *self){
 	self->lastMeasurementTime = 0;
 }
 
+void PLVC_setMovementDirection(PIDLightValCtrl *self,MovementDirection movementDirection)
+{
+	self->movementDirection = movementDirection;
+}

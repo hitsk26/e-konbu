@@ -32,7 +32,7 @@ void RunningMethod_execute_method(RunningMethod *self, TargetValues target_value
 	if(self->request_forced_stop ==0){
 		DrivenDirector_request_drive(&drivenDirector,target_values.target_brightness, target_values.target_curvature,
 		target_values.target_speed,self->target_tail_angle,self->balancing_requrement,
-		self->use_controller,self->gyroOffsetRevise);
+		self->use_controller,self->gyroOffsetRevise,self->movementDirection);
 	}
 	else {
 		DrivenDirector_request_stop(&drivenDirector,self->target_tail_angle);

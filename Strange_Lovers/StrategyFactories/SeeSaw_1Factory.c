@@ -19,7 +19,7 @@ void seesaw_1_factory_init(){
 	switch_term.speed = 30;
 	switch_term.time =30000;
 	balancing_requrement = 0;
-	target_tail_angle=100;
+	target_tail_angle=150;
 	gyroOffsetRevise=0;
 	request_forced_stop= 0;
 	movementDirection = FORWARD;
