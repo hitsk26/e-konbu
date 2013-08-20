@@ -129,6 +129,6 @@ void clear_objects(){
 	//DrivenPart/TargetLightValueControl
 	PLVC_reset(mLightValCtrl.mPIDLightValCtrl);
 
-	Runner_init(&runner,&startUp);
+	Runner_init(&runner,&firstStraight);
 }
 
