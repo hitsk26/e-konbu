@@ -52,6 +52,7 @@ int Calibration_calibration(Calibration *this_Calibration){
 	}
 
 	InclinationEncoder_set_gyro_offset(&inclinationEncoder ,this_Calibration->gyro);
+	InclinationEncoder_set_initial_gyro_offset(&inclinationEncoder ,this_Calibration->gyro);
 
 	while(1){
 		if(PushButton_detect_push_button(&pushButton) == TRUE){

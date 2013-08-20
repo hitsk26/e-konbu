@@ -78,7 +78,7 @@ void initialization(){
 
 
 	//StrategyPart
-	Runner_init(&runner,&startUpWithTail);
+	Runner_init(&runner,&firstStraight);
 }
 
 void clear_objects(){

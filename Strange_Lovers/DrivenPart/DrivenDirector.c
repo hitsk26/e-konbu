@@ -31,6 +31,7 @@ void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness,
 	
 	WheelActuator_set_turn(&wheelActuator , turn);
 	WheelActuator_set_self_balancing_requirement(&wheelActuator,self_balancing_requirement);
+	WheelActuator_revise_gyro_offset(&wheelActuator,gyro_offset_revise);
 	WheelActuator_dirve_motors(&wheelActuator);
 	
 }

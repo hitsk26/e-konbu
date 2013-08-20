@@ -22,5 +22,6 @@ extern void WheelActuator_tail_running(WheelActuator *this_WheelActuator,S8 *pwm
 extern void WheelActuator_dirve_motors(WheelActuator *this_WheelActuator);
 void WheelActuator_set_self_balancing_requirement(WheelActuator *this_WheelActuator,int self_balancing_requirment);
 void WheelActuator_stop_motors(WheelActuator *self);
+void WheelActuator_revise_gyro_offset(WheelActuator *self,int gyro_offset_revise);
 #endif
 

@@ -14,7 +14,7 @@ void WheelActuator_balance_running(WheelActuator *self,S8 *pwm_l,S8 *pwm_r){
 				(F32)self->forward,
 				(F32)self->turn,
 				(F32)InclinationEncoder_get_inclination(&inclinationEncoder),
-				(F32)inclinationEncoder.gyro_offset,
+				(F32)InclinationEncoder_get_gyro_offset(&inclinationEncoder),
 				(F32)nxt_motor_get_count(NXT_PORT_C),
 				(F32)nxt_motor_get_count(NXT_PORT_B),
 				(F32)ecrobot_get_battery_voltage(),
@@ -62,4 +62,12 @@ void WheelActuator_stop_motors(WheelActuator *self)
 {
 	WheelMotor_drive_motor(&leftWheelMotor,0);
 	WheelMotor_drive_motor(&rightWheelMotor,0);
+}
+
+void WheelActuator_revise_gyro_offset(WheelActuator *self,int gyro_offset_revise){
+	int base = InclinationEncoder_get_intilal_gyro_offset(&inclinationEncoder);
+	int revised_gyro_offset = base + gyro_offset_revise;
+
+	InclinationEncoder_set_gyro_offset(&inclinationEncoder,revised_gyro_offset);
+
 }
