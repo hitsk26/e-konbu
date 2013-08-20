@@ -68,7 +68,6 @@ void initialization(){
 	slope_factory_init();
 	first_straight_factory_init();
 	seesaw_factory_init();
-	started_running_factory_init();
 	start_up__factory_init();
 
 	//StrategyPart
