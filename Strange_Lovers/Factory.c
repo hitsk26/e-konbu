@@ -74,9 +74,11 @@ void initialization(){
 	second_curve_1_factory_init();
 	second_curve_2_factory_init();
 	second_curve_3_factory_init();
+	start_up_with_tail_factory_init();
+
 
 	//StrategyPart
-	Runner_init(&runner,&startUp);
+	Runner_init(&runner,&startUpWithTail);
 }
 
 void clear_objects(){

@@ -16,7 +16,7 @@ void seesaw_factory_init(){
 	SeesawFirstLineTraceMethod.target_tail_angle=100;
 	SeesawFirstLineTraceMethod.use_controller.target_curvature_controller_weight= 0;
 	SeesawFirstLineTraceMethod.use_controller.target_light_controller_weight = 1;
-
+	SeesawFirstLineTraceMethod.request_forced_stop = 0;
 
 	//SeesawRunningUp
 	SeesawRunningUpMethod.balancing_requrement = 0;

@@ -21,6 +21,6 @@ extern void WheelActuator_set_turn(WheelActuator *this_WheelActuator , S8 turn);
 extern void WheelActuator_tail_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S8 *pwm_r);
 extern void WheelActuator_dirve_motors(WheelActuator *this_WheelActuator);
 void WheelActuator_set_self_balancing_requirement(WheelActuator *this_WheelActuator,int self_balancing_requirment);
-
+void WheelActuator_stop_motors(WheelActuator *self);
 #endif
 

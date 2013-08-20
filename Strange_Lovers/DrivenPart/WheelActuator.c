@@ -2,17 +2,17 @@
 #include "../Factory.h"
 
 
-void WheelActuator_init(WheelActuator *this_WheelActuator){
-	this_WheelActuator->forward = 0;
-	this_WheelActuator->turn = 0;
+void WheelActuator_init(WheelActuator *self){
+	self->forward = 0;
+	self->turn = 0;
 	balance_init();
 }
 
-void WheelActuator_balance_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S8 *pwm_r){
+void WheelActuator_balance_running(WheelActuator *self,S8 *pwm_l,S8 *pwm_r){
 	
 	balance_control(
-				(F32)this_WheelActuator->forward,
-				(F32)this_WheelActuator->turn,
+				(F32)self->forward,
+				(F32)self->turn,
 				(F32)InclinationEncoder_get_inclination(&inclinationEncoder),
 				(F32)inclinationEncoder.gyro_offset,
 				(F32)nxt_motor_get_count(NXT_PORT_C),
@@ -23,26 +23,26 @@ void WheelActuator_balance_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S
 }
 
 
-void WheelActuator_set_forward(WheelActuator *this_WheelActuator , S8 forward){
-	this_WheelActuator->forward = forward;
+void WheelActuator_set_forward(WheelActuator *self , S8 forward){
+	self->forward = forward;
 }
 
-void WheelActuator_set_turn(WheelActuator *this_WheelActuator , S8 turn){
-	this_WheelActuator->turn = turn;
+void WheelActuator_set_turn(WheelActuator *self , S8 turn){
+	self->turn = turn;
 }
 
-void WheelActuator_tail_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S8 *pwm_r){
-	*pwm_l = cutoff(this_WheelActuator->forward + 	this_WheelActuator->turn,100);
-	*pwm_r = cutoff(this_WheelActuator->forward - 	this_WheelActuator->turn,100);
+void WheelActuator_tail_running(WheelActuator *self,S8 *pwm_l,S8 *pwm_r){
+	*pwm_l = cutoff(self->forward + 	self->turn,100);
+	*pwm_r = cutoff(self->forward - 	self->turn,100);
 
 }
 
-void WheelActuator_dirve_motors(WheelActuator *this_WheelActuator){
+void WheelActuator_dirve_motors(WheelActuator *self){
 	S8 pwm_l=0,pwm_r=0;
-	if(this_WheelActuator->self_balancing_requirment == 1){
+	if(self->self_balancing_requirment == 1){
 		WheelActuator_balance_running(&wheelActuator,&pwm_l,&pwm_r);
 	}
-	else if(this_WheelActuator->self_balancing_requirment==0){
+	else if(self->self_balancing_requirment==0){
 		 WheelActuator_tail_running(&wheelActuator,&pwm_l,&pwm_r);
 	}
 	else {
@@ -54,6 +54,12 @@ void WheelActuator_dirve_motors(WheelActuator *this_WheelActuator){
 }
 
 
-void WheelActuator_set_self_balancing_requirement(WheelActuator *this_WheelActuator,int self_balancing_requirment){
-	this_WheelActuator->self_balancing_requirment= self_balancing_requirment;
+void WheelActuator_set_self_balancing_requirement(WheelActuator *self,int self_balancing_requirment){
+	self->self_balancing_requirment= self_balancing_requirment;
+}
+
+void WheelActuator_stop_motors(WheelActuator *self)
+{
+	WheelMotor_drive_motor(&leftWheelMotor,0);
+	WheelMotor_drive_motor(&rightWheelMotor,0);
 }

@@ -7,7 +7,7 @@ void start_up_with_tail_factory_init(){
 	int balancing_requrement =0;
 	int target_tail_angle=0;
 	int gyroOffsetRevise=0;
-
+	int request_forced_stop;
 
 	//waitTouchRunningMethod
 	use_controller.target_curvature_controller_weight = 0.0;
@@ -20,7 +20,8 @@ void start_up_with_tail_factory_init(){
 	balancing_requrement = 0;
 	target_tail_angle=95;
 	gyroOffsetRevise=0;
-	RunningMethod_init(&startUpWithTail_waitTouchRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,inPushedSwitch_judge_switch_method);
+	request_forced_stop= 1;
+	RunningMethod_init(&startUpWithTail_waitTouchRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,inPushedSwitch_judge_switch_method,request_forced_stop);
 	
 
 	
@@ -31,6 +32,6 @@ void start_up_with_tail_factory_init(){
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0.0;
 	target_values.target_speed = 0;
-	Section *nextSection = null;
+	Section *nextSection = &seesaw;
 	Section_init(&startUpWithTail,nextSection,number_of_running_method,start_up_with_tail_running_method_array,target_values);
 }

@@ -36,14 +36,16 @@ typedef struct {
 	 * 走法切り替え判定値
 	 */
 	SwitchTerm switch_term;
-
+	
 	//走法切り替えの関数へのポインタ
 	 int (*fp_SwitchJudge)(SwitchTerm);
+
+	 int request_forced_stop;
 
 }RunningMethod;
 
 void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerWeight use_controller,int target_tail_angle,
-					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm));
+					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm),int request_forced_stop);
 
 
 	/**

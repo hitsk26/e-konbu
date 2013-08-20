@@ -7,7 +7,7 @@ void second_straight_factory_init(){
 	int balancing_requrement =0;
 	int target_tail_angle=0;
 	int gyroOffsetRevise=0;
-
+	int request_forced_stop =0;
 	
 	//First Straight 1010mm
 
@@ -22,7 +22,9 @@ void second_straight_factory_init(){
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
-	RunningMethod_init(&secondStraightLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method);
+	request_forced_stop = 0;
+
+	RunningMethod_init(&secondStraightLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop);
 	
 	second_straight_running_method_array[0]=secondStraightLineTraceMethod;
 	int number_of_running_method=1;

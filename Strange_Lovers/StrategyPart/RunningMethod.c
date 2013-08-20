@@ -2,7 +2,7 @@
 #include "../Factory.h"
 
 void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerWeight use_controller,int target_tail_angle,
-					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm))
+					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm),int request_forced_stop)
 {
 	self->balancing_requrement = balancing_requrement;
 	self->fp_SwitchJudge = fp_SwitchJudge;
@@ -18,7 +18,7 @@ void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerW
 	self->target_tail_angle = target_tail_angle;
 	self->use_controller.target_curvature_controller_weight = use_controller.target_curvature_controller_weight;
 	self->use_controller.target_light_controller_weight = use_controller.target_light_controller_weight;
-
+	self->request_forced_stop = request_forced_stop;
 }
 
 int RunningMethod_check_executed(RunningMethod *self)
@@ -28,7 +28,12 @@ int RunningMethod_check_executed(RunningMethod *self)
 
 void RunningMethod_execute_method(RunningMethod *self, TargetValues target_values)
 {
+	if(self->request_forced_stop ==0){
 		DrivenDirector_request_drive(&drivenDirector,target_values.target_brightness, target_values.target_curvature,
 		target_values.target_speed,self->target_tail_angle,self->balancing_requrement,
 		self->use_controller,self->gyroOffsetRevise);
+	}
+	else {
+		DrivenDirector_request_stop(&drivenDirector,self->target_tail_angle);
+	}
 }
