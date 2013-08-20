@@ -3,59 +3,59 @@
 
 #define CYCLE_TIME 0.004
 
-void CC_init(CurvatureCtrl *this_CurvatureCtrl,PIDCurvatureCtrl PCC)
+void CC_init(CurvatureCtrl *self,PIDCurvatureCtrl *PCC)
 {
-	mPIDCurvatureCtrl = PCC;
-	PCC_init(&mPIDCurvatureCtrl);
+	self->mPIDCurvatureCtrl = PCC;
+	PCC_init(self->mPIDCurvatureCtrl);
 	C_init(&mCurvature);
-	this_CurvatureCtrl->C_CtrlState = C_CTRL_OFF;
+	self->C_CtrlState = C_CTRL_OFF;
 }
 
-void CC_setTargCurvature(CurvatureCtrl *this_CurvatureCtrl,float parm)
+void CC_setTargCurvature(CurvatureCtrl *self,float parm)
 {
 	C_setTargCurvature(&mCurvature,parm);
 }
 
-float CC_getTargCurvatureCtrl(CurvatureCtrl *this_CurvatureCtrl)
+float CC_getTargCurvatureCtrl(CurvatureCtrl *self)
 {
 	return C_getTargCurvature(&mCurvature);
 }
 
-void CC_setCtrlParm(CurvatureCtrl *this_CurvatureCtrl,PIDCurvatureCtrlParm parm)
+void CC_setCtrlParm(CurvatureCtrl *self,PIDCurvatureCtrlParm parm)
 {
-	PCC_setPIDCurvatureCtrlParm(&mPIDCurvatureCtrl,parm);
+	PCC_setPIDCurvatureCtrlParm(self->mPIDCurvatureCtrl,parm);
 }
 
-PIDCurvatureCtrlParm CC_getCtrlParm(CurvatureCtrl *this_CurvatureCtrl)
+PIDCurvatureCtrlParm CC_getCtrlParm(CurvatureCtrl *self)
 {
-	return PCC_getPIDCurvatureCtrlParm(&mPIDCurvatureCtrl);
+	return PCC_getPIDCurvatureCtrlParm(self->mPIDCurvatureCtrl);
 }
 
-void CC_startCtrl(CurvatureCtrl *this_CurvatureCtrl)
+void CC_startCtrl(CurvatureCtrl *self)
 {
-	CC_changeMode(&(*this_CurvatureCtrl),C_CTRL_ON);
+	CC_changeMode(&(*self),C_CTRL_ON);
 }
 
-void CC_stopCtrl(CurvatureCtrl *this_CurvatureCtrl)
+void CC_stopCtrl(CurvatureCtrl *self)
 {
-	PCC_reset(&mPIDCurvatureCtrl);
-	CC_changeMode(&(*this_CurvatureCtrl),C_CTRL_OFF);
+	PCC_reset(self->mPIDCurvatureCtrl);
+	CC_changeMode(&(*self),C_CTRL_OFF);
 }
 
-float CC_doCtrl(CurvatureCtrl *this_CurvatureCtrl)
+float CC_doCtrl(CurvatureCtrl *self)
 {
 	float curvature = C_getCurvature(&mCurvature,ecrobot_get_systick_ms());
-	float turn = PCC_calcCurvatureCtrlVal(&mPIDCurvatureCtrl,
+	float turn = PCC_calcCurvatureCtrlVal(self->mPIDCurvatureCtrl,
 		C_getTargCurvature(&mCurvature),curvature,systick_get_ms()*0.001);
 	return turn;
 }
 
-float CC_run(CurvatureCtrl *this_CurvatureCtrl)
+float CC_run(CurvatureCtrl *self)
 {
 	float turn = 0;
-	switch(this_CurvatureCtrl->C_CtrlState){
+	switch(self->C_CtrlState){
 	case C_CTRL_ON:
-		turn = CC_doCtrl(&(*this_CurvatureCtrl));
+		turn = CC_doCtrl(&(*self));
 		break;
 	case C_CTRL_OFF:
 		turn = 0;
@@ -68,8 +68,8 @@ float CC_run(CurvatureCtrl *this_CurvatureCtrl)
 	return turn;
 }
 
-void CC_changeMode(CurvatureCtrl *this_CurvatureCtrl,CurvatureCtrlState state)
+void CC_changeMode(CurvatureCtrl *self,CurvatureCtrlState state)
 {
-	this_CurvatureCtrl->C_CtrlState = state;
+	self->C_CtrlState = state;
 }
 

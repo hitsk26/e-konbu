@@ -51,9 +51,8 @@ void initialization(){
 	SC_startCtrl(&mSpeedCtrl);
 
 	//DrivenPart/TargetCurvatureControl
-	PCC_init(&mPIDCurvatureCtrl);
 	PCCP_init(&mPIDCurvatureCtrlParm);
-	CC_init(&mCurvatureCtrl,mPIDCurvatureCtrl);
+	CC_init(&mCurvatureCtrl,&mPIDCurvatureCtrl);
 	CC_setCtrlParm(&mCurvatureCtrl,mPIDCurvatureCtrlParm);
 	CC_setTargCurvature(&mCurvatureCtrl,0);
 	CC_startCtrl(&mCurvatureCtrl);

@@ -12,7 +12,7 @@ extern float PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *self,float targCurvature
 {
 	float turn;
 	
-	float deviation =   targCurvature - curvature;
+	float deviation =   self->movementDirection*(targCurvature - curvature);
 
 	self->integratedDeviation = (float) (self->integratedDeviation + 
 		(deviation * (time - self->lastMeasurementTime)));
@@ -43,14 +43,19 @@ PIDCurvatureCtrlParm PCC_getPIDCurvatureCtrlParm(PIDCurvatureCtrl *self)
 	return self->mPIDCurvatureCtrlParm;
 }
 
-extern void PCC_setPIDCurvatureCtrlParm(PIDCurvatureCtrl *self,PIDCurvatureCtrlParm parm)
+void PCC_setPIDCurvatureCtrlParm(PIDCurvatureCtrl *self,PIDCurvatureCtrlParm parm)
 {
 	self->mPIDCurvatureCtrlParm = parm;
 }
 
-extern void PCC_reset(PIDCurvatureCtrl *self)
+void PCC_reset(PIDCurvatureCtrl *self)
 {
 	self->integratedDeviation = 0;
 	self->bfDeviation = 0;
 	self->lastMeasurementTime = 0;
+}
+
+void PCC_setMovementDirection(PIDCurvatureCtrl *self,MovementDirection movementDirection)
+{
+	self->movementDirection = movementDirection;
 }

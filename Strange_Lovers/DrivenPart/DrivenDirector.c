@@ -13,6 +13,7 @@ float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightnes
 	CC_setTargCurvature(&mCurvatureCtrl,target_curvature);
 	LV_setTargLightVal(&mLightVal,target_brightness);
 	PLVC_setMovementDirection(mLightValCtrl.mPIDLightValCtrl,movementDirection);
+	PCC_setMovementDirection(mCurvatureCtrl.mPIDCurvatureCtrl,movementDirection);
 
 	float brightness_turn = LVC_run(&mLightValCtrl);
 	float curvature_turn = CC_run(&mCurvatureCtrl);
