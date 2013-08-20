@@ -68,6 +68,7 @@ static void Section_update_current_running_methods(Section *self){
 	if(self->current_running_method_number +1 < self->number_of_running_method ) {
 		self->current_running_method_number +=1;
 		ecrobot_sound_tone(300,50,50);
+		Timer_reset(&timer);
 	}
 	else {
 		//none
