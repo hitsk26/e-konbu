@@ -8,6 +8,7 @@ void second_curve_2_factory_init(){
 	int target_tail_angle=0;
 	int gyroOffsetRevise=0;
 	int request_forced_stop = 0;
+	MovementDirection movementDirection = FORWARD;
 
 	//secondCurve_1_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
@@ -21,7 +22,8 @@ void second_curve_2_factory_init(){
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
-	RunningMethod_init(&secondCurve_2_LineTraceRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop);
+	movementDirection = FORWARD;
+	RunningMethod_init(&secondCurve_2_LineTraceRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop,movementDirection);
 	
 
 

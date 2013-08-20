@@ -8,7 +8,7 @@ void start_up__factory_init(){
 	int target_tail_angle=0;
 	int gyroOffsetRevise=0;
 	int request_forced_stop = 0;
-	
+	MovementDirection movementDirection = FORWARD;
 
 	//waitTouchRunningMethod
 	use_controller.target_curvature_controller_weight = 0.0;
@@ -22,7 +22,8 @@ void start_up__factory_init(){
 	target_tail_angle=95;
 	gyroOffsetRevise=0;
 	request_forced_stop = 1;
-	RunningMethod_init(&waitTouchRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,inPushedSwitch_judge_switch_method,request_forced_stop);
+	movementDirection = FORWARD;
+	RunningMethod_init(&waitTouchRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,inPushedSwitch_judge_switch_method,request_forced_stop,movementDirection);
 	
 
 	//tailMoveRunningMethod
@@ -37,7 +38,8 @@ void start_up__factory_init(){
 	target_tail_angle=127;
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
-	RunningMethod_init(&tailMoveRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,TimeSwitch_judge_switch_method,request_forced_stop);
+	movementDirection = FORWARD;
+	RunningMethod_init(&tailMoveRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,TimeSwitch_judge_switch_method,request_forced_stop,movementDirection);
 	
 
 	//tailBackRunningMethod
@@ -53,7 +55,8 @@ void start_up__factory_init(){
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
-	RunningMethod_init(&tailBackRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,TimeSwitch_judge_switch_method,request_forced_stop);
+	movementDirection = FORWARD;
+	RunningMethod_init(&tailBackRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,TimeSwitch_judge_switch_method,request_forced_stop,movementDirection);
 	
 
 

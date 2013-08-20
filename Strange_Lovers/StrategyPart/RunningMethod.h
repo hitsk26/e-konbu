@@ -10,6 +10,18 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/SwitchJudge.h"
 
 
+#ifndef MovementDirection        
+#define MovementDirection int
+#endif
+
+#ifndef FORWARD            
+#define FORWARD 1
+#endif
+
+#ifndef BACKWARD           
+#define BACKWARD -1
+#endif
+
 typedef struct {
 	
 	/**
@@ -42,10 +54,12 @@ typedef struct {
 
 	 int request_forced_stop;
 
+	 MovementDirection movementDirection;
+
 }RunningMethod;
 
 void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerWeight use_controller,int target_tail_angle,
-					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm),int request_forced_stop);
+					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm),int request_forced_stop,MovementDirection movementDirection);
 
 
 	/**

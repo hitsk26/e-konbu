@@ -8,6 +8,7 @@ void first_straight_factory_init(){
 	int target_tail_angle=0;
 	int gyroOffsetRevise=0;
 	int request_forced_stop=0;
+	MovementDirection movementDirection = FORWARD;
 	
 	//First Straight 1010mm
 
@@ -22,8 +23,9 @@ void first_straight_factory_init(){
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
-	request_forced_stop =0;
-	RunningMethod_init(&stableRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop);
+	request_forced_stop =0; 
+	movementDirection = FORWARD;
+	RunningMethod_init(&stableRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop,movementDirection);
 	
 
 	//straightLineTraceMethod
@@ -38,7 +40,8 @@ void first_straight_factory_init(){
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
-	RunningMethod_init(&straightLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop);
+	movementDirection = FORWARD;
+	RunningMethod_init(&straightLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop,movementDirection);
 	
 
 

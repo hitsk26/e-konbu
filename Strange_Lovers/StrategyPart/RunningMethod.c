@@ -2,7 +2,7 @@
 #include "../Factory.h"
 
 void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerWeight use_controller,int target_tail_angle,
-					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm),int request_forced_stop)
+					int gyroOffsetRevise,SwitchTerm switch_term,int (*fp_SwitchJudge)(SwitchTerm),int request_forced_stop,MovementDirection movementDirection)
 {
 	self->balancing_requrement = balancing_requrement;
 	self->fp_SwitchJudge = fp_SwitchJudge;
@@ -19,6 +19,7 @@ void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerW
 	self->use_controller.target_curvature_controller_weight = use_controller.target_curvature_controller_weight;
 	self->use_controller.target_light_controller_weight = use_controller.target_light_controller_weight;
 	self->request_forced_stop = request_forced_stop;
+	self->movementDirection =movementDirection;
 }
 
 int RunningMethod_check_executed(RunningMethod *self)
