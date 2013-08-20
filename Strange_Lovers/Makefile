@@ -75,7 +75,7 @@ TARGET_SOURCES := \
 	./StrategyFactories/SecondStraightFactory.c \
 	./StrategyFactories/SecondCurve_1Factory.c \
 	./StrategyFactories/SecondCurve_2Factory.c \
-
+	
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build
