@@ -8,8 +8,8 @@
 
 
 typedef struct{
-	int speed;
-	int buf_distance;
+	float speed;
+	float buf_distance;
 }SpeedEncoder;
 
 

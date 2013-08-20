@@ -80,7 +80,6 @@ void initialization(){
 	seesaw_3_factory_init();
 	seesaw_4_factory_init();
 	seesaw_5_factory_init();
-
 	//StrategyPart
 	Runner_init(&runner,&startUpWithTail);
 }
@@ -133,6 +132,6 @@ void clear_objects(){
 	//DrivenPart/TargetLightValueControl
 	PLVC_reset(mLightValCtrl.mPIDLightValCtrl);
 
-	Runner_init(&runner,&firstStraight);
+	Runner_init(&runner,&startUpWithTail);
 }
 

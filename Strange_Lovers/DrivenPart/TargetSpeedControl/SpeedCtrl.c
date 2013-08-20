@@ -57,10 +57,9 @@ void SC_run(SpeedCtrl *self)
 	}
 }
 
-//角度制御実行メソッド
 void SC_doCtrl(SpeedCtrl *self)
 {
-	int speed = S_getSpeed(&mSpeed,systick_get_ms());
+	float speed = S_getSpeed(&mSpeed,systick_get_ms());
 	float forward = PSC_calcSpeedCtrlVal(self->mPIDSpeedCtrl,S_getTargSpeed(&mSpeed),S_getBfSpeed(&mSpeed),speed,systick_get_ms()*0.001);
 	WheelActuator_set_forward(&wheelActuator ,forward);
 }
