@@ -1,5 +1,5 @@
-#ifndef _FirstStraightFactory_
-#define _FirstStraightFactory_
+#ifndef _SecondStraightFactory_
+#define _SecondStraightFactory_
 
 #include "../DrivenPart/DrivenDirector.h"
 #include "../DrivenPart/ControllerWeight.h"
@@ -25,16 +25,15 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 
-#include "FiststCurveFactory.h"
+#include "SecondCurve_1Factory.h"
 
 
 //StarategyPart
 
-Section firstStraight;
-RunningMethod stableRunningMethod;
-RunningMethod straightLineTraceMethod;
+Section secondStraight;
+RunningMethod secondStraightLineTraceMethod;
 
-RunningMethod first_straight_running_method_array[2];
+RunningMethod second_straight_running_method_array[1];
 
 
 //Section firstCurve;
@@ -43,7 +42,7 @@ RunningMethod first_straight_running_method_array[2];
 //StrategyPart/RunningMethodSwitchJudge
 
 
-extern void first_straight_factory_init();
+extern void second_straight_factory_init();
 
 #endif
 
