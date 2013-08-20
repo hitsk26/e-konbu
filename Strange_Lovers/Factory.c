@@ -73,7 +73,7 @@ void initialization(){
 	second_straight_factory_init();
 	second_curve_1_factory_init();
 	second_curve_2_factory_init();
-	
+	second_curve_3_factory_init();
 
 	//StrategyPart
 	Runner_init(&runner,&startUp);

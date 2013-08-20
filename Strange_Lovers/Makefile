@@ -16,6 +16,7 @@ TARGET_SOURCES := \
 	./lib/mymath.c \
 	./lib/MovingAverage.c \
 	./lib/LowPassFillter.c \
+	./lib/MyString.c \
 	model_impl.c \
 	Factory.c \
 	balancer_param.c \
@@ -75,7 +76,9 @@ TARGET_SOURCES := \
 	./StrategyFactories/SecondStraightFactory.c \
 	./StrategyFactories/SecondCurve_1Factory.c \
 	./StrategyFactories/SecondCurve_2Factory.c \
-	
+	./StrategyFactories/SecondCurve_3Factory.c \
+	./StrategyFactories/StartUpWithTailFactory.c \
+
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build

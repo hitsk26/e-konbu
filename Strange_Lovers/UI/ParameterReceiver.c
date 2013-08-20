@@ -1,6 +1,5 @@
 #include "ParameterReceiver.h"
-#include "stdlib.h"
-#include "string.h"
+#include "../lib/MyString.h"
 
 #define BUF_SIZE 11
 
@@ -8,7 +7,7 @@ static void ParameterReceiver_init_buf(char *buf,int buf_size );
 static int ParameterReceiver_check_receive_data_number(char *buf);
 static void ParameterReceiver_adjust_value(ParameterReceiver *self,char *buf);
 static void ParameterReceiver_switch_adujusting_value(ParameterReceiver *self,char *buf);
-static float ParameterReceiver_atof(ParameterReceiver *self,char *buf);
+
 ADJUSTING_PARAMETER ParameterReceiver_ato_ADJUSTING_PARAMETER(ParameterReceiver *self,char *buf);
 
 
@@ -46,18 +45,21 @@ static void ParameterReceiver_init_buf(char *buf,int buf_size ){
 }
 
 static int ParameterReceiver_check_receive_data_number(char *buf){
-	if(atof(buf)!=0){
+	if(buf[0] == '0' || buf[0] == '1' ||buf[0] == '2' ||buf[0] == '3' ||buf[0] == '4' ||buf[0] == '5' ||buf[0] == '6' ||buf[0] == '7' ||buf[0] == '8' ||buf[0] == '09')
+		{//my_atof(buf)!=0){
 		return 1;
 	}
 	else {
 		return 0;
+	
 	}
 }
+
 
 static void ParameterReceiver_adjust_value(ParameterReceiver *self,char *buf){
 	
 	PIDLightValCtrlParm *parameter = LVC_getCtrlParm(self->lightValCtrl);
-	float new_value = ParameterReceiver_atof(self,buf);
+	float new_value = my_atof(buf);
 
 	switch (self->adjusing_paramter) {
 		case KP :
@@ -81,19 +83,16 @@ static void ParameterReceiver_switch_adujusting_value(ParameterReceiver *self,ch
 	self->adjusing_paramter = ParameterReceiver_ato_ADJUSTING_PARAMETER(self,buf);
 }
 
-static float ParameterReceiver_atof(ParameterReceiver *self,char *buf){
-
-	return (float)atof(buf);
-}
 
 ADJUSTING_PARAMETER ParameterReceiver_ato_ADJUSTING_PARAMETER(ParameterReceiver *self,char *buf){
-	if(strcmp(buf,"KP")==0){
+	
+	if(my_strcmp(buf,"KP")==0){
 		return KP;
 	}
-	else if(strcmp(buf,"KI")==0){
+	else if(my_strcmp(buf,"KI")==0){
 		return KI;
 	}
-	else if(strcmp(buf,"KD")==0){
+	else if(my_strcmp(buf,"KD")==0){
 		return KD;
 	}
 }
