@@ -9,7 +9,7 @@ void PLVC_init(PIDLightValCtrl *self,PIDLightValCtrlParm *parm){
 	PLVCP_init(parm,180.0,0.15,80);
 }
 
-int PLVC_calcCtrlVal(PIDLightValCtrl *self,float targLightVal,float LightVal,float time){
+float PLVC_calcCtrlVal(PIDLightValCtrl *self,float targLightVal,float LightVal,float time){
 	
 	float	turn;
 
@@ -35,7 +35,7 @@ int PLVC_calcCtrlVal(PIDLightValCtrl *self,float targLightVal,float LightVal,flo
 	self->bfDeviation = deviation;
 	self->lastMeasurementTime = time;
 
-	return (int)turn;
+	return turn;
 }
 
 void PLVC_setCtrlParm(PIDLightValCtrl *self,PIDLightValCtrlParm *parm){

@@ -41,7 +41,7 @@ void LVC_doCtrl(LightValCtrl *self){
 	PIDLightValCtrlParm *parameter = LVC_getCtrlParm(&mLightValCtrl);
 }
 
-int LVC_run(LightValCtrl *self){
+float LVC_run(LightValCtrl *self){
 	switch(self->LV_CtrlState){
 	case LV_CTRL_ON:
 		LVC_doCtrl(&(*self));

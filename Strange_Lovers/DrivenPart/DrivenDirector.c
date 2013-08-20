@@ -8,23 +8,22 @@
 void DrivenDirector_init(DrivenDirector *self){
 }
 
-int DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightness, float target_curvature,ControllerWeight use_controller)
+float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightness, float target_curvature,ControllerWeight use_controller)
 {
 	CC_setTargCurvature(&mCurvatureCtrl,target_curvature);
 	LV_setTargLightVal(&mLightVal,target_brightness);
 
-	int brightness_turn = LVC_run(&mLightValCtrl);
-	int curvature_turn = CC_run(&mCurvatureCtrl);
-	logSend(0,0,BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000,brightness_turn,curvature_turn,use_controller.target_light_controller_weight*brightness_turn  
-		+  use_controller.target_curvature_controller_weight*curvature_turn,0,0);
+	float brightness_turn = LVC_run(&mLightValCtrl);
+	float curvature_turn = CC_run(&mCurvatureCtrl);
+	logSend(0,0,BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000,brightness_turn,curvature_turn,CurvatureEncoder_get_curvature(&curvatureEncoder)*1000,0,0);
 	return use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn;
 }
 
 void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness, float target_curvature,int target_speed,int target_tail_angle,int self_balancing_requirement,ControllerWeight use_controller,int gyro_offset_revise)
 {
-	int turn = DrivenDirector_calc_turn_value(self,target_brightness,target_curvature,use_controller);
-
+	float turn = DrivenDirector_calc_turn_value(self,target_brightness,target_curvature,use_controller);
+	turn =0;
 	PID_tail(target_tail_angle);
 	SC_setTargSpeed(&mSpeedCtrl, target_speed);
 	SC_run(&mSpeedCtrl);

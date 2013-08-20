@@ -9,7 +9,7 @@
 typedef struct{
 	LightValCtrlState LV_CtrlState;
 	PIDLightValCtrl *mPIDLightValCtrl;
-	int turn;
+	float turn;
 }LightValCtrl;
 
 
@@ -22,7 +22,7 @@ extern PIDLightValCtrlParm* LVC_getCtrlParm(LightValCtrl *self);
 extern void LVC_startCtrl(LightValCtrl *self);
 extern void LVC_stopCtrl(LightValCtrl *self);
 extern void LVC_doCtrl(LightValCtrl *self);
-extern int LVC_run(LightValCtrl *self);
+extern float LVC_run(LightValCtrl *self);
 extern void LVC_changeMode(LightValCtrl *self,LightValCtrlState state);
 extern LightValRange LVC_getLightValRange(LightValCtrl *self);
 extern void LVC_setLightValRange(LightValCtrl *self,LightValRange LVR);

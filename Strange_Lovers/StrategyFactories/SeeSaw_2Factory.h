@@ -1,5 +1,5 @@
-#ifndef _StartUpWithTailFactory_
-#define _StartUpWithTailFactory_
+#ifndef _SeeSaw_2Factory_
+#define _SeeSaw_2Factory_
 
 #include "../DrivenPart/DrivenDirector.h"
 #include "../DrivenPart/ControllerWeight.h"
@@ -24,21 +24,22 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
-#include "../StrategyPart/RunningMethodSwitchJudge/TimeSwitch.h"
-#include "../StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
 
-#include "SeeSaw_1Factory.h"
+#include "SeeSaw_3Factory.h"
 
 
 //StarategyPart
 
-Section startUpWithTail;
-RunningMethod startUpWithTail_waitTouchRunningMethod;
+Section seesaw_2;
+RunningMethod SeesawRunningBuckMethod;
+
+RunningMethod seesaw_2_running_method_array[1];
 
 
-RunningMethod start_up_with_tail_running_method_array[1];
+//StrategyPart/RunningMethodSwitchJudge
 
-extern void start_up_with_tail_factory_init();
+extern void seesaw_2_factory_init();
 
 #endif
 

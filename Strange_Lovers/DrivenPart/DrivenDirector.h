@@ -23,7 +23,7 @@ void DrivenDirector_init(DrivenDirector *this_DrivenDirector);
 /**
  * ù‰ñ—Ê‚ğŒvZ‚·‚é
  */
-int DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,float target_brightness, float target_curvature,ControllerWeight use_controller);
+float DrivenDirector_calc_turn_value(DrivenDirector *this_DrivenDirector,float target_brightness, float target_curvature,ControllerWeight use_controller);
 
 /**
  * ‹ì“®—v‹‚ğ‚·‚é

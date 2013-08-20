@@ -65,7 +65,11 @@
 //#include "./StrategyFactories/SecondCurve_4Factory.h"
 
 #include "./StrategyFactories/StartUpWithTailFactory.h"
-
+#include "./StrategyFactories/SeeSaw_1Factory.h"
+#include "./StrategyFactories/SeeSaw_2Factory.h"
+#include "./StrategyFactories/SeeSaw_3Factory.h"
+#include "./StrategyFactories/SeeSaw_4Factory.h"
+#include "./StrategyFactories/SeeSaw_5Factory.h"
 
 
 Calibration calibration;

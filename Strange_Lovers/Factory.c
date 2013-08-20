@@ -75,10 +75,14 @@ void initialization(){
 	second_curve_2_factory_init();
 	second_curve_3_factory_init();
 	start_up_with_tail_factory_init();
-
+	seesaw_1_factory_init();
+	seesaw_2_factory_init();
+	seesaw_3_factory_init();
+	seesaw_4_factory_init();
+	seesaw_5_factory_init();
 
 	//StrategyPart
-	Runner_init(&runner,&firstStraight);
+	Runner_init(&runner,&startUpWithTail);
 }
 
 void clear_objects(){

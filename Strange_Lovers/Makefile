@@ -78,6 +78,11 @@ TARGET_SOURCES := \
 	./StrategyFactories/SecondCurve_2Factory.c \
 	./StrategyFactories/SecondCurve_3Factory.c \
 	./StrategyFactories/StartUpWithTailFactory.c \
+	./StrategyFactories/SeeSaw_1Factory.c \
+	./StrategyFactories/SeeSaw_2Factory.c \
+	./StrategyFactories/SeeSaw_3Factory.c \
+	./StrategyFactories/SeeSaw_4Factory.c \
+	./StrategyFactories/SeeSaw_5Factory.c \
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 

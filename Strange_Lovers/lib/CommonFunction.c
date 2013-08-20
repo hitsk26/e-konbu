@@ -1,8 +1,8 @@
 #include "CommonFunction.h"
 
-int cutoff(int value, int criterion){
+float cutoff(float value, int criterion){
 	
-	int cut_offed;
+	float cut_offed;
 	
 	if(value>criterion){
 		cut_offed = criterion;

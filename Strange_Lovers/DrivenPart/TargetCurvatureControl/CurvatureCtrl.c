@@ -42,17 +42,17 @@ void CC_stopCtrl(CurvatureCtrl *this_CurvatureCtrl)
 	CC_changeMode(&(*this_CurvatureCtrl),C_CTRL_OFF);
 }
 
-int CC_doCtrl(CurvatureCtrl *this_CurvatureCtrl)
+float CC_doCtrl(CurvatureCtrl *this_CurvatureCtrl)
 {
 	float curvature = C_getCurvature(&mCurvature,ecrobot_get_systick_ms());
-	int turn = PCC_calcCurvatureCtrlVal(&mPIDCurvatureCtrl,
+	float turn = PCC_calcCurvatureCtrlVal(&mPIDCurvatureCtrl,
 		C_getTargCurvature(&mCurvature),curvature,systick_get_ms()*0.001);
 	return turn;
 }
 
-int CC_run(CurvatureCtrl *this_CurvatureCtrl)
+float CC_run(CurvatureCtrl *this_CurvatureCtrl)
 {
-	int turn = 0;
+	float turn = 0;
 	switch(this_CurvatureCtrl->C_CtrlState){
 	case C_CTRL_ON:
 		turn = CC_doCtrl(&(*this_CurvatureCtrl));

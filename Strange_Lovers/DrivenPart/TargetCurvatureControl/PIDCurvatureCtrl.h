@@ -12,7 +12,7 @@ typedef struct{
 } PIDCurvatureCtrl;
 
 extern void PCC_init(PIDCurvatureCtrl *this_PIDCurvatureCtrl);
-extern int PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *this_PIDCurvatureCtrl,float targCurvature,float curvature,float time);
+extern float PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *this_PIDCurvatureCtrl,float targCurvature,float curvature,float time);
 extern PIDCurvatureCtrlParm PCC_getPIDCurvatureCtrlParm(PIDCurvatureCtrl *this_PIDCurvatureCtrl);
 extern void PCC_setPIDCurvatureCtrlParm(PIDCurvatureCtrl *this_PIDCurvatureCtrl,PIDCurvatureCtrlParm parm);
 extern void PCC_reset(PIDCurvatureCtrl *this_PIDCurvatureCtrl);

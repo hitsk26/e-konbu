@@ -21,8 +21,8 @@ extern void CC_setCtrlParm(CurvatureCtrl *this_CurvatureCtrl,PIDCurvatureCtrlPar
 extern PIDCurvatureCtrlParm CC_getCtrlParm(CurvatureCtrl *this_CurvatureCtrl);
 extern void CC_startCtrl(CurvatureCtrl *this_CurvatureCtrl);
 extern void CC_stopCtrl(CurvatureCtrl *this_CurvatureCtrl);
-extern int CC_doCtrl(CurvatureCtrl *this_CurvatureCtrl);
-extern int CC_run(CurvatureCtrl *this_CurvatureCtrl);
+extern float CC_doCtrl(CurvatureCtrl *this_CurvatureCtrl);
+extern float CC_run(CurvatureCtrl *this_CurvatureCtrl);
 extern void CC_changeMode(CurvatureCtrl *this_CurvatureCtrl,CurvatureCtrlState state);
 
 #endif

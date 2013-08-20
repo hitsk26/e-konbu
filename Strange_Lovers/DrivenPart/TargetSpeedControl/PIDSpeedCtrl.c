@@ -8,7 +8,7 @@ void PSC_init(PIDSpeedCtrl *self){
 
 }
 
-int PSC_calcSpeedCtrlVal(PIDSpeedCtrl *self,float targSpeed,float bfSpeed,float speed,float time){
+float PSC_calcSpeedCtrlVal(PIDSpeedCtrl *self,float targSpeed,float bfSpeed,float speed,float time){
 	float forward=0;
 	
 	float deviation = targSpeed - speed;
@@ -40,7 +40,7 @@ int PSC_calcSpeedCtrlVal(PIDSpeedCtrl *self,float targSpeed,float bfSpeed,float 
 		forward = -100;
 	
 	self->buf_forward = forward;
-	return (int)forward;
+	return forward;
 }
 
 PIDSpeedCtrlParm PSC_getPIDSpeedCtrlParm(PIDSpeedCtrl *self){

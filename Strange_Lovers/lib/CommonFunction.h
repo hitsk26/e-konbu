@@ -1,6 +1,6 @@
 #ifndef __CommonFunction
 #define __CommonFunction
 
-int cutoff(int value, int criterion);
+float cutoff(float value, int criterion);
 
 #endif

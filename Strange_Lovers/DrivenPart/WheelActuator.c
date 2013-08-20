@@ -23,11 +23,11 @@ void WheelActuator_balance_running(WheelActuator *self,S8 *pwm_l,S8 *pwm_r){
 }
 
 
-void WheelActuator_set_forward(WheelActuator *self , S8 forward){
+void WheelActuator_set_forward(WheelActuator *self , float forward){
 	self->forward = forward;
 }
 
-void WheelActuator_set_turn(WheelActuator *self , S8 turn){
+void WheelActuator_set_turn(WheelActuator *self , float turn){
 	self->turn = turn;
 }
 

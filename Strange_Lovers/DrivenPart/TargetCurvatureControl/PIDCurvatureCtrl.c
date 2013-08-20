@@ -8,7 +8,7 @@ extern void PCC_init(PIDCurvatureCtrl *self)
 	self->turn_buf=0;
 }
 
-extern int PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *self,float targCurvature,float curvature,float time)
+extern float PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *self,float targCurvature,float curvature,float time)
 {
 	float turn;
 	
@@ -35,7 +35,7 @@ extern int PCC_calcCurvatureCtrlVal(PIDCurvatureCtrl *self,float targCurvature,f
 	self->lastMeasurementTime = time;
 	self->turn_buf = turn;
 
-	return (int)turn;
+	return turn;
 }
 
 PIDCurvatureCtrlParm PCC_getPIDCurvatureCtrlParm(PIDCurvatureCtrl *self)

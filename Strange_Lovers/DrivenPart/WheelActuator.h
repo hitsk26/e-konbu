@@ -8,16 +8,16 @@
 
 
 typedef struct{
-	S8 forward;
-	S8 turn;
+	float forward;
+	float turn;
 	int self_balancing_requirment;
 }WheelActuator;
 
 
 extern void WheelActuator_init(WheelActuator *this_WheelActuator);
 extern void WheelActuator_balance_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S8 *pwm_r);
-extern void WheelActuator_set_forward(WheelActuator *this_WheelActuator , S8 forward);
-extern void WheelActuator_set_turn(WheelActuator *this_WheelActuator , S8 turn);
+extern void WheelActuator_set_forward(WheelActuator *this_WheelActuator , float forward);
+extern void WheelActuator_set_turn(WheelActuator *this_WheelActuator , float turn);
 extern void WheelActuator_tail_running(WheelActuator *this_WheelActuator,S8 *pwm_l,S8 *pwm_r);
 extern void WheelActuator_dirve_motors(WheelActuator *this_WheelActuator);
 void WheelActuator_set_self_balancing_requirement(WheelActuator *this_WheelActuator,int self_balancing_requirment);
