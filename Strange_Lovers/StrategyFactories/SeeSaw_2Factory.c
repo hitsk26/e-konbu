@@ -11,13 +11,13 @@ void seesaw_2_factory_init(){
 	MovementDirection movementDirection = FORWARD;
 	int (*fp_SwitchJudge)(SwitchTerm);
 
-	use_controller.target_curvature_controller_weight = 0.0;
-	use_controller.target_light_controller_weight = 1.0;
-	switch_term.distance = 1000;
+	use_controller.target_curvature_controller_weight = 1.0;
+	use_controller.target_light_controller_weight = 0.0;
+	switch_term.distance = -100;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 1;
-	switch_term.speed = 30;
-	switch_term.time =30000;
+	switch_term.speed = 0;
+	switch_term.time =0;
 	balancing_requrement = 0;
 	target_tail_angle=100;
 	gyroOffsetRevise=0;
@@ -28,12 +28,11 @@ void seesaw_2_factory_init(){
 	
 	seesaw_2_running_method_array[0]=SeesawRunningBuckMethod;
 
-
 	int number_of_running_method=1;
 	TargetValues target_values; 
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0.0;
-	target_values.target_speed = -50;
+	target_values.target_speed = -100;
 	Section *nextSection = &seesaw_3;
 	RunningMethod *runningMethod = seesaw_2_running_method_array;
 	Section_init(&seesaw_2,nextSection,number_of_running_method,runningMethod,target_values);
