@@ -22,7 +22,7 @@ void seesaw_1_factory_init(){
 	target_tail_angle=100;
 	gyroOffsetRevise=0;
 	request_forced_stop= 0;
-	movementDirection = FORWARD;
+	movementDirection = BACKWARD;
 	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
 
 	RunningMethod_init(&SeesawFirstLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
@@ -34,7 +34,7 @@ void seesaw_1_factory_init(){
 	TargetValues target_values; 
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0.0;
-	target_values.target_speed = 50;
+	target_values.target_speed = -50;
 	Section *nextSection = &seesaw_3;
 	RunningMethod *runningMethod = seesaw_1_running_method_array;
 	Section_init(&seesaw_1,nextSection,number_of_running_method,runningMethod,target_values);
