@@ -26,7 +26,7 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
 
-#include "SeeSaw_3Factory.h"
+#include "SeeSaw_stopFactory.h"
 
 
 

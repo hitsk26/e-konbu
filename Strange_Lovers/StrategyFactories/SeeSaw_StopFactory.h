@@ -1,5 +1,5 @@
-#ifndef _StartUpFactory_
-#define _StartUpFactory_
+#ifndef _SeeSaw_stopFactory_
+#define _SeeSaw_stopFactory_
 
 #include "../DrivenPart/DrivenDirector.h"
 #include "../DrivenPart/ControllerWeight.h"
@@ -24,29 +24,24 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/DistanceSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/TimeSwitch.h"
-#include "../StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.h"
 
-#include "seesaw_1Factory.h"
+#include "SeeSaw_2Factory.h"
+
 
 
 //StarategyPart
 
-Section startUp;
-RunningMethod waitTouchRunningMethod;
-RunningMethod tailMoveRunningMethod;
-RunningMethod tailBackRunningMethod;
+Section seesaw_stop;
+RunningMethod SeesawStopMethod;
 
-RunningMethod start_up_running_method_array[3];
-
-
-//Section firstCurve;
+RunningMethod seesaw_stop_running_method_array[1];
 
 
 //StrategyPart/RunningMethodSwitchJudge
 
-
-extern void start_up__factory_init();
+extern void seesaw_stop_factory_init();
 
 #endif
 

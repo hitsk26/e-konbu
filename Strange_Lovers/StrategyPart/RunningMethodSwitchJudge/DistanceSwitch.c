@@ -9,7 +9,6 @@ int DistanceSwitch_judge_switch_method(SwitchTerm switch_term)
 	{
 		if(DistanceEncoder_get_distance(&distanceEncoder) > switch_term.distance){
 				judge_flag=1;
-				DistanceEncoder_reset_Encoder(&distanceEncoder);
 		}
 		else {
 			judge_flag=0;
@@ -17,7 +16,6 @@ int DistanceSwitch_judge_switch_method(SwitchTerm switch_term)
 	}else{
 		if(DistanceEncoder_get_distance(&distanceEncoder) < switch_term.distance){
 				judge_flag=1;
-			DistanceEncoder_reset_Encoder(&distanceEncoder);
 		}
 		else {
 			judge_flag=0;

@@ -74,6 +74,7 @@ void initialization(){
 	second_curve_3_factory_init();
 	start_up_with_tail_factory_init();
 	seesaw_1_factory_init();
+	seesaw_stop_factory_init();
 	seesaw_2_factory_init();
 	seesaw_3_factory_init();
 	seesaw_4_factory_init();

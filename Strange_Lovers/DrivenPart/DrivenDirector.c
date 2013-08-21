@@ -1,8 +1,7 @@
 #include "DrivenDirector.h"
 #include "../logSend.h"
 #include "../Factory.h"
-
-
+#include "../EncoderPart/DistanceEncoder.h"
 
 void DrivenDirector_init(DrivenDirector *self){
 }
@@ -30,7 +29,7 @@ void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness,
 	WheelActuator_set_self_balancing_requirement(&wheelActuator,self_balancing_requirement);
 	WheelActuator_revise_gyro_offset(&wheelActuator,gyro_offset_revise);
 	WheelActuator_dirve_motors(&wheelActuator);
-	
+	logSend(0, 0, DistanceEncoder_get_distance(&distanceEncoder), 0, 0, 0, 0, 0);
 }
 void DrivenDirector_request_stop(DrivenDirector *self,int target_tail_angle)
 {
