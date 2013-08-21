@@ -10,12 +10,15 @@
 typedef struct{
 	float speed;
 	float buf_distance;
+	float buf_speed;
+	float lower_limit;
+	float upper_limit;
 }SpeedEncoder;
 
 
-float SpeedEncoder_get_speed(SpeedEncoder *this_SpeedEncoder);
-void SpeedEncoder_calc_speed(SpeedEncoder *this_SpeedEncoder);
-void SpeedEncoder_init(SpeedEncoder *this_SpeedEncoder);
+float SpeedEncoder_get_speed(SpeedEncoder *self);
+void SpeedEncoder_calc_speed(SpeedEncoder *self);
+void SpeedEncoder_init(SpeedEncoder *self);
 
 #endif 
 

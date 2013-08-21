@@ -1,7 +1,6 @@
 #include "DrivenDirector.h"
 #include "../logSend.h"
 #include "../Factory.h"
-#include "../logSend.h"
 
 
 
@@ -17,7 +16,6 @@ float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightnes
 
 	float brightness_turn = LVC_run(&mLightValCtrl);
 	float curvature_turn = CC_run(&mCurvatureCtrl);
-	logSend(0,0,BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000,wheelActuator.forward*100,curvature_turn,SpeedEncoder_get_speed(&speedEncoder),0,0);
 	return use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn;
 }
@@ -28,7 +26,6 @@ void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness,
 	PID_tail(target_tail_angle);
 	SC_setTargSpeed(&mSpeedCtrl, target_speed);
 	SC_run(&mSpeedCtrl);
-	
 	WheelActuator_set_turn(&wheelActuator , turn);
 	WheelActuator_set_self_balancing_requirement(&wheelActuator,self_balancing_requirement);
 	WheelActuator_revise_gyro_offset(&wheelActuator,gyro_offset_revise);

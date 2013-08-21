@@ -6,19 +6,19 @@ void S_init(Speed *this_Speed){
 	this_Speed->bfSpeed = 0;
 }
 
-int S_getSpeed(Speed *this_Speed,int time){
+float S_getSpeed(Speed *this_Speed,int time){
 
-	int speed = SpeedEncoder_get_speed(&speedEncoder);
+	float speed = SpeedEncoder_get_speed(&speedEncoder);
 
 	this_Speed->bfSpeed = speed;
 	return speed;
 }
 
-int S_getBfSpeed(Speed *this_Speed){
+float S_getBfSpeed(Speed *this_Speed){
 	return this_Speed->bfSpeed;
 }
 
-int S_getTargSpeed(Speed *this_Speed){
+float S_getTargSpeed(Speed *this_Speed){
 	return this_Speed->targSpeed;
 }
 

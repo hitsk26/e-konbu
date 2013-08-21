@@ -12,9 +12,9 @@ typedef struct{
 } Speed;
 
 extern void S_init(Speed *this_Speed);
-extern int S_getSpeed(Speed *this_Speed,int time);
-extern int S_getTargSpeed(Speed *this_Speed);
-extern int S_getBfSpeed(Speed *this_Speed);
+extern float S_getSpeed(Speed *this_Speed,int time);
+extern float S_getTargSpeed(Speed *this_Speed);
+extern float S_getBfSpeed(Speed *this_Speed);
 extern void S_setTargSpeed(Speed *this_Speed,int parm);
 
 #endif

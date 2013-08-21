@@ -80,6 +80,7 @@ void initialization(){
 	seesaw_5_factory_init();
 	//StrategyPart
 	Runner_init(&runner,&startUpWithTail);
+	//Runner_init(&runner,&firstStraight);
 }
 
 void clear_objects(){

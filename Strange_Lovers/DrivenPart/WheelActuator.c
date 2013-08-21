@@ -32,18 +32,17 @@ void WheelActuator_set_turn(WheelActuator *self , float turn){
 }
 
 void WheelActuator_tail_running(WheelActuator *self,S8 *pwm_l,S8 *pwm_r){
-	*pwm_l = cutoff(self->forward + 	self->turn,100);
-	*pwm_r = cutoff(self->forward - 	self->turn,100);
-
+	*pwm_l = cutoff(self->forward + self->turn,100);
+	*pwm_r = cutoff(self->forward - self->turn,100);
 }
 
 void WheelActuator_dirve_motors(WheelActuator *self){
 	S8 pwm_l=0,pwm_r=0;
 	if(self->self_balancing_requirment == 1){
-		WheelActuator_balance_running(&wheelActuator,&pwm_l,&pwm_r);
+		WheelActuator_balance_running(self,&pwm_l,&pwm_r);
 	}
 	else if(self->self_balancing_requirment==0){
-		 WheelActuator_tail_running(&wheelActuator,&pwm_l,&pwm_r);
+		 WheelActuator_tail_running(self,&pwm_l,&pwm_r);
 	}
 	else {
 	//fetal error
