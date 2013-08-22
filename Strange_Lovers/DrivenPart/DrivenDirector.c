@@ -15,7 +15,6 @@ float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightnes
 
 	float brightness_turn = LVC_run(&mLightValCtrl);
 	float curvature_turn = CC_run(&mCurvatureCtrl);
-	logSend(0,0,SpeedEncoder_get_speed(&speedEncoder),0,0,0,0,0);
 	return use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn;
 }
@@ -30,7 +29,6 @@ void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness,
 	WheelActuator_set_self_balancing_requirement(&wheelActuator,self_balancing_requirement);
 	WheelActuator_revise_gyro_offset(&wheelActuator,gyro_offset_revise);
 	WheelActuator_dirve_motors(&wheelActuator);
-	logSend(0, 0, DistanceEncoder_get_distance(&distanceEncoder), 0, 0, 0, 0, 0);
 }
 void DrivenDirector_request_stop(DrivenDirector *self,int target_tail_angle)
 {

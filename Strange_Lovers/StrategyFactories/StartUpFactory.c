@@ -69,6 +69,6 @@ void start_up__factory_init(){
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0.0;
 	target_values.target_speed = 0;
-	Section *nextSection = &seesaw_1;
+	Section *nextSection = &firstStraight;
 	Section_init(&startUp,nextSection,number_of_running_method,start_up_running_method_array,target_values);
 }

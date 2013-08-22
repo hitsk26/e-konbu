@@ -27,7 +27,7 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/TimeSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.h"
 
-#include "seesaw_1Factory.h"
+#include "FiststStraightFactory.h"
 
 
 //StarategyPart

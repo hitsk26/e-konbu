@@ -12,7 +12,7 @@ void seesaw_1_factory_init(){
 	int (*fp_SwitchJudge)(SwitchTerm);
 
 	use_controller.target_curvature_controller_weight = 0.0;
-	use_controller.target_light_controller_weight = 1.0;
+	use_controller.target_light_controller_weight =1.0;
 	switch_term.distance = 500;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 1;

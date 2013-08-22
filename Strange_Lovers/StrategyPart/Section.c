@@ -6,7 +6,8 @@ static void Section_update_current_running_methods(Section *self);
 
 //区間最後の走法実行終了判断
 static int Section_clear_section(Section *self,int executed_flag);
-
+//走法切り替え時のエンコーダのリセット
+static void Section_reset_encoder(Section *self);
 
 void Section_init(Section *self,Section *nextSection,int number_of_running_method,RunningMethod *running_methods,TargetValues target_values)
 {
@@ -64,17 +65,18 @@ int Section_run(Section *self)
 }
 
 static void Section_update_current_running_methods(Section *self){
-	
+			
 	if(self->current_running_method_number +1 < self->number_of_running_method ) {
 		self->current_running_method_number +=1;
-		Timer_reset(&timer);
-		DistanceEncoder_reset_Encoder(&distanceEncoder);
-
 	}
 	else {
 		//none
 	}
-
+	Section_reset_encoder(self);
 }
 	
-
+static void Section_reset_encoder(Section *self){
+	Timer_reset(&timer);
+	DistanceEncoder_reset_Encoder(&distanceEncoder);
+	ecrobot_sound_tone(1000,49,90);
+}
