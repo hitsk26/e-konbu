@@ -1,48 +1,52 @@
-#include "FiststStraightFactory.h"
+#include "ThurdStraightFactory.h"
 
 
-void first_straight_factory_init(){
-	
-	//RunningMethod
+void thurd_straight_factory_init(){
 
-	//stableRunningMethod
-	stableRunningMethod.balancing_requrement = 1;
-	stableRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
-	stableRunningMethod.gyroOffsetRevise = 0;
-	
-	stableRunningMethod.switch_term.distance = 970;
-	stableRunningMethod.switch_term.inclination = 0;
-	stableRunningMethod.switch_term.time = 0;
-	
-	stableRunningMethod.target_tail_angle=0;
-	stableRunningMethod.use_controller.target_curvature_controller_weight= 0.0;
-	stableRunningMethod.use_controller.target_light_controller_weight = 1.0;
-	
-	//straightLineTraceMethod
-	straightLineTraceMethod.balancing_requrement = 1;
-	straightLineTraceMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
-	straightLineTraceMethod.gyroOffsetRevise = 0;
-	
-	straightLineTraceMethod.switch_term.distance = 0;
-	straightLineTraceMethod.switch_term.inclination = 0;
-	straightLineTraceMethod.switch_term.time = 0;
-	
-	straightLineTraceMethod.target_tail_angle=0;
-	straightLineTraceMethod.use_controller.target_curvature_controller_weight= 0.0;
-	straightLineTraceMethod.use_controller.target_light_controller_weight = 1.0;
+	//Section Local variables
+	TargetValues target_values; 
+	Section *nextSection;
+	RunningMethod *runningMethod;
 
-
-	first_straight_running_method_array[0]=stableRunningMethod;
-	first_straight_running_method_array[1]=straightLineTraceMethod;
-
-	firstStraight.current_running_method_number=0;
-	firstStraight.number_of_running_method=1;
-	firstStraight.running_methods=first_straight_running_method_array;
-
-	firstStraight.target_values.target_brightness=0.5;
-	firstStraight.target_values.target_curvature=0;
-	firstStraight.target_values.target_speed=100;
+	//RunningMethod Local Variables
+	ControllerWeight use_controller;
+	SwitchTerm switch_term;
+	int number_of_running_method=0;
+	int balancing_requrement =1;
+	int target_tail_angle=0;
+	int gyroOffsetRevise=0;
+	int request_forced_stop = 0;
+	int (*fp_SwitchJudge)(SwitchTerm);
+	MovementDirection movementDirection = FORWARD;
 	
-	firstStraight.nextSection = &firstCurve;
+
+	//secondCurve_1_LineTraceRunningMethod
+	use_controller.target_curvature_controller_weight = 0.5;
+	use_controller.target_light_controller_weight = 0.5;
+	switch_term.distance = 512.89;
+	switch_term.inclination = 0;
+	switch_term.inPushed = 0;
+	switch_term.speed = 0;
+	switch_term.time =0;
+	balancing_requrement = 1;
+	target_tail_angle=0;
+	gyroOffsetRevise=0;
+	request_forced_stop = 0;
+	movementDirection = FORWARD;
+	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
+	RunningMethod_init(&thurdStraightLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
+
+	
+	
+	//secondCurve_3 Section
+	thurd_straight_running_method_array[0]=thurdStraightLineTraceMethod;
+	runningMethod = thurd_straight_running_method_array;
+	number_of_running_method=1;
+	target_values.target_brightness = 0.5;
+	target_values.target_curvature = 0;
+	target_values.target_speed = 400;
+	nextSection = &thurdStraight;
+
+	Section_init(&thurdStraight,nextSection,number_of_running_method,runningMethod,target_values);
 
 }
