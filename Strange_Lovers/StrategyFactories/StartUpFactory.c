@@ -10,6 +10,8 @@ void start_up__factory_init(){
 	int request_forced_stop = 0;
 	MovementDirection movementDirection = FORWARD;
 
+	int (*fp_SwitchJudge)(SwitchTerm);
+
 	//waitTouchRunningMethod
 	use_controller.target_curvature_controller_weight = 0.0;
 	use_controller.target_light_controller_weight = 0.0;
@@ -23,7 +25,8 @@ void start_up__factory_init(){
 	gyroOffsetRevise=0;
 	request_forced_stop = 1;
 	movementDirection = FORWARD;
-	RunningMethod_init(&waitTouchRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,inPushedSwitch_judge_switch_method,request_forced_stop,movementDirection);
+	fp_SwitchJudge =inPushedSwitch_judge_switch_method;
+	RunningMethod_init(&waitTouchRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 
 	//tailMoveRunningMethod
@@ -33,13 +36,14 @@ void start_up__factory_init(){
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
-	switch_term.time =200;
+	switch_term.time =300;
 	balancing_requrement = 0;
-	target_tail_angle=127;
+	target_tail_angle=110;
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
 	movementDirection = FORWARD;
-	RunningMethod_init(&tailMoveRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,TimeSwitch_judge_switch_method,request_forced_stop,movementDirection);
+	fp_SwitchJudge = TimeSwitch_judge_switch_method;
+	RunningMethod_init(&tailMoveRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 
 	//tailBackRunningMethod
@@ -56,7 +60,8 @@ void start_up__factory_init(){
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
 	movementDirection = FORWARD;
-	RunningMethod_init(&tailBackRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,TimeSwitch_judge_switch_method,request_forced_stop,movementDirection);
+	fp_SwitchJudge = TimeSwitch_judge_switch_method;
+	RunningMethod_init(&tailBackRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 
 

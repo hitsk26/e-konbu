@@ -29,5 +29,8 @@ typedef struct {
 	 * ‘¬“x
 	 */
 	int speed;
+
+	float curvature;
+
 }SwitchTerm;
 #endif

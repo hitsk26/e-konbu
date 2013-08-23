@@ -78,5 +78,5 @@ static void Section_update_current_running_methods(Section *self){
 static void Section_reset_encoder(Section *self){
 	Timer_reset(&timer);
 	DistanceEncoder_reset_Encoder(&distanceEncoder);
-	ecrobot_sound_tone(1000,49,90);
+	ecrobot_sound_tone(1000,10,90);
 }

@@ -12,9 +12,9 @@ float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightnes
 	LV_setTargLightVal(&mLightVal,target_brightness);
 	PLVC_setMovementDirection(mLightValCtrl.mPIDLightValCtrl,movementDirection);
 	PCC_setMovementDirection(mCurvatureCtrl.mPIDCurvatureCtrl,movementDirection);
-
 	float brightness_turn = LVC_run(&mLightValCtrl);
 	float curvature_turn = CC_run(&mCurvatureCtrl);
+	logSend(0,0,DistanceEncoder_get_distance(&distanceEncoder),CurvatureEncoder_get_curvature(&curvatureEncoder)*1000,DirectionEncoder_get_direction(&directionEncoder),BrightnessEncoder_get_brightness_normalize(&brightnessEncoder),0,0);
 	return use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn;
 }

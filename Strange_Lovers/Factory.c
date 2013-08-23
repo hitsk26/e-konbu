@@ -64,7 +64,7 @@ void initialization(){
 	strategies_init();
 	
 	//StrategyPart
-	Runner_init(&runner,&startUpWithTail);
+	Runner_init(&runner,startSection);
 	
 }
 
@@ -117,7 +117,7 @@ void clear_objects(){
 	PLVC_reset(mLightValCtrl.mPIDLightValCtrl);
 
 	strategies_init();
-	Runner_init(&runner,&seesaw_3);
+	Runner_init(&runner,startSection);
 }
 
 

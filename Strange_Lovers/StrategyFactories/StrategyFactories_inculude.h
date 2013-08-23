@@ -1,17 +1,9 @@
 #ifndef _StrategyFactories_include_
 #define _StrategyFactories_include_
 
-#include "../DrivenPart/DrivenDirector.h"
+
 #include "../DrivenPart/ControllerWeight.h"
 
-
-#include "../EncoderPart/DistanceEncoder.h"
-#include "../EncoderPart/SpeedEncoder.h"
-#include "../EncoderPart/Timer.h"
-#include "../EncoderPart/InclinationEncoder.h"
-#include "../EncoderPart/BrightnessEncoder.h"
-#include "../EncoderPart/DirectionEncoder.h"
-#include "../EncoderPart/CurvatureEncoder.h"
 
 #include "../StrategyPart/Runner.h"
 #include "../StrategyPart/RunningMethod.h"
@@ -27,6 +19,8 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/TimeSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/CurvatureSwitch.h"
+
 
 #endif
 
