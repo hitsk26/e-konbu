@@ -80,7 +80,7 @@ void initialization(){
 	seesaw_4_factory_init();
 	seesaw_5_factory_init();
 	//StrategyPart
-	Runner_init(&runner,&startUpWithTail);
+	Runner_init(&runner,&startUp);
 	
 }
 
