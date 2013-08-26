@@ -17,7 +17,8 @@ void slope_factory_init(){
 	slopeRunningMethod.target_tail_angle=0;
 	slopeRunningMethod.use_controller.target_curvature_controller_weight= 0.5;
 	slopeRunningMethod.use_controller.target_light_controller_weight = 0.5;
-	
+	slopeRunningMethod.movementDirection = FORWARD;
+
 	slope_running_method_array[0]=slopeRunningMethod;
 	
 	slope.current_running_method_number=0;

@@ -67,16 +67,19 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/CurvatureSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
 	./StrategyFactories/SlopeFactory.c \
 	./StrategyFactories/AfterSlopeStraightFactory.c \
 	./StrategyFactories/FiststCurveFactory.c \
 	./StrategyFactories/StartUpFactory.c \
 	./StrategyFactories/SecondStraightFactory.c \
-	./StrategyFactories/SecondCurve_1Factory.c \
-	./StrategyFactories/SecondCurve_2Factory.c \
-	./StrategyFactories/SecondCurve_3Factory.c \
+	./StrategyFactories/SecondCurveFactory.c \
 	./StrategyFactories/StartUpWithTailFactory.c \
+	./StrategyFactories/ThurdStraightFactory.c \
+	./StrategyFactories/ThurdCurveFactory.c \
+	./StrategyFactories/ForthStraightFactory.c \
+	./StrategyFactories/ForthCurveFactory.c \
 	./StrategyFactories/SeeSaw_1Factory.c \
 	./StrategyFactories/SeeSaw_StopFactory.c \
 	./StrategyFactories/SeeSaw_2Factory.c \

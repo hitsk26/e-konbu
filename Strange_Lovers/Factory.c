@@ -1,4 +1,5 @@
 #include "Factory.h"
+static void strategies_init();
 
 void initialization(){
 	
@@ -60,28 +61,11 @@ void initialization(){
 	//DrivenPart/TargetLightValueControl
 	LVC_init(&mLightValCtrl,&mPIDLightValCtrl);
 
-
-	//initialize Sections pleas call them here!!
+	strategies_init();
 	
-	first_curve_factory_init();
-	after_slope_straight_factory_init();
-	slope_factory_init();
-	first_straight_factory_init();
-	start_up__factory_init();
-	second_straight_factory_init();
-	second_curve_1_factory_init();
-	second_curve_2_factory_init();
-	second_curve_3_factory_init();
-	start_up_with_tail_factory_init();
-	seesaw_1_factory_init();
-	seesaw_stop_factory_init();
-	seesaw_2_factory_init();
-	seesaw_3_factory_init();
-	seesaw_4_factory_init();
-	seesaw_5_factory_init();
 	//StrategyPart
-	Runner_init(&runner,&startUpWithTail);
-	
+	Runner_init(&runner,startSection);
+
 }
 
 void clear_objects(){
@@ -131,7 +115,33 @@ void clear_objects(){
 
 	//DrivenPart/TargetLightValueControl
 	PLVC_reset(mLightValCtrl.mPIDLightValCtrl);
-	Section_reset(runner.current_section);
-	Runner_init(&runner,&seesaw_3);
+
+	strategies_init();
+	Runner_init(&runner,startSection);
+}
+
+
+//initialize strategies pleas call them here!!
+void strategies_init(){
+
+	first_curve_factory_init();
+	after_slope_straight_factory_init();
+	slope_factory_init();
+	first_straight_factory_init();
+	start_up__factory_init();
+	second_straight_factory_init();
+	second_curve_factory_init();
+	thurd_straight_factory_init();
+	thurd_curve_factory_init();
+	forth_straight_factory_init();
+	forth_curve_factory_init();
+	start_up_with_tail_factory_init();
+	seesaw_1_factory_init();
+	seesaw_stop_factory_init();
+	seesaw_2_factory_init();
+	seesaw_3_factory_init();
+	seesaw_4_factory_init();
+	seesaw_5_factory_init();
+
 }
 

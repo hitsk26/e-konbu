@@ -6,7 +6,7 @@ void PLVC_init(PIDLightValCtrl *self,PIDLightValCtrlParm *parm){
 	self->bfDeviation = 0;
 	self->lastMeasurementTime = 0;	
 	self->mPIDLightValCtrlParm = parm;
-	PLVCP_init(parm,180.0,0.15,80);
+	PLVCP_init(parm,130.0,1.15,80);
 	//PLVCP_init(parm,18.0,0.15,8);
 }
 

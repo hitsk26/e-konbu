@@ -59,11 +59,14 @@
 #include "./StrategyFactories/SlopeFactory.h"
 #include "./StrategyFactories/StartUpFactory.h"
 #include "./StrategyFactories/SecondStraightFactory.h"
-#include "./StrategyFactories/SecondCurve_1Factory.h"
+#include "./StrategyFactories/SecondCurveFactory.h"
+#include "./StrategyFactories/ThurdStraightFactory.h"
+#include "./StrategyFactories/ThurdCurveFactory.h"
+#include "./StrategyFactories/ForthStraightFactory.h"
+#include "./StrategyFactories/ForthCurveFactory.h"
+
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
-#include "./StrategyFactories/SecondCurve_2Factory.h"
-#include "./StrategyFactories/SecondCurve_3Factory.h"
-#include "./StrategyFactories/SecondCurve_4Factory.h"
+
 
 #include "./StrategyFactories/StartUpWithTailFactory.h"
 #include "./StrategyFactories/SeeSaw_1Factory.h"
@@ -72,6 +75,8 @@
 #include "./StrategyFactories/SeeSaw_3Factory.h"
 #include "./StrategyFactories/SeeSaw_4Factory.h"
 #include "./StrategyFactories/SeeSaw_5Factory.h"
+
+
 
 
 Calibration calibration;
@@ -130,6 +135,7 @@ LightValCtrl mLightValCtrl;
 //StarategyPart
 Runner runner;
 
+Section *startSection = &firstStraight;
 
 //StrategyPart/RunningMethodSwitchJudge
 

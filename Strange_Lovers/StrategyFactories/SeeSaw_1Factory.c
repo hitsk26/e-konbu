@@ -11,18 +11,18 @@ void seesaw_1_factory_init(){
 	MovementDirection movementDirection = FORWARD;
 	int (*fp_SwitchJudge)(SwitchTerm);
 
-	use_controller.target_curvature_controller_weight = 0.0;
-	use_controller.target_light_controller_weight =1.0;
+	use_controller.target_curvature_controller_weight =1.0;
+	use_controller.target_light_controller_weight =0.0;
 	switch_term.distance = 500;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 1;
 	switch_term.speed = 40;
-	switch_term.time =20000;
+	switch_term.time =2000;
 	balancing_requrement = 0;
 	target_tail_angle=100;
 	gyroOffsetRevise=0;
 	request_forced_stop= 0;
-	movementDirection = BACKWARD;
+	movementDirection = FORWARD;
 	fp_SwitchJudge = SpeedTimerMultipleSwitch_judge_switch_method;
 
 	RunningMethod_init(&SeesawFirstLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
