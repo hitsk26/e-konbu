@@ -21,7 +21,7 @@ void forth_straight_factory_init()
 	MovementDirection movementDirection = FORWARD;
 	
 
-	//forthStraightLineTraceMethod
+	//secondCurve_1_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
 	switch_term.distance = 863.06;
@@ -35,14 +35,14 @@ void forth_straight_factory_init()
 
 	
 	
-	//forthStraightLineTraceMethod
+	//secondCurve_3 Section
 	forth_straight_running_method_array[0]=forthStraightLineTraceMethod;
 	runningMethod = forth_straight_running_method_array;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0;
 	target_values.target_speed = 400;
-	nextSection = &forthCurve_1;
+	nextSection = &forthStraight;
 
 	Section_init(&forthStraight,nextSection,number_of_running_method,runningMethod,target_values);
 
