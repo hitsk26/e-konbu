@@ -38,7 +38,8 @@ void start_up__factory_init(){
 	switch_term.speed = 0;
 	switch_term.time =300;
 	balancing_requrement = 0;
-	target_tail_angle=110;
+	target_tail_angle=119;
+
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
 	movementDirection = FORWARD;
@@ -54,7 +55,7 @@ void start_up__factory_init(){
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
-	switch_term.time = 4;
+	switch_term.time = 200;
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;

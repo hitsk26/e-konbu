@@ -65,7 +65,7 @@ void initialization(){
 	
 	//StrategyPart
 	Runner_init(&runner,startSection);
-	
+
 }
 
 void clear_objects(){
