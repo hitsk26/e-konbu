@@ -12,12 +12,12 @@ void seesaw_stop_factory_init(){
 	int (*fp_SwitchJudge)(SwitchTerm);
 
 	use_controller.target_curvature_controller_weight = 0.0;
-	use_controller.target_light_controller_weight = 1.0;
+	use_controller.target_light_controller_weight = 0.0;
 	switch_term.distance = 500;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 1;
 	switch_term.speed = 0;
-	switch_term.time =3000;
+	switch_term.time =5000;
 	balancing_requrement = 0;
 	target_tail_angle=100;
 	gyroOffsetRevise=0;

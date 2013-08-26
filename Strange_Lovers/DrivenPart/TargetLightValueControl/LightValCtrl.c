@@ -32,7 +32,6 @@ void LVC_startCtrl(LightValCtrl *self){
 }
 
 void LVC_stopCtrl(LightValCtrl *self){
-	ecrobot_sound_tone(900,100,10);
 	LVC_changeMode(self,LV_CTRL_OFF);
 }
 

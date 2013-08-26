@@ -135,7 +135,7 @@ LightValCtrl mLightValCtrl;
 //StarategyPart
 Runner runner;
 
-Section *startSection = &firstStraight;
+Section *startSection = &startUpWithTail;
 
 //StrategyPart/RunningMethodSwitchJudge
 
