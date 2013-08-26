@@ -132,6 +132,9 @@ void strategies_init(){
 	second_straight_factory_init();
 	second_curve_factory_init();
 	thurd_straight_factory_init();
+	thurd_curve_factory_init();
+	forth_straight_factory_init();
+	forth_curve_factory_init();
 	start_up_with_tail_factory_init();
 	seesaw_1_factory_init();
 	seesaw_stop_factory_init();

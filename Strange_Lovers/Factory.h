@@ -61,6 +61,9 @@
 #include "./StrategyFactories/SecondStraightFactory.h"
 #include "./StrategyFactories/SecondCurveFactory.h"
 #include "./StrategyFactories/ThurdStraightFactory.h"
+#include "./StrategyFactories/ThurdCurveFactory.h"
+#include "./StrategyFactories/ForthStraightFactory.h"
+#include "./StrategyFactories/ForthCurveFactory.h"
 
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
 

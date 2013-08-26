@@ -77,6 +77,9 @@ TARGET_SOURCES := \
 	./StrategyFactories/SecondCurveFactory.c \
 	./StrategyFactories/StartUpWithTailFactory.c \
 	./StrategyFactories/ThurdStraightFactory.c \
+	./StrategyFactories/ThurdCurveFactory.c \
+	./StrategyFactories/ForthStraightFactory.c \
+	./StrategyFactories/ForthCurveFactory.c \
 	./StrategyFactories/SeeSaw_1Factory.c \
 	./StrategyFactories/SeeSaw_StopFactory.c \
 	./StrategyFactories/SeeSaw_2Factory.c \
