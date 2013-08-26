@@ -33,7 +33,7 @@ void seesaw_2_factory_init(){
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0.0;
 	target_values.target_speed = -100;
-	Section *nextSection = &seesaw_3;
+	Section *nextSection = &seesaw_2_2;
 	RunningMethod *runningMethod = seesaw_2_running_method_array;
 	Section_init(&seesaw_2,nextSection,number_of_running_method,runningMethod,target_values);
 	
