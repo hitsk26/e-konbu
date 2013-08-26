@@ -17,7 +17,6 @@ void second_curve_factory_init(){
 	int (*fp_SwitchJudge)(SwitchTerm);
 	MovementDirection movementDirection = FORWARD;
 	
-cp
 	//secondCurve_1_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
