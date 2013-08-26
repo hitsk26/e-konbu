@@ -55,6 +55,5 @@ void DrivenDirector_check_halt_request_target_control_(DrivenDirector *self,Cont
 	else {
 		LVC_startCtrl(&mLightValCtrl);
 	}
-
-
 }
+

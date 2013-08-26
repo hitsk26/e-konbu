@@ -2,6 +2,7 @@
 #define _OutFifthCurveFactory_
 
 #include "../StrategyFactories/StrategyFactories_inculude.h"
+#include "AfterOutFifthCurveStraight.h"
 
 
 

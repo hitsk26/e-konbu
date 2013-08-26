@@ -64,6 +64,9 @@
 #include "./StrategyFactories/ThurdCurveFactory.h"
 #include "./StrategyFactories/ForthStraightFactory.h"
 #include "./StrategyFactories/ForthCurveFactory.h"
+#include "./StrategyFactories/OutFifthStraightFactory.h"
+#include "./StrategyFactories/OutFifthCurveFactory.h"
+#include "./StrategyFactories/OutSixthCurveFactory.h"
 
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
 
@@ -135,7 +138,7 @@ LightValCtrl mLightValCtrl;
 //StarategyPart
 Runner runner;
 
-Section *startSection = &startUpWithTail;
+Section *startSection = &startUp;
 
 //StrategyPart/RunningMethodSwitchJudge
 
