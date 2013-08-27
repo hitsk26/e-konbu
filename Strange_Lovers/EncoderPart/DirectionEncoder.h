@@ -10,13 +10,15 @@
 
 typedef struct{
 	float direction;
-	
+	int revL_buf;
+	int revR_buf;
 }DirectionEncoder;
 
 
-float DirectionEncoder_get_direction(DirectionEncoder *this_DirectionEncoder);
-void DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder);
-void DirectionEncoder_init(DirectionEncoder *this_DirectionEncoder);
+float DirectionEncoder_get_direction(DirectionEncoder *self);
+void DirectionEncoder_calc_speed(DirectionEncoder *self);
+void DirectionEncoder_init(DirectionEncoder *self);
+void DirectionEncoder_reset(DirectionEncoder *self);
 
 #endif 
 

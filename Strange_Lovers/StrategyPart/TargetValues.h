@@ -5,6 +5,7 @@ typedef struct {
 	float target_brightness;
 	float target_curvature;
 	int target_speed;
+	float target_runner_angle;
 }TargetValues;
 
 

@@ -6,23 +6,32 @@
 #define TARGTIME 100
 
 
-void DirectionEncoder_init(DirectionEncoder *this_DirectionEncoder)
+void DirectionEncoder_init(DirectionEncoder *self)
 {
-	this_DirectionEncoder->direction = 0;
+	self->direction = 0;
+	self->revL_buf = 0;
+	self->revR_buf = 0;
 }
 
-float DirectionEncoder_get_direction(DirectionEncoder *this_DirectionEncoder)
+float DirectionEncoder_get_direction(DirectionEncoder *self)
 {
-	return this_DirectionEncoder->direction;
+	return self->direction;
 }
 
-void DirectionEncoder_calc_speed(DirectionEncoder *this_DirectionEncoder)
+void DirectionEncoder_calc_speed(DirectionEncoder *self)
 {
-	int revL = WheelMotor_get_count(&leftWheelMotor);
+	int revL = WheelMotor_get_count(&leftWheelMotor) - self->revL_buf;
 
-	int revR = WheelMotor_get_count(&rightWheelMotor);	
+	int revR = WheelMotor_get_count(&rightWheelMotor) - self->revR_buf;	
 
-	this_DirectionEncoder->direction = (float)WHEEL_R /MACHINE_W * (revR - revL);
+	self->direction = (float)WHEEL_R /MACHINE_W * (revR - revL);
+	
 }
 
 
+void DirectionEncoder_reset(DirectionEncoder *self)
+{
+	self->revL_buf = WheelMotor_get_count(&leftWheelMotor);
+	self->revR_buf = WheelMotor_get_count(&rightWheelMotor);
+	self->direction = 0;
+}
