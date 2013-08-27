@@ -3,7 +3,7 @@
 
 #include "../StrategyFactories/StrategyFactories_inculude.h"
 
-#include "SeeSaw_3Factory.h"
+#include "SeeSaw_2_2Factory.h"
 
 
 //StarategyPart

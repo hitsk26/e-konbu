@@ -75,6 +75,7 @@
 #include "./StrategyFactories/SeeSaw_1Factory.h"
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
 #include "./StrategyFactories/SeeSaw_2Factory.h"
+#include "./StrategyFactories/SeeSaw_2_2Factory.h"
 #include "./StrategyFactories/SeeSaw_3Factory.h"
 #include "./StrategyFactories/SeeSaw_4Factory.h"
 #include "./StrategyFactories/SeeSaw_5Factory.h"

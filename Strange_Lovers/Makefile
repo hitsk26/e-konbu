@@ -86,6 +86,7 @@ TARGET_SOURCES := \
 	./StrategyFactories/SeeSaw_1Factory.c \
 	./StrategyFactories/SeeSaw_StopFactory.c \
 	./StrategyFactories/SeeSaw_2Factory.c \
+	./StrategyFactories/SeeSaw_2_2Factory.c \
 	./StrategyFactories/SeeSaw_3Factory.c \
 	./StrategyFactories/SeeSaw_4Factory.c \
 	./StrategyFactories/SeeSaw_5Factory.c \
