@@ -6,8 +6,8 @@ void PLVC_init(PIDLightValCtrl *self,PIDLightValCtrlParm *parm){
 	self->bfDeviation = 0;
 	self->lastMeasurementTime = 0;	
 	self->mPIDLightValCtrlParm = parm;
-	//PLVCP_init(parm,130.0,1.15,80);
-	PLVCP_init(parm,68.0,0.15,8);
+	PLVCP_init(parm,180.0,0,40);
+	//PLVCP_init(parm,68.0,0.15,8);
 }
 
 float PLVC_calcCtrlVal(PIDLightValCtrl *self,float targLightVal,float LightVal,float time){

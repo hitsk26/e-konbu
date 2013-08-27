@@ -138,7 +138,9 @@ void strategies_init(){
 	start_up_with_tail_factory_init();
 	out_fifth_straight_factory_init();
 	out_fifth_curve_factory_init();
+	after_out_fifth_curve_straight_factory_init();
 	out_sixth_curve_factory_init();
+	
 	seesaw_1_factory_init();
 	seesaw_stop_factory_init();
 	seesaw_2_factory_init();

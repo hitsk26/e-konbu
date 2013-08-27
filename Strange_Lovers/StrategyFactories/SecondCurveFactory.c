@@ -47,7 +47,7 @@ void second_curve_factory_init(){
 	//secondCurve_2_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 943.473;
+	switch_term.distance = 643;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
@@ -67,7 +67,7 @@ void second_curve_factory_init(){
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = -1.0/570.18;
 	target_values.target_speed = 400;
-	nextSection = &secondCurve_2;
+	nextSection = &secondCurve_3;
 	Section_init(&secondCurve_2,nextSection,number_of_running_method,second_curve_2_running_method_array,target_values);
 
 
@@ -93,10 +93,8 @@ void second_curve_factory_init(){
 	second_curve_3_running_method_array[0]=secondCurve_3_LineTraceRunningMethod;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = -1.0/927.14;
+	target_values.target_curvature = -1.0/527;
 	target_values.target_speed = 400;
 	nextSection = &thurdStraight;
 	Section_init(&secondCurve_3,nextSection,number_of_running_method,second_curve_3_running_method_array,target_values);
-
-
 }

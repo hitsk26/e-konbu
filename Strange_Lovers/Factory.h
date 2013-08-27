@@ -70,6 +70,7 @@
 #include "./StrategyFactories/ForthCurveFactory.h"
 #include "./StrategyFactories/OutFifthStraightFactory.h"
 #include "./StrategyFactories/OutFifthCurveFactory.h"
+#include "./StrategyFactories/AfterOutFifthCurveStraight.h"
 #include "./StrategyFactories/OutSixthCurveFactory.h"
 
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
@@ -147,7 +148,7 @@ DirectionCtrl directionCtrl;
 //StarategyPart
 Runner runner;
 
-Section *startSection = &startUpWithTail;
+Section *startSection = &secondStraight;
 
 //StrategyPart/RunningMethodSwitchJudge
 

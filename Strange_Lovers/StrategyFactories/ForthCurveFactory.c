@@ -21,7 +21,7 @@ void forth_curve_factory_init(){
 	//forthCurve_1_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 361.0737;
+	switch_term.distance =461.0737;
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;

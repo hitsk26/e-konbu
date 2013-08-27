@@ -83,6 +83,7 @@ TARGET_SOURCES := \
 	./StrategyFactories/ForthStraightFactory.c \
 	./StrategyFactories/ForthCurveFactory.c \
 	./StrategyFactories/OutFifthStraightFactory.c \
+	./StrategyFactories/AfterOutFifthCurveStraight.c \
 	./StrategyFactories/OutFifthCurveFactory.c \
 	./StrategyFactories/OutSixthCurveFactory.c \
 	./StrategyFactories/SeeSaw_1Factory.c \
