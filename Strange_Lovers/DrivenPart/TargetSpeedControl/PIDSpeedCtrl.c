@@ -55,4 +55,5 @@ void PSC_reset(PIDSpeedCtrl *self){
 	self->integratedDeviation = 0;
 	self->bfDeviation = 0;
 	self->lastMeasurementTime = 0;
+	self->buf_forward = 0;
 }
