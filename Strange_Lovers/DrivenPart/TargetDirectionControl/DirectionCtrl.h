@@ -1,6 +1,7 @@
-#ifndef DRIVENPART_TARGETDIRECTIONCONTROL_DIRECTION_CTRL_H
-#define DRIVENPART_TARGETDIRECTIONCONTROL_DIRECTION_CTRL_H
+#ifndef __DirectionControl
+#define __DirectionControl
 
+#include "../../lib/CommonFunction.h"
 
 typedef struct {
 	

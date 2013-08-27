@@ -57,6 +57,7 @@ TARGET_SOURCES := \
 	./DrivenPart/TargetLightValueControl/LightValRange.c \
 	./DrivenPart/TargetLightValueControl/PIDLightValCtrl.c \
 	./DrivenPart/TargetLightValueControl/PIDLightValCtrlParm.c \
+	./DrivenPart/TargetDirectionControl/DirectionCtrl.c \
 	./StrategyPart/Section.c \
 	./StrategyPart/RunningMethod.c \
 	./StrategyPart/Runner.c \

@@ -33,6 +33,9 @@
 #include "DrivenPart/TargetCurvatureControl/Curvature.h"
 #include "DrivenPart/TargetCurvatureControl/PIDCurvatureCtrlParm.h"
 
+#include "DrivenPart/TargetDirectionControl/DirectionCtrl.h"
+
+
 #include "EncoderPart/DistanceEncoder.h"
 #include "EncoderPart/SpeedEncoder.h"
 #include "EncoderPart/Timer.h"
@@ -136,6 +139,10 @@ PIDLightValCtrlParm mPIDLightValCtrlParm;
 PIDLightValCtrl mPIDLightValCtrl;
 LightVal mLightVal;
 LightValCtrl mLightValCtrl;
+
+//DrivenPart/DirectionControl
+DirectionCtrl directionCtrl;
+
 
 //StarategyPart
 Runner runner;
