@@ -20,6 +20,7 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/TimeSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/CurvatureSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.h"
 
 
 #endif

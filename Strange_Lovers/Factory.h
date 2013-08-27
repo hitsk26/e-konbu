@@ -53,6 +53,7 @@
 #include "StrategyPart/RunningMethodSwitchJudge/InclinationSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
+#include "StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.h"
 
 
 #include "./StrategyFactories/FiststStraightFactory.h"
@@ -139,7 +140,7 @@ LightValCtrl mLightValCtrl;
 //StarategyPart
 Runner runner;
 
-Section *startSection = &startUp;
+Section *startSection = &startUpWithTail;
 
 //StrategyPart/RunningMethodSwitchJudge
 

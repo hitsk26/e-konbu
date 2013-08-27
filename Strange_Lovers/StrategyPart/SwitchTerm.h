@@ -32,5 +32,7 @@ typedef struct {
 
 	float curvature;
 
+	int tail_angle;
+
 }SwitchTerm;
 #endif
