@@ -16,3 +16,10 @@ Motor_set_speed(this_WheelMotor->port_id,pwm,1); //3rd paramter means barake mod
 
 }
 
+void WheelMotor_set_count(WheelMotor *this_WheelMotor, int count)
+{
+	Motor_set_count(this_WheelMotor->port_id,count);
+}
+
+
+
