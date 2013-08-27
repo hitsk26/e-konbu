@@ -2,6 +2,7 @@
 #include "../Factory.h"
 
 static void WheelActuator_reset_wheel_motors(WheelActuator *self);
+static int WheelActuator_need_reset_balancer(WheelActuator *self,int self_balancing_requirment);
 
 void WheelActuator_init(WheelActuator *self){
 	self->forward = 0;
@@ -55,6 +56,10 @@ void WheelActuator_dirve_motors(WheelActuator *self){
 
 
 void WheelActuator_set_self_balancing_requirement(WheelActuator *self,int self_balancing_requirment){
+	if(WheelActuator_need_reset_balancer(self,self_balancing_requirment)){
+		balance_init();
+		WheelActuator_reset_wheel_motors(self);
+	}
 	self->self_balancing_requirment= self_balancing_requirment;
 }
 
@@ -75,4 +80,12 @@ void WheelActuator_revise_gyro_offset(WheelActuator *self,int gyro_offset_revise
 void WheelActuator_reset_wheel_motors(WheelActuator *self){
 	WheelMotor_set_count(&leftWheelMotor,0);
 	WheelMotor_set_count(&rightWheelMotor,0);
+}
+
+int WheelActuator_need_reset_balancer(WheelActuator *self,int self_balancing_requirment){
+	
+	if(self->self_balancing_requirment == 0 && self_balancing_requirment ==1){
+		return 1;
+	}
+	return 0;
 }
