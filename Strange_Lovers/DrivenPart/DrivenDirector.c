@@ -38,7 +38,7 @@ void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness,
 void DrivenDirector_request_stop(DrivenDirector *self,int target_tail_angle)
 {
 	PID_tail(target_tail_angle);
-	WheelActuator_stop_motors(&wheelActuator);
+	WheelActuator_stop_wheel_motors(&wheelActuator);
 }
 
 void DrivenDirector_check_halt_request_target_control_(DrivenDirector *self,ControllerWeight use_controller){

@@ -1,6 +1,7 @@
 #include "WheelActuator.h"
 #include "../Factory.h"
 
+static void WheelActuator_reset_wheel_motors(WheelActuator *self);
 
 void WheelActuator_init(WheelActuator *self){
 	self->forward = 0;
@@ -57,7 +58,7 @@ void WheelActuator_set_self_balancing_requirement(WheelActuator *self,int self_b
 	self->self_balancing_requirment= self_balancing_requirment;
 }
 
-void WheelActuator_stop_motors(WheelActuator *self)
+void WheelActuator_stop_wheel_motors(WheelActuator *self)
 {
 	WheelMotor_drive_motor(&leftWheelMotor,0);
 	WheelMotor_drive_motor(&rightWheelMotor,0);
@@ -69,4 +70,9 @@ void WheelActuator_revise_gyro_offset(WheelActuator *self,int gyro_offset_revise
 
 	InclinationEncoder_set_gyro_offset(&inclinationEncoder,revised_gyro_offset);
 
+}
+
+void WheelActuator_reset_wheel_motors(WheelActuator *self){
+	WheelMotor_set_count(&leftWheelMotor,0);
+	WheelMotor_set_count(&rightWheelMotor,0);
 }
