@@ -148,7 +148,7 @@ DirectionCtrl directionCtrl;
 //StarategyPart
 Runner runner;
 
-Section *startSection = &startUp;
+Section *startSection = &firstStraight;
 
 //StrategyPart/RunningMethodSwitchJudge
 

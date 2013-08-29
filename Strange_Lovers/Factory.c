@@ -111,7 +111,7 @@ void clear_objects(){
 	PSC_reset(mSpeedCtrl.mPIDSpeedCtrl);
 
 	//DrivenPart/TargetCurvatureControl
-	//PCC_reset(mLightValCtrl.mPIDLightValCtrl);
+	PCC_reset(mCurvatureCtrl.mPIDCurvatureCtrl);
 
 	//DrivenPart/TargetLightValueControl
 	PLVC_reset(mLightValCtrl.mPIDLightValCtrl);

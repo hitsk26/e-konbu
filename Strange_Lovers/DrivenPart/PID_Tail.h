@@ -3,6 +3,7 @@
 
 
 #include "./TailMotor.h"
+#include "../lib/CommonFunction.h"
 
 
 typedef struct{

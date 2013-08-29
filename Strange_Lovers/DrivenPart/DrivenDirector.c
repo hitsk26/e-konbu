@@ -20,7 +20,7 @@ float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightnes
 	//float direction_turn = DirectionCtrl_run(&directionCtrl,target_runner_angle);
 	float turn_sum =use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn;/* + use_controller.target_runner_angle_controller_weight* direction_turn;*/
-	logSend(0,0,DistanceEncoder_get_distance(&distanceEncoder),0,wheelActuator.forward,brightness_turn,0,0);
+	logSend(0,0,DistanceEncoder_get_distance(&distanceEncoder),SpeedEncoder_get_speed(&speedEncoder),wheelActuator.forward,brightness_turn,0,0);
 	return turn_sum;
 }
 

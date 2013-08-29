@@ -13,7 +13,7 @@ void PID_TAIL_init(PID_TAIL *this_PID_TAIL){
 
 void PID_tail(int target_tail_angle){
 
-	static const float Kp_s = 0.5;
+	static const float Kp_s = 2.4;
 	static const float Ki_s = Kp_s*0.157894736;
 	static const float Kd_s = 0.00;
 	float hensa = 0;
@@ -25,11 +25,8 @@ void PID_tail(int target_tail_angle){
 	bf_hensa = hensa;
 	float angle = Kp_s*hensa + Ki_s*i_hensa + Kd_s*d_hensa ;
 
-	if (angle < -100) {
-		angle= -100;
-	}else if (angle > 100) {
-		angle = 100;
-	}
+	angle = cutoff(angle,100);
+
 
 	TailMotor_drive_tail(&tailMotor,angle);
 }
