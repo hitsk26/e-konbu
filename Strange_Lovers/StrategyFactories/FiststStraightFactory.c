@@ -22,7 +22,7 @@ void first_straight_factory_init(){
 	switch_term.time =0;
 	balancing_requrement = 1;
 	target_tail_angle=0;
-	gyroOffsetRevise=0;
+	gyroOffsetRevise=10;
 	request_forced_stop =0; 
 	movementDirection = FORWARD;
 	RunningMethod_init(&stableRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop,movementDirection);
@@ -38,7 +38,7 @@ void first_straight_factory_init(){
 	switch_term.time =0;
 	balancing_requrement = 1;
 	target_tail_angle=0;
-	gyroOffsetRevise=-10;
+	gyroOffsetRevise=0;
 	request_forced_stop = 0;
 	movementDirection = FORWARD;
 	RunningMethod_init(&straightLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop,movementDirection);
