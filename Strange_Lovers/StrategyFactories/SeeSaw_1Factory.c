@@ -42,5 +42,4 @@ void seesaw_1_factory_init(){
 	Section *nextSection = &seesaw_stop; //ŽŸ‚Ì‹æŠÔ
 	RunningMethod *runningMethod = seesaw_1_running_method_array;
 	Section_init(&seesaw_1,nextSection,number_of_running_method,runningMethod,target_values);
-
 }

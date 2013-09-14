@@ -34,5 +34,7 @@ typedef struct {
 
 	int tail_angle;
 
+	float direction;
+
 }SwitchTerm;
 #endif
