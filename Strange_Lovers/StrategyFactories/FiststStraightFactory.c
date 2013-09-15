@@ -15,7 +15,7 @@ void first_straight_factory_init(){
 	//stableRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 200;
+	switch_term.distance =	200;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
@@ -31,7 +31,7 @@ void first_straight_factory_init(){
 	//straightLineTraceMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance =810;
+	switch_term.distance =8100;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
