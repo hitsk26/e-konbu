@@ -23,7 +23,7 @@ void start_up__factory_init(){
 	switch_term.speed = 0;
 	switch_term.time =0;
 	balancing_requrement = 0;
-	target_tail_angle=95;
+	target_tail_angle=100;
 	gyroOffsetRevise=0;
 	request_forced_stop = 1;
 	movementDirection = FORWARD;
@@ -38,9 +38,10 @@ void start_up__factory_init(){
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
-	switch_term.time =300;
+	switch_term.time =200;
+	//switch_term.tail_angle=130;		//119;
 	balancing_requrement = 0;
-	target_tail_angle=119;
+	target_tail_angle=115;
 
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
@@ -58,9 +59,10 @@ void start_up__factory_init(){
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
 	switch_term.time = 200;
+	//switch_term.tail_angle=0;
 	balancing_requrement = 1;
 	target_tail_angle=0;
-	gyroOffsetRevise=0;
+	gyroOffsetRevise=15;		
 	request_forced_stop = 0;
 	movementDirection = FORWARD;
 	fp_SwitchJudge = TimeSwitch_judge_switch_method;

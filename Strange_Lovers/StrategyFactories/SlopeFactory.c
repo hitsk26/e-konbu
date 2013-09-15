@@ -42,7 +42,7 @@ void slope_factory_init(){
 
 	slope.target_values.target_brightness=0.5;
 	slope.target_values.target_curvature=0.0;
-	slope.target_values.target_speed=400;
+	slope.target_values.target_speed=300;
 	
 	slope.nextSection = &afterSlopeStraight;
 

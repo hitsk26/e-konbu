@@ -34,7 +34,6 @@ Section slope;
 RunningMethod slopeUpRunningMethod;
 RunningMethod slopeDownRunningMethod;
 
-
 RunningMethod slope_running_method_array[2];
 
 
