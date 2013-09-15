@@ -62,7 +62,7 @@ void start_up__factory_init(){
 	//switch_term.tail_angle=0;
 	balancing_requrement = 1;
 	target_tail_angle=0;
-	gyroOffsetRevise=15;		
+	gyroOffsetRevise=8;		
 	request_forced_stop = 0;
 	movementDirection = FORWARD;
 	fp_SwitchJudge = TimeSwitch_judge_switch_method;
