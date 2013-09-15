@@ -4,6 +4,8 @@
 #include "../EncoderPart/DistanceEncoder.h"
 #include "ecrobot_interface.h"
 
+#include "../EncoderPart/BrightnessEncoder.h"
+
 void DrivenDirector_check_halt_request_target_control_(DrivenDirector *self,ControllerWeight use_controller);
 
 
@@ -21,7 +23,8 @@ float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightnes
 	//float direction_turn = DirectionCtrl_run(&directionCtrl,target_runner_angle);
 	float turn_sum =use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn;/* + use_controller.target_runner_angle_controller_weight* direction_turn;*/
-	logSend(0,0,DistanceEncoder_get_distance(&distanceEncoder),SpeedEncoder_get_speed(&speedEncoder),wheelActuator.forward,ecrobot_get_battery_voltage(),0,0);
+	//logSend(0,0,DistanceEncoder_get_distance(&distanceEncoder),SpeedEncoder_get_speed(&speedEncoder),wheelActuator.forward,turn_sum,0,0);
+	logSend(0,0,turn_sum,brightness_turn,curvature_turn,BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000,0,0);
 	return turn_sum;
 }
 

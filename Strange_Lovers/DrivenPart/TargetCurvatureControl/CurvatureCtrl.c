@@ -46,7 +46,7 @@ float CC_doCtrl(CurvatureCtrl *self)
 {
 	float curvature = C_getCurvature(&mCurvature,ecrobot_get_systick_ms());
 	float turn = PCC_calcCurvatureCtrlVal(self->mPIDCurvatureCtrl,
-		C_getTargCurvature(&mCurvature),curvature,systick_get_ms()*0.001);
+		C_getTargCurvature(&mCurvature),curvature,Timer_get_ms(&timer)*0.001);
 	return turn;
 }
 

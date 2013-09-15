@@ -10,13 +10,13 @@ void after_slope_straight_factory_init(){
 	afterSlopeStraightRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	afterSlopeStraightRunningMethod.gyroOffsetRevise = 0;
 	
-	afterSlopeStraightRunningMethod.switch_term.distance = 378.6;
+	afterSlopeStraightRunningMethod.switch_term.distance = 318.6;
 	afterSlopeStraightRunningMethod.switch_term.inclination = 0;
 	afterSlopeStraightRunningMethod.switch_term.time = 0;
 	
 	afterSlopeStraightRunningMethod.target_tail_angle=0;
-	afterSlopeStraightRunningMethod.use_controller.target_curvature_controller_weight= 0.5;
-	afterSlopeStraightRunningMethod.use_controller.target_light_controller_weight = 0.5;
+	afterSlopeStraightRunningMethod.use_controller.target_curvature_controller_weight= 0.0;
+	afterSlopeStraightRunningMethod.use_controller.target_light_controller_weight = 1.0;
 	afterSlopeStraightRunningMethod.movementDirection = FORWARD;
 
 	after_slope_straight_running_method_array[0]=afterSlopeStraightRunningMethod;

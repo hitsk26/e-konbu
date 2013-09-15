@@ -18,8 +18,8 @@ void second_curve_factory_init(){
 	MovementDirection movementDirection = FORWARD;
 	
 	//secondCurve_1_LineTraceRunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.3;
+	use_controller.target_light_controller_weight = 0.7;
 	switch_term.distance = 1141.592;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
@@ -46,8 +46,9 @@ void second_curve_factory_init(){
 
 
 	//secondCurve_2_LineTraceRunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	
+	use_controller.target_curvature_controller_weight = 0.3;
+	use_controller.target_light_controller_weight = 0.7;
 	switch_term.distance = 643;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
