@@ -70,6 +70,7 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/CurvatureSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.c\
 	./StrategyFactories/FiststStraightFactory.c \
 	./StrategyFactories/SlopeFactory.c \
 	./StrategyFactories/AfterSlopeStraightFactory.c \

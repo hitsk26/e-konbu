@@ -34,5 +34,7 @@ typedef struct {
 
 	int tail_angle;
 
+	int startSignelRecieve;
+
 }SwitchTerm;
 #endif

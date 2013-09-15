@@ -1,4 +1,5 @@
 #include "StartUpFactory.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.h"
 
 
 void start_up__factory_init(){
@@ -15,9 +16,10 @@ void start_up__factory_init(){
 	//waitTouchRunningMethod
 	use_controller.target_curvature_controller_weight = 0.0;
 	use_controller.target_light_controller_weight = 0.0;
+	switch_term.startSignelRecieve = 1;
 	switch_term.distance = 0;
 	switch_term.inclination = 0;
-	switch_term.inPushed = 1;
+	switch_term.inPushed = 0;
 	switch_term.speed = 0;
 	switch_term.time =0;
 	balancing_requrement = 0;
@@ -25,7 +27,7 @@ void start_up__factory_init(){
 	gyroOffsetRevise=0;
 	request_forced_stop = 1;
 	movementDirection = FORWARD;
-	fp_SwitchJudge =inPushedSwitch_judge_switch_method;
+	fp_SwitchJudge =StartSignalRecieveSwitch_judge_switch_method;
 	RunningMethod_init(&waitTouchRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 

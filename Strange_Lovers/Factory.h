@@ -57,6 +57,7 @@
 #include "StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.h"
+#include "StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.h"
 
 
 #include "./StrategyFactories/FiststStraightFactory.h"
@@ -148,7 +149,7 @@ DirectionCtrl directionCtrl;
 //StarategyPart
 Runner runner;
 
-Section *startSection = &firstStraight;
+Section *startSection = &startUp;
 
 //StrategyPart/RunningMethodSwitchJudge
 
