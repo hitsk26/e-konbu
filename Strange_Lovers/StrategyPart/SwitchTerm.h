@@ -36,5 +36,8 @@ typedef struct {
 
 	int startSignelRecieve;
 
+	float direction;
+
+
 }SwitchTerm;
 #endif
