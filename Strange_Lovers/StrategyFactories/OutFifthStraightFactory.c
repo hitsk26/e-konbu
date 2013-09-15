@@ -24,7 +24,7 @@ void out_fifth_straight_factory_init()
 	//outFifthStraightLineTraceMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 920;
+	switch_term.distance = 480;
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
@@ -32,8 +32,6 @@ void out_fifth_straight_factory_init()
 	movementDirection = FORWARD;
 	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
 	RunningMethod_init(&outFifthStraightLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
-
-
 	
 	//outFifthStraight Section
 	out_fifth_straight_running_method_array[0]=outFifthStraightLineTraceMethod;
@@ -42,8 +40,33 @@ void out_fifth_straight_factory_init()
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0;
 	target_values.target_speed = 400;
-	nextSection = &outFifthCurve;
+	nextSection = &outFifthStraightSlowDown;
 
 	Section_init(&outFifthStraight,nextSection,number_of_running_method,runningMethod,target_values);
+
+
+	//slowDown
+	use_controller.target_curvature_controller_weight = 0.5;
+	use_controller.target_light_controller_weight = 0.5;
+	switch_term.distance = 400;
+	balancing_requrement = 1;
+	target_tail_angle=0;
+	gyroOffsetRevise=0;
+	request_forced_stop = 0;
+	movementDirection = FORWARD;
+	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
+	RunningMethod_init(&outFifthStraightSlowDownMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
+
+	//outFifthStraight Section
+	out_fifth_straight_slow_down_running_method_array[0]=outFifthStraightSlowDownMethod;
+	runningMethod = out_fifth_straight_running_method_array;
+	number_of_running_method=1;
+	target_values.target_brightness = 0.5;
+	target_values.target_curvature = 0;
+	target_values.target_speed = 300;
+	nextSection = &outFifthCurve;
+
+	Section_init(&outFifthStraightSlowDown,nextSection,number_of_running_method,runningMethod,target_values);
+
 
 }
