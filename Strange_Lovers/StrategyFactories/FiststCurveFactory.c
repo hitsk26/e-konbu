@@ -8,7 +8,9 @@ void first_curve_factory_init(){
 	
 	//curveLineTraceMethod
 	curveLineTraceMethod.balancing_requrement = 1;
-	curveLineTraceMethod.fp_SwitchJudge= DirectionDistanceMultipleSwitch_judge_switch_method;
+	//curveLineTraceMethod.fp_SwitchJudge= DirectionDistanceMultipleSwitch_judge_switch_method;
+	curveLineTraceMethod.fp_SwitchJudge= DirectionSwitch_judge_switch_method;
+	
 	curveLineTraceMethod.gyroOffsetRevise = 0;
 
 	curveLineTraceMethod.switch_term.distance = 1649.60;

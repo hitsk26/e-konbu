@@ -63,7 +63,7 @@ void thurd_curve_factory_init()
 	runningMethod = thurdCurve_2_running_method_array;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = 1.0/200.0;
+	target_values.target_curvature = 1.0/300.0;
 	target_values.target_speed = 400;
 	nextSection = &thurdCurve_3;
 
@@ -113,7 +113,9 @@ void thurd_curve_factory_init()
 	runningMethod = thurdCurve_4_running_method_array;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = 1.0/280.0;
+	//target_values.target_curvature = 1.0/280.0;
+	target_values.target_curvature = 1.0/380.0;
+	
 	target_values.target_speed = 400;
 	nextSection = &thurdCurve_5;
 

@@ -22,8 +22,8 @@ void thurd_straight_factory_init(){
 
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 400;
-	//switch_term.distance = 512.89;
+	//switch_term.distance = 400;
+	switch_term.distance = 512.89;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
