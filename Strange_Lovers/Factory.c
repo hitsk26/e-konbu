@@ -34,7 +34,7 @@ void initialization(){
 	DirectionEncoder_init(&directionEncoder);
 	CurvatureEncoder_init(&curvatureEncoder);
 	SpeedEncoder_init(&speedEncoder);
-
+	CoordinateEncoder_init(&coordinateEncoder);
 
 	//DrivenPart
 	PID_TAIL_init(&pid_tail);
@@ -97,7 +97,7 @@ void clear_objects(){
 	DirectionEncoder_init(&directionEncoder);
 	CurvatureEncoder_init(&curvatureEncoder);
 	SpeedEncoder_init(&speedEncoder);
-
+	CoordinateEncoder_reset_Encoder(&coordinateEncoder);
 
 	//DrivenPart
 	PID_TAIL_init(&pid_tail);

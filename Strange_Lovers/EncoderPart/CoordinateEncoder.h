@@ -4,6 +4,8 @@
 
 #include "../EncoderPart/DistanceEncoder.h"
 #include "../EncoderPart/DirectionEncoder.h"
+#include "math.h"
+
 
 typedef struct{
 	float xCoo;
