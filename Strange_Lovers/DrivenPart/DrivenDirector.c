@@ -33,7 +33,7 @@ void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness,
 {
 	DrivenDirector_check_halt_request_target_control_(self,use_controller);
 	float turn = DrivenDirector_calc_turn_value(self,target_brightness,target_curvature,target_runner_angle,use_controller,movementDirection);
-	PID_tail(target_tail_angle);
+	PID_tail(&pid_tail,target_tail_angle);
 	SC_setTargSpeed(&mSpeedCtrl, target_speed);
 	SC_run(&mSpeedCtrl);
 
@@ -44,7 +44,7 @@ void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness,
 }
 void DrivenDirector_request_stop(DrivenDirector *self,int target_tail_angle)
 {
-	PID_tail(target_tail_angle);
+	PID_tail(&pid_tail,target_tail_angle);
 	WheelActuator_stop_wheel_motors(&wheelActuator);
 }
 

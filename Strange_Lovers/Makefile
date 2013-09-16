@@ -70,7 +70,6 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/CurvatureSwitch.c \
-	./StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.c\
 	./StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.c \
@@ -90,17 +89,12 @@ TARGET_SOURCES := \
 	./StrategyFactories/AfterOutFifthCurveStraight.c \
 	./StrategyFactories/OutFifthCurveFactory.c \
 	./StrategyFactories/OutSixthCurveFactory.c \
-	./StrategyFactories/SeeSaw_1Factory.c \
-	./StrategyFactories/SeeSaw_StopFactory.c \
-	./StrategyFactories/SeeSaw_2Factory.c \
-	./StrategyFactories/SeeSaw_2_2Factory.c \
-	./StrategyFactories/SeeSaw_3Factory.c \
-	./StrategyFactories/SeeSaw_4Factory.c \
-	./StrategyFactories/SeeSaw_5Factory.c \
+	./StrategyFactories/SeeSawFactory.c \
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
 O_PATH ?= build
 
 include $(NXTOSEK_ROOT)/ecrobot/lejos_osek.tmf
+
 

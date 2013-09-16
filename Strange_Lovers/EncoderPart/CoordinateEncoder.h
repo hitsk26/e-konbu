@@ -4,7 +4,7 @@
 
 #include "../EncoderPart/DistanceEncoder.h"
 #include "../EncoderPart/DirectionEncoder.h"
-#include "math.h"
+#include "../lib/mymath.h"
 
 
 typedef struct{
