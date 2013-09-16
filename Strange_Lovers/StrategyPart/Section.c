@@ -79,5 +79,5 @@ static void Section_reset_encoder(Section *self){
 	Timer_reset(&timer);
 	DistanceEncoder_reset_Encoder(&distanceEncoder);
 	//DirectionEncoder_reset(&directionEncoder);
-	ecrobot_sound_tone(1000,2,90);
+	ecrobot_sound_tone(1000,5,100);
 }

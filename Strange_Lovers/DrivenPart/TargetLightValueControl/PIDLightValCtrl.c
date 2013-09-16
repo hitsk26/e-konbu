@@ -6,15 +6,14 @@ void PLVC_init(PIDLightValCtrl *self,PIDLightValCtrlParm *parm){
 	self->bfDeviation = 0;
 	self->lastMeasurementTime = 0;	
 	self->mPIDLightValCtrlParm = parm;
-//	PLVCP_init(parm,180.0,0,80);
-	PLVCP_init(parm,110.0,0,22);
+PLVCP_init(parm,180.0,0,80);
+	//PLVCP_init(parm,110.0,0,22);
 	
 }
 
 float PLVC_calcCtrlVal(PIDLightValCtrl *self,float targLightVal,float LightVal,float time){
 	
 	float	turn;
-
 
 	float deviation = self->movementDirection*(targLightVal - LightVal);
 
