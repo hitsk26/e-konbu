@@ -24,7 +24,7 @@ void slope_factory_init(){
 	slopeDownRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	slopeDownRunningMethod.gyroOffsetRevise = 0;
 	
-	slopeDownRunningMethod.switch_term.distance = 1140;
+	slopeDownRunningMethod.switch_term.distance = 1200;
 	slopeDownRunningMethod.switch_term.inclination = 0;
 	slopeDownRunningMethod.switch_term.time = 0;
 	

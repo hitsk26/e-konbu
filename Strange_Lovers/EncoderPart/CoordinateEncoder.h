@@ -15,9 +15,11 @@ typedef struct{
 
 
 void CoordinateEncoder_init(CoordinateEncoder *self);
+
+
+float CoordinateEncoder_get_xCoo(CoordinateEncoder *self);
+float CoordinateEncoder_get_yCoo(CoordinateEncoder *self);
 void CoordinateEncoder_calc_coordinate(CoordinateEncoder *self);
-float CoordinateEncoder_get_coordinate(CoordinateEncoder *self);
-float CoordinateEncoder_get_total_coordinate(CoordinateEncoder *self);
 void CoordinateEncoder_reset_Encoder(CoordinateEncoder *self);
 
 #endif

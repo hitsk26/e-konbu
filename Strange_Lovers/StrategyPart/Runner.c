@@ -4,6 +4,7 @@
 
 void Runner_init(Runner *self,Section *start_section){
 	self->current_section = start_section;
+	self->current_section = &firstStraight;
 	self->runner_state = STOP;
 
 }
@@ -25,7 +26,7 @@ void Runner_execute(Runner *self){
 		DistanceEncoder_calc_distance(&distanceEncoder);
 		SpeedEncoder_calc_speed(&speedEncoder);
 		CurvatureEncoder_calc_curvature(&curvatureEncoder);
-		CoordinateEncoder_calc_coordinate(&coordinateEncoder);
+		//CoordinateEncoder_calc_coordinate(&coordinateEncoder);
 		Runner_run(self);
 			break;
 	case (STOP) :

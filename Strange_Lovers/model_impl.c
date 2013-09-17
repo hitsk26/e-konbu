@@ -73,6 +73,11 @@ TASK(ActionTask){
 	TerminateTask();
 }
 
+TASK(DriveTask){
+	
+	WheelActuator_dirve_motors(&wheelActuator);
+	TerminateTask();
+}
 TASK(UI){
 
 	Starter_user_command_accept(&starter);

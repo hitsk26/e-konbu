@@ -14,7 +14,7 @@ void first_curve_factory_init(){
 	curveLineTraceMethod.gyroOffsetRevise = 0;
 
 	//curveLineTraceMethod.switch_term.distance = 1649.60;
-	curveLineTraceMethod.switch_term.distance = 1449.60;
+	curveLineTraceMethod.switch_term.distance = 1300.60;
 	
 	curveLineTraceMethod.switch_term.direction = 95;
 

@@ -41,7 +41,7 @@ void after_out_fifth_curve_straight_factory_init()
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0;
-	target_values.target_speed = 400;
+	target_values.target_speed = 300;
 	nextSection = &outSixthCurve_1;
 
 	Section_init(&afterOutFifthCurveStraight,nextSection,number_of_running_method,runningMethod,target_values);

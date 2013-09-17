@@ -24,8 +24,7 @@ float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightnes
 	float turn_sum =use_controller.target_light_controller_weight*brightness_turn  
 		+  use_controller.target_curvature_controller_weight*curvature_turn;/* + use_controller.target_runner_angle_controller_weight* direction_turn;*/
 	
-logSend(0,0,DistanceEncoder_get_distance(&distanceEncoder),DirectionEncoder_get_direction(&directionEncoder),brightness_turn,BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000,0,0);
-
+	logSend(0,0,DirectionEncoder_get_direction(&directionEncoder),CurvatureEncoder_get_curvature(&curvatureEncoder)*1000,CoordinateEncoder_get_xCoo(&coordinateEncoder),CoordinateEncoder_get_yCoo(&coordinateEncoder),0,0);
 	return turn_sum;
 }
 
@@ -40,7 +39,7 @@ void DrivenDirector_request_drive(DrivenDirector *self ,float target_brightness,
 	WheelActuator_set_turn(&wheelActuator , turn);
 	WheelActuator_set_self_balancing_requirement(&wheelActuator,self_balancing_requirement);
 	WheelActuator_revise_gyro_offset(&wheelActuator,gyro_offset_revise);
-	WheelActuator_dirve_motors(&wheelActuator);
+
 }
 void DrivenDirector_request_stop(DrivenDirector *self,int target_tail_angle)
 {

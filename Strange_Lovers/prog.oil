@@ -68,12 +68,38 @@ CPU ATMEL_AT91SAM7S256
 		EVENT = RUNEVENT;
 	};
 
+	TASK DriveTask
+	{
+		AUTOSTART = FALSE;
+		SCHEDULE = FULL;
+		PRIORITY = 4;
+		ACTIVATION = 1;
+		STACKSIZE = 512;
+		RESOURCE = lcd;
+		EVENT = RUNEVENT;
+	};
+
 	ALARM cyclic_alarm1
 	{
 		COUNTER = SysTimerCnt;
 		ACTION = ACTIVATETASK
 		{
 			TASK = ActionTask;
+		};
+		AUTOSTART = TRUE
+		{
+			ALARMTIME = 1;
+			CYCLETIME = 4;
+			APPMODE = appmode1;
+		};
+	};
+
+		ALARM cyclic_alarm2
+	{
+		COUNTER = SysTimerCnt;
+		ACTION = ACTIVATETASK
+		{
+			TASK = DriveTask;
 		};
 		AUTOSTART = TRUE
 		{
