@@ -16,7 +16,7 @@ int Calibration_calibration(Calibration *this_Calibration){
 		if(PushButton_detect_push_button(&pushButton) == TRUE)break;
 	}
 	
-		ecrobot_sound_tone(880, 512, 30);
+		ecrobot_sound_tone(880, 512, 10);
 		/* ジャイロセンサの値を計算するための開始時間をセットする */
 		cal_start_time = ecrobot_get_systick_ms();
 
@@ -27,14 +27,14 @@ int Calibration_calibration(Calibration *this_Calibration){
 	}
 
 		this_Calibration->gyro /= avg_cnt;
-		ecrobot_sound_tone(440U, 500U, 30U);
+		ecrobot_sound_tone(440U, 500U, 10);
 
 	systick_wait_ms(500);
 	
 	//black
 	while(1){
 		if(PushButton_detect_push_button(&pushButton) == TRUE){
-			ecrobot_sound_tone(906, 512, 30);
+			ecrobot_sound_tone(906, 512, 10);
 			BrightnessEncoder_set_black(&brightnessEncoder,BrightnessEncoder_get_brightness(&brightnessEncoder));
 			systick_wait_ms(500);
 			break;
@@ -44,7 +44,7 @@ int Calibration_calibration(Calibration *this_Calibration){
 	//white
 	while(1){
 		if(PushButton_detect_push_button(&pushButton) == TRUE){
-			ecrobot_sound_tone(906, 512, 30);
+			ecrobot_sound_tone(906, 512, 10);
 			BrightnessEncoder_set_white(&brightnessEncoder,BrightnessEncoder_get_brightness(&brightnessEncoder));
 			systick_wait_ms(500);
 			break;
