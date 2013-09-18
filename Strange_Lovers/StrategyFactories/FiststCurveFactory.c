@@ -8,10 +8,13 @@ void first_curve_factory_init(){
 	
 	//curveLineTraceMethod
 	curveLineTraceMethod.balancing_requrement = 1;
-	curveLineTraceMethod.fp_SwitchJudge= DirectionDistanceMultipleSwitch_judge_switch_method;
+	//curveLineTraceMethod.fp_SwitchJudge= DirectionDistanceMultipleSwitch_judge_switch_method;
+	curveLineTraceMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
+	
 	curveLineTraceMethod.gyroOffsetRevise = 0;
 
-	curveLineTraceMethod.switch_term.distance = 1649.60;
+	curveLineTraceMethod.switch_term.distance = 1449.60;
+	
 	curveLineTraceMethod.switch_term.direction = 95;
 
 	curveLineTraceMethod.switch_term.inclination = 0;
@@ -28,7 +31,7 @@ void first_curve_factory_init(){
 	firstCurve.number_of_running_method=1;
 	firstCurve.running_methods=first_curve_running_method_array;
 	firstCurve.target_values.target_curvature=-1.0/1050.17;
-	firstCurve.target_values.target_brightness=0.5;
+	firstCurve.target_values.target_brightness=0.4;
 	firstCurve.target_values.target_speed=400;
 	firstCurve.nextSection = &secondStraight;
 

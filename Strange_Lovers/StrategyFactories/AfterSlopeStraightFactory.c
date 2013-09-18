@@ -10,7 +10,7 @@ void after_slope_straight_factory_init(){
 	afterSlopeStraightRunningMethod.fp_SwitchJudge= DistanceSwitch_judge_switch_method;
 	afterSlopeStraightRunningMethod.gyroOffsetRevise = 0;
 	
-	afterSlopeStraightRunningMethod.switch_term.distance = 378.6;
+	afterSlopeStraightRunningMethod.switch_term.distance = 318.6;
 	afterSlopeStraightRunningMethod.switch_term.inclination = 0;
 	afterSlopeStraightRunningMethod.switch_term.time = 0;
 	

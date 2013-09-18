@@ -13,16 +13,16 @@ void first_straight_factory_init(){
 	//First Straight 1010mm
 
 	//stableRunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance =	200;
+	use_controller.target_curvature_controller_weight = 0.1;
+	use_controller.target_light_controller_weight = 0.1;
+	switch_term.distance =	20;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
 	switch_term.time =0;
 	balancing_requrement = 1;
 	target_tail_angle=0;
-	gyroOffsetRevise=10;
+	gyroOffsetRevise=0;
 	request_forced_stop =0; 
 	movementDirection = FORWARD;
 	RunningMethod_init(&stableRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,DistanceSwitch_judge_switch_method,request_forced_stop,movementDirection);
@@ -31,7 +31,7 @@ void first_straight_factory_init(){
 	//straightLineTraceMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance =8100;
+	switch_term.distance =980;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
