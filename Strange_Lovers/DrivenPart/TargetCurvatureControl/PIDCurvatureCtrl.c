@@ -53,6 +53,7 @@ void PCC_reset(PIDCurvatureCtrl *self)
 	self->integratedDeviation = 0;
 	self->bfDeviation = 0;
 	self->lastMeasurementTime = 0;
+	self->turn_buf=0;
 }
 
 void PCC_setMovementDirection(PIDCurvatureCtrl *self,MovementDirection movementDirection)

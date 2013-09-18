@@ -70,6 +70,9 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/CurvatureSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.c\
+	./StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
 	./StrategyFactories/SlopeFactory.c \
 	./StrategyFactories/AfterSlopeStraightFactory.c \
@@ -83,6 +86,7 @@ TARGET_SOURCES := \
 	./StrategyFactories/ForthStraightFactory.c \
 	./StrategyFactories/ForthCurveFactory.c \
 	./StrategyFactories/OutFifthStraightFactory.c \
+	./StrategyFactories/AfterOutFifthCurveStraight.c \
 	./StrategyFactories/OutFifthCurveFactory.c \
 	./StrategyFactories/OutSixthCurveFactory.c \
 	./StrategyFactories/SeeSaw_1Factory.c \

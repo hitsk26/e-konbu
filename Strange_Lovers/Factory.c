@@ -111,7 +111,7 @@ void clear_objects(){
 	PSC_reset(mSpeedCtrl.mPIDSpeedCtrl);
 
 	//DrivenPart/TargetCurvatureControl
-	//PCC_reset(mLightValCtrl.mPIDLightValCtrl);
+	PCC_reset(mCurvatureCtrl.mPIDCurvatureCtrl);
 
 	//DrivenPart/TargetLightValueControl
 	PLVC_reset(mLightValCtrl.mPIDLightValCtrl);
@@ -138,7 +138,9 @@ void strategies_init(){
 	start_up_with_tail_factory_init();
 	out_fifth_straight_factory_init();
 	out_fifth_curve_factory_init();
+	after_out_fifth_curve_straight_factory_init();
 	out_sixth_curve_factory_init();
+	
 	seesaw_1_factory_init();
 	seesaw_stop_factory_init();
 	seesaw_2_factory_init();

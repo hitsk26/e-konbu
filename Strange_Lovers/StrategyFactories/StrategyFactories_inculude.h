@@ -21,6 +21,9 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/CurvatureSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.h"
+
 
 
 #endif

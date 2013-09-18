@@ -12,6 +12,7 @@ void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerW
 	self->switch_term.distance = switch_term.distance;
 	self->switch_term.inclination = switch_term.inclination;
 	self->switch_term.time = switch_term.time;
+	self->switch_term.startSignelRecieve = switch_term.startSignelRecieve;
 	self->switch_term.inPushed = switch_term.inPushed;
 	self->switch_term.speed= switch_term.speed;
 

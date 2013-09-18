@@ -2,6 +2,7 @@
 #define _ThurdStraightFactory_
 
 #include "../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories/ThurdCurveFactory.h"
 
 
 

@@ -20,10 +20,12 @@ void thurd_straight_factory_init(){
 	MovementDirection movementDirection = FORWARD;
 	
 
-	//secondCurve_1_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
+	//switch_term.distance = 400;
 	switch_term.distance = 512.89;
+	switch_term.distance = 660.89;
+	
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
@@ -44,8 +46,8 @@ void thurd_straight_factory_init(){
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0;
-	target_values.target_speed = 400;
-	nextSection = &thurdStraight;
+	target_values.target_speed = 300;
+	nextSection = &thurdCurve_1;
 
 	Section_init(&thurdStraight,nextSection,number_of_running_method,runningMethod,target_values);
 
