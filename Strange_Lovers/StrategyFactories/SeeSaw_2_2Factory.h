@@ -9,7 +9,8 @@
 //StarategyPart
 
 Section seesaw_2_2;
-	
+
+//RunningMethod runningforwardMethod;
 RunningMethod tailplusmovingMethod;
 RunningMethod tailbackMethod;
 
