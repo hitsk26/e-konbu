@@ -11,8 +11,8 @@ void seesaw_1_factory_init(){
 	MovementDirection movementDirection = FORWARD;
 	int (*fp_SwitchJudge)(SwitchTerm);
 
-	use_controller.target_curvature_controller_weight =0.8; //曲率制御の重み付け
-	use_controller.target_light_controller_weight =0.2;	//輝度制御の重み付け
+	use_controller.target_curvature_controller_weight =0.0; //曲率制御の重み付け
+	use_controller.target_light_controller_weight =1.0;	//輝度制御の重み付け
 	switch_term.distance = 500; //距離切替を採用した際の切替条件 [mm]
 	switch_term.inclination = 0; //傾き切替を採用した際の切替条件
 	switch_term.speed = 50; //速度切替条件 [mm/s]
