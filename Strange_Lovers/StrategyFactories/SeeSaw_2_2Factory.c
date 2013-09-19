@@ -35,6 +35,18 @@ void seesaw_2_2factory_init(){
 	//RunningMethod_init(&runningforwardMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 
 	//’q”V‚³‚ñ‚Ì‚â‚Â‚©‚çƒRƒsƒy
+
+	use_controller.target_curvature_controller_weight = 0.0;
+	use_controller.target_light_controller_weight = 0.0;
+	switch_term.time =1000;
+	balancing_requrement = 0;
+	target_tail_angle=100;
+	gyroOffsetRevise=0;
+	request_forced_stop= 1;
+	movementDirection = FORWARD;
+	fp_SwitchJudge = TimeSwitch_judge_switch_method;
+	RunningMethod_init(&stopMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
+	
 	
 	//tailMoveRunningMethod
 	use_controller.target_curvature_controller_weight = 0.0;
@@ -111,12 +123,12 @@ void seesaw_2_2factory_init(){
 	
 	*/
 
-	//seesaw_2_2running_method_array[0]=runningforwardMethod;
-	seesaw_2_2running_method_array[0]=tailplusmovingMethod;
-	seesaw_2_2running_method_array[1]=tailbackMethod;
+	seesaw_2_2running_method_array[0]=stopMethod;
+	seesaw_2_2running_method_array[1]=tailplusmovingMethod;
+	seesaw_2_2running_method_array[2]=tailbackMethod;
 
 
-	int number_of_running_method=2;
+	int number_of_running_method=3;
 	TargetValues target_values; 
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0.0;

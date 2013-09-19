@@ -10,12 +10,12 @@
 
 Section seesaw_2_2;
 
-//RunningMethod runningforwardMethod;
+RunningMethod stopMethod;
 RunningMethod tailplusmovingMethod;
 RunningMethod tailbackMethod;
 
 
-RunningMethod seesaw_2_2running_method_array[2];
+RunningMethod seesaw_2_2running_method_array[3];
 
 
 //StrategyPart/RunningMethodSwitchJudge

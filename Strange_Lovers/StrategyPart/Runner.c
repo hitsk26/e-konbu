@@ -4,8 +4,6 @@
 
 void Runner_init(Runner *self,Section *start_section){
 	self->current_section = start_section;
-	//self->current_section = &seesaw_1;
-
 	self->runner_state = STOP;
 
 }
