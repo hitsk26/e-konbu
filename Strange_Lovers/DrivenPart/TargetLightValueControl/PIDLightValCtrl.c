@@ -9,6 +9,8 @@ void PLVC_init(PIDLightValCtrl *self,PIDLightValCtrlParm *parm){
 	//PLVCP_init(parm,120.0,0,25);
 	//PLVCP_init(parm,110.0,0,22);
 	//PLVCP_init(parm,180.0,0,50);
+
+	//tail
 	PLVCP_init(parm,68.0,0.15,8);
 }
 
