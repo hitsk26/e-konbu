@@ -17,9 +17,9 @@ void seesaw_stop_factory_init(){
 	switch_term.inclination = 0;
 	switch_term.inPushed = 1;
 	switch_term.speed = 0;
-	switch_term.time =50000;
+	switch_term.time =10000;
 	balancing_requrement = 0;
-	target_tail_angle=128;
+	target_tail_angle=100;
 	gyroOffsetRevise=0;
 	request_forced_stop= 1;
 	movementDirection = FORWARD;
