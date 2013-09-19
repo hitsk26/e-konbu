@@ -125,11 +125,11 @@ void clear_objects(){
 
 //initialize strategies pleas call them here!!
 void strategies_init(){
-
+	first_straight_factory_init();
 	first_curve_factory_init();
 	after_slope_straight_factory_init();
 	slope_factory_init();
-	first_straight_factory_init();
+	
 	start_up__factory_init();
 	second_straight_factory_init();
 	second_curve_factory_init();

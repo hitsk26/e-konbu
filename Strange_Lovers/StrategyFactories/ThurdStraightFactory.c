@@ -20,11 +20,11 @@ void thurd_straight_factory_init(){
 	MovementDirection movementDirection = FORWARD;
 	
 
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.3;
+	use_controller.target_light_controller_weight = 0.7;
 	//switch_term.distance = 400;
 	switch_term.distance = 512.89;
-	switch_term.distance = 600.89;
+	switch_term.distance = 680.89;
 	
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
