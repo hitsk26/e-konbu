@@ -8,6 +8,7 @@ void PLVC_init(PIDLightValCtrl *self,PIDLightValCtrlParm *parm){
 	self->mPIDLightValCtrlParm = parm;
 //PLVCP_init(parm,180.0,0,80);
 	PLVCP_init(parm,120.0,0,25);
+	PLVCP_init(parm,130.0,0,48); //for ‚«‚ñ‚¬‚å
 }
 
 float PLVC_calcCtrlVal(PIDLightValCtrl *self,float targLightVal,float LightVal,float time){

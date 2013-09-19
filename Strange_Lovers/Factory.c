@@ -69,7 +69,7 @@ void initialization(){
 }
 
 void clear_objects(){
-	/*
+	
 	ecrobot_set_motor_rev(NXT_PORT_A,0);
 	ecrobot_set_motor_rev(NXT_PORT_B,0);
 	ecrobot_set_motor_rev(NXT_PORT_C,0);
@@ -119,17 +119,17 @@ void clear_objects(){
 
 	strategies_init();
 	Runner_init(&runner,startSection);
-	*/
+	
 }
 
 
 //initialize strategies pleas call them here!!
 void strategies_init(){
-
+	first_straight_factory_init();
 	first_curve_factory_init();
 	after_slope_straight_factory_init();
 	slope_factory_init();
-	first_straight_factory_init();
+	
 	start_up__factory_init();
 	second_straight_factory_init();
 	second_curve_factory_init();

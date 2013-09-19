@@ -44,13 +44,18 @@ void forth_curve_factory_init(){
 	//forthCurve_2_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 807.2846;
+	//switch_term.distance = 750.2846;
+	switch_term.distance =900.2846;
+	
 	balancing_requrement = 1;
 	target_tail_angle=0;
+	switch_term.direction = 180;
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
 	movementDirection = FORWARD;
+
 	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
+	//fp_SwitchJudge = DirectionDistanceMultipleSwitch_judge_switch_method;
 	RunningMethod_init(&forthCurve_2_LineTraceRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 

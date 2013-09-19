@@ -1,6 +1,6 @@
 #ifndef __MovingAverage
 #define __MovingAverage
-#define MAX_ARRAY_NUMBER 100
+#define MAX_ARRAY_NUMBER 30
 
 typedef struct {
 	int index;

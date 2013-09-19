@@ -78,6 +78,6 @@ static void Section_update_current_running_methods(Section *self){
 static void Section_reset_encoder(Section *self){
 	Timer_reset(&timer);
 	DistanceEncoder_reset_Encoder(&distanceEncoder);
-	DirectionEncoder_reset(&directionEncoder);
+	//DirectionEncoder_reset(&directionEncoder);
 	ecrobot_sound_tone(1000,5,100);
 }
