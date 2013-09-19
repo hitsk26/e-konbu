@@ -74,6 +74,7 @@
 #include "./StrategyFactories/AfterOutFifthCurveStraight.h"
 #include "./StrategyFactories/OutSixthCurveFactory.h"
 
+#include "./StrategyFactories/LookUpGate.h"
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
 
 

@@ -3,6 +3,8 @@
 
 #include "../StrategyFactories/StrategyFactories_inculude.h"
 
+#include "../StrategyFactories/LookUpGate.h"
+
 #include "SlopeFactory.h"
 
 

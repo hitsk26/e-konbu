@@ -140,7 +140,7 @@ void strategies_init(){
 	out_fifth_curve_factory_init();
 	after_out_fifth_curve_straight_factory_init();
 	out_sixth_curve_factory_init();
-	
+
 	seesaw_1_factory_init();
 	seesaw_stop_factory_init();
 	seesaw_2_factory_init();
@@ -149,5 +149,6 @@ void strategies_init(){
 	seesaw_4_factory_init();
 	seesaw_5_factory_init();
 
+	look_up_factory_init();
 }
 
