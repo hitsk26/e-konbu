@@ -89,9 +89,17 @@ TARGET_SOURCES := \
 	./StrategyFactories/AfterOutFifthCurveStraight.c \
 	./StrategyFactories/OutFifthCurveFactory.c \
 	./StrategyFactories/OutSixthCurveFactory.c \
-	./StrategyFactories/SeeSawFactory.c \
+	./StrategyFactories/SeeSaw_1Factory.c \
+	./StrategyFactories/SeeSaw_StopFactory.c \
+	./StrategyFactories/SeeSaw_2Factory.c \
+	./StrategyFactories/SeeSaw_2_2Factory.c \
+	./StrategyFactories/SeeSaw_3Factory.c \
+	./StrategyFactories/SeeSaw_4Factory.c \
+	./StrategyFactories/SeeSaw_5Factory.c \
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
+
+BUILD_MODE = ROM_ONLY
 
 O_PATH ?= build
 

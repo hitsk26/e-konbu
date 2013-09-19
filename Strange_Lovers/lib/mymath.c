@@ -1,4 +1,5 @@
 #include "mymath.h"
+
 /*
  *	ŠeŽí’è‹`
 */
@@ -64,5 +65,5 @@ return s;
 
 double mycos(double x)
 {
-	return mysin(PI / 2 - x);
+  return mysin(PI / 2 - x);
 }
