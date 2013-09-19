@@ -93,6 +93,8 @@ TARGET_SOURCES := \
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
+BUILDMODE =ROM_ONLY
+
 O_PATH ?= build
 
 include $(NXTOSEK_ROOT)/ecrobot/lejos_osek.tmf

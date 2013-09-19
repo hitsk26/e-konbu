@@ -4,7 +4,7 @@
 
 void Runner_init(Runner *self,Section *start_section){
 	self->current_section = start_section;
-	self->current_section = &firstStraight;
+	self->current_section = &thurdStraight;
 	self->runner_state = STOP;
 
 }

@@ -69,7 +69,7 @@ void initialization(){
 }
 
 void clear_objects(){
-	/*
+	
 	ecrobot_set_motor_rev(NXT_PORT_A,0);
 	ecrobot_set_motor_rev(NXT_PORT_B,0);
 	ecrobot_set_motor_rev(NXT_PORT_C,0);
@@ -119,7 +119,7 @@ void clear_objects(){
 
 	strategies_init();
 	Runner_init(&runner,startSection);
-	*/
+	
 }
 
 
