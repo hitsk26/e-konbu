@@ -38,6 +38,7 @@ typedef struct {
 
 	float direction;
 
+	int distance_obstacle
 
 }SwitchTerm;
 #endif
