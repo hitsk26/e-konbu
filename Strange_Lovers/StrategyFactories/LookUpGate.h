@@ -4,7 +4,6 @@
 #include "../StrategyFactories/StrategyFactories_inculude.h"
 
 
-
 //StarategyPart
 
 Section lookup;

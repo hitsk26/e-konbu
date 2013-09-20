@@ -75,6 +75,7 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.c\
 	./StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/SonarSwitch.c \
 	./StrategyFactories/FiststStraightFactory.c \
 	./StrategyFactories/SlopeFactory.c \
 	./StrategyFactories/AfterSlopeStraightFactory.c \
