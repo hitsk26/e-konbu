@@ -59,7 +59,7 @@
 #include "StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.h"
 
-
+//OutCourse
 #include "./StrategyFactories/FiststStraightFactory.h"
 #include "./StrategyFactories/SlopeFactory.h"
 #include "./StrategyFactories/StartUpFactory.h"
@@ -75,8 +75,6 @@
 #include "./StrategyFactories/OutSixthCurveFactory.h"
 
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
-
-
 #include "./StrategyFactories/StartUpWithTailFactory.h"
 #include "./StrategyFactories/SeeSaw_1Factory.h"
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
@@ -86,7 +84,20 @@
 #include "./StrategyFactories/SeeSaw_4Factory.h"
 #include "./StrategyFactories/SeeSaw_5Factory.h"
 
-
+//InCourse
+#include "./StrategyFactories/In/FiststStraightFactory.h"
+#include "./StrategyFactories/In/SlopeFactory.h"
+#include "./StrategyFactories/In/StartUpFactory.h"
+#include "./StrategyFactories/In/SecondStraightFactory.h"
+#include "./StrategyFactories/In/SecondCurveFactory.h"
+#include "./StrategyFactories/In/ThurdStraightFactory.h"
+#include "./StrategyFactories/In/ThurdCurveFactory.h"
+#include "./StrategyFactories/In/ForthStraightFactory.h"
+#include "./StrategyFactories/In/ForthCurveFactory.h"
+#include "./StrategyFactories/In/InFifthStraightFactory.h"
+#include "./StrategyFactories/In/InFifthCurveFactory.h"
+#include "./StrategyFactories/In/AfterInFifthCurveStraight.h"
+#include "./StrategyFactories/In/InSixthCurveFactory.h"
 
 
 Calibration calibration;
