@@ -18,6 +18,7 @@ DeclareTask(UI);
 void ecrobot_device_initialize(void){
 	ecrobot_init_bt_slave("LEJOS-OSEK");
 	ecrobot_set_light_sensor_active(NXT_PORT_S3);
+	ecrobot_init_sonar_sensor(NXT_PORT_S2);
 	initialization();
 }
 
@@ -27,6 +28,7 @@ void ecrobot_device_terminate(void){
 	ecrobot_set_light_sensor_inactive(NXT_PORT_S3);
 	ecrobot_set_motor_speed(NXT_PORT_B, 0);
 	ecrobot_set_motor_speed(NXT_PORT_C, 0);
+	ecrobot_term_sonar_sensor(NXT_PORT_S2);
 	ecrobot_term_bt_connection();
 
 }

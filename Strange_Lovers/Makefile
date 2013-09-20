@@ -28,6 +28,7 @@ TARGET_SOURCES := \
 	./HardwareWrapper/SystemTimer.c \
 	./HardwareWrapper/GyroSensor.c \
 	./HardwareWrapper/LightSensor.c \
+	./HardwareWrapper/SonarSensor.c \
 	./UI/PushButton.c \
 	./UI/Display.c \
 	./UI/Starter.c \
@@ -39,6 +40,7 @@ TARGET_SOURCES := \
 	./EncoderPart/BrightnessEncoder.c \
 	./EncoderPart/DirectionEncoder.c \
 	./EncoderPart/CurvatureEncoder.c \
+	./EncoderPart/SonarEncoder.c \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/WheelActuator.c \
