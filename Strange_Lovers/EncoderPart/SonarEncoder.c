@@ -14,6 +14,4 @@ void SonarEncoder_mesure_distance_obstacle(SonarEncoder *self,unsigned int time)
 		self->distance_obstacle= SonarSensor_get_sonor_sensor(self->port_id);
 		self->last_mesurement_time = time;
 	}
-	ecrobot_debug1(self->last_mesurement_time,time,self->distance_obstacle);
-
 }	
