@@ -37,7 +37,7 @@ void first_straight_factory_init(){
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
-	switch_term.time =1500;
+	switch_term.time =150;
 	balancing_requrement = 1;
 	target_tail_angle=90;
 	gyroOffsetRevise=0;
