@@ -38,7 +38,7 @@ void look_up_factory_init(){
 	switch_term.speed = 0;
 	switch_term.time =0;
 	balancing_requrement = 0;
-	target_tail_angle=65;
+	target_tail_angle=90;		//65;
 	gyroOffsetRevise=0;
 	request_forced_stop =0; 
 	movementDirection = FORWARD;
@@ -53,7 +53,7 @@ void look_up_factory_init(){
 	switch_term.speed = 0;
 	switch_term.time =0;
 	balancing_requrement = 0;
-	target_tail_angle=65;
+	target_tail_angle=90;		//65;
 	gyroOffsetRevise=0;
 	request_forced_stop =0; 
 	movementDirection = FORWARD;
@@ -65,7 +65,7 @@ void look_up_factory_init(){
 
 	int number_of_running_method=2;
 	TargetValues target_values; 
-	target_values.target_brightness = 0.6;
+	target_values.target_brightness = 0.55;
 	target_values.target_curvature = 0.0;
 	target_values.target_speed = 180;
 	Section *nextSection = &startUp;
