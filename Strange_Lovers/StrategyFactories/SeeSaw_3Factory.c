@@ -12,10 +12,26 @@ void seesaw_3_factory_init(){
 	MovementDirection movementDirection = FORWARD;
 	int (*fp_SwitchJudge)(SwitchTerm);
 
-	//SeesawRunningUp
 	use_controller.target_curvature_controller_weight = 1.0;
 	use_controller.target_light_controller_weight = 0.0;
-	switch_term.distance =200;
+	switch_term.distance =10;
+	switch_term.inclination = 600;
+	switch_term.inPushed = 1;
+	switch_term.speed = 0;
+	switch_term.time = 1000;
+	balancing_requrement = 1;
+	target_tail_angle=0;
+	gyroOffsetRevise=0;
+	request_forced_stop= 0;
+	movementDirection = FORWARD;
+	fp_SwitchJudge = TimeSwitch_judge_switch_method;
+	RunningMethod_init(&SeesawBeforeForwardRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
+	
+
+	//SeesawForwardRunning
+	use_controller.target_curvature_controller_weight = 0.0;
+	use_controller.target_light_controller_weight = 1.0;
+	switch_term.distance =300;
 	switch_term.inclination = 600;
 	switch_term.inPushed = 1;
 	switch_term.speed = 0;
@@ -26,6 +42,23 @@ void seesaw_3_factory_init(){
 	request_forced_stop= 0;
 	movementDirection = FORWARD;
 	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
+	RunningMethod_init(&SeesawForwardRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
+	
+
+	//SeesawRunningUp
+	use_controller.target_curvature_controller_weight = 1.0;
+	use_controller.target_light_controller_weight = 0.0;
+	switch_term.distance =280;
+	switch_term.inclination = 650;
+	switch_term.inPushed = 1;
+	switch_term.speed = 0;
+	switch_term.time = 0;
+	balancing_requrement = 1;
+	target_tail_angle=0;
+	gyroOffsetRevise=20;
+	request_forced_stop= 0;
+	movementDirection = FORWARD;
+	fp_SwitchJudge = InclinationSwitch_judge_switch_method;
 	RunningMethod_init(&SeesawRunningUpMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 
@@ -33,17 +66,17 @@ void seesaw_3_factory_init(){
 	use_controller.target_curvature_controller_weight = 0.0;
 	use_controller.target_light_controller_weight = 1.0;
 	gyroOffsetRevise = 100;
-	switch_term.distance = 150;
+	switch_term.distance = 500;
 	switch_term.inclination = 600;
 	switch_term.inPushed = 1;
 	switch_term.speed = 0;
 	switch_term.time = 0;
 	balancing_requrement = 1;
 	target_tail_angle=0;
-	gyroOffsetRevise=15;
+	gyroOffsetRevise=2;
 	request_forced_stop= 0;
 	movementDirection = FORWARD;
-	fp_SwitchJudge = InclinationSwitch_judge_switch_method;
+	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
 	RunningMethod_init(&SeesawUpslopeRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 	//SeesawSwitchDownslope
@@ -80,18 +113,19 @@ void seesaw_3_factory_init(){
 	RunningMethod_init(&SeesawDownslopeRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 
+	seesaw_3_running_method_array[0]=SeesawBeforeForwardRunningMethod;
+	seesaw_3_running_method_array[1]=SeesawForwardRunningMethod;
+	seesaw_3_running_method_array[2]=SeesawRunningUpMethod;
+	seesaw_3_running_method_array[3]=SeesawUpslopeRunningMethod;
+	seesaw_3_running_method_array[4]=SeesawSwitchDownslopeMethod;
+	seesaw_3_running_method_array[5]=SeesawDownslopeRunningMethod;
 
-	seesaw_3_running_method_array[0]=SeesawRunningUpMethod;
-	seesaw_3_running_method_array[1]=SeesawUpslopeRunningMethod;
-	seesaw_3_running_method_array[2]=SeesawSwitchDownslopeMethod;
-	seesaw_3_running_method_array[3]=SeesawDownslopeRunningMethod;
 
-
-	int number_of_running_method=4;
+	int number_of_running_method=6;
 	TargetValues target_values; 
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = 0.0;
-	target_values.target_speed = 60;
+	target_values.target_curvature = -0.5;
+	target_values.target_speed = 50;
 	Section *nextSection = &seesaw_4;
 	RunningMethod *runningMethod = seesaw_3_running_method_array;
 	Section_init(&seesaw_3,nextSection,number_of_running_method,runningMethod,target_values);
