@@ -96,6 +96,8 @@ TARGET_SOURCES := \
 	./StrategyFactories/SeeSaw_3Factory.c \
 	./StrategyFactories/SeeSaw_4Factory.c \
 	./StrategyFactories/SeeSaw_5Factory.c \
+	./StrategyFactories/Initialize/OutInitialize.c \
+	
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 

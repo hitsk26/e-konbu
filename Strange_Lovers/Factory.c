@@ -1,5 +1,5 @@
 #include "Factory.h"
-static void strategies_init();
+#include "StrategyFactories/Initialize/CommonInitializeInterface.h"
 
 void initialization(){
 	
@@ -11,7 +11,6 @@ void initialization(){
     nxt_motor_set_count(NXT_PORT_C, 0); /* reset right motor count */
 
 	Calibration_init(&calibration);
-	
 	
 
 	//UI
@@ -120,36 +119,4 @@ void clear_objects(){
 	Runner_init(&runner,startSection);
 }
 
-
-//initialize strategies pleas call them here!!
-void strategies_init(){
-
-	first_curve_factory_init();
-	after_slope_straight_factory_init();
-	slope_factory_init();
-	first_straight_factory_init();
-	start_up__factory_init();
-	second_straight_factory_init();
-	second_curve_factory_init();
-	thurd_straight_factory_init();
-	thurd_curve_factory_init();
-	forth_straight_factory_init();
-	forth_curve_factory_init();
-	start_up_with_tail_factory_init();
-	out_fifth_straight_factory_init();
-	out_fifth_curve_factory_init();
-	after_out_fifth_curve_straight_factory_init();
-	out_sixth_curve_factory_init();
-	
-
-
-	seesaw_1_factory_init();
-	seesaw_stop_factory_init();
-	seesaw_2_factory_init();
-	seesaw_2_2factory_init();
-	seesaw_3_factory_init();
-	seesaw_4_factory_init();
-	seesaw_5_factory_init();
-
-}
 
