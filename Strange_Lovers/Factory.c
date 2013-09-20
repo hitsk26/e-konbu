@@ -145,6 +145,7 @@ void strategies_init(){
 	seesaw_stop_factory_init();
 	seesaw_2_factory_init();
 	seesaw_2_2factory_init();
+	seesaw_2_3factory_init();
 	seesaw_3_factory_init();
 	seesaw_4_factory_init();
 

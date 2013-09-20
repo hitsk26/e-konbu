@@ -9,9 +9,9 @@
 //StarategyPart
 
 Section seesaw_3;
-RunningMethod SeesawBeforeForwardRunningMethod;
 RunningMethod SeesawForwardRunningMethod;
 RunningMethod SeesawRunningUpMethod;
+RunningMethod SeesawRunningUp2Method;
 RunningMethod SeesawUpslopeRunningMethod;
 RunningMethod SeesawSwitchDownslopeMethod;
 RunningMethod SeesawDownslopeRunningMethod;
