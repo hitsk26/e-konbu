@@ -1,7 +1,7 @@
 #ifndef DETECTORPART_SONOR_ENCODER_H
 #define DETECTORPART_SONOR_ENCODER_H
 
-#define SONOR_MESURE_CYCLE_TIME 40
+#define SONOR_MESURE_CYCLE_TIME 50
 
 #include "../HardwareWrapper/SonarSensor.h"
 

@@ -34,7 +34,7 @@ void initialization(){
 	DirectionEncoder_init(&directionEncoder);
 	CurvatureEncoder_init(&curvatureEncoder);
 	SpeedEncoder_init(&speedEncoder);
-
+	SonarEncoder_init(&sonorEncoder,NXT_PORT_S2);
 
 	//DrivenPart
 	PID_TAIL_init(&pid_tail);
@@ -97,6 +97,7 @@ void clear_objects(){
 	DirectionEncoder_init(&directionEncoder);
 	CurvatureEncoder_init(&curvatureEncoder);
 	SpeedEncoder_init(&speedEncoder);
+	SonarEncoder_init(&sonorEncoder,NXT_PORT_S2);
 
 
 	//DrivenPart
