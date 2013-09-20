@@ -43,6 +43,8 @@
 #include "EncoderPart/BrightnessEncoder.h"
 #include "EncoderPart/DirectionEncoder.h"
 #include "EncoderPart/CurvatureEncoder.h"
+#include "EncoderPart/CoordinateEncoder.h"
+
 
 #include "./StrategyPart/Runner.h"
 #include "./StrategyPart/RunningMethod.h"
@@ -87,6 +89,7 @@ InclinationEncoder inclinationEncoder;
 BrightnessEncoder brightnessEncoder; 
 DirectionEncoder directionEncoder;
 CurvatureEncoder curvatureEncoder; 
+CoordinateEncoder coordinateEncoder;
 
 //DrivenPart
 PID_TAIL pid_tail;

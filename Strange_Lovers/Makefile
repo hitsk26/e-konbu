@@ -39,6 +39,7 @@ TARGET_SOURCES := \
 	./EncoderPart/BrightnessEncoder.c \
 	./EncoderPart/DirectionEncoder.c \
 	./EncoderPart/CurvatureEncoder.c \
+	./EncoderPart/CoordinateEncoder.c \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/WheelActuator.c \
@@ -69,7 +70,6 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/MultipleTermSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/SpeedTimerMultipleSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/CurvatureSwitch.c \
-	./StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.c\
 	./StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.c \
@@ -97,12 +97,15 @@ TARGET_SOURCES := \
 	./StrategyFactories/Out/SeeSaw_4Factory.c \
 	./StrategyFactories/Out/SeeSaw_5Factory.c \
 	./StrategyFactories/Initialize/OutInitialize.c \
-	
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
+
+BUILD_MODE = ROM_ONLY
+
 
 O_PATH ?= build
 BUILD_MODE = ROM_ONLY
 
 include $(NXTOSEK_ROOT)/ecrobot/lejos_osek.tmf
+
 

@@ -5,5 +5,5 @@ del /Q *.rxe
  
 make all 
 
-IF EXIST *.rxe sh appflash.sh
+IF EXIST appflash.sh sh appflash.sh
 

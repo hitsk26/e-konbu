@@ -24,7 +24,7 @@ void after_out_fifth_curve_straight_factory_init()
 	//afterOutFifthCurveStraight_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 100.0;
+	switch_term.distance = 150.0;
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
@@ -41,7 +41,7 @@ void after_out_fifth_curve_straight_factory_init()
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0;
-	target_values.target_speed = 400;
+	target_values.target_speed = 300;
 	nextSection = &outSixthCurve_1;
 
 	Section_init(&afterOutFifthCurveStraight,nextSection,number_of_running_method,runningMethod,target_values);
