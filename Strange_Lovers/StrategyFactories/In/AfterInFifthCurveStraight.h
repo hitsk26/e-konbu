@@ -1,7 +1,7 @@
 #ifndef _AfterInFifthCurveStraight_
 #define _AfterInFifthCurveStraight_
 
-#include "../../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 #include "InSixthCurveFactory.h"
 
 

@@ -1,9 +1,9 @@
 #ifndef _StartUpWithTailFactory_
 #define _StartUpWithTailFactory_
 
-#include "../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 
-#include "SeeSaw_1Factory.h"
+#include "FiststStraightFactory.h"
 
 
 //StarategyPart

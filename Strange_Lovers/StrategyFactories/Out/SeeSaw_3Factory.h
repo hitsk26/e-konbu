@@ -1,7 +1,7 @@
 #ifndef _SeeSaw_3Factory_
 #define _SeeSaw_3Factory_
 
-#include "../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 
 #include "SeeSaw_4Factory.h"
 

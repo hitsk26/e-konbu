@@ -1,9 +1,9 @@
 #ifndef _ForthCurveFactory_
 #define _ForthCurveFactory_
 
-#include "../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 
-#include "../StrategyFactories/OutFifthStraightFactory.h"
+#include "./OutFifthStraightFactory.h"
 
 
 

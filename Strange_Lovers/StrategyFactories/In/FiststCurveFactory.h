@@ -2,7 +2,7 @@
 #define _FirstCurveFactory_
 
 #include "../../StrategyFactories/StrategyFactories_inculude.h"
-#include "../../StrategyFactories/SecondStraightFactory.h"
+#include "SecondStraightFactory.h"
 
 //StarategyPart
 

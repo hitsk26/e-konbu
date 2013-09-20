@@ -1,7 +1,7 @@
 #ifndef _OutFifthStraightFactory_
 #define _OutFifthStraightFactory_
 
-#include "../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 #include "OutFifthCurveFactory.h"
 
 

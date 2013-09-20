@@ -1,9 +1,9 @@
 #ifndef _SixthCurveFactory_
 #define _SixthCurveFactory_
 
-#include "../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 
-#include "../StrategyFactories/StartUpFactory.h"
+#include "./StartUpFactory.h"
 
 
 

@@ -1,7 +1,7 @@
 #ifndef _InSixthCurveFactory_
 #define _InSixthCurveFactory_
 
-#include "../../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 #include "StartUpFactory.h"
 
 

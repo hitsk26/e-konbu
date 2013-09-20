@@ -16,7 +16,7 @@
 #include "../In/InFifthCurveFactory.h"
 #include "../In/AfterInFifthCurveStraight.h"
 #include "../In/InSixthCurveFactory.h"
-#include "../StartUpWithTailFactory.h"
+#include "../In/StartUpWithTailFactory.h"
 
 void strategies_init(){
 

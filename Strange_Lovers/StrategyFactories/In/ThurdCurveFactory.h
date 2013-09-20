@@ -1,7 +1,7 @@
 #ifndef _ThurdCurveFactory_
 #define _ThurdCurveFactory_
 
-#include "../../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 #include "ForthStraightFactory.h"
 
 

@@ -1,5 +1,4 @@
 #include "FiststCurveFactory.h"
-#include "FiststStraightFactory.h"
 
 
 void first_curve_factory_init(){

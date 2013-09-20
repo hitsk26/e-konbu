@@ -1,5 +1,5 @@
 #include "StartUpFactory.h"
-#include "../StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.h"
+#include "../StrategyFactories_inculude.h"
 
 
 void start_up__factory_init(){

@@ -1,7 +1,7 @@
 #ifndef _StartUpFactory_
 #define _StartUpFactory_
 
-#include "../StrategyFactories/StrategyFactories_inculude.h"
+#include "../StrategyFactories_inculude.h"
 
 #include "FiststStraightFactory.h"
 

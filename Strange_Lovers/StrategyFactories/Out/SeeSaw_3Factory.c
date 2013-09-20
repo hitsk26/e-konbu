@@ -1,5 +1,4 @@
 #include "SeeSaw_3Factory.h"
-#include "../StrategyPart/RunningMethodSwitchJudge/inPushedSwitch.h"
 
 
 void seesaw_3_factory_init(){

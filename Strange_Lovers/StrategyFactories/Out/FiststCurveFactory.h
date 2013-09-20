@@ -1,8 +1,8 @@
 #ifndef _FirstCurveFactory_
 #define _FirstCurveFactory_
 
-#include "../StrategyFactories/StrategyFactories_inculude.h"
-#include "../StrategyFactories/SecondStraightFactory.h"
+#include "../StrategyFactories_inculude.h"
+#include "./SecondStraightFactory.h"
 
 //StarategyPart
 
