@@ -58,7 +58,7 @@ void strategies_init(){
 	seesaw_4_factory_init();
 	seesaw_5_factory_init();
 
-	startSection = &firstStraight;
+	startSection = &startUp;
 
 }
 
