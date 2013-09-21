@@ -1,8 +1,8 @@
 #ifndef _ThurdStraightFactory_
 #define _ThurdStraightFactory_
 
-#include "../StrategyFactories_inculude.h"
-#include "./ThurdCurveFactory.h"
+#include "../../StrategyFactories/StrategyFactories_inculude.h"
+#include "ThurdCurveFactory.h"
 
 
 

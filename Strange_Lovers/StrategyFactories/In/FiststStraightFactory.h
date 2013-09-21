@@ -1,7 +1,7 @@
 #ifndef _FirstStraightFactory_
 #define _FirstStraightFactory_
 
-#include "../StrategyFactories_inculude.h"
+#include "../../StrategyFactories/StrategyFactories_inculude.h"
 
 #include "SlopeFactory.h"
 

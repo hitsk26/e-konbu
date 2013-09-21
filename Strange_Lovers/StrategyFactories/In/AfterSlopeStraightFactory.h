@@ -1,7 +1,7 @@
 #ifndef _AfterSlopeStraightStraightFactory_
 #define _AfterSlopeStraightStraightFactory_
 
-#include "../StrategyFactories_inculude.h"
+#include "../../StrategyFactories/StrategyFactories_inculude.h"
 
 #include "FiststCurveFactory.h"
 

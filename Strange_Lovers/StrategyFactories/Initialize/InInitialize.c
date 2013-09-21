@@ -16,7 +16,6 @@
 #include "../In/InFifthCurveFactory.h"
 #include "../In/AfterInFifthCurveStraight.h"
 #include "../In/InSixthCurveFactory.h"
-#include "../In/StartUpWithTailFactory.h"
 
 void strategies_init(){
 
@@ -31,7 +30,6 @@ void strategies_init(){
 	thurd_curve_factory_init();
 	forth_straight_factory_init();
 	forth_curve_factory_init();
-	start_up_with_tail_factory_init();
 	In_fifth_straight_factory_init();
 	In_fifth_curve_factory_init();
 	after_In_fifth_curve_straight_factory_init();

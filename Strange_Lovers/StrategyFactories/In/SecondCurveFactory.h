@@ -1,9 +1,9 @@
 #ifndef _SecondCurveFactory_
 #define _SecondCurveFactory_
 
-#include "../StrategyFactories_inculude.h"
+#include "../../StrategyFactories/StrategyFactories_inculude.h"
 
-#include "./ThurdStraightFactory.h"
+#include "ThurdStraightFactory.h"
 
 
 

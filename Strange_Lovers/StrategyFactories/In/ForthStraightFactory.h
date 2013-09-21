@@ -1,8 +1,8 @@
 #ifndef _ForthStraightFactory_
 #define _ForthStraightFactory_
 
-#include "../StrategyFactories_inculude.h"
-#include "./ForthCurveFactory.h"
+#include "../../StrategyFactories/StrategyFactories_inculude.h"
+#include "ForthCurveFactory.h"
 
 
 
