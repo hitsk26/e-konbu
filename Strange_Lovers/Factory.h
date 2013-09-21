@@ -81,6 +81,7 @@
 #include "./StrategyFactories/LookUpGate3.h"
 #include "./StrategyFactories/LookUpGate4.h"
 #include "./StrategyFactories/LookUpGate5.h"
+#include "./StrategyFactories/GarageIn.h"
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
 
 

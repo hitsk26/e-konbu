@@ -155,6 +155,7 @@ void strategies_init(){
 	look_up3_factory_init();
 	look_up4_factory_init();
 	look_up5_factory_init();
+	garage_factory_init();
 	balance_stop_factory_init();
 }
 
