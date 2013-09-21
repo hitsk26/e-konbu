@@ -26,7 +26,7 @@ void CoordinateEncoder_calc_coordinate(CoordinateEncoder *self)
 	float distance = DistanceEncoder_get_total_distance(&distanceEncoder);
 	float theta = DirectionEncoder_get_direction(&directionEncoder);
 
-	self->xCoo += (distance - self->distance_buf) * mysin(deg2rad(theta));
+	self->xCoo += (distance - self->distance_buf) * my_sin(deg2rad(theta));
 	self->yCoo += (distance - self->distance_buf) * mycos(deg2rad(theta));
 	
 	self->distance_buf =distance;

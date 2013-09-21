@@ -21,9 +21,9 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_1 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.0;
-	use_controller.target_light_controller_weight = 1.0;
-	switch_term.distance = 299.2192;
+	use_controller.target_curvature_controller_weight = 0.5;
+	use_controller.target_light_controller_weight = 0.5;
+	switch_term.distance = 187;
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
@@ -38,7 +38,7 @@ void thurd_curve_factory_init()
 	runningMethod = thurdCurve_1_running_method_array;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = 1.0/500.0;
+	target_values.target_curvature = 1.0/1678.0;
 	target_values.target_speed = 400;
 	nextSection = &thurdCurve_2;
 
@@ -46,9 +46,11 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_2 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 372.5929;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
+	//switch_term.distance = 548.5929;
+
+	switch_term.distance = 648.5929;
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
@@ -63,8 +65,9 @@ void thurd_curve_factory_init()
 	runningMethod = thurdCurve_2_running_method_array;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = 1.0/500.0;
-	//target_values.target_curvature = 1.0/300.0;
+	//target_values.target_curvature = 1.0/810.0;
+	target_values.target_curvature = 1.0/610.0;
+	
 	target_values.target_speed = 400;
 	nextSection = &thurdCurve_3;
 
@@ -72,10 +75,9 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_3 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 380.3242;
-	switch_term.distance = 440.3242;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
+	switch_term.distance = 1214.5;
 	
 	balancing_requrement = 1;
 	target_tail_angle=0;
@@ -91,7 +93,9 @@ void thurd_curve_factory_init()
 	runningMethod = thurdCurve_3_running_method_array;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = 1.0/600.0;
+	//target_values.target_curvature = 1.0/978.1;
+	target_values.target_curvature = 1.0/878.1;
+	
 	target_values.target_speed = 400;
 	nextSection = &thurdCurve_4;
 
@@ -99,9 +103,9 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_4 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 307.8761;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
+	switch_term.distance = 247;
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
@@ -116,8 +120,7 @@ void thurd_curve_factory_init()
 	runningMethod = thurdCurve_4_running_method_array;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = 1.0/280.0;
-	//target_values.target_curvature = 1.0/380.0;
+	target_values.target_curvature = 1.0/1214.0;
 	
 	target_values.target_speed = 400;
 	nextSection = &thurdCurve_5;
@@ -126,10 +129,9 @@ void thurd_curve_factory_init()
 
 
 		//thurdCurve_5 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 414.3831;
-	switch_term.distance = 514.3831;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
+	switch_term.distance = 1000;
 	
 	balancing_requrement = 1;
 	target_tail_angle=0;
@@ -145,7 +147,7 @@ void thurd_curve_factory_init()
 	runningMethod = thurdCurve_5_running_method_array;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = 1.0/760.0;
+	target_values.target_curvature = 1.0/1000.0;
 	target_values.target_speed = 400;
 	nextSection = &forthStraight;
 
