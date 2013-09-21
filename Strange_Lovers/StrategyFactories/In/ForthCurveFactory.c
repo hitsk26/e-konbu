@@ -19,8 +19,8 @@ void forth_curve_factory_init(){
 	
 
 	//forthCurve_1_LineTraceRunningMethod
-	use_controller.target_curvature_controller_weight = 0.0;
-	use_controller.target_light_controller_weight = 1.0;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	switch_term.distance =308;//458
 	balancing_requrement = 1;
 	target_tail_angle=0;
@@ -35,15 +35,15 @@ void forth_curve_factory_init(){
 	forth_curve_1_running_method_array[0]=forthCurve_1_LineTraceRunningMethod;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = -0.00090654206;
+	target_values.target_curvature = -1.0/1003.09;
 	target_values.target_speed = 300;
 	nextSection= &forthCurve_2;
 	Section_init(&forthCurve_1,nextSection,number_of_running_method,forth_curve_1_running_method_array,target_values);
 
 
 	//forthCurve_2_LineTraceRunningMethod
-	use_controller.target_curvature_controller_weight = 0.0;
-	use_controller.target_light_controller_weight = 1.0;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	switch_term.distance = 482;
 	balancing_requrement = 1;
 	target_tail_angle=0;
@@ -58,7 +58,7 @@ void forth_curve_factory_init(){
 	forth_curve_2_running_method_array[0]=forthCurve_2_LineTraceRunningMethod;
 	number_of_running_method=1;
 	target_values.target_brightness = 0.5;
-	target_values.target_curvature = -0.00734782609;
+	target_values.target_curvature = -136.09;
 	target_values.target_speed = 300;
 	nextSection = &InFifthStraight;
 	Section_init(&forthCurve_2,nextSection,number_of_running_method,forth_curve_2_running_method_array,target_values);
