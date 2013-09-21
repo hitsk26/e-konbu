@@ -75,6 +75,7 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.c\
 	./StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/MarkerSwitch.c \
 	./StrategyFactories/Out/StartUpFactory.c \
 	./StrategyFactories/Out/StartUpWithTailFactory.c \
 	./StrategyFactories/Out/FiststStraightFactory.c \
