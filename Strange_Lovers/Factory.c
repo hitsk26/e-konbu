@@ -34,6 +34,7 @@ void initialization(){
 	CurvatureEncoder_init(&curvatureEncoder);
 	SpeedEncoder_init(&speedEncoder);
 	CoordinateEncoder_init(&coordinateEncoder);
+	SonarEncoder_init(&sonorEncoder,NXT_PORT_S2);
 
 	//DrivenPart
 	PID_TAIL_init(&pid_tail);
@@ -98,7 +99,7 @@ void clear_objects(){
 	CurvatureEncoder_init(&curvatureEncoder);
 	SpeedEncoder_init(&speedEncoder);
 	CoordinateEncoder_reset_Encoder(&coordinateEncoder);
-
+	SonarEncoder_init(&sonorEncoder,NXT_PORT_S2);
 	//DrivenPart
 	PID_TAIL_init(&pid_tail);
 	WheelActuator_init(&wheelActuator);
@@ -118,6 +119,6 @@ void clear_objects(){
 
 	strategies_init();
 	Runner_init(&runner,startSection);
-	
 }
+
 

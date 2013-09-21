@@ -1,7 +1,8 @@
-#include "FiststStraightFactory.h"
+#include "BalanceStopFactory.h"
+#include "LookUpGate.h"
 
 
-void first_straight_factory_init(){
+void balance_stop_factory_init(){
 	ControllerWeight use_controller;
 	SwitchTerm switch_term;
 	int balancing_requrement =0;
@@ -27,7 +28,7 @@ void first_straight_factory_init(){
 	request_forced_stop =0; 
 	fp_SwitchJudge = TimeSwitch_judge_switch_method;
 	movementDirection = FORWARD;
-	RunningMethod_init(&stableRunningMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
+	RunningMethod_init(&stopBalanceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 
 	//straightLineTraceMethod
@@ -44,17 +45,17 @@ void first_straight_factory_init(){
 	request_forced_stop = -30;
 	fp_SwitchJudge = TimeSwitch_judge_switch_method;
 	movementDirection = FORWARD;
-	RunningMethod_init(&straightLineTraceMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
+	RunningMethod_init(&downTailUpMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 	
 
 
-	first_straight_running_method_array[0]=stableRunningMethod;
-	first_straight_running_method_array[1]=straightLineTraceMethod;
+	balanceStop_method_array[0]=stopBalanceMethod;
+	balanceStop_method_array[1]=downTailUpMethod;
 	int number_of_running_method=2;
 	TargetValues target_values; 
 	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0.0;
 	target_values.target_speed = 10;
-	Section *nextSection =&slope;		// &slope;
-	Section_init(&firstStraight,nextSection,number_of_running_method,first_straight_running_method_array,target_values);
+	Section *nextSection =&lookup;		// &slope;
+	Section_init(&balanceStop,nextSection,number_of_running_method,balanceStop_method_array,target_values);
 }

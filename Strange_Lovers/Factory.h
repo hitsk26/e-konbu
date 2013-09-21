@@ -44,7 +44,7 @@
 #include "EncoderPart/DirectionEncoder.h"
 #include "EncoderPart/CurvatureEncoder.h"
 #include "EncoderPart/CoordinateEncoder.h"
-
+#include "EncoderPart/SonarEncoder.h"
 
 #include "./StrategyPart/Runner.h"
 #include "./StrategyPart/RunningMethod.h"
@@ -91,6 +91,7 @@ BrightnessEncoder brightnessEncoder;
 DirectionEncoder directionEncoder;
 CurvatureEncoder curvatureEncoder; 
 CoordinateEncoder coordinateEncoder;
+SonarEncoder sonorEncoder;
 
 //DrivenPart
 PID_TAIL pid_tail;

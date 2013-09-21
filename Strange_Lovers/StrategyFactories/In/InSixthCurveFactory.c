@@ -1,4 +1,5 @@
 #include "InSixthCurveFactory.h"
+#include "BalanceStopFactory.h"
 
 
 void In_fifth_curve_factory_init()
@@ -24,7 +25,7 @@ void In_fifth_curve_factory_init()
 	//InSixCurveLineTraceMethod
 	use_controller.target_curvature_controller_weight =0.4;
 	use_controller.target_light_controller_weight = 0.6;
-	switch_term.distance = 2231000;//2231
+	switch_term.distance = 2231;//2231
 	//switch_term.distance =1300.265;
 	//switch_term.distance =1200.265;
 	
@@ -46,7 +47,7 @@ void In_fifth_curve_factory_init()
 	target_values.target_curvature = 0.000755594;
 	
 	target_values.target_speed = 300;
-	nextSection = &startUp;
+	nextSection = &balanceStop;
 
 	Section_init(&InSixthCurve,nextSection,number_of_running_method,runningMethod,target_values);
 

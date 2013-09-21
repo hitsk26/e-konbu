@@ -18,7 +18,7 @@ void start_up__factory_init(){
 	switch_term.startSignelRecieve = 1;
 	switch_term.distance = 0;
 	switch_term.inclination = 0;
-	switch_term.inPushed = 0;
+	switch_term.inPushed = 1;
 	switch_term.speed = 0;
 	switch_term.time =0;
 	balancing_requrement = 0;

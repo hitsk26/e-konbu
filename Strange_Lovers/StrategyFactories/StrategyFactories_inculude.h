@@ -24,7 +24,8 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.h"
-
+#include "../StrategyPart/RunningMethodSwitchJudge/SonarSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/MarkerSwitch.h"
 
 
 #endif

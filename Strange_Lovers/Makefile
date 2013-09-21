@@ -28,6 +28,7 @@ TARGET_SOURCES := \
 	./HardwareWrapper/SystemTimer.c \
 	./HardwareWrapper/GyroSensor.c \
 	./HardwareWrapper/LightSensor.c \
+	./HardwareWrapper/SonarSensor.c \
 	./UI/PushButton.c \
 	./UI/Display.c \
 	./UI/Starter.c \
@@ -40,6 +41,7 @@ TARGET_SOURCES := \
 	./EncoderPart/DirectionEncoder.c \
 	./EncoderPart/CurvatureEncoder.c \
 	./EncoderPart/CoordinateEncoder.c \
+	./EncoderPart/SonarEncoder.c \
 	./DrivenPart/WheelMotor.c \
 	./DrivenPart/TailMotor.c \
 	./DrivenPart/WheelActuator.c \
@@ -73,6 +75,7 @@ TARGET_SOURCES := \
 	./StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.c\
 	./StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.c \
 	./StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.c \
+	./StrategyPart/RunningMethodSwitchJudge/MarkerSwitch.c \
 	./StrategyFactories/Out/StartUpFactory.c \
 	./StrategyFactories/Out/StartUpWithTailFactory.c \
 	./StrategyFactories/Out/FiststStraightFactory.c \
@@ -101,11 +104,8 @@ TARGET_SOURCES := \
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
 
-BUILD_MODE = ROM_ONLY
-
 
 O_PATH ?= build
-BUILD_MODE = ROM_ONLY
 
 BUILD_MODE=ROM_ONLY
 
