@@ -37,7 +37,7 @@ void second_curve_factory_init(){
 	//secondCurve_1 Section
 	second_curve_1_running_method_array[0]=secondCurve_1_LineTraceRunningMethod;
 	number_of_running_method=1;
-	target_values.target_brightness = 0.5;
+	target_values.target_brightness = 0.3;
 	//target_values.target_curvature = -1.0/726.76;
 	target_values.target_curvature = -1.0/626.76;
 	target_values.target_speed = 400;
@@ -66,7 +66,7 @@ void second_curve_factory_init(){
 	//secondCurve_2 Section
 	second_curve_2_running_method_array[0]=secondCurve_2_LineTraceRunningMethod;
 	number_of_running_method=1;
-	target_values.target_brightness = 0.4;
+	target_values.target_brightness = 0.3;
 	//target_values.target_curvature = -1.0/570.18;
 	target_values.target_curvature = -1.0/470.18;
 	target_values.target_speed = 400;
@@ -96,8 +96,9 @@ void second_curve_factory_init(){
 	//secondCurve_3 Section
 	second_curve_3_running_method_array[0]=secondCurve_3_LineTraceRunningMethod;
 	number_of_running_method=1;
-	target_values.target_brightness = 0.4;
-	target_values.target_curvature = -1.0/527;
+	target_values.target_brightness = 0.3;
+	//target_values.target_curvature = -1.0/527;
+	target_values.target_curvature = -1.0/480;
 	target_values.target_speed = 400;
 	nextSection = &thurdStraight;
 	Section_init(&secondCurve_3,nextSection,number_of_running_method,second_curve_3_running_method_array,target_values);
