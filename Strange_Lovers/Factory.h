@@ -77,6 +77,10 @@
 
 #include "./StrategyFactories/BalanceStopFactory.h"
 #include "./StrategyFactories/LookUpGate.h"
+#include "./StrategyFactories/LookUpGate2.h"
+#include "./StrategyFactories/LookUpGate3.h"
+#include "./StrategyFactories/LookUpGate4.h"
+#include "./StrategyFactories/LookUpGate5.h"
 #include "./StrategyFactories/SeeSaw_stopFactory.h"
 
 

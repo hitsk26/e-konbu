@@ -1,7 +1,7 @@
-#include "LookUpGate.h"
 #include "LookUpGate2.h"
+#include "LookUpGate3.h"
 
-void look_up_factory_init(){
+void look_up2_factory_init(){
 	ControllerWeight use_controller;
 	SwitchTerm switch_term;
 	int balancing_requrement =0;
@@ -21,23 +21,23 @@ void look_up_factory_init(){
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
 	switch_term.time =0;
-	switch_term.distance_obstacle = 55;
+	switch_term.distance_obstacle = 27;
 	balancing_requrement = 0;
 	target_tail_angle=90;
 	gyroOffsetRevise=0;
 	request_forced_stop =0; 
 	movementDirection = FORWARD;
-	RunningMethod_init(&beforeLookUpMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,SonarSwitch_judge_switch_method,request_forced_stop,movementDirection);
+	RunningMethod_init(&throughgreyMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,SonarSwitch_judge_switch_method,request_forced_stop,movementDirection);
 
 
 
-	look_up_running_method_array[0] = beforeLookUpMethod;
+	look_up2_running_method_array[0] = throughgreyMethod;
 
 	int number_of_running_method=1;
 	TargetValues target_values; 
-	target_values.target_brightness = 0.6;
+	target_values.target_brightness = 0.5;
 	target_values.target_curvature = 0.0;
 	target_values.target_speed = 180;
-	Section *nextSection = &lookup2;
-	Section_init(&lookup,nextSection,number_of_running_method,look_up_running_method_array,target_values);
+	Section *nextSection = &lookup3;
+	Section_init(&lookup2,nextSection,number_of_running_method,look_up2_running_method_array,target_values);
 }

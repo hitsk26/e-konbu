@@ -8,10 +8,8 @@
 
 Section lookup;
 RunningMethod beforeLookUpMethod;
-RunningMethod doingLookUpMethod;
-RunningMethod afterLookUpMethod;
 
-RunningMethod look_up_running_method_array[2];
+RunningMethod look_up_running_method_array[1];
 
 
 //Section firstCurve;

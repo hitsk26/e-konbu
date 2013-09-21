@@ -94,6 +94,10 @@ TARGET_SOURCES := \
 	./StrategyFactories/OutSixthCurveFactory.c \
 	./StrategyFactories/BalanceStopFactory.c \
 	./StrategyFactories/LookUpGate.c \
+	./StrategyFactories/LookUpGate2.c \
+	./StrategyFactories/LookUpGate3.c \
+	./StrategyFactories/LookUpGate4.c \
+	./StrategyFactories/LookUpGate5.c \
 	./StrategyFactories/SeeSaw_1Factory.c \
 	./StrategyFactories/SeeSaw_StopFactory.c \
 	./StrategyFactories/SeeSaw_2Factory.c \

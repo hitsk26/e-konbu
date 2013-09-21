@@ -151,6 +151,10 @@ void strategies_init(){
 	seesaw_5_factory_init();
 
 	look_up_factory_init();
+	look_up2_factory_init();
+	look_up3_factory_init();
+	look_up4_factory_init();
+	look_up5_factory_init();
 	balance_stop_factory_init();
 }
 

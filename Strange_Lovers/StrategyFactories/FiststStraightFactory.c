@@ -23,7 +23,7 @@ void first_straight_factory_init(){
 	switch_term.time =500;
 	balancing_requrement = 1;
 	target_tail_angle=0;
-	gyroOffsetRevise=-10;
+	gyroOffsetRevise=0;
 	request_forced_stop =0; 
 	fp_SwitchJudge = TimeSwitch_judge_switch_method;
 	movementDirection = FORWARD;
