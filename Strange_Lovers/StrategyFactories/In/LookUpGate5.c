@@ -17,7 +17,7 @@ void look_up5_factory_init(){
 	//beforelookupMethod
 	use_controller.target_curvature_controller_weight = 0.0;
 	use_controller.target_light_controller_weight = 0.0;
-	switch_term.distance =	300;
+	switch_term.distance =	180;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
@@ -31,11 +31,30 @@ void look_up5_factory_init(){
 	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
 	RunningMethod_init(&doublelookupMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 
+	//tailcontrol
+	use_controller.target_curvature_controller_weight = 0.0;
+	use_controller.target_light_controller_weight = 0.0;
+	switch_term.distance =	0;
+	switch_term.inclination = 0;
+	switch_term.inPushed = 0;
+	switch_term.speed = 0;
+	switch_term.time =50;
+	switch_term.distance_obstacle = 0;
+	balancing_requrement = 0;
+	target_tail_angle=120;
+	gyroOffsetRevise=0;
+	request_forced_stop =0; 
+	movementDirection = FORWARD;
+	//fp_SwitchJudge = DistanceSwitch_judge_switch_method;
+	fp_SwitchJudge =StartSignalRecieveSwitch_judge_switch_method;
+	RunningMethod_init(&taillookupMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 
 
 	look_up5_running_method_array[0] = doublelookupMethod;
+	look_up5_running_method_array[1] = taillookupMethod;
 
-	int number_of_running_method=1;
+
+	int number_of_running_method=2;
 	TargetValues target_values; 
 	target_values.target_brightness = 0.6;
 	target_values.target_curvature = 0.0;

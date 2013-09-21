@@ -33,7 +33,7 @@ void look_up3_factory_init(){
 	//doingLookupMethod
 	use_controller.target_curvature_controller_weight = 0.0;
 	use_controller.target_light_controller_weight = 1.0;
-	switch_term.distance =	400;
+	switch_term.distance =	450;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
@@ -53,7 +53,7 @@ void look_up3_factory_init(){
 
 	int number_of_running_method=1;
 	TargetValues target_values; 
-	target_values.target_brightness = 0.6;
+	target_values.target_brightness = 0.65;
 	target_values.target_curvature = 0.0;
 	target_values.target_speed = 180;
 	Section *nextSection = &lookup4;
