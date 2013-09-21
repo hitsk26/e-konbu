@@ -32,7 +32,7 @@ void garage_factory_init(){
 
 
 
-	look_up_running_method_array[0] = beforeLookUpMethod;
+	garage_running_method_array[0] = beforeGarageMethod;
 
 	int number_of_running_method=1;
 	TargetValues target_values; 
