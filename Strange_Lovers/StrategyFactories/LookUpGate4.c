@@ -39,7 +39,7 @@ void look_up4_factory_init(){
 	TargetValues target_values; 
 	target_values.target_brightness = 0.6;
 	target_values.target_curvature = 0.0;
-	target_values.target_speed = -100;
+	target_values.target_speed = -200;
 	target_values.target_runner_angle = 0;
 	Section *nextSection = &lookup5;
 	Section_init(&lookup4,nextSection,number_of_running_method,look_up4_running_method_array,target_values);
