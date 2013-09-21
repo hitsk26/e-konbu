@@ -15,7 +15,7 @@ void seesaw_1_factory_init(){
 	use_controller.target_light_controller_weight =1.0;	//輝度制御の重み付け
 	switch_term.distance = 500; //距離切替を採用した際の切替条件 [mm]
 	switch_term.inclination = 0; //傾き切替を採用した際の切替条件
-	switch_term.speed = 40; //速度切替条件 [mm/s]
+	switch_term.speed = 50; //速度切替条件 [mm/s]
 	switch_term.time =2000; //時間切替条件 [ms]
 	balancing_requrement = 0; //倒立制御の有無 1:倒立走行 0:尻尾走行 合わせて尻尾角度を９５度程度にする必要あり
 	target_tail_angle=100; //尻尾の目標角度
@@ -25,7 +25,7 @@ void seesaw_1_factory_init(){
 	fp_SwitchJudge = SpeedTimerMultipleSwitch_judge_switch_method; //切替を判定する関数名を指定　
 	/*
 	距離切替 DistanceSwitch_judge_switch_method
-	時間切替 TTimeSwitch_judge_switch_method
+	時間切替 TimeSwitch_judge_switch_method
 	など
 	*/
 

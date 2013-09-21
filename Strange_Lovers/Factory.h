@@ -64,6 +64,7 @@
 #include "StrategyFactories/Initialize/CommonInitializeInterface.h"
 
 
+
 Calibration calibration;
 
 
@@ -126,6 +127,7 @@ DirectionCtrl directionCtrl;
 Runner runner;
 
 Section *startSection; 
+
 
 //StrategyPart/RunningMethodSwitchJudge
 

@@ -21,7 +21,7 @@ void seesaw_5_factory_init(){
 	switch_term.speed = 0;
 	switch_term.time = 0;
 	balancing_requrement = 1;
-	target_tail_angle=100;
+	target_tail_angle=0;
 	gyroOffsetRevise=0;
 	request_forced_stop= 0;
 	movementDirection = FORWARD;

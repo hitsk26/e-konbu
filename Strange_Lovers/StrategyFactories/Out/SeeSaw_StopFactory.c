@@ -17,11 +17,11 @@ void seesaw_stop_factory_init(){
 	switch_term.inclination = 0;
 	switch_term.inPushed = 1;
 	switch_term.speed = 0;
-	switch_term.time =5000;
+	switch_term.time =1000;
 	balancing_requrement = 0;
 	target_tail_angle=100;
 	gyroOffsetRevise=0;
-	request_forced_stop= 0;
+	request_forced_stop= 1;
 	movementDirection = FORWARD;
 	fp_SwitchJudge = TimeSwitch_judge_switch_method;
 	RunningMethod_init(&SeesawStopMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
