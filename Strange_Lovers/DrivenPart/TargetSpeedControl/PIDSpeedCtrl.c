@@ -34,8 +34,8 @@ float PSC_calcSpeedCtrlVal(PIDSpeedCtrl *self,float targSpeed,float bfSpeed,floa
 	
 	forward = forward + self->buf_forward;
 
-	if(forward > 140)
-		forward = 140;
+	if(forward > 160)
+		forward = 160;
 	else if(forward < -100)
 		forward = -100;
 	

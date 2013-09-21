@@ -43,6 +43,8 @@
 #include "EncoderPart/BrightnessEncoder.h"
 #include "EncoderPart/DirectionEncoder.h"
 #include "EncoderPart/CurvatureEncoder.h"
+#include "EncoderPart/CoordinateEncoder.h"
+
 
 #include "./StrategyPart/Runner.h"
 #include "./StrategyPart/RunningMethod.h"
@@ -59,33 +61,7 @@
 #include "StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.h"
 #include "StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.h"
 
-
-#include "./StrategyFactories/FiststStraightFactory.h"
-#include "./StrategyFactories/SlopeFactory.h"
-#include "./StrategyFactories/StartUpFactory.h"
-#include "./StrategyFactories/SecondStraightFactory.h"
-#include "./StrategyFactories/SecondCurveFactory.h"
-#include "./StrategyFactories/ThurdStraightFactory.h"
-#include "./StrategyFactories/ThurdCurveFactory.h"
-#include "./StrategyFactories/ForthStraightFactory.h"
-#include "./StrategyFactories/ForthCurveFactory.h"
-#include "./StrategyFactories/OutFifthStraightFactory.h"
-#include "./StrategyFactories/OutFifthCurveFactory.h"
-#include "./StrategyFactories/AfterOutFifthCurveStraight.h"
-#include "./StrategyFactories/OutSixthCurveFactory.h"
-
-#include "./StrategyFactories/SeeSaw_stopFactory.h"
-
-
-#include "./StrategyFactories/StartUpWithTailFactory.h"
-#include "./StrategyFactories/SeeSaw_1Factory.h"
-#include "./StrategyFactories/SeeSaw_stopFactory.h"
-#include "./StrategyFactories/SeeSaw_2Factory.h"
-#include "./StrategyFactories/SeeSaw_2_2Factory.h"
-#include "./StrategyFactories/SeeSaw_3Factory.h"
-#include "./StrategyFactories/SeeSaw_4Factory.h"
-#include "./StrategyFactories/SeeSaw_5Factory.h"
-
+#include "StrategyFactories/Initialize/CommonInitializeInterface.h"
 
 
 
@@ -114,6 +90,7 @@ InclinationEncoder inclinationEncoder;
 BrightnessEncoder brightnessEncoder; 
 DirectionEncoder directionEncoder;
 CurvatureEncoder curvatureEncoder; 
+CoordinateEncoder coordinateEncoder;
 
 //DrivenPart
 PID_TAIL pid_tail;
@@ -149,7 +126,8 @@ DirectionCtrl directionCtrl;
 //StarategyPart
 Runner runner;
 
-Section *startSection = &startUp;
+Section *startSection; 
+
 
 //StrategyPart/RunningMethodSwitchJudge
 

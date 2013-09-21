@@ -23,6 +23,7 @@
 #include "../StrategyPart/RunningMethodSwitchJudge/TailAngleSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/DirectionSwitch.h"
 #include "../StrategyPart/RunningMethodSwitchJudge/DirectionDistanceMultipleSwitch.h"
+#include "../StrategyPart/RunningMethodSwitchJudge/StartSignalRecieveSwitch.h"
 
 
 

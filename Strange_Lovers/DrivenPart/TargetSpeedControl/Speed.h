@@ -1,9 +1,6 @@
 #ifndef _SPEED_H
 #define _SPEED_H
 
-#include "math.h"
-
-
 #define LIMIT 100
 
 typedef struct{

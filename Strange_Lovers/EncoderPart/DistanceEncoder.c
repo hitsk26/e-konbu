@@ -3,33 +3,38 @@
 #define CIRCUMFERENCE 258
 
 
-void DistanceEncoder_init(DistanceEncoder *this_DistanceEncoder)
+void DistanceEncoder_init(DistanceEncoder *self)
 {
-	this_DistanceEncoder->distance = 0;
-	this_DistanceEncoder->revL_buf=0;
-	this_DistanceEncoder->revR_buf=0;
+	self->distance = 0;
+	self->revL_buf=0;
+	self->revR_buf=0;
 
 }
 
 
-float DistanceEncoder_get_distance(DistanceEncoder *this_DistanceEncoder)
+float DistanceEncoder_get_distance(DistanceEncoder *self)
 {
-	return this_DistanceEncoder->distance;
+	return self->distance;
 }
 
-void DistanceEncoder_calc_distance(DistanceEncoder *this_DistanceEncoder)
+float DistanceEncoder_get_total_distance(DistanceEncoder *self)
+{
+	return self->total_distance;
+}
+
+void DistanceEncoder_calc_distance(DistanceEncoder *self)
 {
 	S16 revL=0,revR=0;
 	revL = WheelMotor_get_count(&leftWheelMotor);
 	revR = WheelMotor_get_count(&rightWheelMotor);	
-	this_DistanceEncoder->distance= CIRCUMFERENCE/360.0 * (((revL - this_DistanceEncoder->revL_buf) + (revR- this_DistanceEncoder->revR_buf)) /2.0);
+	self->distance= CIRCUMFERENCE/360.0 * (((revL - self->revL_buf) + (revR- self->revR_buf)) /2.0);
+	self->total_distance =	CIRCUMFERENCE/360.0 * ((revL + revR) /2.0);
 }
 
- void DistanceEncoder_reset_Encoder(DistanceEncoder *this_DistanceEncoder)
+ void DistanceEncoder_reset_Encoder(DistanceEncoder *self)
 {
-	this_DistanceEncoder->revL_buf=WheelMotor_get_count(&leftWheelMotor);
-	this_DistanceEncoder->revR_buf=WheelMotor_get_count(&rightWheelMotor);
-	this_DistanceEncoder->distance = 0;
-
+	self->revL_buf=WheelMotor_get_count(&leftWheelMotor);
+	self->revR_buf=WheelMotor_get_count(&rightWheelMotor);
+	self->distance = 0;
 }
 

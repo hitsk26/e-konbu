@@ -33,7 +33,9 @@ PIDCurvatureCtrlParm CC_getCtrlParm(CurvatureCtrl *self)
 
 void CC_startCtrl(CurvatureCtrl *self)
 {
+	PCC_reset(self->mPIDCurvatureCtrl);
 	CC_changeMode(&(*self),C_CTRL_ON);
+	CurvatureEncoder_get_curvature(&curvatureEncoder);
 }
 
 void CC_stopCtrl(CurvatureCtrl *self)

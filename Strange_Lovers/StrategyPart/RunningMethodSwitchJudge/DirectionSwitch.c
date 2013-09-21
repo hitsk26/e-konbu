@@ -2,7 +2,7 @@
 #include "../../Factory.h"
 
 
-#define ACCEPT_RANGE 5
+#define ACCEPT_RANGE 4
 
 int DirectionSwitch_judge_switch_method(SwitchTerm switch_term)
 {	
