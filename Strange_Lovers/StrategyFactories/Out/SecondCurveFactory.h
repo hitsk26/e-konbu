@@ -3,7 +3,7 @@
 
 #include "../StrategyFactories_inculude.h"
 
-#include "./ThurdStraightFactory.h"
+#include "ThurdStraightFactory.h"
 
 
 

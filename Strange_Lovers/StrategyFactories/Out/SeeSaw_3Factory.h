@@ -9,13 +9,11 @@
 //StarategyPart
 
 Section seesaw_3;
-RunningMethod SeesawForwardRunningMethod;
 RunningMethod SeesawRunningUpMethod;
-RunningMethod SeesawRunningUp2Method;
 RunningMethod SeesawUpslopeRunningMethod;
 RunningMethod SeesawSwitchDownslopeMethod;
 RunningMethod SeesawDownslopeRunningMethod;
-RunningMethod seesaw_3_running_method_array[6];
+RunningMethod seesaw_3_running_method_array[4];
 
 
 //StrategyPart/RunningMethodSwitchJudge

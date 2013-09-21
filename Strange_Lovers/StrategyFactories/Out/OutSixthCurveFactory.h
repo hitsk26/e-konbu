@@ -3,7 +3,7 @@
 
 #include "../StrategyFactories_inculude.h"
 
-#include "./StartUpFactory.h"
+#include "StartUpFactory.h"
 
 
 

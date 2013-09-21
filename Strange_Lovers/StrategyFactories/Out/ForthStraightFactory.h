@@ -2,7 +2,7 @@
 #define _ForthStraightFactory_
 
 #include "../StrategyFactories_inculude.h"
-#include "./ForthCurveFactory.h"
+#include "ForthCurveFactory.h"
 
 
 

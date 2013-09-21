@@ -15,6 +15,10 @@ Section thurdCurve_2;
 RunningMethod thurdCurve_2LineTraceMethod;
 RunningMethod thurdCurve_2_running_method_array[2];
 
+Section thurdCurve_2_2;
+RunningMethod thurdCurve_2_2LineTraceMethod;
+RunningMethod thurdCurve_2_2_running_method_array[2];
+
 
 Section thurdCurve_3;
 RunningMethod thurdCurve_3LineTraceMethod;

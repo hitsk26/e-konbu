@@ -3,7 +3,7 @@
 
 #include "../StrategyFactories_inculude.h"
 
-#include "./OutFifthStraightFactory.h"
+#include "OutFifthStraightFactory.h"
 
 
 

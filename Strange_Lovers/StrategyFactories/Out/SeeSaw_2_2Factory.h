@@ -3,19 +3,18 @@
 
 #include "../StrategyFactories_inculude.h"
 
-#include "SeeSaw_2_3Factory.h"
+#include "SeeSaw_3Factory.h"
 
 
 //StarategyPart
 
 Section seesaw_2_2;
-
-RunningMethod stopMethod;
+	
 RunningMethod tailplusmovingMethod;
 RunningMethod tailbackMethod;
 
 
-RunningMethod seesaw_2_2running_method_array[3];
+RunningMethod seesaw_2_2running_method_array[2];
 
 
 //StrategyPart/RunningMethodSwitchJudge

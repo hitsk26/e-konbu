@@ -1,5 +1,4 @@
 #include "StartUpFactory.h"
-#include "../StrategyFactories_inculude.h"
 
 
 void start_up__factory_init(){
