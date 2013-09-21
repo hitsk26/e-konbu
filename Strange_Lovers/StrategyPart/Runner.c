@@ -26,6 +26,7 @@ void Runner_execute(Runner *self){
 		SpeedEncoder_calc_speed(&speedEncoder);
 		CurvatureEncoder_calc_curvature(&curvatureEncoder);
 		//CoordinateEncoder_calc_coordinate(&coordinateEncoder);
+		SonarEncoder_mesure_distance_obstacle(&sonorEncoder,Timer_get_ms(&timer));
 		Runner_run(self);
 			break;
 	case (STOP) :

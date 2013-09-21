@@ -15,6 +15,7 @@ void RunningMethod_init(RunningMethod *self,int balancing_requrement,ControllerW
 	self->switch_term.startSignelRecieve = switch_term.startSignelRecieve;
 	self->switch_term.inPushed = switch_term.inPushed;
 	self->switch_term.speed= switch_term.speed;
+	self->switch_term.distance_obstacle = switch_term.distance_obstacle;
 
 	self->target_tail_angle = target_tail_angle;
 	self->use_controller.target_curvature_controller_weight = use_controller.target_curvature_controller_weight;

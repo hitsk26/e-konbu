@@ -3,6 +3,7 @@
 
 #include "../StrategyFactories_inculude.h"
 
+
 #include "SlopeFactory.h"
 
 
