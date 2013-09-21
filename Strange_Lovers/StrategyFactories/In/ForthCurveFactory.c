@@ -44,7 +44,7 @@ void forth_curve_factory_init(){
 	//forthCurve_2_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.4;
 	use_controller.target_light_controller_weight = 0.6;
-	switch_term.distance = 482;
+	switch_term.distance = 682;
 	balancing_requrement = 1;
 	target_tail_angle=0;
 	gyroOffsetRevise=0;
@@ -57,9 +57,9 @@ void forth_curve_factory_init(){
 	//forthCurve_2 Section
 	forth_curve_2_running_method_array[0]=forthCurve_2_LineTraceRunningMethod;
 	number_of_running_method=1;
-	target_values.target_brightness = 0.5;
-	target_values.target_curvature = -136.09;
-	target_values.target_speed = 300;
+	target_values.target_brightness = 0.3;
+	target_values.target_curvature = -1/300;//-1/136.09;
+	target_values.target_speed = 250;
 	nextSection = &InFifthStraight;
 	Section_init(&forthCurve_2,nextSection,number_of_running_method,forth_curve_2_running_method_array,target_values);
 

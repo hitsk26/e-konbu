@@ -51,7 +51,7 @@ void strategies_init(){
 	garage_factory_init();
 	balance_stop_factory_init();
 	
-	startSection = &forthStraight;
+	startSection = &startUp;
 
 }
 

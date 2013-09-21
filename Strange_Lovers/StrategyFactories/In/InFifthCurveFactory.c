@@ -36,10 +36,10 @@ void In_sixth_curve_factory_init(){
 	//InFifthCurve_1 Section
 	InFifth_curve_1_running_method_array[0]=InFifth_Curve_1_LineTraceRunningMethod;
 	number_of_running_method=1;
-	target_values.target_brightness = 0.5;
+	target_values.target_brightness = 0.3;
 	//target_values.target_curvature = -1/262.979;
 	target_values.target_curvature = -1/180.0;
-	target_values.target_speed = 300;
+	target_values.target_speed = 250;
 	nextSection= &InFifthCurve_2;
 	Section_init(&InFifthCurve_1,nextSection,number_of_running_method,InFifth_curve_1_running_method_array,target_values);
 
