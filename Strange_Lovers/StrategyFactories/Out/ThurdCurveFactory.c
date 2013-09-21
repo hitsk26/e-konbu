@@ -21,8 +21,8 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_1 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	//switch_term.distance = 299.2192;
 	switch_term.distance =270.0;
 	
@@ -48,8 +48,8 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_2 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	//switch_term.distance = 472.5929;
 	switch_term.distance = 180.0;
 	
@@ -76,8 +76,8 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_2_2 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	//switch_term.distance = 472.5929;
 	switch_term.distance =4000.0;
 	
@@ -104,8 +104,8 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_3 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	//switch_term.distance = 300.3242;
 	switch_term.distance = 422.3242;
 	
@@ -133,8 +133,8 @@ void thurd_curve_factory_init()
 
 
 	//thurdCurve_4 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	switch_term.distance = 307.8761;
 	switch_term.distance = 296.0;
 	
@@ -162,8 +162,8 @@ void thurd_curve_factory_init()
 
 
 		//thurdCurve_5 RunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	//switch_term.distance = 414.3831;
 	switch_term.distance = 365.3831;
 	
