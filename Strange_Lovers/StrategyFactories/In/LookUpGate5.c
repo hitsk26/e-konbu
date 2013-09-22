@@ -77,7 +77,7 @@ void look_up5_factory_init(){
 	TargetValues target_values; 
 	target_values.target_brightness = 0.6;
 	target_values.target_curvature = 0.0;
-	target_values.target_speed = 130;
+	target_values.target_speed = 150;
 	Section *nextSection = &garageIn;
 	Section_init(&lookup5,nextSection,number_of_running_method,look_up5_running_method_array,target_values);
 }

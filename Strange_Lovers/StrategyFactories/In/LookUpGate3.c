@@ -55,7 +55,7 @@ void look_up3_factory_init(){
 	TargetValues target_values; 
 	target_values.target_brightness = 0.65;
 	target_values.target_curvature = 0.0;
-	target_values.target_speed = 180;
+	target_values.target_speed = 200;
 	Section *nextSection = &lookup4;
 	Section_init(&lookup3,nextSection,number_of_running_method,look_up3_running_method_array,target_values);
 }

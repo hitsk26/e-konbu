@@ -16,13 +16,16 @@ int MarkerSwitch_judge_switch_method(SwitchTerm switch_term)
 	if(count == 100){
 		sum_av= sum/100;
 		count=0;
-		if(sum_av < switch_term.distance_obstacle){
-		judge_flag = 1;
+		if(sum_av < switch_term.bright){
+			judge_flag = 1;
 		}
 	}else{
 		sum+=BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000;
 		count++;
 	}
+
+	ecrobot_debug1(switch_term.bright,sum_av,BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000);
+
 
 
 	return judge_flag;
