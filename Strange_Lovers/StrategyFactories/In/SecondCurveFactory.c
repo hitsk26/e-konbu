@@ -18,8 +18,8 @@ void second_curve_factory_init(){
 	MovementDirection movementDirection = FORWARD;
 	
 	//secondCurve_1_LineTraceRunningMethod
-	use_controller.target_curvature_controller_weight = 0.4;
-	use_controller.target_light_controller_weight = 0.6;
+	use_controller.target_curvature_controller_weight = 0.3;//0.4
+	use_controller.target_light_controller_weight = 0.7;//0.6
 	//switch_term.distance = 761.83622;
 	switch_term.distance = 601.83622; //sisou
 	
