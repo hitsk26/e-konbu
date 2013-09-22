@@ -101,6 +101,7 @@ TARGET_SOURCES := \
 	./StrategyFactories/In/LookUpGate4.c \
 	./StrategyFactories/In/LookUpGate5.c \
 	./StrategyFactories/In/GarageIn.c \
+	./StrategyFactories/In/Stop.c \
 	
 
 TOPPERS_OSEK_OIL_SOURCE := ./prog.oil
