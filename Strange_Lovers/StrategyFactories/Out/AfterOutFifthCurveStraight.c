@@ -22,8 +22,8 @@ void after_out_fifth_curve_straight_factory_init()
 	
 
 	//afterOutFifthCurveStraight_LineTraceRunningMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	switch_term.distance = 150.0;
 	balancing_requrement = 1;
 	target_tail_angle=0;

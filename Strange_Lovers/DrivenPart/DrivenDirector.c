@@ -28,6 +28,7 @@ float DrivenDirector_calc_turn_value(DrivenDirector *self,float target_brightnes
 	logSend(0,0, BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000,0,0,0,0,0);
 
 
+
 	return turn_sum;
 }
 

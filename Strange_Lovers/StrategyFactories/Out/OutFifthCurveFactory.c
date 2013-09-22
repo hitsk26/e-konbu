@@ -22,8 +22,8 @@ void out_fifth_curve_factory_init()
 	
 
 	//outFifthCurveLineTraceMethod
-	use_controller.target_curvature_controller_weight = 0.5;
-	use_controller.target_light_controller_weight = 0.5;
+	use_controller.target_curvature_controller_weight = 0.4;
+	use_controller.target_light_controller_weight = 0.6;
 	switch_term.distance = 1470.265;
 	//switch_term.distance =1300.265;
 	//switch_term.distance =1200.265;
@@ -42,7 +42,7 @@ void out_fifth_curve_factory_init()
 	out_fifth_curve_running_method_array[0]=outFifthCurveLineTraceMethod;
 	runningMethod = out_fifth_curve_running_method_array;
 	number_of_running_method=1;
-	target_values.target_brightness = 0.5;
+	target_values.target_brightness = 0.3;
 	target_values.target_curvature = -1.0/250.0;
 	
 	target_values.target_speed = 300;
