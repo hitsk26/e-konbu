@@ -10,7 +10,7 @@ Section garageIn;
 RunningMethod beforeGarageMethod;
 RunningMethod grayGarageMethod;
 
-RunningMethod garage_running_method_array[2];
+RunningMethod garage_running_method_array[1];
 
 
 //Section firstCurve;

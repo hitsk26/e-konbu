@@ -25,7 +25,7 @@ void In_fifth_curve_factory_init()
 	//InSixCurveLineTraceMethod
 	use_controller.target_curvature_controller_weight =0.4;
 	use_controller.target_light_controller_weight = 0.6;
-	switch_term.distance = 2231;//2231
+	switch_term.distance = 2031;//2231
 	//switch_term.distance =1300.265;
 	//switch_term.distance =1200.265;
 	

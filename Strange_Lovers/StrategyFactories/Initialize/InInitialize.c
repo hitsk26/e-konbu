@@ -23,6 +23,7 @@
 #include "../In/LookUpGate4.h"
 #include "../In/LookUpGate5.h"
 #include "../In/GarageIn.h"
+#include "../In/Stop.h"
 
 
 void strategies_init(){
@@ -50,7 +51,8 @@ void strategies_init(){
 	look_up5_factory_init();
 	garage_factory_init();
 	balance_stop_factory_init();
-	
+	stop_factory_init();
+
 	startSection = &startUp;
 }
 
