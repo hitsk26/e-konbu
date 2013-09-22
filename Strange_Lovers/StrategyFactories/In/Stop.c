@@ -24,7 +24,7 @@ void stop_factory_init(){
 	balancing_requrement = 0;
 	target_tail_angle=70;
 	gyroOffsetRevise=0;
-	request_forced_stop =0; 
+	request_forced_stop =1; 
 	movementDirection = FORWARD;
 	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
 	RunningMethod_init(&stopMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
