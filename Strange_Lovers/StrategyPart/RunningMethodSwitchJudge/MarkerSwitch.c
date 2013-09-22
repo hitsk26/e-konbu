@@ -1,13 +1,28 @@
 #include "MarkerSwitch.h"
 #include "../../Factory.h"
 
+
+int count=0;
+int sum=0;
+int sum_av=0;
+
 int MarkerSwitch_judge_switch_method(SwitchTerm switch_term)
 {	
 	int judge_flag=0;
 
-	DirectionEncoder_get_direction(&directionEncoder); //向きの計測
-	BrightnessEncoder_get_brightness(&brightnessEncoder);//輝度の計測
+	//DirectionEncoder_get_direction(&directionEncoder); //向きの計測
+	//BrightnessEncoder_get_brightness(&brightnessEncoder);//輝度の計測
 
+	if(count == 100){
+		sum_av= sum/100;
+		count=0;
+		if(sum_av < switch_term.distance_obstacle){
+		judge_flag = 1;
+		}
+	}else{
+		sum+=BrightnessEncoder_get_brightness_normalize(&brightnessEncoder)*1000;
+		count++;
+	}
 
 
 	return judge_flag;

@@ -23,7 +23,7 @@ void look_up2_factory_init(){
 	switch_term.time =0;
 	switch_term.distance_obstacle = 27;
 	balancing_requrement = 0;
-	target_tail_angle=90;
+	target_tail_angle=80;
 	gyroOffsetRevise=0;
 	request_forced_stop =0; 
 	movementDirection = FORWARD;
