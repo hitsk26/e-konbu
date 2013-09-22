@@ -62,8 +62,10 @@ void forth_curve_factory_init(){
 	//forthCurve_2 Section
 	forth_curve_2_running_method_array[0]=forthCurve_2_LineTraceRunningMethod;
 	number_of_running_method=1;
-	target_values.target_brightness = 0.5;
-	target_values.target_curvature = -1.0/650.0;
+	target_values.target_brightness = 0.3;
+	//target_values.target_curvature = -1.0/650.0;
+	target_values.target_curvature = -1.0/550.0;
+	
 	target_values.target_speed = 400;
 	nextSection = &outFifthStraight;
 	Section_init(&forthCurve_2,nextSection,number_of_running_method,forth_curve_2_running_method_array,target_values);
