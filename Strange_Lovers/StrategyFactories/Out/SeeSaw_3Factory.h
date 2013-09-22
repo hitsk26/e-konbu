@@ -3,17 +3,16 @@
 
 #include "../StrategyFactories_inculude.h"
 
-#include "SeeSaw_4Factory.h"
+#include "SeeSaw_UpslopeFactory.h"
 
 
 //StarategyPart
 
 Section seesaw_3;
+RunningMethod SeesawForwardRunningMethod;
 RunningMethod SeesawRunningUpMethod;
-RunningMethod SeesawUpslopeRunningMethod;
-RunningMethod SeesawSwitchDownslopeMethod;
-RunningMethod SeesawDownslopeRunningMethod;
-RunningMethod seesaw_3_running_method_array[4];
+RunningMethod SeesawRunningUp2Method;
+RunningMethod seesaw_3_running_method_array[3];
 
 
 //StrategyPart/RunningMethodSwitchJudge
@@ -21,5 +20,4 @@ RunningMethod seesaw_3_running_method_array[4];
 extern void seesaw_3_factory_init();
 
 #endif
-
 

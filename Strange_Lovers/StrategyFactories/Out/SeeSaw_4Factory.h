@@ -3,7 +3,7 @@
 
 #include "../StrategyFactories_inculude.h"
 
-#include "SeeSaw_5Factory.h"
+#include "SeeSaw_1Factory.h"
 
 
 //StarategyPart
@@ -18,5 +18,4 @@ RunningMethod seesaw_4_running_method_array[1];
 extern void seesaw_4_factory_init();
 
 #endif
-
 

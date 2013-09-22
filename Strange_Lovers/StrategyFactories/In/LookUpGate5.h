@@ -8,9 +8,10 @@
 
 Section lookup5;
 RunningMethod doublelookupMethod;
+RunningMethod doublelookup2Method;
 RunningMethod taillookupMethod;
 
-RunningMethod look_up5_running_method_array[2];
+RunningMethod look_up5_running_method_array[3];
 
 
 //Section firstCurve;

@@ -52,6 +52,5 @@ void strategies_init(){
 	balance_stop_factory_init();
 	
 	startSection = &startUp;
-
 }
 
