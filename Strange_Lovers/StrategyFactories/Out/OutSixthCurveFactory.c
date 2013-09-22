@@ -44,7 +44,7 @@ void out_sixth_curve_factory_init(){
 	//outSixthCurve_2_LineTraceRunningMethod
 	use_controller.target_curvature_controller_weight = 0.5;
 	use_controller.target_light_controller_weight = 0.5;
-	switch_term.distance = 14000000.0619;
+	switch_term.distance = 1200.0619;
 	
 	balancing_requrement = 1;
 	target_tail_angle=0;
@@ -63,7 +63,7 @@ void out_sixth_curve_factory_init(){
 	target_values.target_curvature = 1.0/300.0;
 	
 	target_values.target_speed = 300;
-	nextSection = &startUp;
+	nextSection = &seesaw_1;
 	Section_init(&outSixthCurve_2,nextSection,number_of_running_method,outSixth_curve_2_running_method_array,target_values);
 
 

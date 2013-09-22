@@ -27,6 +27,8 @@
 #include "../Out/SeeSaw_3Factory.h"
 #include "../Out/SeeSaw_4Factory.h"
 #include "../Out/SeeSaw_5Factory.h"
+#include "../Out/SeeSaw_UpslopeFactory.h"
+
 
 
 
@@ -54,11 +56,12 @@ void strategies_init(){
 	seesaw_stop_factory_init();
 	seesaw_2_factory_init();
 	seesaw_2_2factory_init();
+	seesaw_2_3factory_init();
 	seesaw_3_factory_init();
+	seesaw_Upslope_factory_init();
 	seesaw_4_factory_init();
-	seesaw_5_factory_init();
 
-	startSection = &firstStraight;
+	startSection = &startUp;
 
 }
 
