@@ -51,11 +51,6 @@ void strategies_init(){
 	garage_factory_init();
 	balance_stop_factory_init();
 	
-<<<<<<< HEAD
-	startSection = &balanceStop;
-=======
 	startSection = &startUp;
-
->>>>>>> ecca8cb80549e0f8f26a6801a9b4fdba343859f8
 }
 
