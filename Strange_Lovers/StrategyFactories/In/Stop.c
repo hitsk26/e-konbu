@@ -24,7 +24,7 @@ void stop_factory_init(){
 	balancing_requrement = 0;
 	target_tail_angle=70;
 	gyroOffsetRevise=0;
-	request_forced_stop =1; 
+	request_forced_stop =0; 
 	movementDirection = FORWARD;
 	fp_SwitchJudge = DistanceSwitch_judge_switch_method;
 	RunningMethod_init(&stopMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
@@ -37,7 +37,7 @@ void stop_factory_init(){
 	TargetValues target_values; 
 	target_values.target_brightness = 0.6;
 	target_values.target_curvature = 0.0;
-	target_values.target_speed = 0;
+	target_values.target_speed = -5;
 	Section *nextSection = &stop;
 	Section_init(&stop,nextSection,number_of_running_method,stop_running_method_array,target_values);
 }

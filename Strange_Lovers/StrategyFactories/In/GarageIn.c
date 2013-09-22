@@ -17,7 +17,7 @@ void garage_factory_init(){
 	use_controller.target_curvature_controller_weight = 0.0;
 	use_controller.target_light_controller_weight = 0.1;
 	use_controller.target_runner_angle_controller_weight = 0.9;
-	switch_term.distance =	1900;
+	switch_term.distance =	1710;
 	switch_term.inclination = 0;
 	switch_term.inPushed = 0;
 	switch_term.speed = 0;
@@ -32,25 +32,7 @@ void garage_factory_init(){
 	RunningMethod_init(&beforeGarageMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
 
 
-	//beforelookupMethod
-	use_controller.target_curvature_controller_weight = 0.0;
-	use_controller.target_light_controller_weight = 1.0;
-	switch_term.distance =	0;
-	switch_term.inclination = 0;
-	switch_term.inPushed = 0;
-	switch_term.speed = 0;
-	switch_term.time =0;
-	switch_term.distance = 0;
-	switch_term.distance_obstacle = 0;
-	switch_term.bright = 470;
-	balancing_requrement = 0;
-	target_tail_angle=70;
-	gyroOffsetRevise=0;
-	request_forced_stop =0; 
-	movementDirection = FORWARD;
-	fp_SwitchJudge = MarkerSwitch_judge_switch_method;
-	RunningMethod_init(&grayGarageMethod,balancing_requrement,use_controller,target_tail_angle, gyroOffsetRevise,switch_term,fp_SwitchJudge,request_forced_stop,movementDirection);
-	
+
 
 	garage_running_method_array[0] = beforeGarageMethod;
 	//garage_running_method_array[1] = grayGarageMethod;
