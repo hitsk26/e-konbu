@@ -40,7 +40,7 @@ void start_up__factory_init(){
 	switch_term.time =250;
 	//switch_term.tail_angle=130;		//119;
 	balancing_requrement = 0;
-	target_tail_angle=117;
+	target_tail_angle=113;
 
 	gyroOffsetRevise=0;
 	request_forced_stop = 0;
