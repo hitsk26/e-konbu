@@ -40,5 +40,7 @@ typedef struct {
 
 	int distance_obstacle;
 
+	int bright;
+
 }SwitchTerm;
 #endif

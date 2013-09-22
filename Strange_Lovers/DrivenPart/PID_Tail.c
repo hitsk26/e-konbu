@@ -2,8 +2,7 @@
 #include "../Factory.c"
 	
 void PID_TAIL_init(PID_TAIL *self){
-
-	self->Kp = 4.0;//2.4;
+	self->Kp = 4.8;//2.4;
 }
 
 
