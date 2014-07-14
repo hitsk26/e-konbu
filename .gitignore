@@ -88,6 +88,9 @@ ipch/
 *.asta.bak
 
 logs/*
+logs
 model_sheet/*
+model_sheet
+
 区間情報/*
 区間情報
