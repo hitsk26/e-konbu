@@ -86,3 +86,8 @@ ipch/
 #astah extra files
 *.asta.lock
 *.asta.bak
+
+logs/*
+model_sheet/*
+区間情報/*
+区間情報
